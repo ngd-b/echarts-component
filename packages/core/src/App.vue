@@ -3,8 +3,8 @@
   <div class="w-500px h-400px">
     <VueEcharts>
       <Line :data="data" />
-      <XAxis :data="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" show />
-      <YAxis show />
+      <XAxis :data="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" />
+      <YAxis />
     </VueEcharts>
   </div>
 </template>

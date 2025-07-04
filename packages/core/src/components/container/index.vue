@@ -6,12 +6,19 @@
 import * as echarts from "echarts";
 import { onMounted, provide, ref, watch } from "vue";
 import { VueEcharts } from "../../types/index";
-import type { ChartOptions, SeriesOption } from "./type";
+import type { ChartOptions, SeriesOption, SeriesConfig } from "./type";
+import { DefaultSeriesConfig } from "./type";
 import type { XAXisOption, YAXisOption } from "echarts/types/dist/shared";
+import { omitBy, isUndefined } from "lodash";
 
 let chart: echarts.ECharts | null = null;
 const root = ref(null);
-const options = ref<ChartOptions>({});
+const options = ref<ChartOptions>({
+  ...DefaultSeriesConfig,
+});
+const props = withDefaults(defineProps<SeriesConfig>(), {
+  animation: true,
+});
 
 onMounted(() => {
   initChart();
@@ -24,16 +31,30 @@ provide(VueEcharts, {
 });
 
 watch(
+  () => props,
+  () => {
+    let propsData = omitBy(props, isUndefined);
+
+    options.value = {
+      ...options.value,
+      ...propsData,
+    };
+  },
+  { immediate: true, deep: true }
+);
+
+watch(
   options,
   () => {
-    chart?.setOption(options.value);
+    console.log("update options", options.value);
+    chart?.setOption({ ...options.value });
   },
   { immediate: true, deep: true }
 );
 function initChart() {
   chart = echarts.init(root.value);
 
-  chart.setOption(options.value);
+  chart.setOption({ ...options.value });
 }
 function updateSeries(seriesData: SeriesOption) {
   options.value.series = seriesData;
