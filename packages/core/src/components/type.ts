@@ -3,3 +3,4 @@ export * from "./series/type";
 export * from "./xAxis/type";
 export * from "./yAxis/type";
 export * from "./grid/type";
+export * from "./title/type";

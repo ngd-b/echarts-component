@@ -76,4 +76,5 @@ export interface Actions {
   updateXAxis: (data: XAXisOption) => void;
   updateYAxis: (data: YAXisOption) => void;
   updateGrid: (data: GridComponentOption) => void;
+  updateTitle: (data: TitleComponentOption) => void;
 }

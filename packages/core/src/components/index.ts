@@ -6,7 +6,8 @@ export { VueEcharts };
 import XAxis from "./xAxis/index.vue";
 import YAxis from "./yAxis/index.vue";
 import Grid from "./grid/index.vue";
+import Title from "./title/index.vue";
 
-export { XAxis, YAxis, Grid };
+export { XAxis, YAxis, Grid, Title };
 // series type
 export * from "./series";

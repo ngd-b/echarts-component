@@ -1,4 +1,4 @@
-import type { GridComponentOption } from "echarts/components.d.ts";
+import type { GridOption as GridComponentOption } from "echarts/types/dist/shared.d.ts";
 
 export type { GridComponentOption };
 export type GridOptions = Partial<Omit<GridComponentOption, "tooltip">>;

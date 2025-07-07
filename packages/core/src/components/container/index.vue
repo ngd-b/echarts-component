@@ -10,7 +10,12 @@ import type { ChartOptions, SeriesOption, SeriesConfig } from "./type";
 import { DefaultSeriesConfig } from "./type";
 import { omitBy, isUndefined } from "lodash";
 //
-import type { XAXisOption, YAXisOption, GridComponentOption } from "../type";
+import type {
+  XAXisOption,
+  YAXisOption,
+  GridComponentOption,
+  TitleComponentOption,
+} from "../type";
 
 let chart: echarts.ECharts | null = null;
 const root = ref(null);
@@ -30,6 +35,7 @@ provide(VueEcharts, {
   updateXAxis,
   updateYAxis,
   updateGrid,
+  updateTitle,
 });
 
 watch(
@@ -70,5 +76,8 @@ function updateYAxis(yAxisData: YAXisOption) {
 }
 function updateGrid(gridData: GridComponentOption) {
   options.value.grid = gridData;
+}
+function updateTitle(titleData: TitleComponentOption) {
+  options.value.title = titleData;
 }
 </script>
