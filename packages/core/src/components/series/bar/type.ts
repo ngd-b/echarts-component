@@ -15,7 +15,6 @@ export type BarSeries = Partial<
     | "select"
     | "markLine"
     | "markArea"
-    | "markLine"
     | "markPoint"
     | "universalTransition"
     | "tooltip"

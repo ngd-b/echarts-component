@@ -15,11 +15,9 @@ export type LineSeries = Partial<
     | "emphasis"
     | "blur"
     | "select"
-    | "markerPosition"
+    | "markPoint"
     | "markLine"
     | "markArea"
-    | "markLine"
-    | "markPoint"
     | "universalTransition"
     | "tooltip"
   >
