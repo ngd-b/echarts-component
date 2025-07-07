@@ -1,21 +1,18 @@
-import type { LineSeriesOption } from "echarts/charts";
+import type { BarSeriesOption } from "echarts/charts";
 
-export type { LineSeriesOption };
-export type LineSeries = Partial<
+export type { BarSeriesOption };
+export type BarSeries = Partial<
   Omit<
-    LineSeriesOption,
+    BarSeriesOption,
     | "type"
+    | "backgroundStyle"
     | "label"
-    | "endLabel"
     | "labelLine"
     | "labelLayout"
     | "itemStyle"
-    | "lineStyle"
-    | "areaStyle"
     | "emphasis"
     | "blur"
     | "select"
-    | "markerPosition"
     | "markLine"
     | "markArea"
     | "markLine"
@@ -25,37 +22,38 @@ export type LineSeries = Partial<
   >
 >;
 
-export const DefaultLineSeries: LineSeries = {
+export const DefaultBarSeries: BarSeries = {
+  data: [],
   colorBy: "series",
+  legendHoverLink: true,
   coordinateSystem: "cartesian2d",
   xAxisIndex: 0,
   yAxisIndex: 0,
   polarIndex: 0,
-  symbol: "emptyCircle",
-  symbolSize: 4,
-  symbolKeepAspect: false,
-  symbolOffset: [0, 0],
-  showSymbol: true,
-  showAllSymbol: "auto",
-  legendHoverLink: true,
+  roundCap: false,
+  realtimeSort: false,
+  showBackground: false,
+  selectedMode: false,
   stackStrategy: "samesign",
   cursor: "pointer",
-  connectNulls: false,
-  clip: true,
-  triggerLineEvent: false,
-  step: false,
-  data: [],
-  selectedMode: false,
-  smooth: false,
+  barMinHeight: 0,
+  barMinAngle: 0,
+  barGap: "20%",
+  large: false,
+  largeThreshold: 400,
+  progressive: 5000,
+  progressiveThreshold: 3000,
+  progressiveChunkMode: "mod",
   seriesLayoutBy: "column",
   datasetIndex: 0,
+  clip: true,
   zlevel: 0,
   z: 2,
   silent: false,
   animation: true,
   animationThreshold: 2000,
   animationDuration: 1000,
-  animationEasing: "linear",
+  animationEasing: "cubicInOut",
   animationDelay: 0,
   animationDurationUpdate: 300,
   animationEasingUpdate: "cubicInOut",

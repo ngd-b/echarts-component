@@ -2,24 +2,23 @@
 import * as echarts from "echarts/core";
 import { LineChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
-import type { LineSeries, LineSeriesOption } from "./type";
+import type { BarSeries, BarSeriesOption } from "./type";
 import { VueEcharts } from "../../../types/index";
 import { inject, ref, watch } from "vue";
 import type { Actions } from "../../type";
-import { DefaultLineSeries } from "./type";
+import { DefaultBarSeries } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 echarts.use([LineChart, CanvasRenderer]);
 
-const options = ref<LineSeriesOption>({ type: "line", ...DefaultLineSeries });
+const options = ref<BarSeriesOption>({ type: "bar", ...DefaultBarSeries });
 const { updateSeries } = inject<Actions>(VueEcharts) as Actions;
 
 defineOptions({
-  name: "Line",
+  name: "Bar",
 });
 
-const props = withDefaults(defineProps<LineSeries>(), {
-  showSymbol: true,
+const props = withDefaults(defineProps<BarSeries>(), {
   legendHoverLink: true,
   clip: true,
   animation: true,

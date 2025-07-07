@@ -7,12 +7,13 @@
       <YAxis />
       <Grid show />
       <Title text="Hello World" left="center" />
+      <Bar :data="data" />
     </VueEcharts>
   </div>
 </template>
 <script setup lang="tsx">
 import { onMounted, ref } from "vue";
-import { VueEcharts, Line, XAxis, YAxis, Grid, Title } from "./components";
+import { VueEcharts, Line, XAxis, YAxis, Grid, Title, Bar } from "./components";
 
 let data = ref([1, 12, 3, 24, 5, 36, 7, 48, 9, 10]);
 onMounted(() => {
