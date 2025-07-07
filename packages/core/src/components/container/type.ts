@@ -75,4 +75,5 @@ export interface Actions {
   updateSeries: (data: SeriesOption) => void;
   updateXAxis: (data: XAXisOption) => void;
   updateYAxis: (data: YAXisOption) => void;
+  updateGrid: (data: GridComponentOption) => void;
 }

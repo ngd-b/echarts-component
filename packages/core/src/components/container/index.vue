@@ -8,8 +8,9 @@ import { onMounted, provide, ref, watch } from "vue";
 import { VueEcharts } from "../../types/index";
 import type { ChartOptions, SeriesOption, SeriesConfig } from "./type";
 import { DefaultSeriesConfig } from "./type";
-import type { XAXisOption, YAXisOption } from "echarts/types/dist/shared";
 import { omitBy, isUndefined } from "lodash";
+//
+import type { XAXisOption, YAXisOption, GridComponentOption } from "../type";
 
 let chart: echarts.ECharts | null = null;
 const root = ref(null);
@@ -28,6 +29,7 @@ provide(VueEcharts, {
   updateSeries,
   updateXAxis,
   updateYAxis,
+  updateGrid,
 });
 
 watch(
@@ -65,5 +67,8 @@ function updateXAxis(xAxisData: XAXisOption) {
 }
 function updateYAxis(yAxisData: YAXisOption) {
   options.value.yAxis = yAxisData;
+}
+function updateGrid(gridData: GridComponentOption) {
+  options.value.grid = gridData;
 }
 </script>

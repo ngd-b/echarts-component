@@ -1,2 +1,5 @@
 export * from "./container/type";
 export * from "./series/type";
+export * from "./xAxis/type";
+export * from "./yAxis/type";
+export * from "./grid/type";

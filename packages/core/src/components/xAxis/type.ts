@@ -27,7 +27,7 @@ export const DefaultXAxis: XAxis = {
   nameLocation: "end",
   nameGap: 15,
   inverse: false,
-  // scale :false,
+  // scale: false,
   //splitNumber: 5,
   // minInterval: 0,
   // logBase: 10,
