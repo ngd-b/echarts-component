@@ -3,9 +3,8 @@ import * as echarts from "echarts/core";
 import { BarChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import type { BarSeries, BarSeriesOption } from "./type";
-import { VueEcharts } from "../../../types/index";
-import { inject, ref, useId, watch } from "vue";
-import type { Actions } from "../../type";
+import { useVueEcharts } from "../../../hooks/index";
+import { ref, useId, watch } from "vue";
 import { DefaultBarSeries } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -19,7 +18,7 @@ const options = ref<BarSeriesOption>({
   id: id,
   ...DefaultBarSeries,
 });
-const { updateSeries } = inject<Actions>(VueEcharts) as Actions;
+const { updateSeries } = useVueEcharts();
 
 defineOptions({
   name: "Bar",

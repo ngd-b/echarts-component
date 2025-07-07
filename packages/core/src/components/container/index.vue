@@ -5,7 +5,8 @@
 <script setup lang="tsx">
 import * as echarts from "echarts";
 import { onMounted, provide, ref, watch } from "vue";
-import { VueEcharts } from "../../types/index";
+import type { EchartsContext } from "../../types/index";
+import { ECHARTS_CONTEXT_KEY } from "../../hooks/index";
 import type { ChartOptions, SeriesOption, SeriesConfig } from "./type";
 import { DefaultSeriesConfig } from "./type";
 import { omitBy, isUndefined } from "lodash";
@@ -18,6 +19,7 @@ import type {
 } from "../type";
 
 let chart: echarts.ECharts | null = null;
+
 const root = ref(null);
 const options = ref<ChartOptions & { series: SeriesOption[] }>({
   ...DefaultSeriesConfig,
@@ -29,14 +31,6 @@ const props = withDefaults(defineProps<SeriesConfig>(), {
 
 onMounted(() => {
   initChart();
-});
-
-provide(VueEcharts, {
-  updateSeries,
-  updateXAxis,
-  updateYAxis,
-  updateGrid,
-  updateTitle,
 });
 
 watch(
@@ -89,4 +83,13 @@ function updateGrid(gridData: GridComponentOption) {
 function updateTitle(titleData: TitleComponentOption) {
   options.value.title = titleData;
 }
+
+provide<EchartsContext>(ECHARTS_CONTEXT_KEY, {
+  echartRef: chart,
+  updateSeries,
+  updateXAxis,
+  updateYAxis,
+  updateGrid,
+  updateTitle,
+});
 </script>

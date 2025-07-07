@@ -1,7 +1,6 @@
 <script setup lang="tsx">
-import { inject, ref, watch } from "vue";
-import type { Actions } from "../type";
-import { VueEcharts } from "../../types/index";
+import { ref, watch } from "vue";
+import { useVueEcharts } from "../../hooks/index";
 import type { YAxis, YAXisOption } from "./type";
 import { DefaultYAxis } from "./type";
 import { omitBy, isUndefined } from "lodash";
@@ -9,7 +8,7 @@ import { omitBy, isUndefined } from "lodash";
 const options = ref<YAXisOption>({
   ...DefaultYAxis,
 });
-const { updateYAxis } = inject<Actions>(VueEcharts) as Actions;
+const { updateYAxis } = useVueEcharts();
 
 defineOptions({
   name: "YAxis",

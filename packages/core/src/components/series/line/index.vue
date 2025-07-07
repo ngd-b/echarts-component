@@ -3,9 +3,8 @@ import * as echarts from "echarts/core";
 import { LineChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import type { LineSeries, LineSeriesOption } from "./type";
-import { VueEcharts } from "../../../types/index";
-import { inject, ref, useId, watch } from "vue";
-import type { Actions } from "../../type";
+import { ref, useId, watch } from "vue";
+import { useVueEcharts } from "../../../hooks/index";
 import { DefaultLineSeries } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -19,7 +18,7 @@ const options = ref<LineSeriesOption>({
   id: id,
   ...DefaultLineSeries,
 });
-const { updateSeries } = inject<Actions>(VueEcharts) as Actions;
+const { updateSeries } = useVueEcharts();
 
 defineOptions({
   name: "Line",

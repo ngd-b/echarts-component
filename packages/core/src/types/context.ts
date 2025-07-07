@@ -1,4 +1,16 @@
-import type { InjectionKey } from "vue";
-import type { Actions } from "../components/type";
+import type {
+  SeriesOption,
+  XAXisOption,
+  YAXisOption,
+  GridComponentOption,
+  TitleComponentOption,
+} from "../components/type";
 
-export const VueEcharts: InjectionKey<Actions> = Symbol("VueEcharts");
+export interface EchartsContext {
+  echartRef: echarts.ECharts | null;
+  updateSeries: (data: SeriesOption) => void;
+  updateXAxis: (data: XAXisOption) => void;
+  updateYAxis: (data: YAXisOption) => void;
+  updateGrid: (data: GridComponentOption) => void;
+  updateTitle: (data: TitleComponentOption) => void;
+}

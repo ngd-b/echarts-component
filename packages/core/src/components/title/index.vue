@@ -1,7 +1,6 @@
 <script setup lang="tsx">
-import { inject, ref, watch } from "vue";
-import type { Actions } from "../type";
-import { VueEcharts } from "../../types/index";
+import { ref, watch } from "vue";
+import { useVueEcharts } from "../../hooks/index";
 import type { TitleComponentOption, TitleOptions } from "./type";
 import { DefaultTitleOptions } from "./type";
 import { omitBy, isUndefined } from "lodash";
@@ -9,7 +8,7 @@ import { omitBy, isUndefined } from "lodash";
 const options = ref<TitleComponentOption>({
   ...DefaultTitleOptions,
 });
-const { updateTitle } = inject<Actions>(VueEcharts) as Actions;
+const { updateTitle } = useVueEcharts();
 
 defineOptions({
   name: "Title",

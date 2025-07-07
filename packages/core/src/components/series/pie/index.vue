@@ -3,9 +3,9 @@ import * as echarts from "echarts/core";
 import { PieChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import type { PieSeries, PieSeriesOption } from "./type";
-import { VueEcharts } from "../../../types/index";
-import { inject, ref, useId, watch } from "vue";
-import type { Actions } from "../../type";
+import { useVueEcharts } from "../../../hooks/index";
+import { ref, useId, watch } from "vue";
+
 import { DefaultPieSeries } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -18,7 +18,7 @@ const options = ref<PieSeriesOption>({
   id: id,
   ...DefaultPieSeries,
 });
-const { updateSeries } = inject<Actions>(VueEcharts) as Actions;
+const { updateSeries } = useVueEcharts();
 
 defineOptions({
   name: "Line",

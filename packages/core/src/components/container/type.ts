@@ -10,7 +10,6 @@ import type {
   TooltipComponentOption,
   GridComponentOption,
 } from "echarts/components";
-import type { XAXisOption, YAXisOption } from "echarts/types/dist/shared";
 
 export type SeriesOption = LineSeriesOption | BarSeriesOption | PieSeriesOption;
 
@@ -70,11 +69,3 @@ export type ChartOptions = ComposeOption<
   | TooltipComponentOption
   | GridComponentOption
 >;
-
-export interface Actions {
-  updateSeries: (data: SeriesOption) => void;
-  updateXAxis: (data: XAXisOption) => void;
-  updateYAxis: (data: YAXisOption) => void;
-  updateGrid: (data: GridComponentOption) => void;
-  updateTitle: (data: TitleComponentOption) => void;
-}
