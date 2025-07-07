@@ -4,14 +4,21 @@ import { LineChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import type { LineSeries, LineSeriesOption } from "./type";
 import { VueEcharts } from "../../../types/index";
-import { inject, ref, watch } from "vue";
+import { inject, ref, useId, watch } from "vue";
 import type { Actions } from "../../type";
 import { DefaultLineSeries } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 echarts.use([LineChart, CanvasRenderer]);
 
-const options = ref<LineSeriesOption>({ type: "line", ...DefaultLineSeries });
+// 组件唯一id
+let id = useId();
+
+const options = ref<LineSeriesOption>({
+  type: "line",
+  id: id,
+  ...DefaultLineSeries,
+});
 const { updateSeries } = inject<Actions>(VueEcharts) as Actions;
 
 defineOptions({

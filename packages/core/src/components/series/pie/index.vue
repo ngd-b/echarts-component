@@ -1,17 +1,23 @@
 <script setup lang="tsx">
 import * as echarts from "echarts/core";
-import { LineChart } from "echarts/charts";
+import { PieChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import type { PieSeries, PieSeriesOption } from "./type";
 import { VueEcharts } from "../../../types/index";
-import { inject, ref, watch } from "vue";
+import { inject, ref, useId, watch } from "vue";
 import type { Actions } from "../../type";
 import { DefaultPieSeries } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
-echarts.use([LineChart, CanvasRenderer]);
+echarts.use([PieChart, CanvasRenderer]);
+// 组件唯一id
+let id = useId();
 
-const options = ref<PieSeriesOption>({ type: "pie", ...DefaultPieSeries });
+const options = ref<PieSeriesOption>({
+  type: "pie",
+  id: id,
+  ...DefaultPieSeries,
+});
 const { updateSeries } = inject<Actions>(VueEcharts) as Actions;
 
 defineOptions({

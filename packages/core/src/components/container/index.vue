@@ -19,8 +19,9 @@ import type {
 
 let chart: echarts.ECharts | null = null;
 const root = ref(null);
-const options = ref<ChartOptions>({
+const options = ref<ChartOptions & { series: SeriesOption[] }>({
   ...DefaultSeriesConfig,
+  series: [],
 });
 const props = withDefaults(defineProps<SeriesConfig>(), {
   animation: true,
@@ -65,7 +66,15 @@ function initChart() {
   chart.setOption({ ...options.value });
 }
 function updateSeries(seriesData: SeriesOption) {
-  options.value.series = seriesData;
+  let index = options.value.series.findIndex(
+    (item: SeriesOption) => item.id === seriesData.id
+  );
+
+  if (index > -1) {
+    options.value.series[index] = seriesData;
+  } else {
+    options.value.series.push(seriesData);
+  }
 }
 
 function updateXAxis(xAxisData: XAXisOption) {
