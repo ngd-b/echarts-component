@@ -4,7 +4,7 @@
 </template>
 <script setup lang="tsx">
 import * as echarts from "echarts";
-import { onMounted, provide, ref, watch } from "vue";
+import { onMounted, provide, ref, useAttrs, watch } from "vue";
 import type { EchartsContext } from "../../types/index";
 import { ECHARTS_CONTEXT_KEY } from "../../hooks/index";
 import type { ChartOptions, SeriesOption, SeriesConfig } from "./type";
@@ -20,7 +20,10 @@ import type {
 
 defineOptions({
   name: "VueEcharts",
+  inheritAttrs: false, // 继承属性
 });
+
+const attrs = useAttrs();
 let chart: echarts.ECharts | null = null;
 
 const root = ref(null);

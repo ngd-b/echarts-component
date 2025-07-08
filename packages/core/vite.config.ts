@@ -18,7 +18,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"), // 你的主入口文件
       name: "VueEchartsComponents", // UMD 名称（可选）
-      fileName: (format) => `echarts-component-vue.${format}.js`,
+      fileName: "echarts-component-vue",
       formats: ["es", "cjs"],
     },
     rollupOptions: {

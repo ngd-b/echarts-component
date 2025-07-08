@@ -19,14 +19,15 @@
     "charts",
     "vue-echarts"
   ],
-  "main": "./dist/echarts-component-vue.cjs.js",
-  "module": "./dist/echarts-component-vue.es.js",
+  "main": "./dist/echarts-component-vue.js.",
+  "module": "./dist/echarts-component-vue.cjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/echarts-component-vue.es.js",
-      "require": "./dist/echarts-component-vue.cjs.js"
-    }
+      "import": "./dist/echarts-component-vue.js",
+      "require": "./dist/echarts-component-vue.cjs"
+    },
+    "./style.css": "./dist/echarts-component-vue.css"
   },
   "files": [
     "dist",

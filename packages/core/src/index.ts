@@ -9,7 +9,7 @@ import {
   Title,
   Grid,
 } from "./components/index";
-
+import "virtual:uno.css";
 export * from "./hooks/index";
 
 export type * from "./types/index";

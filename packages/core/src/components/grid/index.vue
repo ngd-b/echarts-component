@@ -1,11 +1,15 @@
 <script setup lang="tsx">
-import { ref, watch } from "vue";
+import { ref, useId, watch } from "vue";
 import { useVueEcharts } from "../../hooks/index";
 import type { GridComponentOption, GridOptions } from "./type";
 import { DefaultGridOptions } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
+// 组件唯一id
+let id = useId();
+
 const options = ref<GridComponentOption>({
+  id,
   ...DefaultGridOptions,
 });
 const { updateGrid } = useVueEcharts();
