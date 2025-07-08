@@ -1,5 +1,5 @@
 {
-  "name": "vue-echarts-components-docs",
+  "name": "@echarts-component/docs",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "less": "^4.3.0",
     "vitepress": "^1.6.3"
   }
 }

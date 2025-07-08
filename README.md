@@ -1,5 +1,5 @@
 
-# vue-echarts-components
+# echarts-component
 
 > 🧩 基于 Vue 3 的组件化 ECharts 图表框架
 
@@ -20,11 +20,11 @@
 ## 📦 安装
 
 ```bash
-npm install vue-echarts-components
+npm install @echarts-component/vue
 # or
-pnpm add vue-echarts-components
+pnpm add @echarts-component/vue
 # or
-yarn add vue-echarts-components
+yarn add @echarts-component/vue
 ````
 
 ---
@@ -33,7 +33,7 @@ yarn add vue-echarts-components
 
 ```vue
 <script setup>
-import { VueEcharts, Pie, XAxis, Title } from 'vue-echarts-components'
+import { VueEcharts, Pie, XAxis, Title } from '@echarts-component/vue'
 
 const data = [
   { value: 40, name: 'A' },

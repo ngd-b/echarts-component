@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: 什么是Vue-Echarts-Components？
-      link: /guide/what-is-vue-echarts-components
+      link: /guide/what-is-echarts-component
     - theme: alt
       text: 快速开始
       link: /guide/installer/

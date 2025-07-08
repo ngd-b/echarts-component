@@ -2,14 +2,14 @@ import { defineConfig } from "vitepress";
 import pkg from "../../package.json";
 
 export default defineConfig({
-  title: "vue-echarts-components",
+  title: "echarts-component",
   description: "Vue3 ECharts 组件",
 
   themeConfig: {
     logo: "",
     editLink: {
       pattern:
-        "https://github.com/ngd-b/vue-echarts-components/edit/main/docs/:path",
+        "https://github.com/ngd-b/echarts-component/edit/main/docs/:path",
     },
     search: {
       provider: "local",
@@ -17,17 +17,17 @@ export default defineConfig({
     socialLinks: [
       {
         icon: "github",
-        link: "https://github.com/ngd-b/vue-echarts-components",
+        link: "https://github.com/ngd-b/echarts-component",
       },
     ],
     nav: [
-      { text: "组件", link: "/guide/what-is-vue-echarts-components" },
+      { text: "组件", link: "/guide/what-is-echarts-component" },
       {
         text: pkg.version,
         items: [
           {
             text: "更新日志",
-            link: "https://github.com/ngd-b/vue-echarts-components/releases",
+            link: "https://github.com/ngd-b/echarts-component/releases",
           },
         ],
       },
@@ -38,7 +38,7 @@ export default defineConfig({
         items: [
           {
             text: "什么是Vue-ECharts-Components",
-            link: "/guide/what-is-vue-echarts-components",
+            link: "/guide/what-is-echarts-component",
           },
           {
             text: "安装",
@@ -101,7 +101,7 @@ export default defineConfig({
     ],
     footer: {
       message:
-        'Released under the <a href="https://github.com/ngd-b/vue-echarts-components/blob/main/LICENSE">MIT License</a>.',
+        'Released under the <a href="https://github.com/ngd-b/echarts-component/blob/main/LICENSE">MIT License</a>.',
       copyright:
         'Copyright © 2025-present <a href="https://github.com/ngd-b">Hboot</a>',
     },
@@ -109,7 +109,7 @@ export default defineConfig({
   srcDir: "src",
   lastUpdated: true,
   sitemap: {
-    hostname: "https://vue-echarts-components.hboot.fun",
+    hostname: "https://echarts-component.hboot.fun",
   },
   cleanUrls: true,
 });

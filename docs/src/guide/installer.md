@@ -2,23 +2,21 @@
 
 ## 安装
 
-### 使用 npm
+::: code-group
 
-```sh
-npm install vue-echarts-components echarts
+```sh [npm]
+npm install echarts-component echarts
 ```
 
-### 使用 yarn
-
-```sh
-yarn add vue-echarts-components echarts
+```sh [yarn]
+yarn add echarts-component echarts
 ```
 
-### 使用 pnpm
-
-```sh
-pnpm add vue-echarts-components echarts
+```sh [pnpm]
+pnpm add echarts-component echarts
 ```
+
+:::
 
 ## 全局引入
 
@@ -27,7 +25,7 @@ pnpm add vue-echarts-components echarts
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import VueEChartsComponents from 'vue-echarts-components'
+import VueEChartsComponents from 'echarts-component'
 
 const app = createApp(App)
 app.use(VueEChartsComponents)
@@ -42,7 +40,7 @@ app.mount('#app')
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { VueEcharts, Line, Bar, XAxis, YAxis, Title, Tooltip, Legend } from 'vue-echarts-components'
+import { VueEcharts, Line, Bar, XAxis, YAxis, Title, Tooltip, Legend } from 'echarts-component'
 
 const app = createApp(App)
 
@@ -169,7 +167,7 @@ export default {
 
 ```ts
 import { defineComponent } from 'vue'
-import type { LineProps } from 'vue-echarts-components'
+import type { LineProps } from 'echarts-component'
 
 export default defineComponent({
   setup() {

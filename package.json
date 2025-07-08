@@ -1,5 +1,5 @@
 {
-  "name": "@vue-echarts/monorepo",
+  "name": "@echarts-component/monorepo",
   "private": true,
   "version": "0.1.0",
   "type": "module",
