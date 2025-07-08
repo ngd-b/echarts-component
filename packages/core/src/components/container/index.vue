@@ -1,5 +1,5 @@
 <template>
-  <div ref="root" class="w-full h-full"></div>
+  <div ref="root" v-bind="attrs"></div>
   <slot></slot>
 </template>
 <script setup lang="tsx">
