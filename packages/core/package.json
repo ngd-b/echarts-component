@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "author": "hboot<bobolity@163.com>",
@@ -19,13 +19,13 @@
     "charts",
     "vue-echarts"
   ],
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "./dist/echarts-component-vue.cjs.js",
+  "module": "./dist/echarts-component-vue.es.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/echarts-component-vue.es.js",
+      "require": "./dist/echarts-component-vue.cjs.js"
     }
   },
   "files": [

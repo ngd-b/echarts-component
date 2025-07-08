@@ -16,14 +16,14 @@ Vue-ECharts-Component 是一个专为 Vue 3 设计的组件库，旨在将 Apach
 使用组件化方式配置图表
 
 ```js
-<Chart>
+<VueEcharts>
   <Line :data="[12, 19, 3, 5, 2, 3]" />
   <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
   <YAxis />
   <Title text="一周数据趋势" />
   <Tooltip />
   <Legend />
-</Chart>
+</VueEcharts>
 ```
 
 传统 ECharts JSON 配置方式
@@ -92,7 +92,7 @@ const option = {
 组件的嵌套关系直接映射 ECharts 的配置结构，例如：
 
 ```js
-<Chart>
+<VueEcharts>
   <!-- 网格配置 -->
   <Grid :left="10" :right="10" />
   
@@ -104,7 +104,7 @@ const option = {
   
   <!-- 系列配置 -->
   <Bar :data="[10, 20, 30]" />
-</Chart>
+</VueEcharts>
 
 ```
 

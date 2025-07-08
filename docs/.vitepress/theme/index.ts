@@ -1,6 +1,6 @@
 import DefaultTheme from "vitepress/theme";
 import type { Theme } from "vitepress";
-import { VueEcharts, Line, Bar, Pie } from "@echarts-component/vue";
+import VueEcharts from "@echarts-component/vue";
 
 import "./index.less";
 
@@ -9,5 +9,6 @@ export default {
   enhanceApp({ app }) {
     // 注册自定义全局组件
     // app.component();
+    app.use(VueEcharts);
   },
 } satisfies Theme;

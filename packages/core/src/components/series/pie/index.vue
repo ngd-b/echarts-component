@@ -21,7 +21,7 @@ const options = ref<PieSeriesOption>({
 const { updateSeries } = useVueEcharts();
 
 defineOptions({
-  name: "Line",
+  name: "Pie",
 });
 
 const props = withDefaults(defineProps<PieSeries>(), {

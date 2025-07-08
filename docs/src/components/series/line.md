@@ -20,6 +20,21 @@
 
 ```
 
+<script setup>
+  import { ref } from 'vue'
+
+  const data = ref([12, 19, 3, 5, 2, 3])
+</script>
+
+<div style="width:100%;height:300px;">
+  <VueEcharts>
+      <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" />
+      <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
+      <YAxis />
+      <Title text="一周数据趋势" />
+  </VueEcharts>
+</div>
+
 ## 多系列折线图
 
 可以在同一个图表中使用多个 `Line` 组件创建多系列折线图：
@@ -40,6 +55,16 @@
 
 ```
 
+<div style="width:100%;height:300px;">
+  <VueEcharts>
+      <Line :data="[12, 19, 3, 5, 2, 3]" name="数据A" />
+      <Line :data="[5, 20, 8, 15, 10, 8]" name="数据B" />
+      <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
+      <YAxis />
+      <Title text="多系列数据对比" />
+  </VueEcharts>
+</div>
+
 ## 平滑曲线
 
 通过设置 `smooth` 属性可以将折线转换为平滑曲线：
@@ -59,6 +84,15 @@
 
 ```
 
+<div style="width:100%;height:300px;">
+  <VueEcharts>
+      <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" smooth />
+      <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
+      <YAxis />
+      <Title text="一周数据趋势" />
+  </VueEcharts>
+</div>
+
 ## 阶梯线
 
 通过设置 `step` 属性可以创建阶梯线图：
@@ -77,3 +111,12 @@
 </template>
 
 ```
+
+<div style="width:100%;height:300px;">
+  <VueEcharts>
+      <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" step />
+      <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
+      <YAxis />
+      <Title text="一周数据趋势" />
+  </VueEcharts>
+</div>

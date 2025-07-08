@@ -5,15 +5,15 @@
 ::: code-group
 
 ```sh [npm]
-npm install echarts-component echarts
+npm install @echarts-component/vue echarts
 ```
 
 ```sh [yarn]
-yarn add echarts-component echarts
+yarn add @echarts-component/vue echarts
 ```
 
 ```sh [pnpm]
-pnpm add echarts-component echarts
+pnpm add @echarts-component/vue echarts
 ```
 
 :::
@@ -25,7 +25,7 @@ pnpm add echarts-component echarts
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import VueEChartsComponents from 'echarts-component'
+import VueEChartsComponents from '@echarts-component/vue'
 
 const app = createApp(App)
 app.use(VueEChartsComponents)
@@ -40,7 +40,7 @@ app.mount('#app')
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { VueEcharts, Line, Bar, XAxis, YAxis, Title, Tooltip, Legend } from 'echarts-component'
+import { VueEcharts, Line, Bar, XAxis, YAxis, Title, Tooltip, Legend } from '@echarts-component/vue'
 
 const app = createApp(App)
 
@@ -51,62 +51,6 @@ app.component('Bar', Bar)
 // 注册其他需要的组件
 
 app.mount('#app')
-```
-
-## 基本使用示例
-
-### 折线图示例
-
-```ts
-<template>
-  <VueEcharts :auto-resize="true" style="height: 300px">
-    <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" />
-    <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
-    <YAxis />
-    <Title text="一周数据趋势" />
-    <Tooltip />
-    <Legend />
-  </VueEcharts>
-</template>
-
-```
-
-### 柱状图示例
-
-```ts
-<template>
-  <VueEcharts :auto-resize="true" style="height: 300px">
-    <Bar :data="[65, 59, 80, 81, 56, 55]" name="销量" />
-    <XAxis :data="['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']" />
-    <YAxis />
-    <Title text="商品销量统计" />
-    <Tooltip trigger="axis" />
-    <Legend />
-  </VueEcharts>
-</template>
-```
-
-### 饼图示例
-
-```ts
-<template>
-  <VueEcharts :auto-resize="true" style="height: 300px">
-    <Pie
-      :data="[
-        { value: 335, name: '直接访问' },
-        { value: 310, name: '邮件营销' },
-        { value: 234, name: '联盟广告' },
-        { value: 135, name: '视频广告' },
-        { value: 1548, name: '搜索引擎' }
-      ]"
-      radius="50%"
-    />
-    <Title text="流量来源分析" />
-    <Tooltip trigger="item" :formatter="{a} <br/>{b}: {c} ({d}%)" />
-    <Legend orient="vertical" :right="10" top="middle" />
-  </VueEcharts>
-</template>
-
 ```
 
 ## 响应式图表
@@ -167,12 +111,13 @@ export default {
 
 ```ts
 import { defineComponent } from 'vue'
-import type { LineProps } from 'echarts-component'
+import type { LineOptions } from '@echarts-component/vue'
 
 export default defineComponent({
   setup() {
-    const lineData: LineProps['data'] = [12, 19, 3, 5, 2, 3]
-
+    const lineData: LineOptions = {
+      data: [12, 19, 3, 5, 2, 3]
+    }
     return {
       lineData
     }

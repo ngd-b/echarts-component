@@ -18,6 +18,9 @@ import type {
   TitleComponentOption,
 } from "../type";
 
+defineOptions({
+  name: "VueEcharts",
+});
 let chart: echarts.ECharts | null = null;
 
 const root = ref(null);
