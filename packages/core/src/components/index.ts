@@ -8,7 +8,8 @@ import YAxis from "./yAxis/index.vue";
 import Grid from "./grid/index.vue";
 import Title from "./title/index.vue";
 import Legend from "./legend/index.vue";
+import Tooltip from "./tooltip/index.vue";
 
-export { XAxis, YAxis, Grid, Title, Legend };
+export { XAxis, YAxis, Grid, Title, Legend, Tooltip };
 // series type
 export * from "./series";

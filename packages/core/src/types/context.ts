@@ -5,6 +5,7 @@ import type {
   GridComponentOption,
   TitleComponentOption,
   LegendComponentOption,
+  TooltipComponentOption,
 } from "../components/type";
 
 export interface EchartsContext {
@@ -15,4 +16,5 @@ export interface EchartsContext {
   updateGrid: (data: GridComponentOption) => void;
   updateTitle: (data: TitleComponentOption) => void;
   updateLegend: (data: LegendComponentOption) => void;
+  updateTooltip: (data: TooltipComponentOption) => void;
 }

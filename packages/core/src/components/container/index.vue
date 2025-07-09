@@ -17,6 +17,7 @@ import type {
   GridComponentOption,
   TitleComponentOption,
   LegendComponentOption,
+  TooltipComponentOption,
 } from "../type";
 
 defineOptions({
@@ -36,6 +37,7 @@ const options = ref<
     grid?: GridComponentOption[];
     title?: TitleComponentOption[];
     legend?: LegendComponentOption[];
+    tooltip?: TooltipComponentOption[];
   }
 >({
   ...DefaultSeriesConfig,
@@ -161,6 +163,21 @@ function updateLegend(legendData: LegendComponentOption) {
   }
 }
 
+function updateTooltip(tooltipData: any) {
+  if (options.value.tooltip === undefined) {
+    options.value.tooltip = [];
+  }
+  let index = options.value.tooltip.findIndex(
+    (item: TooltipComponentOption) => item.id === tooltipData.id
+  );
+
+  if (index > -1) {
+    options.value.tooltip[index] = tooltipData;
+  } else {
+    options.value.tooltip.push(tooltipData);
+  }
+}
+
 provide<EchartsContext>(ECHARTS_CONTEXT_KEY, {
   echartRef: chart,
   updateSeries,
@@ -169,5 +186,6 @@ provide<EchartsContext>(ECHARTS_CONTEXT_KEY, {
   updateGrid,
   updateTitle,
   updateLegend,
+  updateTooltip,
 });
 </script>
