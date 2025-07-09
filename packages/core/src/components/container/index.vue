@@ -28,9 +28,23 @@ const attrs = useAttrs();
 let chart: echarts.ECharts | null = null;
 
 const root = ref(null);
-const options = ref<ChartOptions & { series: SeriesOption[] }>({
+const options = ref<
+  ChartOptions & {
+    series: SeriesOption[];
+    xAxis: XAXisOption[];
+    yAxis: YAXisOption[];
+    grid: GridComponentOption[];
+    title: TitleComponentOption[];
+    legend: LegendComponentOption[];
+  }
+>({
   ...DefaultSeriesConfig,
   series: [],
+  xAxis: [],
+  yAxis: [],
+  grid: [],
+  title: [],
+  legend: [],
 });
 const props = withDefaults(defineProps<SeriesConfig>(), {
   animation: true,
@@ -79,20 +93,60 @@ function updateSeries(seriesData: SeriesOption) {
 }
 
 function updateXAxis(xAxisData: XAXisOption) {
-  options.value.xAxis = xAxisData;
+  let index = options.value.xAxis.findIndex(
+    (item: XAXisOption) => item.id === xAxisData.id
+  );
+
+  if (index > -1) {
+    options.value.xAxis[index] = xAxisData;
+  } else {
+    options.value.xAxis.push(xAxisData);
+  }
 }
 function updateYAxis(yAxisData: YAXisOption) {
-  options.value.yAxis = yAxisData;
+  let index = options.value.yAxis.findIndex(
+    (item: YAXisOption) => item.id === yAxisData.id
+  );
+
+  if (index > -1) {
+    options.value.yAxis[index] = yAxisData;
+  } else {
+    options.value.yAxis.push(yAxisData);
+  }
 }
 function updateGrid(gridData: GridComponentOption) {
-  options.value.grid = gridData;
+  let index = options.value.grid.findIndex(
+    (item: GridComponentOption) => item.id === gridData.id
+  );
+
+  if (index > -1) {
+    options.value.grid[index] = gridData;
+  } else {
+    options.value.grid.push(gridData);
+  }
 }
 function updateTitle(titleData: TitleComponentOption) {
-  options.value.title = titleData;
+  let index = options.value.title.findIndex(
+    (item: TitleComponentOption) => item.id === titleData.id
+  );
+
+  if (index > -1) {
+    options.value.title[index] = titleData;
+  } else {
+    options.value.title.push(titleData);
+  }
 }
 
 function updateLegend(legendData: LegendComponentOption) {
-  options.value.legend = legendData;
+  let index = options.value.legend.findIndex(
+    (item: LegendComponentOption) => item.id === legendData.id
+  );
+
+  if (index > -1) {
+    options.value.legend[index] = legendData;
+  } else {
+    options.value.legend.push(legendData);
+  }
 }
 
 provide<EchartsContext>(ECHARTS_CONTEXT_KEY, {
