@@ -9,6 +9,7 @@ import type {
   TitleComponentOption,
   TooltipComponentOption,
   GridComponentOption,
+  LegendComponentOption,
 } from "echarts/components";
 
 export type SeriesOption = LineSeriesOption | BarSeriesOption | PieSeriesOption;
@@ -68,4 +69,5 @@ export type ChartOptions = ComposeOption<
   | TitleComponentOption
   | TooltipComponentOption
   | GridComponentOption
+  | LegendComponentOption
 >;

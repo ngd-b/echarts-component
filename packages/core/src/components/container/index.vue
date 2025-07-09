@@ -16,6 +16,7 @@ import type {
   YAXisOption,
   GridComponentOption,
   TitleComponentOption,
+  LegendComponentOption,
 } from "../type";
 
 defineOptions({
@@ -90,6 +91,10 @@ function updateTitle(titleData: TitleComponentOption) {
   options.value.title = titleData;
 }
 
+function updateLegend(legendData: LegendComponentOption) {
+  options.value.legend = legendData;
+}
+
 provide<EchartsContext>(ECHARTS_CONTEXT_KEY, {
   echartRef: chart,
   updateSeries,
@@ -97,5 +102,6 @@ provide<EchartsContext>(ECHARTS_CONTEXT_KEY, {
   updateYAxis,
   updateGrid,
   updateTitle,
+  updateLegend,
 });
 </script>

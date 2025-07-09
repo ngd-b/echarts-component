@@ -4,6 +4,7 @@ import type {
   YAXisOption,
   GridComponentOption,
   TitleComponentOption,
+  LegendComponentOption,
 } from "../components/type";
 
 export interface EchartsContext {
@@ -13,4 +14,5 @@ export interface EchartsContext {
   updateYAxis: (data: YAXisOption) => void;
   updateGrid: (data: GridComponentOption) => void;
   updateTitle: (data: TitleComponentOption) => void;
+  updateLegend: (data: LegendComponentOption) => void;
 }

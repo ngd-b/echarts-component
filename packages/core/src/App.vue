@@ -15,8 +15,15 @@
       <Title text="Hello World" left="center" />
     </VueEcharts>
     <VueEcharts class="w-500px h-400px">
-      <Pie :data="data" />
+      <Pie
+        :data="[
+          { name: 'A', value: 200 },
+          { name: 'B', value: 300 },
+          { name: 'C', value: 400 },
+        ]"
+      />
       <Title text="Hello World" left="center" />
+      <Legend top="center" :right="0" orient="vertical" />
     </VueEcharts>
   </div>
 </template>
@@ -31,6 +38,7 @@ import {
   Title,
   Bar,
   Pie,
+  Legend,
 } from "./components";
 
 let data = ref([1, 12, 3, 24, 5, 36, 7, 48, 9, 10]);

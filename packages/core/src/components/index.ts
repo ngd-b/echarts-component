@@ -7,7 +7,8 @@ import XAxis from "./xAxis/index.vue";
 import YAxis from "./yAxis/index.vue";
 import Grid from "./grid/index.vue";
 import Title from "./title/index.vue";
+import Legend from "./legend/index.vue";
 
-export { XAxis, YAxis, Grid, Title };
+export { XAxis, YAxis, Grid, Title, Legend };
 // series type
 export * from "./series";
