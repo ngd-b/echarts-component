@@ -11,5 +11,10 @@ import Legend from "./legend/index.vue";
 import Tooltip from "./tooltip/index.vue";
 
 export { XAxis, YAxis, Grid, Title, Legend, Tooltip };
+
+// children components
+import TextStyle from "./title/textStyle.vue";
+
+export { TextStyle };
 // series type
 export * from "./series";

@@ -1,6 +1,10 @@
 import type { TitleOption as TitleComponentOption } from "echarts/types/dist/shared.d.ts";
+import { TextOptions } from "../common/type";
 
 export type { TitleComponentOption };
+
+export type TextType = "textStyle" | "subtextStyle";
+
 export type TitleOptions = Partial<
   Omit<TitleComponentOption, "textStyle" | "subtextStyle">
 >;
@@ -31,4 +35,21 @@ export const DefaultTitleOptions: TitleOptions = {
 
   // shadowOffsetX: 0,     // 类型枚举值中没有shadowOffsetX？
   // shadowOffsetY: 0,
+};
+
+export const DefaultTextStyleOptions: TextOptions = {
+  color: "#333",
+  fontStyle: "normal",
+  fontWeight: "bolder",
+  fontFamily: "sans-serif",
+  fontSize: 18,
+  lineHeight: 20,
+  textBorderType: "solid",
+  textBorderDashOffset: 0,
+  textShadowColor: "transparent",
+  textShadowBlur: 0,
+  textShadowOffsetX: 0,
+  textShadowOffsetY: 0,
+  // overflow: "none",
+  // ellipsis: "...",
 };
