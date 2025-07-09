@@ -1,3 +1,12 @@
+---
+prev:
+  text: "安装"
+  link: "/guide/installer"
+next:
+  text: "Line"
+  link: "/components/series/line"
+---
+
 # VueEcharts 根组件说明
 
 ## 概述
@@ -36,7 +45,7 @@ VueEcharts 组件还支持组件化的配置方式，通过嵌套子组件来构
 
 ### 使用 useVueEcharts 组合式函数
 
-Vue-ECharts-Component 提供了 `useVueEcharts` 组合式函数，让你可以在 Composition API 中更方便地使用 ECharts。
+`echarts-component`提供了 `useVueEcharts` 组合式函数，让你可以在 Composition API 中更方便地使用 ECharts。
 
 #### 基本用法
 

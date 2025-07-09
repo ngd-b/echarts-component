@@ -37,7 +37,7 @@ export default defineConfig({
         text: "简介",
         items: [
           {
-            text: "什么是Vue-ECharts-Components",
+            text: "什么是echarts-component",
             link: "/guide/what-is-echarts-component",
           },
           {
@@ -56,7 +56,6 @@ export default defineConfig({
           {
             text: "Series系列",
             collapsed: false,
-
             items: [
               {
                 text: "Line",

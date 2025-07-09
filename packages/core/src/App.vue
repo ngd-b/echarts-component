@@ -4,17 +4,14 @@
   <div class="flex flex-wrap gap-20px">
     <VueEcharts class="w-500px h-400px">
       <Line :data="data" />
-      <XAxis :data="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" />
+      <XAxis />
       <YAxis />
-      <Title text="Hello World" left="center" />
-      <Grid />
     </VueEcharts>
     <VueEcharts class="w-500px h-400px">
       <Bar :data="data" />
       <XAxis :data="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" />
       <YAxis />
       <Title text="Hello World" left="center" />
-      <Grid />
     </VueEcharts>
     <VueEcharts class="w-500px h-400px">
       <Pie

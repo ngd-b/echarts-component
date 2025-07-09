@@ -30,21 +30,15 @@ let chart: echarts.ECharts | null = null;
 const root = ref(null);
 const options = ref<
   ChartOptions & {
-    series: SeriesOption[];
-    xAxis: XAXisOption[];
-    yAxis: YAXisOption[];
-    grid: GridComponentOption[];
-    title: TitleComponentOption[];
-    legend: LegendComponentOption[];
+    series?: SeriesOption[];
+    xAxis?: XAXisOption[];
+    yAxis?: YAXisOption[];
+    grid?: GridComponentOption[];
+    title?: TitleComponentOption[];
+    legend?: LegendComponentOption[];
   }
 >({
   ...DefaultSeriesConfig,
-  series: [],
-  xAxis: [],
-  yAxis: [],
-  grid: [],
-  title: [],
-  legend: [],
 });
 const props = withDefaults(defineProps<SeriesConfig>(), {
   animation: true,
@@ -81,6 +75,9 @@ function initChart() {
   chart.setOption({ ...options.value });
 }
 function updateSeries(seriesData: SeriesOption) {
+  if (options.value.series === undefined) {
+    options.value.series = [];
+  }
   let index = options.value.series.findIndex(
     (item: SeriesOption) => item.id === seriesData.id
   );
@@ -93,6 +90,9 @@ function updateSeries(seriesData: SeriesOption) {
 }
 
 function updateXAxis(xAxisData: XAXisOption) {
+  if (options.value.xAxis === undefined) {
+    options.value.xAxis = [];
+  }
   let index = options.value.xAxis.findIndex(
     (item: XAXisOption) => item.id === xAxisData.id
   );
@@ -104,6 +104,9 @@ function updateXAxis(xAxisData: XAXisOption) {
   }
 }
 function updateYAxis(yAxisData: YAXisOption) {
+  if (options.value.yAxis === undefined) {
+    options.value.yAxis = [];
+  }
   let index = options.value.yAxis.findIndex(
     (item: YAXisOption) => item.id === yAxisData.id
   );
@@ -115,6 +118,9 @@ function updateYAxis(yAxisData: YAXisOption) {
   }
 }
 function updateGrid(gridData: GridComponentOption) {
+  if (options.value.grid === undefined) {
+    options.value.grid = [];
+  }
   let index = options.value.grid.findIndex(
     (item: GridComponentOption) => item.id === gridData.id
   );
@@ -126,6 +132,9 @@ function updateGrid(gridData: GridComponentOption) {
   }
 }
 function updateTitle(titleData: TitleComponentOption) {
+  if (options.value.title === undefined) {
+    options.value.title = [];
+  }
   let index = options.value.title.findIndex(
     (item: TitleComponentOption) => item.id === titleData.id
   );
@@ -138,6 +147,9 @@ function updateTitle(titleData: TitleComponentOption) {
 }
 
 function updateLegend(legendData: LegendComponentOption) {
+  if (options.value.legend === undefined) {
+    options.value.legend = [];
+  }
   let index = options.value.legend.findIndex(
     (item: LegendComponentOption) => item.id === legendData.id
   );
