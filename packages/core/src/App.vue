@@ -12,8 +12,9 @@
       <Bar :data="data" />
       <XAxis :data="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" />
       <YAxis />
-      <Title text="Hello World" left="center">
-        <TextStyle color="red" font-size="32" />
+      <Title text="Hello World" subtext="hboot" left="center">
+        <Text prop="textStyle" color="red" font-size="32" />
+        <Text prop="subtextStyle" color="blue" font-size="16" />
       </Title>
       <Tooltip />
     </VueEcharts>
@@ -45,7 +46,7 @@ import {
   Pie,
   Legend,
   Tooltip,
-  TextStyle,
+  Text,
 } from "./components";
 
 let data = ref([1, 12, 3, 24, 5, 36, 7, 48, 9, 10]);

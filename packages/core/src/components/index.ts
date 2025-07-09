@@ -13,8 +13,6 @@ import Tooltip from "./tooltip/index.vue";
 export { XAxis, YAxis, Grid, Title, Legend, Tooltip };
 
 // children components
-import TextStyle from "./title/textStyle.vue";
-
-export { TextStyle };
+export * from "./common/index";
 // series type
 export * from "./series";

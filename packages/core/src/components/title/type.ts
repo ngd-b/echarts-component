@@ -53,3 +53,8 @@ export const DefaultTextStyleOptions: TextOptions = {
   // overflow: "none",
   // ellipsis: "...",
 };
+
+export const TextMapDefault: Record<TextType, TextOptions> = {
+  textStyle: DefaultTextStyleOptions,
+  subtextStyle: DefaultTextStyleOptions,
+};

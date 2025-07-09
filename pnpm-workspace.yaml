@@ -3,3 +3,5 @@ packages:
   - examples
   - docs
 
+patchedDependencies:
+  echarts: patches/echarts.patch

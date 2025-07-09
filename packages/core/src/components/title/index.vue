@@ -2,7 +2,7 @@
 import { provide, ref, useId, watch } from "vue";
 import { useVueEcharts, ECHARTS_TEXT_KEY } from "../../hooks/index";
 import type { TitleComponentOption, TitleOptions, TextType } from "./type";
-import { DefaultTitleOptions } from "./type";
+import { DefaultTitleOptions, TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 import { TextContext } from "@/types/text";
 import { TextCommonOption } from "../common/type";
@@ -40,7 +40,7 @@ watch(
 
 function updateTextStyle<T extends TextType>(name: T, data: TextCommonOption) {
   options.value[name] = data;
-  updateTitle(options.value);
+  updateTitle({ ...TextMapDefault[name], ...options.value });
 }
 
 provide<TextContext<TextType>>(ECHARTS_TEXT_KEY, {

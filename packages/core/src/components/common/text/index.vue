@@ -1,25 +1,28 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
+import { useText } from "../../../hooks/index";
 import type { TextCommonOption, TextOptions } from "./type";
 import { DefaultTextOptions } from "./type";
 import { omitBy, isUndefined } from "lodash";
-
-const options = ref<TextCommonOption>({
-  ...DefaultTextOptions,
-});
+import { TextType } from "../../../types/text";
 
 defineOptions({
   name: "Text",
+  inheritAttrs: false,
 });
-const emits = defineEmits<{ change: [TextCommonOption] }>();
 
-const props = withDefaults(defineProps<TextOptions>(), {});
+let options = ref<TextCommonOption>({
+  ...DefaultTextOptions,
+});
+
+const props = withDefaults(defineProps<TextOptions & { prop: TextType }>(), {});
+const { updateTextStyle } = useText();
 
 watch(
   () => props,
   () => {
-    let propsData = omitBy(props, isUndefined);
-    emits("change", { ...options.value, ...propsData });
+    let propsData = omitBy(props, isUndefined || "prop");
+    updateTextStyle(props.prop, { ...options.value, ...propsData });
   },
   { immediate: true, deep: true }
 );

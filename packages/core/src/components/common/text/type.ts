@@ -1,4 +1,4 @@
-import { TextCommonOption } from "echarts/types/src/util/types.js";
+import type { TextCommonOption } from "echarts/types/dist/shared";
 
 export { TextCommonOption };
 
