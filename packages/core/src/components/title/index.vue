@@ -4,7 +4,7 @@ import { useVueEcharts, ECHARTS_TEXT_KEY } from "../../hooks/index";
 import type { TitleComponentOption, TitleOptions, TextType } from "./type";
 import { DefaultTitleOptions, TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
-import { TextContext } from "@/types/text";
+import { TextContext } from "../../types/text";
 import { TextCommonOption } from "../common/type";
 
 // 组件唯一id
@@ -39,8 +39,8 @@ watch(
 );
 
 function updateTextStyle<T extends TextType>(name: T, data: TextCommonOption) {
-  options.value[name] = data;
-  updateTitle({ ...TextMapDefault[name], ...options.value });
+  options.value[name] = { ...TextMapDefault[name], ...data };
+  updateTitle(options.value);
 }
 
 provide<TextContext<TextType>>(ECHARTS_TEXT_KEY, {

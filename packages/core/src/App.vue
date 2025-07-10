@@ -6,7 +6,9 @@
       <Line :data="data" />
       <XAxis />
       <YAxis />
-      <Tooltip trigger="axis" />
+      <Tooltip trigger="axis">
+        <Text prop="textStyle" />
+      </Tooltip>
     </VueEcharts>
     <VueEcharts class="w-500px h-400px">
       <Bar :data="data" />
