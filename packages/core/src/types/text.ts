@@ -1,7 +1,13 @@
-import { TextCommonOption } from "@/components/common/type";
+import { TextOptions } from "@/components/common/type";
 
-export type TextType = "textStyle" | "subtextStyle" | "pageTextStyle";
+export type TextType =
+  | "textStyle"
+  | "subtextStyle"
+  | "pageTextStyle"
+  | "nameTextStyle"
+  | "axisLabel";
 
 export interface TextContext<T extends TextType = TextType> {
-  updateTextStyle: (name: T, data: TextCommonOption) => void;
+  defaultTextProps?: TextOptions;
+  updateTextStyle: (name: T, data: TextOptions) => void;
 }

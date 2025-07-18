@@ -4,7 +4,10 @@
   <div class="flex flex-wrap gap-20px">
     <VueEcharts class="w-500px h-400px">
       <Line :data="data" />
-      <XAxis />
+      <XAxis name="XAxis">
+        <Text prop="nameTextStyle" color="red" font-size="24" />
+        <Text prop="axisLabel" color="green" font-size="18" />
+      </XAxis>
       <YAxis />
       <Tooltip trigger="axis">
         <Text prop="textStyle" />

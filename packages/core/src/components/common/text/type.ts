@@ -1,7 +1,14 @@
-import type { TextCommonOption } from "echarts/types/dist/shared";
+import type {
+  TextCommonOption,
+  AxisNameTextStyleOption,
+  LabelOption,
+} from "echarts/types/dist/shared";
 
-export { TextCommonOption };
+export { TextCommonOption, AxisNameTextStyleOption, LabelOption };
 
-export type TextOptions = TextCommonOption;
+export type TextOptions =
+  | TextCommonOption
+  | AxisNameTextStyleOption
+  | LabelOption;
 
 export const DefaultTextOptions: TextOptions = {};

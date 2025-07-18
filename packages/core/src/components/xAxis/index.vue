@@ -1,9 +1,10 @@
 <script setup lang="tsx">
-import { ref, useId, watch } from "vue";
-import { useVueEcharts } from "../../hooks/index";
-import type { XAxis, XAXisOption } from "./type";
-import { DefaultXAxis } from "./type";
+import { provide, ref, useId, watch } from "vue";
+import { ECHARTS_TEXT_KEY, useVueEcharts } from "../../hooks/index";
+import type { TextOptions, TextType, XAxis, XAXisOption } from "./type";
+import { DefaultXAxis, TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
+import { TextContext } from "../../types/text";
 
 // 组件唯一id
 let id = useId();
@@ -27,9 +28,27 @@ watch(
   () => props,
   () => {
     let propsData = omitBy(props, isUndefined);
-    updateXAxis({ ...options.value, ...propsData });
+    options.value = {
+      ...options.value,
+      ...propsData,
+    };
+    updateXAxis(options.value);
   },
   { immediate: true, deep: true }
 );
+
+function updateTextStyle<T extends TextType>(name: T, data: TextOptions) {
+  options.value[name] = { ...TextMapDefault[name], ...data };
+  updateXAxis(options.value);
+}
+
+provide<TextContext<TextType>>(ECHARTS_TEXT_KEY, {
+  defaultTextProps: {
+    show: true,
+  },
+  updateTextStyle,
+});
 </script>
-<template></template>
+<template>
+  <slot></slot>
+</template>

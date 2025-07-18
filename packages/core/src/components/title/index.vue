@@ -1,11 +1,15 @@
 <script setup lang="tsx">
 import { provide, ref, useId, watch } from "vue";
 import { useVueEcharts, ECHARTS_TEXT_KEY } from "../../hooks/index";
-import type { TitleComponentOption, TitleOptions, TextType } from "./type";
+import type {
+  TitleComponentOption,
+  TitleOptions,
+  TextType,
+  TextOptions,
+} from "./type";
 import { DefaultTitleOptions, TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 import { TextContext } from "../../types/text";
-import { TextCommonOption } from "../common/type";
 
 // 组件唯一id
 let id = useId();
@@ -38,7 +42,7 @@ watch(
   { immediate: true, deep: true }
 );
 
-function updateTextStyle<T extends TextType>(name: T, data: TextCommonOption) {
+function updateTextStyle<T extends TextType>(name: T, data: TextOptions) {
   options.value[name] = { ...TextMapDefault[name], ...data };
   updateTitle(options.value);
 }
