@@ -6,9 +6,10 @@ import type {
 
 export { TextCommonOption, AxisNameTextStyleOption, LabelOption };
 
-export type TextOptions =
+export type TextOptions = (
   | TextCommonOption
   | AxisNameTextStyleOption
-  | LabelOption;
+  | LabelOption
+) & { show?: boolean };
 
 export const DefaultTextOptions: TextOptions = {};

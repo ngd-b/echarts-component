@@ -14,14 +14,11 @@ defineOptions({
 let options = ref<TextCommonOption>({
   ...DefaultTextOptions,
 });
-const { updateTextStyle, defaultTextProps = {} } = useText();
-
-// 仅处理设置为boolean 为true的属性
-let boolProps = pickBy(defaultTextProps, isBoolean);
+const { updateTextStyle } = useText();
 
 const props = withDefaults(defineProps<TextOptions & { prop: TextType }>(), {
   prop: "textStyle",
-  ...boolProps,
+  show: () => useText().defaultTextProps?.show || false,
 });
 watch(
   () => props,
