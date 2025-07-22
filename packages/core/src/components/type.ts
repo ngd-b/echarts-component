@@ -1,10 +1,43 @@
-export * from "./container/type";
-export * from "./series/type";
-export * from "./xAxis/type";
-export * from "./yAxis/type";
-export * from "./grid/type";
-export * from "./title/type";
-export * from "./legend/type";
-export * from "./tooltip/type";
-//
-export * from "./common/type";
+import type {
+  ChartOptions,
+  SeriesOption,
+  SeriesConfig,
+} from "./container/type";
+import type {
+  PieSeries,
+  PieSeriesOption,
+  LineSeries,
+  LineSeriesOption,
+  BarSeries,
+  BarSeriesOption,
+} from "./series/type";
+import type { XAXisOption, XAxis } from "./xAxis/type";
+import type { YAXisOption, YAxis } from "./yAxis/type";
+import type { GridComponentOption, GridOptions } from "./grid/type";
+import type { TooltipComponentOption, TooltipOptions } from "./tooltip/type";
+import type { TitleComponentOption, TitleOptions } from "./title/type";
+import type { TextOptions } from "./common/type";
+import type { LegendComponentOption, LegendOptions } from "./legend/type";
+
+export { ChartOptions, SeriesOption, SeriesConfig };
+export {
+  PieSeries,
+  LineSeries,
+  BarSeries,
+  PieSeriesOption,
+  LineSeriesOption,
+  BarSeriesOption,
+};
+export { XAxis, XAXisOption, YAXisOption, YAxis };
+export {
+  GridComponentOption,
+  GridOptions,
+  TooltipComponentOption,
+  TooltipOptions,
+  TitleComponentOption,
+  TitleOptions,
+  LegendComponentOption,
+  LegendOptions,
+};
+
+export { TextOptions };

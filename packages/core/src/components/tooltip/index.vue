@@ -1,12 +1,9 @@
 <script setup lang="tsx">
-import { provide, ref, useId, watch } from "vue";
-import { ECHARTS_TEXT_KEY, useVueEcharts } from "../../hooks/index";
+import { ref, useId, watch } from "vue";
+import { useVueEcharts, useText } from "../../hooks/index";
 import type { TextType, TooltipComponentOption, TooltipOptions } from "./type";
 import { DefaultTooltipOptions, TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
-import { TextContext } from "../../types/text";
-import { TextCommonOption } from "../common/type";
-
 // 组件唯一id
 let id = useId();
 
@@ -15,6 +12,17 @@ const options = ref<TooltipComponentOption>({
   ...DefaultTooltipOptions,
 });
 const { updateTooltip } = useVueEcharts();
+// 增加文本样式
+useText<TooltipComponentOption, TextType>({
+  options: options,
+  update: updateTooltip,
+  defaultTextOptions: (name) => {
+    if (!name) {
+      return {};
+    }
+    return TextMapDefault[name];
+  },
+});
 
 defineOptions({
   name: "Legend",
@@ -37,15 +45,6 @@ watch(
   },
   { immediate: true, deep: true }
 );
-
-function updateTextStyle<T extends TextType>(name: T, data: TextCommonOption) {
-  options.value[name] = { ...TextMapDefault[name], ...data };
-  updateTooltip(options.value);
-}
-
-provide<TextContext<TextType>>(ECHARTS_TEXT_KEY, {
-  updateTextStyle,
-});
 </script>
 <template>
   <slot></slot>

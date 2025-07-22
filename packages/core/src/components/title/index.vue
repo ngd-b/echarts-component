@@ -1,15 +1,9 @@
 <script setup lang="tsx">
-import { provide, ref, useId, watch } from "vue";
-import { useVueEcharts, ECHARTS_TEXT_KEY } from "../../hooks/index";
-import type {
-  TitleComponentOption,
-  TitleOptions,
-  TextType,
-  TextOptions,
-} from "./type";
+import { ref, useId, watch } from "vue";
+import { useVueEcharts, useText } from "../../hooks/index";
+import type { TitleComponentOption, TitleOptions, TextType } from "./type";
 import { DefaultTitleOptions, TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
-import { TextContext } from "../../types/text";
 
 // 组件唯一id
 let id = useId();
@@ -19,6 +13,17 @@ const options = ref<TitleComponentOption>({
   ...DefaultTitleOptions,
 });
 const { updateTitle } = useVueEcharts();
+// 增加文本样式
+useText<TitleComponentOption, TextType>({
+  options: options,
+  update: updateTitle,
+  defaultTextOptions: (name) => {
+    if (!name) {
+      return {};
+    }
+    return TextMapDefault[name];
+  },
+});
 
 defineOptions({
   name: "Title",
@@ -41,15 +46,6 @@ watch(
   },
   { immediate: true, deep: true }
 );
-
-function updateTextStyle<T extends TextType>(name: T, data: TextOptions) {
-  options.value[name] = { ...TextMapDefault[name], ...data };
-  updateTitle(options.value);
-}
-
-provide<TextContext<TextType>>(ECHARTS_TEXT_KEY, {
-  updateTextStyle,
-});
 </script>
 <template>
   <slot></slot>

@@ -8,6 +8,15 @@ import type {
   TooltipComponentOption,
 } from "../components/type";
 
+export type UpdateOption =
+  | SeriesOption
+  | XAXisOption
+  | YAXisOption
+  | GridComponentOption
+  | TitleComponentOption
+  | LegendComponentOption
+  | TooltipComponentOption;
+
 export interface EchartsContext {
   echartRef: echarts.ECharts | null;
   updateSeries: (data: SeriesOption) => void;

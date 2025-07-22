@@ -14,17 +14,31 @@ defineOptions({
 let options = ref<TextCommonOption>({
   ...DefaultTextOptions,
 });
-const { updateTextStyle } = useText();
+
+const textContext = useText();
+if (!textContext) {
+  throw new Error(
+    "[Vue Echarts]: useText must be used within a valid context."
+  );
+}
 
 const props = withDefaults(defineProps<TextOptions & { prop: TextType }>(), {
   prop: "textStyle",
-  show: () => useText().defaultTextProps?.show || false,
+  show: () => {
+    const textContext = useText();
+    if (!textContext) {
+      return false;
+    }
+    return textContext.defaultTextProps
+      ? textContext.defaultTextProps()?.show || false
+      : false;
+  },
 });
 watch(
   () => props,
   () => {
     let propsData = omitBy(props, isUndefined || "prop");
-    updateTextStyle(props.prop, { ...options.value, ...propsData });
+    textContext.updateTextStyle(props.prop, { ...options.value, ...propsData });
   },
   { immediate: true, deep: true }
 );

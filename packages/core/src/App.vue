@@ -8,7 +8,9 @@
         <Text prop="nameTextStyle" color="red" font-size="24" />
         <Text prop="axisLabel" color="green" font-size="18" />
       </XAxis>
-      <YAxis />
+      <YAxis name="YAxis">
+        <Text prop="nameTextStyle" color="yellow" />
+      </YAxis>
       <Tooltip trigger="axis">
         <Text prop="textStyle" />
       </Tooltip>

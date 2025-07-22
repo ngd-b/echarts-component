@@ -1,15 +1,52 @@
 import { TextContext } from "@/types/text";
-import { inject } from "vue";
+import { inject, provide, Ref } from "vue";
+import { TextType } from "../types/text";
+import { TextOptions } from "@/components/common/type";
+import { UpdateOption } from "@/types";
 
 export const ECHARTS_TEXT_KEY = Symbol("vue-echarts-text");
 
-export function useText() {
+interface UseTextOptions<O, E> {
+  options: Ref<O>;
+  update: (data: O) => void;
+  defaultTextOptions: (name?: E) => TextOptions;
+}
+export function useText<O extends UpdateOption, E extends TextType>(
+  config?: Partial<UseTextOptions<O, E>>
+): TextContext<E> | null {
   let textOptions = inject<TextContext>(ECHARTS_TEXT_KEY);
 
-  if (!textOptions) {
+  if (!config) {
+    return textOptions ?? null;
+  }
+  const { options, update, defaultTextOptions } = config;
+
+  if (!options || !update) {
     throw new Error(
-      "[Vue Echarts]: useTitle() can only be used inside setup() or functional components."
+      "[Vue Echarts]: useTitle() requires options and update function."
     );
   }
-  return textOptions;
+
+  /**
+   * 更新text配置
+   * @param name
+   * @param data
+   */
+  const updateTextStyle = <T extends E = E>(name: T, data: TextOptions) => {
+    (options.value as Record<E, TextOptions>)[name] = {
+      ...defaultTextOptions!(name),
+      ...data,
+    };
+    update(options.value);
+  };
+
+  if (options) {
+    // 提供消费
+    provide<TextContext<E>>(ECHARTS_TEXT_KEY, {
+      defaultTextProps: defaultTextOptions,
+      updateTextStyle,
+    });
+  }
+
+  return inject<TextContext>(ECHARTS_TEXT_KEY)!;
 }

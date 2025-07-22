@@ -8,6 +8,6 @@ export type TextType =
   | "axisLabel";
 
 export interface TextContext<T extends TextType = TextType> {
-  defaultTextProps?: TextOptions;
+  defaultTextProps?: (name?: T) => TextOptions;
   updateTextStyle: (name: T, data: TextOptions) => void;
 }

@@ -1,8 +1,8 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts } from "../../hooks/index";
-import type { YAxis, YAXisOption } from "./type";
-import { DefaultYAxis } from "./type";
+import { useVueEcharts, useText } from "../../hooks/index";
+import type { TextType, YAxis, YAXisOption } from "./type";
+import { DefaultYAxis, TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
@@ -13,6 +13,19 @@ const options = ref<YAXisOption>({
   ...DefaultYAxis,
 });
 const { updateYAxis } = useVueEcharts();
+// 增加文本样式
+useText<YAXisOption, TextType>({
+  options: options,
+  update: updateYAxis,
+  defaultTextOptions: (name) => {
+    if (!name) {
+      return {
+        show: true,
+      };
+    }
+    return TextMapDefault[name];
+  },
+});
 
 defineOptions({
   name: "YAxis",
@@ -27,9 +40,15 @@ watch(
   () => props,
   () => {
     let propsData = omitBy(props, isUndefined);
-    updateYAxis({ ...options.value, ...propsData });
+    options.value = {
+      ...options.value,
+      ...propsData,
+    };
+    updateYAxis(options.value);
   },
   { immediate: true, deep: true }
 );
 </script>
-<template></template>
+<template>
+  <slot></slot>
+</template>
