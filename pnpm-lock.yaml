@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   echarts:
-    hash: 9a1eba1e718ed26936b0f8e3839042b6a2c9febe12a9a43fc69c205d8d3a0922
+    hash: f742f5bae49272961dc42e10cbcc7173f08eec344d08dca1f89fe0b18c5ce69b
     path: patches/echarts.patch
 
 importers:
@@ -15,7 +15,7 @@ importers:
     dependencies:
       echarts:
         specifier: 5.6.0
-        version: 5.6.0(patch_hash=9a1eba1e718ed26936b0f8e3839042b6a2c9febe12a9a43fc69c205d8d3a0922)
+        version: 5.6.0(patch_hash=f742f5bae49272961dc42e10cbcc7173f08eec344d08dca1f89fe0b18c5ce69b)
       vue:
         specifier: ^3.5.17
         version: 3.5.17(typescript@5.8.3)
@@ -52,7 +52,7 @@ importers:
     dependencies:
       echarts:
         specifier: 5.6.0
-        version: 5.6.0(patch_hash=9a1eba1e718ed26936b0f8e3839042b6a2c9febe12a9a43fc69c205d8d3a0922)
+        version: 5.6.0(patch_hash=f742f5bae49272961dc42e10cbcc7173f08eec344d08dca1f89fe0b18c5ce69b)
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -2858,7 +2858,7 @@ snapshots:
 
   duplexer@0.1.2: {}
 
-  echarts@5.6.0(patch_hash=9a1eba1e718ed26936b0f8e3839042b6a2c9febe12a9a43fc69c205d8d3a0922):
+  echarts@5.6.0(patch_hash=f742f5bae49272961dc42e10cbcc7173f08eec344d08dca1f89fe0b18c5ce69b):
     dependencies:
       tslib: 2.3.0
       zrender: 5.6.1

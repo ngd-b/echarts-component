@@ -73,6 +73,10 @@ function initChart() {
 }
 
 function updateChart() {
+  console.log(
+    "====================updateChart======================",
+    options.value
+  );
   chart?.setOption(options.value);
 }
 </script>

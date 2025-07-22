@@ -1,6 +1,5 @@
-import { TextContext } from "@/types/text";
 import { inject, provide, Ref } from "vue";
-import { TextType } from "../types/text";
+import { TextType, TextContext } from "../types";
 import { TextOptions } from "@/components/common/type";
 import { UpdateOption } from "@/types";
 

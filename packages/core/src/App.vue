@@ -7,6 +7,9 @@
       <XAxis name="XAxis">
         <Text prop="nameTextStyle" color="red" font-size="24" />
         <Text prop="axisLabel" color="green" font-size="18" />
+        <AxisLine>
+          <line-style color="red" />
+        </AxisLine>
       </XAxis>
       <YAxis name="YAxis">
         <Text prop="nameTextStyle" color="yellow" />
@@ -15,7 +18,7 @@
         <Text prop="textStyle" color="#fff" />
       </Tooltip>
     </VueEcharts>
-    <VueEcharts class="w-500px h-400px">
+    <!-- <VueEcharts class="w-500px h-400px">
       <Bar :data="data" />
       <XAxis :data="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" />
       <YAxis />
@@ -40,7 +43,7 @@
         <Text prop="textStyle" font-size="14" color="#ffaabb" />
       </Legend>
       <Tooltip />
-    </VueEcharts>
+    </VueEcharts> -->
   </div>
 </template>
 <script setup lang="tsx">
@@ -57,6 +60,8 @@ import {
   Legend,
   Tooltip,
   Text,
+  AxisLine,
+  LineStyle,
 } from "./components";
 
 let data = ref([1, 12, 3, 24, 5, 36, 7, 48, 9, 10]);
