@@ -18,8 +18,12 @@ const options = ref<LineSeriesOption>({
   id: id,
   ...DefaultLineSeries,
 });
-const { updateSeries } = useVueEcharts();
-
+const vueEcharts = useVueEcharts();
+if (!vueEcharts) {
+  throw new Error(
+    "[Vue Echarts]: useVueEcharts must be used within a valid context."
+  );
+}
 defineOptions({
   name: "Line",
 });
@@ -35,7 +39,7 @@ watch(
   () => props,
   () => {
     let propsData = omitBy(props, isUndefined);
-    updateSeries({ ...options.value, ...propsData });
+    vueEcharts.updateSeries({ ...options.value, ...propsData });
   },
   { immediate: true, deep: true }
 );

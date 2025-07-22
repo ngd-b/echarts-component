@@ -6,6 +6,7 @@ import type {
   TitleComponentOption,
   LegendComponentOption,
   TooltipComponentOption,
+  ChartOptions,
 } from "../components/type";
 
 export type UpdateOption =
@@ -18,7 +19,6 @@ export type UpdateOption =
   | TooltipComponentOption;
 
 export interface EchartsContext {
-  echartRef: echarts.ECharts | null;
   updateSeries: (data: SeriesOption) => void;
   updateXAxis: (data: XAXisOption) => void;
   updateYAxis: (data: YAXisOption) => void;
@@ -27,3 +27,13 @@ export interface EchartsContext {
   updateLegend: (data: LegendComponentOption) => void;
   updateTooltip: (data: TooltipComponentOption) => void;
 }
+
+export type EchartsOptions = ChartOptions & {
+  series?: SeriesOption[];
+  xAxis?: XAXisOption[];
+  yAxis?: YAXisOption[];
+  grid?: GridComponentOption[];
+  title?: TitleComponentOption[];
+  legend?: LegendComponentOption[];
+  tooltip?: TooltipComponentOption[];
+};

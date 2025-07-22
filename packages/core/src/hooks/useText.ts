@@ -38,13 +38,11 @@ export function useText<O extends UpdateOption, E extends TextType>(
     update(options.value);
   };
 
-  if (options) {
-    // 提供消费
-    provide<TextContext<E>>(ECHARTS_TEXT_KEY, {
-      defaultTextProps: defaultTextOptions,
-      updateTextStyle,
-    });
-  }
+  // 提供消费
+  provide<TextContext<E>>(ECHARTS_TEXT_KEY, {
+    defaultTextProps: defaultTextOptions,
+    updateTextStyle,
+  });
 
   return null;
 }

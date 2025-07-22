@@ -12,7 +12,12 @@ const options = ref<GridComponentOption>({
   id,
   ...DefaultGridOptions,
 });
-const { updateGrid } = useVueEcharts();
+const vueEcharts = useVueEcharts();
+if (!vueEcharts) {
+  throw new Error(
+    "[Vue Echarts]: useVueEcharts must be used within a valid context."
+  );
+}
 defineOptions({
   name: "Grid",
 });
@@ -26,7 +31,7 @@ watch(
   () => props,
   () => {
     let propsData = omitBy(props, isUndefined);
-    updateGrid({ ...options.value, ...propsData });
+    vueEcharts.updateGrid({ ...options.value, ...propsData });
   },
   { immediate: true, deep: true }
 );

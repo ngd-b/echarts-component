@@ -11,6 +11,7 @@ import type {
   GridComponentOption,
   LegendComponentOption,
 } from "echarts/components";
+import { TextCommonOption } from "../common/type";
 
 export type SeriesOption = LineSeriesOption | BarSeriesOption | PieSeriesOption;
 
@@ -71,3 +72,35 @@ export type ChartOptions = ComposeOption<
   | GridComponentOption
   | LegendComponentOption
 >;
+
+export type TextType = "textStyle";
+export type TextOptions = TextCommonOption;
+
+export const DefaultTextStyleOptions: TextCommonOption = {
+  color: "#fff",
+  fontStyle: "normal",
+  fontWeight: "normal",
+  fontFamily: "sans-serif",
+  fontSize: 12,
+  backgroundColor: "transparent",
+  borderWidth: 0,
+  borderType: "solid",
+  borderDashOffset: 0,
+  borderRadius: 0,
+  padding: 0,
+  shadowColor: "transparent",
+  shadowBlur: 0,
+  shadowOffsetX: 0,
+  shadowOffsetY: 0,
+  textBorderType: "solid",
+  textBorderDashOffset: 0,
+  textShadowColor: "transparent",
+  textShadowBlur: 0,
+  textShadowOffsetX: 0,
+  textShadowOffsetY: 0,
+  // overflow: "none",
+  // ellipsis: "...",
+};
+export const TextMapDefault: Record<TextType, TextOptions> = {
+  textStyle: DefaultTextStyleOptions,
+};

@@ -11,11 +11,16 @@ const options = ref<TooltipComponentOption>({
   id,
   ...DefaultTooltipOptions,
 });
-const { updateTooltip } = useVueEcharts();
+const vueEcharts = useVueEcharts();
+if (!vueEcharts) {
+  throw new Error(
+    "[Vue Echarts]: useVueEcharts must be used within a valid context."
+  );
+}
 // 增加文本样式
 useText<TooltipComponentOption, TextType>({
   options: options,
-  update: updateTooltip,
+  update: vueEcharts.updateTooltip,
   defaultTextOptions: (name) => {
     if (!name) {
       return {};
@@ -41,7 +46,7 @@ watch(
       ...options.value,
       ...propsData,
     };
-    updateTooltip(options.value);
+    vueEcharts.updateTooltip(options.value);
   },
   { immediate: true, deep: true }
 );

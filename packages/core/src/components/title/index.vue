@@ -12,11 +12,16 @@ const options = ref<TitleComponentOption>({
   id,
   ...DefaultTitleOptions,
 });
-const { updateTitle } = useVueEcharts();
+const vueEcharts = useVueEcharts();
+if (!vueEcharts) {
+  throw new Error(
+    "[Vue Echarts]: useVueEcharts must be used within a valid context."
+  );
+}
 // 增加文本样式
 useText<TitleComponentOption, TextType>({
   options: options,
-  update: updateTitle,
+  update: vueEcharts.updateTitle,
   defaultTextOptions: (name) => {
     if (!name) {
       return {};
@@ -42,7 +47,7 @@ watch(
       ...options.value,
       ...propsData,
     };
-    updateTitle(options.value);
+    vueEcharts.updateTitle(options.value);
   },
   { immediate: true, deep: true }
 );

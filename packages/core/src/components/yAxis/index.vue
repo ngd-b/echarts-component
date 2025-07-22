@@ -12,11 +12,16 @@ const options = ref<YAXisOption>({
   id,
   ...DefaultYAxis,
 });
-const { updateYAxis } = useVueEcharts();
+const vueEcharts = useVueEcharts();
+if (!vueEcharts) {
+  throw new Error(
+    "[Vue Echarts]: useVueEcharts must be used within a valid context."
+  );
+}
 // 增加文本样式
 useText<YAXisOption, TextType>({
   options: options,
-  update: updateYAxis,
+  update: vueEcharts.updateYAxis,
   defaultTextOptions: (name) => {
     if (!name) {
       return {
@@ -44,7 +49,7 @@ watch(
       ...options.value,
       ...propsData,
     };
-    updateYAxis(options.value);
+    vueEcharts.updateYAxis(options.value);
   },
   { immediate: true, deep: true }
 );

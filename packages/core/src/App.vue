@@ -12,7 +12,7 @@
         <Text prop="nameTextStyle" color="yellow" />
       </YAxis>
       <Tooltip trigger="axis">
-        <Text prop="textStyle" />
+        <Text prop="textStyle" color="#fff" />
       </Tooltip>
     </VueEcharts>
     <VueEcharts class="w-500px h-400px">
@@ -24,6 +24,7 @@
         <Text prop="subtextStyle" color="blue" font-size="16" />
       </Title>
       <Tooltip />
+      <Text prop="textStyle" color="#4455da" />
     </VueEcharts>
     <VueEcharts class="w-500px h-400px">
       <Pie

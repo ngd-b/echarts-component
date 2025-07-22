@@ -12,16 +12,19 @@ const options = ref<LegendComponentOption>({
   id,
   ...DefaultLegendOptions,
 });
-const { updateLegend } = useVueEcharts();
+const vueEcharts = useVueEcharts();
+if (!vueEcharts) {
+  throw new Error(
+    "[Vue Echarts]: useVueEcharts must be used within a valid context."
+  );
+}
 // 增加文本样式
 useText<LegendComponentOption, TextType>({
   options: options,
-  update: updateLegend,
+  update: vueEcharts.updateLegend,
   defaultTextOptions: (name) => {
     if (!name) {
-      return {
-        show: true,
-      };
+      return {};
     }
     return TextMapDefault[name];
   },
@@ -44,7 +47,7 @@ watch(
       ...options.value,
       ...propsData,
     };
-    updateLegend(options.value);
+    vueEcharts.updateLegend(options.value);
   },
   { immediate: true, deep: true }
 );
