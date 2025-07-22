@@ -1,8 +1,8 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts } from "../../hooks/index";
-import type { LegendComponentOption, LegendOptions } from "./type";
-import { DefaultLegendOptions } from "./type";
+import { useVueEcharts, useText } from "../../hooks/index";
+import type { LegendComponentOption, LegendOptions, TextType } from "./type";
+import { DefaultLegendOptions, TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
@@ -13,6 +13,19 @@ const options = ref<LegendComponentOption>({
   ...DefaultLegendOptions,
 });
 const { updateLegend } = useVueEcharts();
+// 增加文本样式
+useText<LegendComponentOption, TextType>({
+  options: options,
+  update: updateLegend,
+  defaultTextOptions: (name) => {
+    if (!name) {
+      return {
+        show: true,
+      };
+    }
+    return TextMapDefault[name];
+  },
+});
 
 defineOptions({
   name: "Legend",
@@ -27,9 +40,15 @@ watch(
   () => props,
   () => {
     let propsData = omitBy(props, isUndefined);
-    updateLegend({ ...options.value, ...propsData });
+    options.value = {
+      ...options.value,
+      ...propsData,
+    };
+    updateLegend(options.value);
   },
   { immediate: true, deep: true }
 );
 </script>
-<template></template>
+<template>
+  <slot></slot>
+</template>

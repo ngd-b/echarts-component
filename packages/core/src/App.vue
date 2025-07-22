@@ -35,7 +35,9 @@
       />
       <Title text="Hello World" left="center" />
       <Legend top="center" :right="0" orient="vertical" />
-      <Legend left="center" :bottom="0" />
+      <Legend left="center" :bottom="0">
+        <Text prop="textStyle" font-size="14" color="#ffaabb" />
+      </Legend>
       <Tooltip />
     </VueEcharts>
   </div>

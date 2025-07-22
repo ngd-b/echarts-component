@@ -14,10 +14,8 @@ interface UseTextOptions<O, E> {
 export function useText<O extends UpdateOption, E extends TextType>(
   config?: Partial<UseTextOptions<O, E>>
 ): TextContext<E> | null {
-  let textOptions = inject<TextContext>(ECHARTS_TEXT_KEY);
-
   if (!config) {
-    return textOptions ?? null;
+    return inject<TextContext>(ECHARTS_TEXT_KEY) ?? null;
   }
   const { options, update, defaultTextOptions } = config;
 
@@ -48,5 +46,5 @@ export function useText<O extends UpdateOption, E extends TextType>(
     });
   }
 
-  return inject<TextContext>(ECHARTS_TEXT_KEY)!;
+  return null;
 }

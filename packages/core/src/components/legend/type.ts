@@ -1,6 +1,10 @@
 import type { LegendComponentOption } from "echarts/components";
+import { TextCommonOption } from "../common/type";
 
 export type { LegendComponentOption };
+export type TextType = "textStyle" | "pageTextStyle";
+export type TextOptions = TextCommonOption;
+
 export type LegendOptions = Partial<
   Omit<
     LegendComponentOption,
@@ -59,4 +63,34 @@ export const DefaultLegendOptions: LegendOptions = {
   selectorPosition: "auto",
   selectorItemGap: 7,
   selectorButtonGap: 10,
+};
+
+export const DefaultTextStyleOptions: TextCommonOption = {
+  color: "#333",
+  fontStyle: "normal",
+  fontWeight: "normal",
+  fontFamily: "sans-serif",
+  fontSize: 12,
+  backgroundColor: "transparent",
+  borderWidth: 0,
+  borderType: "solid",
+  borderDashOffset: 0,
+  borderRadius: 0,
+  padding: 0,
+  shadowColor: "transparent",
+  shadowBlur: 0,
+  shadowOffsetX: 0,
+  shadowOffsetY: 0,
+  textBorderType: "solid",
+  textBorderDashOffset: 0,
+  textShadowColor: "transparent",
+  textShadowBlur: 0,
+  textShadowOffsetX: 0,
+  textShadowOffsetY: 0,
+  // overflow: "none",
+  // ellipsis: "...",
+};
+export const TextMapDefault: Record<TextType, TextOptions> = {
+  textStyle: DefaultTextStyleOptions,
+  pageTextStyle: DefaultTextStyleOptions,
 };
