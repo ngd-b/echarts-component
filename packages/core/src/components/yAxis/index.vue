@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText } from "../../hooks/index";
+import { useVueEcharts, useText, useAxis } from "../../hooks/index";
 import type { TextType, YAxis, YAXisOption } from "./type";
 import { DefaultYAxis, TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
@@ -30,6 +30,12 @@ useText<YAXisOption, TextType>({
     }
     return TextMapDefault[name];
   },
+});
+
+// 配置坐标系样式
+useAxis<YAXisOption>({
+  options: options,
+  update: vueEcharts.updateYAxis,
 });
 
 defineOptions({

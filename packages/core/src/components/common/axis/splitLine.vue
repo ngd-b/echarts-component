@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { SplitLineOption, ZRColor } from "./type";
+import { SplitLineOption } from "./type";
 import { isUndefined, omitBy } from "lodash";
 import { useAxis } from "../../../hooks/useAxis";
 import { AxisType } from "../../../types";

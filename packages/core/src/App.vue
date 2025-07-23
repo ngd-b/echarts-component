@@ -7,21 +7,26 @@
       <XAxis name="XAxis">
         <Text prop="nameTextStyle" color="red" font-size="24" />
         <Text prop="axisLabel" color="green" font-size="18" />
-        <!-- <AxisLine>
+        <AxisLine>
           <line-style color="red" />
-        </AxisLine> -->
+        </AxisLine>
         <AxisTick>
           <line-style :width="5" />
         </AxisTick>
-        <MinorTick show :split-number="10">
-          <line-style color="red" :width="5" />
-        </MinorTick>
         <SplitLine>
           <line-style color="red" />
         </SplitLine>
+        <SplitArea show></SplitArea>
       </XAxis>
       <YAxis name="YAxis">
         <Text prop="nameTextStyle" color="yellow" />
+
+        <MinorTick show :split-number="10">
+          <line-style color="red" :width="2" />
+        </MinorTick>
+        <MinorSplitLine>
+          <line-style color="red" />
+        </MinorSplitLine>
       </YAxis>
       <Tooltip trigger="axis">
         <Text prop="textStyle" color="#fff" />
@@ -74,6 +79,9 @@ import {
   AxisTick,
   MinorTick,
   SplitLine,
+  SplitArea,
+  AreaStyle,
+  MinorSplitLine,
 } from "./components";
 
 let data = ref([1, 12, 3, 24, 5, 36, 7, 48, 9, 10]);

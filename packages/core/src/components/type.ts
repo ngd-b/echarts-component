@@ -20,6 +20,7 @@ import type {
   TextOptions,
   AxisOption,
   LineStyleOption,
+  AreaStyleOption,
   ZRColor,
 } from "./common/type";
 import type { LegendComponentOption, LegendOptions } from "./legend/type";
@@ -45,5 +46,5 @@ export {
   LegendOptions,
 };
 
-export { TextOptions, AxisOption, LineStyleOption };
+export { TextOptions, AxisOption, LineStyleOption, AreaStyleOption };
 export type { ZRColor };

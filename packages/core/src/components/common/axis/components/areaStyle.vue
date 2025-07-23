@@ -1,26 +1,20 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { LineStyleOption, ZRColor } from "../type";
+import { AreaStyleOption, ZRColor } from "../type";
 import { isUndefined, omitBy } from "lodash";
 import { useAxis } from "../../../../hooks/index";
 
 const axisContext = useAxis();
 
-let options = ref<LineStyleOption<ZRColor | ZRColor[]>>({
-  color: "#333",
-  width: 1,
-  type: "solid",
-  dashOffset: 0,
-  cap: "butt",
-  join: "bevel",
-  miterLimit: 10,
+let options = ref<AreaStyleOption<ZRColor | ZRColor[]>>({
+  color: ["rgba(250,250,250,0.3)", "rgba(200,200,200,0.3)"],
   shadowOffsetX: 0,
   shadowOffsetY: 0,
   opacity: 1,
-  ...axisContext?.defaultAxisLineStyle,
+  ...axisContext?.defaultAxisAreaStyle,
 });
 
-const props = withDefaults(defineProps<LineStyleOption>(), {});
+const props = withDefaults(defineProps<AreaStyleOption>(), {});
 
 watch(
   () => props,
@@ -31,7 +25,7 @@ watch(
       ...options.value,
       ...propsData,
     };
-    axisContext?.updateAxisLineStyle(options.value);
+    axisContext?.updateAxisAreaStyle(options.value);
   },
   { immediate: true, deep: true }
 );
