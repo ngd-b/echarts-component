@@ -7,7 +7,7 @@ next:
   link: "/components/series/line"
 ---
 
-# VueEcharts 根组件说明
+# VueEcharts 组件说明
 
 ## 概述
 
