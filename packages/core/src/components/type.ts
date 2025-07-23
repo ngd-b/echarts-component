@@ -16,7 +16,12 @@ import type { YAXisOption, YAxis } from "./yAxis/type";
 import type { GridComponentOption, GridOptions } from "./grid/type";
 import type { TooltipComponentOption, TooltipOptions } from "./tooltip/type";
 import type { TitleComponentOption, TitleOptions } from "./title/type";
-import type { TextOptions, AxisOption, LineStyleOption } from "./common/type";
+import type {
+  TextOptions,
+  AxisOption,
+  LineStyleOption,
+  ZRColor,
+} from "./common/type";
 import type { LegendComponentOption, LegendOptions } from "./legend/type";
 
 export { ChartOptions, SeriesOption, SeriesConfig };
@@ -41,3 +46,4 @@ export {
 };
 
 export { TextOptions, AxisOption, LineStyleOption };
+export type { ZRColor };

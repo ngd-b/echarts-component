@@ -1,4 +1,4 @@
-import { AxisOption, LineStyleOption } from "../components/type";
+import { AxisOption, LineStyleOption, ZRColor } from "../components/type";
 import { AxisContext, AxisType } from "../types";
 import { inject, provide, Ref } from "vue";
 
@@ -6,6 +6,7 @@ export const ECHARTS_AXIS_KEY = Symbol("vue-echarts-axis");
 
 interface UseAxisOptions<O> {
   options: Ref<O>;
+  defaultAxisLineStyle: LineStyleOption<ZRColor | ZRColor[]>;
   update: (data: O) => void;
 }
 export const useAxis = <O>(config?: Partial<UseAxisOptions<O>>) => {
@@ -19,7 +20,7 @@ export const useAxis = <O>(config?: Partial<UseAxisOptions<O>>) => {
     return ctx;
   }
 
-  const { options, update } = config;
+  const { options, update, defaultAxisLineStyle } = config;
 
   if (!options || !update) {
     throw new Error(
@@ -43,6 +44,7 @@ export const useAxis = <O>(config?: Partial<UseAxisOptions<O>>) => {
   };
   // 提供消费
   provide<AxisContext>(ECHARTS_AXIS_KEY, {
+    defaultAxisLineStyle,
     updateAxisStyle,
     updateAxisLineStyle,
   });

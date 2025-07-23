@@ -7,6 +7,7 @@ import type {
   MinorSplitLineOption,
   SplitAreaOption,
   SplitLineOption,
+  ZRColor,
 } from "echarts/types/dist/shared";
 
 export {
@@ -18,6 +19,7 @@ export {
   MinorSplitLineOption,
   SplitAreaOption,
   SplitLineOption,
+  ZRColor,
 };
 
 export type AxisOption =

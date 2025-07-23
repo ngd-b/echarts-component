@@ -1,14 +1,15 @@
-import type { AxisOption, LineStyleOption } from "../components/type";
+import type { AxisOption, LineStyleOption, ZRColor } from "../components/type";
 
 export type AxisType =
   | "axisLine"
   | "axisTick"
-  | "minorTick "
+  | "minorTick"
   | "splitLine"
   | "minorSplitLine"
   | "splitArea";
 
 export interface AxisContext {
+  defaultAxisLineStyle?: LineStyleOption<ZRColor | ZRColor[]>;
   updateAxisStyle: (name: AxisType, data: AxisOption) => void;
   updateAxisLineStyle: (data: LineStyleOption) => void;
 }

@@ -3,6 +3,9 @@ import { ref, watch } from "vue";
 import { AxisLineOption } from "./type";
 import { isUndefined, omitBy } from "lodash";
 import { useAxis } from "../../../hooks/useAxis";
+import { AxisType } from "../../../types";
+
+const prop: AxisType = "axisLine";
 
 let options = ref<AxisLineOption>({
   symbol: "none",
@@ -18,7 +21,10 @@ const axisContext = useAxis();
 // 提供子级服务
 useAxis<AxisLineOption>({
   options: options,
-  update: (data) => axisContext?.updateAxisStyle("axisLine", data),
+  defaultAxisLineStyle: {
+    color: "",
+  },
+  update: (data) => axisContext?.updateAxisStyle(prop, data),
 });
 
 watch(
@@ -26,10 +32,11 @@ watch(
   () => {
     let propsData = omitBy(props, isUndefined);
 
-    axisContext?.updateAxisStyle("axisLine", {
+    options.value = {
       ...options.value,
       ...propsData,
-    });
+    };
+    axisContext?.updateAxisStyle(prop, options.value);
   },
   { immediate: true, deep: true }
 );

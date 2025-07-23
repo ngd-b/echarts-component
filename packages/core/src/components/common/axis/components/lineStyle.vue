@@ -2,7 +2,9 @@
 import { ref, watch } from "vue";
 import { LineStyleOption } from "../type";
 import { isUndefined, omitBy } from "lodash";
-import { useAxis } from "../../../../hooks/useAxis";
+import { useAxis } from "../../../../hooks/index";
+
+const axisContext = useAxis();
 
 let options = ref<LineStyleOption>({
   color: "#333",
@@ -15,20 +17,21 @@ let options = ref<LineStyleOption>({
   shadowOffsetX: 0,
   shadowOffsetY: 0,
   opacity: 1,
+  ...axisContext?.defaultAxisLineStyle,
 });
-const props = withDefaults(defineProps<LineStyleOption>(), {});
 
-const axisContext = useAxis();
+const props = withDefaults(defineProps<LineStyleOption>(), {});
 
 watch(
   () => props,
   () => {
     let propsData = omitBy(props, isUndefined);
 
-    axisContext?.updateAxisLineStyle({
+    options.value = {
       ...options.value,
       ...propsData,
-    });
+    };
+    axisContext?.updateAxisLineStyle(options.value);
   },
   { immediate: true, deep: true }
 );

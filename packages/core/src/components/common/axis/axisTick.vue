@@ -1,0 +1,47 @@
+<script setup lang="tsx">
+import { ref, watch } from "vue";
+import { AxisTickOption } from "./type";
+import { isUndefined, omitBy } from "lodash";
+import { useAxis } from "../../../hooks/useAxis";
+import { AxisType } from "../../../types";
+
+const prop: AxisType = "axisTick";
+
+let options = ref<AxisTickOption>({
+  show: true,
+  // alignWithLabel:false,
+  // interval:'auto'
+  inside: false,
+  length: 5,
+});
+const props = withDefaults(defineProps<Omit<AxisTickOption, "lineStyle">>(), {
+  show: true,
+});
+
+const axisContext = useAxis();
+// 提供子级服务
+useAxis<AxisTickOption>({
+  options: options,
+  defaultAxisLineStyle: {
+    color: "",
+  },
+  update: (data) => axisContext?.updateAxisStyle(prop, data),
+});
+
+watch(
+  () => props,
+  () => {
+    let propsData = omitBy(props, isUndefined);
+
+    options.value = {
+      ...options.value,
+      ...propsData,
+    };
+    axisContext?.updateAxisStyle(prop, options.value);
+  },
+  { immediate: true, deep: true }
+);
+</script>
+<template>
+  <slot></slot>
+</template>
