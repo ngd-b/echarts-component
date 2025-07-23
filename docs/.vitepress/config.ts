@@ -110,6 +110,46 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: "通用系列",
+          collapsed: true,
+          items: [
+            {
+              text: "Text 文本样式设置",
+              link: "/components/common/axis",
+            },
+            {
+              text: "Axis 坐标轴样式",
+              collapsed: true,
+              items: [
+                {
+                  text: "AxisLine 轴线样式",
+                  link: "/components/common/axis/axisLine",
+                },
+                {
+                  text: "AxisTick 刻度样式",
+                  link: "/components/common/axis/axisTick",
+                },
+                {
+                  text: "MinorTick 次刻度样式",
+                  link: "/components/common/axis/minorTick",
+                },
+                {
+                  text: "SplitLine 分割线样式",
+                  link: "/components/common/axis/splitLine",
+                },
+                {
+                  text: "MinorSplitLine 次刻度样式",
+                  link: "/components/common/axis/minorSplitLine",
+                },
+                {
+                  text: "SplitArea 分割区域样式",
+                  link: "/components/common/axis/splitArea",
+                },
+              ],
+            },
+          ],
+        },
       ],
     },
     footer: {
