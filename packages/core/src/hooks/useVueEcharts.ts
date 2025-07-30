@@ -9,10 +9,16 @@ import type {
   XAXisOption,
   YAXisOption,
 } from "../components/type";
+import {
+  ECBasicOption,
+  ResizeOpts,
+  SetOptionOpts,
+} from "echarts/types/dist/shared";
 
 export const ECHARTS_CONTEXT_KEY = Symbol("vue-echarts");
 interface UseVueEchartsOptions {
   options: Ref<EchartsOptions>;
+  getInstance: () => echarts.ECharts | null;
 }
 export function useVueEcharts(
   config?: Partial<UseVueEchartsOptions>
@@ -21,7 +27,7 @@ export function useVueEcharts(
     return inject<EchartsContext>(ECHARTS_CONTEXT_KEY) ?? null;
   }
 
-  const { options } = config;
+  const { options, getInstance } = config;
 
   if (!options) {
     throw new Error(
@@ -129,7 +135,25 @@ export function useVueEcharts(
       options.value.tooltip.push(tooltipData);
     }
   };
-  provide<EchartsContext>(ECHARTS_CONTEXT_KEY, {
+  function setOption(
+    option: ECBasicOption,
+    arg2?: boolean | SetOptionOpts,
+    arg3?: boolean
+  ) {
+    const instance = getInstance!();
+    if (typeof arg2 === "object" || typeof arg2 === "undefined") {
+      instance?.setOption(option, arg2);
+    } else {
+      instance?.setOption(option, arg2, arg3);
+    }
+  }
+  const ctx: EchartsContext = {
+    getInstance: getInstance!,
+    setOption,
+    getWidth: () => getInstance!()!.getWidth(),
+    getHeight: () => getInstance!()!.getHeight(),
+    getOption: () => getInstance!()!.getOption(),
+    resize: (opts?: ResizeOpts) => getInstance!()!.resize(opts),
     updateSeries,
     updateXAxis,
     updateYAxis,
@@ -137,6 +161,7 @@ export function useVueEcharts(
     updateTitle,
     updateLegend,
     updateTooltip,
-  });
-  return null;
+  };
+  provide<EchartsContext>(ECHARTS_CONTEXT_KEY, ctx);
+  return ctx;
 }

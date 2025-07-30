@@ -3,7 +3,7 @@ import type {
   BarSeriesOption,
   PieSeriesOption,
 } from "echarts/charts";
-import type { ComposeOption } from "echarts/core";
+import type { ComposeOption, EChartsInitOpts } from "echarts/core";
 import type {
   // 组件类型的定义后缀都为 ComponentOption
   TitleComponentOption,
@@ -34,7 +34,10 @@ export type SeriesConfig = Partial<
     | "hoverLayerThreshold"
     // | "useUTC"
     // | "options"
-  >
+  > & {
+    theme?: string | object | null;
+    config?: EChartsInitOpts;
+  }
 >;
 
 export const DefaultSeriesConfig: SeriesConfig = {

@@ -4,7 +4,7 @@
 </template>
 <script setup lang="tsx">
 import * as echarts from "echarts";
-import { onMounted, ref, useAttrs, watch } from "vue";
+import { onBeforeMount, onMounted, ref, useAttrs, watch } from "vue";
 import { useText, useVueEcharts } from "../../hooks/index";
 import type { EchartsOptions } from "../../types/index";
 import type { ChartOptions, SeriesConfig, TextType } from "./type";
@@ -29,6 +29,7 @@ const props = withDefaults(defineProps<SeriesConfig>(), {
 
 useVueEcharts({
   options: options,
+  getInstance,
 });
 // 增加文本样式
 useText<ChartOptions, TextType>({
@@ -45,7 +46,11 @@ useText<ChartOptions, TextType>({
 onMounted(() => {
   initChart();
 });
-
+onBeforeMount(() => {
+  if (chart) {
+    chart.dispose();
+  }
+});
 watch(
   () => props,
   () => {
@@ -67,16 +72,19 @@ watch(
   { immediate: true, deep: true }
 );
 function initChart() {
-  chart = echarts.init(root.value);
+  const { theme, config } = props;
+  chart = echarts.init(root.value, theme, config);
 
   chart.setOption(options.value);
 }
 
 function updateChart() {
-  console.log(
-    "====================updateChart======================",
-    options.value
-  );
   chart?.setOption(options.value);
+}
+function getInstance() {
+  if (!chart) {
+    throw new Error("[Vue Echarts]: echarts instance is not ready");
+  }
+  return chart;
 }
 </script>
