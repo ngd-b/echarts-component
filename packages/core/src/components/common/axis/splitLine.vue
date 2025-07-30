@@ -26,7 +26,7 @@ useAxis<SplitLineOption>({
   defaultAxisLineStyle: {
     color: ["#ccc"],
   },
-  update: (data) => axisContext?.updateAxisStyle(prop, data),
+  update: (data) => axisContext.updateAxisStyle(prop, data),
 });
 
 watch(
@@ -38,7 +38,7 @@ watch(
       ...options.value,
       ...propsData,
     };
-    axisContext?.updateAxisStyle(prop, options.value);
+    axisContext.updateAxisStyle(prop, options.value);
   },
   { immediate: true, deep: true }
 );

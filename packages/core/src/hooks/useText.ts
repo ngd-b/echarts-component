@@ -1,4 +1,4 @@
-import { inject, provide, Ref } from "vue";
+import { getCurrentInstance, inject, provide, Ref } from "vue";
 import { TextType, TextContext } from "../types";
 import { TextOptions } from "@/components/common/type";
 import { UpdateOption } from "@/types";
@@ -12,17 +12,18 @@ interface UseTextOptions<O, E> {
 }
 export function useText<O extends UpdateOption, E extends TextType>(
   config?: Partial<UseTextOptions<O, E>>
-): TextContext<E> | null {
-  if (!config) {
-    return inject<TextContext>(ECHARTS_TEXT_KEY) ?? null;
+): TextContext<E> {
+  const injectionState = inject<TextContext | null>(ECHARTS_TEXT_KEY, null);
+  if (injectionState && !config) {
+    return injectionState;
   }
-  const { options, update, defaultTextOptions } = config;
 
-  if (!options || !update) {
+  if (!config || !config.options || !config.update) {
     throw new Error(
       "[Vue Echarts]: useTitle() requires options and update function."
     );
   }
+  const { options, update, defaultTextOptions } = config;
 
   /**
    * 更新text配置
@@ -38,10 +39,18 @@ export function useText<O extends UpdateOption, E extends TextType>(
   };
 
   // 提供消费
-  provide<TextContext<E>>(ECHARTS_TEXT_KEY, {
+  const ctx: TextContext<E> = {
     defaultTextProps: defaultTextOptions,
     updateTextStyle,
-  });
+  };
 
-  return null;
+  const instance = getCurrentInstance();
+  if (instance) {
+    provide<TextContext<E>>(ECHARTS_TEXT_KEY, ctx);
+  } else {
+    console.warn(
+      "[Vue Echarts] useVueEcharts() is called outside of a component setup()."
+    );
+  }
+  return ctx;
 }

@@ -13,11 +13,7 @@ const options = ref<YAXisOption>({
   ...DefaultYAxis,
 });
 const vueEcharts = useVueEcharts();
-if (!vueEcharts) {
-  throw new Error(
-    "[Vue Echarts]: useVueEcharts must be used within a valid context."
-  );
-}
+
 // 增加文本样式
 useText<YAXisOption, TextType>({
   options: options,

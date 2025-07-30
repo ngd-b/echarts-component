@@ -20,7 +20,7 @@ const axisContext = useAxis();
 // 提供子级服务
 useAxis<SplitAreaOption>({
   options: options,
-  update: (data) => axisContext?.updateAxisStyle(prop, data),
+  update: (data) => axisContext.updateAxisStyle(prop, data),
 });
 
 watch(
@@ -32,7 +32,7 @@ watch(
       ...options.value,
       ...propsData,
     };
-    axisContext?.updateAxisStyle(prop, options.value);
+    axisContext.updateAxisStyle(prop, options.value);
   },
   { immediate: true, deep: true }
 );

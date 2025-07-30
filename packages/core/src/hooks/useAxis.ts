@@ -5,7 +5,7 @@ import {
   AreaStyleOption,
 } from "../components/type";
 import { AxisContext, AxisType } from "../types";
-import { inject, provide, Ref } from "vue";
+import { getCurrentInstance, inject, provide, Ref } from "vue";
 
 export const ECHARTS_AXIS_KEY = Symbol("vue-echarts-axis");
 
@@ -15,25 +15,22 @@ interface UseAxisOptions<O> {
   defaultAxisAreaStyle: AreaStyleOption<ZRColor | ZRColor[]>;
   update: (data: O) => void;
 }
-export const useAxis = <O>(config?: Partial<UseAxisOptions<O>>) => {
-  if (!config) {
-    let ctx = inject<AxisContext>(ECHARTS_AXIS_KEY);
-    if (!ctx) {
-      throw new Error(
-        "[Vue Echarts]: useAxis only used within a XAxis and YAxis context."
-      );
-    }
-    return ctx;
+export const useAxis = <O>(
+  config?: Partial<UseAxisOptions<O>>
+): AxisContext => {
+  const injectionState = inject<AxisContext | null>(ECHARTS_AXIS_KEY, null);
+  if (injectionState && !config) {
+    return injectionState;
   }
 
-  const { options, update, defaultAxisLineStyle, defaultAxisAreaStyle } =
-    config;
-
-  if (!options || !update) {
+  if (!config || !config.options || !config.update) {
     throw new Error(
       "[Vue Echarts]: useAxis() requires options and update function."
     );
   }
+
+  const { options, update, defaultAxisLineStyle, defaultAxisAreaStyle } =
+    config;
 
   /**
    * 更新axis配置
@@ -66,14 +63,22 @@ export const useAxis = <O>(config?: Partial<UseAxisOptions<O>>) => {
     ).areaStyle = data;
     update(options.value);
   };
-  // 提供消费
-  provide<AxisContext>(ECHARTS_AXIS_KEY, {
+
+  const ctx: AxisContext = {
     defaultAxisLineStyle,
     defaultAxisAreaStyle,
     updateAxisStyle,
     updateAxisLineStyle,
     updateAxisAreaStyle,
-  });
+  };
 
-  return null;
+  const instance = getCurrentInstance();
+  if (instance) {
+    provide<AxisContext>(ECHARTS_AXIS_KEY, ctx);
+  } else {
+    console.warn(
+      "[Vue Echarts] useVueEcharts() is called outside of a component setup()."
+    );
+  }
+  return ctx;
 };

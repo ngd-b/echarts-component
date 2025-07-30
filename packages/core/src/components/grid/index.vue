@@ -13,11 +13,7 @@ const options = ref<GridComponentOption>({
   ...DefaultGridOptions,
 });
 const vueEcharts = useVueEcharts();
-if (!vueEcharts) {
-  throw new Error(
-    "[Vue Echarts]: useVueEcharts must be used within a valid context."
-  );
-}
+
 defineOptions({
   name: "Grid",
 });

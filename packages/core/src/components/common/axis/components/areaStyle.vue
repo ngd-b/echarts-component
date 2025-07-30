@@ -11,7 +11,7 @@ let options = ref<AreaStyleOption<ZRColor | ZRColor[]>>({
   shadowOffsetX: 0,
   shadowOffsetY: 0,
   opacity: 1,
-  ...axisContext?.defaultAxisAreaStyle,
+  ...axisContext.defaultAxisAreaStyle,
 });
 
 const props = withDefaults(defineProps<AreaStyleOption>(), {});
@@ -25,7 +25,7 @@ watch(
       ...options.value,
       ...propsData,
     };
-    axisContext?.updateAxisAreaStyle(options.value);
+    axisContext.updateAxisAreaStyle(options.value);
   },
   { immediate: true, deep: true }
 );

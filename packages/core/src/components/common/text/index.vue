@@ -16,11 +16,6 @@ let options = ref<TextCommonOption>({
 });
 
 const textContext = useText();
-if (!textContext) {
-  throw new Error(
-    "[Vue Echarts]: useText must be used within a valid context."
-  );
-}
 
 const props = withDefaults(defineProps<TextOptions & { prop: TextType }>(), {
   prop: "textStyle",

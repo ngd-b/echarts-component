@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<SeriesConfig>(), {
 
 useVueEcharts({
   options: options,
-  getInstance,
+  getInstance: () => chart,
 });
 // 增加文本样式
 useText<ChartOptions, TextType>({
@@ -79,12 +79,7 @@ function initChart() {
 }
 
 function updateChart() {
+  console.log("======", options.value);
   chart?.setOption(options.value);
-}
-function getInstance() {
-  if (!chart) {
-    throw new Error("[Vue Echarts]: echarts instance is not ready");
-  }
-  return chart;
 }
 </script>

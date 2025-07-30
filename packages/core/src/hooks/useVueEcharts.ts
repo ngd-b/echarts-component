@@ -1,4 +1,4 @@
-import { inject, provide, Ref } from "vue";
+import { getCurrentInstance, inject, provide, Ref } from "vue";
 import type { EchartsContext, EchartsOptions } from "../types";
 import type {
   GridComponentOption,
@@ -16,24 +16,30 @@ import {
 } from "echarts/types/dist/shared";
 
 export const ECHARTS_CONTEXT_KEY = Symbol("vue-echarts");
+
 interface UseVueEchartsOptions {
   options: Ref<EchartsOptions>;
   getInstance: () => echarts.ECharts | null;
 }
+
 export function useVueEcharts(
   config?: Partial<UseVueEchartsOptions>
-): EchartsContext | null {
-  if (!config) {
-    return inject<EchartsContext>(ECHARTS_CONTEXT_KEY) ?? null;
+): EchartsContext {
+  const injectionState = inject<EchartsContext | null>(
+    ECHARTS_CONTEXT_KEY,
+    null
+  );
+  if (injectionState) {
+    return injectionState;
   }
 
-  const { options, getInstance } = config;
-
-  if (!options) {
+  if (!config || !config.options || !config.getInstance) {
     throw new Error(
-      "[Vue Echarts]: useVueEcharts() requires options and update function."
+      "[Vue Echarts]: useVueEcharts() requires config (options, getInstance) when initialized."
     );
   }
+  const { options, getInstance } = config;
+
   const updateSeries = (seriesData: SeriesOption) => {
     if (options.value.series === undefined) {
       options.value.series = [];
@@ -162,6 +168,15 @@ export function useVueEcharts(
     updateLegend,
     updateTooltip,
   };
-  provide<EchartsContext>(ECHARTS_CONTEXT_KEY, ctx);
+
+  const instance = getCurrentInstance();
+  if (instance) {
+    provide<EchartsContext>(ECHARTS_CONTEXT_KEY, ctx);
+  } else {
+    console.warn(
+      "[Vue Echarts] useVueEcharts() is called outside of a component setup()."
+    );
+  }
+
   return ctx;
 }

@@ -17,7 +17,7 @@ let options = ref<LineStyleOption<ZRColor | ZRColor[]>>({
   shadowOffsetX: 0,
   shadowOffsetY: 0,
   opacity: 1,
-  ...axisContext?.defaultAxisLineStyle,
+  ...axisContext.defaultAxisLineStyle,
 });
 
 const props = withDefaults(defineProps<LineStyleOption>(), {});
@@ -31,7 +31,7 @@ watch(
       ...options.value,
       ...propsData,
     };
-    axisContext?.updateAxisLineStyle(options.value);
+    axisContext.updateAxisLineStyle(options.value);
   },
   { immediate: true, deep: true }
 );
