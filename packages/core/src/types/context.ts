@@ -24,15 +24,17 @@ export type UpdateOption =
   | TooltipComponentOption;
 
 export interface EchartsContext {
-  getInstance: () => echarts.ECharts | null;
+  readonly id: string;
+  vueEchartsRef: echarts.ECharts | null;
+  // getInstance: () => echarts.ECharts | null;
   setOption: {
     (option: ECBasicOption, notMerge?: boolean, lazyUpdate?: boolean): void;
     (option: ECBasicOption, opts?: SetOptionOpts): void;
   };
-  getWidth: () => number;
-  getHeight: () => number;
-  getOption: () => ECBasicOption;
-  resize: (opts?: ResizeOpts) => void;
+  getWidth?: () => number;
+  getHeight?: () => number;
+  getOption?: () => ECBasicOption;
+  resize?: (opts?: ResizeOpts) => void;
   updateSeries: (data: SeriesOption) => void;
   updateXAxis: (data: XAXisOption) => void;
   updateYAxis: (data: YAXisOption) => void;

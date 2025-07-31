@@ -61,7 +61,7 @@
   </div>
 </template>
 <script setup lang="tsx">
-import { onMounted, ref } from "vue";
+import { nextTick, onMounted, ref } from "vue";
 import {
   VueEcharts,
   Line,
@@ -86,18 +86,18 @@ import {
 import { useVueEcharts } from "./hooks";
 
 let data = ref([1, 12, 3, 24, 5, 36, 7, 48, 9, 10]);
-// const { setOption } = useVueEcharts()!;
+const { setOption } = useVueEcharts()!;
 onMounted(() => {
   setTimeout(() => {
-    data.value = [10, 59, 8, 67, 26, 35, 44, 3, 82, 1];
+    data.value = [100, 539, 118, 267, 126, 335, 444, 563, 1282, 22];
   }, 3 * 1000);
 
-  // setOption({
-  //   series: [
-  //     {
-  //       data: [10, 59, 8, 67, 26, 35, 44, 3, 82, 1],
-  //     },
-  //   ],
-  // });
+  setOption({
+    series: [
+      {
+        data: [10, 59, 8, 67, 26, 35, 44, 3, 82, 1],
+      },
+    ],
+  });
 });
 </script>

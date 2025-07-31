@@ -4,7 +4,7 @@
 </template>
 <script setup lang="tsx">
 import * as echarts from "echarts";
-import { onBeforeMount, onMounted, ref, useAttrs, watch } from "vue";
+import { onBeforeMount, onMounted, ref, useAttrs, useId, watch } from "vue";
 import { useText, useVueEcharts } from "../../hooks/index";
 import type { EchartsOptions } from "../../types/index";
 import type { ChartOptions, SeriesConfig, TextType } from "./type";
@@ -17,7 +17,6 @@ defineOptions({
 });
 
 const attrs = useAttrs();
-let chart: echarts.ECharts | null = null;
 
 const root = ref(null);
 const options = ref<EchartsOptions>({
@@ -27,9 +26,8 @@ const props = withDefaults(defineProps<SeriesConfig>(), {
   animation: true,
 });
 
-useVueEcharts({
+const vueEcharts = useVueEcharts({
   options: options,
-  getInstance: () => chart,
 });
 // 增加文本样式
 useText<ChartOptions, TextType>({
@@ -47,8 +45,8 @@ onMounted(() => {
   initChart();
 });
 onBeforeMount(() => {
-  if (chart) {
-    chart.dispose();
+  if (vueEcharts.vueEchartsRef) {
+    vueEcharts.vueEchartsRef.dispose();
   }
 });
 watch(
@@ -73,13 +71,13 @@ watch(
 );
 function initChart() {
   const { theme, config } = props;
-  chart = echarts.init(root.value, theme, config);
+  vueEcharts.vueEchartsRef = echarts.init(root.value, theme, config);
 
-  chart.setOption(options.value);
+  vueEcharts.vueEchartsRef.setOption(options.value);
 }
 
 function updateChart() {
   console.log("======", options.value);
-  chart?.setOption(options.value);
+  vueEcharts.vueEchartsRef?.setOption(options.value);
 }
 </script>
