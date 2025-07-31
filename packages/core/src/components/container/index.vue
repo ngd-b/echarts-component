@@ -10,6 +10,7 @@ import type { EchartsOptions } from "../../types/index";
 import type { ChartOptions, SeriesConfig, TextType } from "./type";
 import { DefaultSeriesConfig, TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
+import { useActions } from "../../stores";
 
 defineOptions({
   name: "VueEcharts",
@@ -45,8 +46,8 @@ onMounted(() => {
   initChart();
 });
 onBeforeMount(() => {
-  if (vueEcharts.vueEchartsRef) {
-    vueEcharts.vueEchartsRef.dispose();
+  if (vueEcharts.vueEchartsRef.value) {
+    vueEcharts.vueEchartsRef.value.dispose();
   }
 });
 watch(
@@ -71,13 +72,16 @@ watch(
 );
 function initChart() {
   const { theme, config } = props;
-  vueEcharts.vueEchartsRef = echarts.init(root.value, theme, config);
+  vueEcharts.vueEchartsRef.value = echarts.init(root.value, theme, config);
 
-  vueEcharts.vueEchartsRef.setOption(options.value);
+  // 初始化actions
+  // 初始化events
+  vueEcharts.actions = useActions();
+  vueEcharts.vueEchartsRef.value.setOption(options.value);
 }
 
 function updateChart() {
   console.log("======", options.value);
-  vueEcharts.vueEchartsRef?.setOption(options.value);
+  vueEcharts.vueEchartsRef.value?.setOption(options.value);
 }
 </script>

@@ -1,5 +1,13 @@
-import { EffectScope, getCurrentScope, inject, provide, Ref, useId } from "vue";
-import type { EchartsContext, EchartsOptions } from "../types";
+import {
+  EffectScope,
+  getCurrentScope,
+  inject,
+  provide,
+  ref,
+  Ref,
+  useId,
+} from "vue";
+import type { Actions, EchartsContext, EchartsOptions } from "../types";
 import type {
   GridComponentOption,
   LegendComponentOption,
@@ -49,7 +57,7 @@ export function useVueEcharts(
   const id = config.id;
   const vueEchartsId = id ?? scope?.vueEchartsId;
 
-  let vueEcharts: EchartsContext | null | undefined;
+  let vueEcharts: EchartsContext | undefined;
 
   if (scope) {
     const injectionState = inject<EchartsContext | null>(
@@ -65,27 +73,29 @@ export function useVueEcharts(
     }
   }
 
-  let ctx: EchartsContext = {
-    id: id ?? useId(),
-    vueEchartsRef: null,
-    setOption,
-    getWidth: vueEcharts?.vueEchartsRef?.getWidth,
-    getHeight: vueEcharts?.vueEchartsRef?.getHeight,
-    getOption: vueEcharts?.vueEchartsRef?.getOption,
-    resize: vueEcharts?.vueEchartsRef?.resize,
-    updateSeries: (data: SeriesOption) => update<SeriesOption>(data, "series"),
-    updateXAxis: (data: XAXisOption) => update<XAXisOption>(data, "xAxis"),
-    updateYAxis: (data: YAXisOption) => update<YAXisOption>(data, "yAxis"),
-    updateGrid: (data: GridComponentOption) =>
-      update<GridComponentOption>(data, "grid"),
-    updateTitle: (data: TitleComponentOption) =>
-      update<TitleComponentOption>(data, "title"),
-    updateLegend: (data: LegendComponentOption) =>
-      update<LegendComponentOption>(data, "legend"),
-    updateTooltip: (data: TooltipComponentOption) =>
-      update<TooltipComponentOption>(data, "tooltip"),
-  };
   if (!vueEcharts || (vueEchartsId && vueEcharts.id !== vueEchartsId)) {
+    let ctx: EchartsContext = {
+      id: id ?? useId(),
+      vueEchartsRef: ref(null),
+      setOption,
+      getWidth: vueEcharts?.vueEchartsRef.value?.getWidth,
+      getHeight: vueEcharts?.vueEchartsRef.value?.getHeight,
+      getOption: vueEcharts?.vueEchartsRef.value?.getOption,
+      resize: vueEcharts?.vueEchartsRef.value?.resize,
+      updateSeries: (data: SeriesOption) =>
+        update<SeriesOption>(data, "series"),
+      updateXAxis: (data: XAXisOption) => update<XAXisOption>(data, "xAxis"),
+      updateYAxis: (data: YAXisOption) => update<YAXisOption>(data, "yAxis"),
+      updateGrid: (data: GridComponentOption) =>
+        update<GridComponentOption>(data, "grid"),
+      updateTitle: (data: TitleComponentOption) =>
+        update<TitleComponentOption>(data, "title"),
+      updateLegend: (data: LegendComponentOption) =>
+        update<LegendComponentOption>(data, "legend"),
+      updateTooltip: (data: TooltipComponentOption) =>
+        update<TooltipComponentOption>(data, "tooltip"),
+      actions: {} as Actions,
+    };
     vueEcharts = ctx;
 
     provide<EchartsContext>(ECHARTS_CONTEXT_KEY, vueEcharts);
@@ -124,14 +134,14 @@ export function useVueEcharts(
     arg2?: boolean | SetOptionOpts,
     arg3?: boolean
   ) {
-    if (!vueEcharts || !vueEcharts.vueEchartsRef) {
+    if (!vueEcharts || !vueEcharts.vueEchartsRef.value) {
       throw new Error("[Vue Echarts]: echarts instance is not ready.");
     }
 
     if (typeof arg2 === "object" || typeof arg2 === "undefined") {
-      vueEcharts.vueEchartsRef.setOption(option, arg2);
+      vueEcharts.vueEchartsRef.value.setOption(option, arg2);
     } else {
-      vueEcharts.vueEchartsRef.setOption(option, arg2, arg3);
+      vueEcharts.vueEchartsRef.value.setOption(option, arg2, arg3);
     }
   }
 

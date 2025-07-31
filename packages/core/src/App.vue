@@ -86,11 +86,14 @@ import {
 import { useVueEcharts } from "./hooks";
 
 let data = ref([1, 12, 3, 24, 5, 36, 7, 48, 9, 10]);
-const { setOption } = useVueEcharts()!;
+const { setOption, actions, vueEchartsRef } = useVueEcharts()!;
 onMounted(() => {
   setTimeout(() => {
     data.value = [100, 539, 118, 267, 126, 335, 444, 563, 1282, 22];
-  }, 3 * 1000);
+
+    console.log(vueEchartsRef);
+    actions.highlight({ dataIndex: 0 });
+  }, 10 * 1000);
 
   setOption({
     series: [
