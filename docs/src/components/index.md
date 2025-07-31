@@ -30,6 +30,9 @@ VueEcharts 组件还支持组件化的配置方式，通过嵌套子组件来构
 </template>
 ```
 
+> [!WARNING]
+> 在使用`VueEcharts`时建议当前组件仅存在一个`VueEcharts`标签，避免多个`VueEcharts`引入导致的注入混乱。
+
 ## 与原生 ECharts 的对比
 
 | 特性                 | VueEcharts 组件化方式               | 原生 ECharts 方式               |
