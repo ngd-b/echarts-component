@@ -1,4 +1,4 @@
-import { Actions, EchartsState } from "../types";
+import type { Actions as ActionsReturn, EchartsState } from "../types";
 
 const Actions = [
   "highlight",
@@ -6,11 +6,19 @@ const Actions = [
   "select",
   "unselect",
   "toggleSelect",
+  "legendAllSelect",
+  "legendInverseSelect",
+  "legendScroll",
+  "legendToggleSelect",
+  "legendSelect",
+  "legendUnSelect",
+  "showTip",
+  "hideTip",
 ] as const;
 
 type ActionName = (typeof Actions)[number];
 
-export const useActions = (state: EchartsState): Actions => {
+export const useActions = (state: EchartsState): ActionsReturn => {
   const actions = Actions.reduce((obj, name) => {
     obj[name] = (param) => {
       if (!state.vueEchartsRef.value) {
@@ -22,7 +30,7 @@ export const useActions = (state: EchartsState): Actions => {
       });
     };
     return obj;
-  }, {} as Record<ActionName, Actions[ActionName]>);
+  }, {} as Record<ActionName, ActionsReturn[ActionName]>);
 
   return actions;
 };
