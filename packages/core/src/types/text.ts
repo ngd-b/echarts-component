@@ -1,4 +1,4 @@
-import { TextOptions } from "@/components/common/type";
+import { TextOptions } from "../components/common/type";
 
 export type TextType =
   | "textStyle"

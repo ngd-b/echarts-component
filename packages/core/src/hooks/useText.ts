@@ -1,7 +1,7 @@
 import { getCurrentInstance, inject, provide, Ref } from "vue";
 import { TextType, TextContext } from "../types";
-import { TextOptions } from "@/components/common/type";
-import { UpdateOption } from "@/types";
+import { TextOptions } from "../components/common/type";
+import { UpdateOption } from "../types";
 
 export const ECHARTS_TEXT_KEY = Symbol("vue-echarts-text");
 
