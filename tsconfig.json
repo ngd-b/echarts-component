@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "jsx": "preserve",
+        "baseUrl": ".",
+        "rootDir":".",
+        "paths":{},
+        "moduleResolution": "Bundler",
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "composite": true,
+        "incremental": true,
+        "strict": true,
+        "strictFunctionTypes": true,
+        "strictNullChecks": true,
+        "noUnusedLocals": false,
+        "skipLibCheck": true,      
+        "skipDefaultLibCheck": true,
+        "esModuleInterop": true,
+        "declaration": true,
+        "declarationDir": "./types",
+        "noUnusedParameters": false,
+    },
+    "include":[
+        "*.ts",
+        "packages",
+        "meta"
+    ],
+    "exclude":[
+        "node_modules",
+        "**/dist"
+    ]
+}

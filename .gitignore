@@ -25,3 +25,6 @@ dist-ssr
 
 **/.vitepress/dist
 */.vitepress/cache
+
+# TypeScript cache
+*.tsbuildinfo

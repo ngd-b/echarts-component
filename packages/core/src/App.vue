@@ -62,7 +62,7 @@
   </div>
 </template>
 <script setup lang="tsx">
-import { nextTick, onMounted, ref } from "vue";
+import { onMounted, ref } from "vue";
 import {
   VueEcharts,
   Line,
