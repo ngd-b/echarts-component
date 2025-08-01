@@ -1,6 +1,6 @@
 {
   "name": "@echarts-component/vue",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Echarts component for Vue",
   "type": "module",
   "scripts": {
