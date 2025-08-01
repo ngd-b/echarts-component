@@ -38,5 +38,5 @@ jobs:
 
       - run: pnpm run publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN_IFUN_VUE3}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           NPM_CONFIG_PROVENANCE: true
