@@ -13,6 +13,9 @@ importers:
 
   .:
     dependencies:
+      '@types/node':
+        specifier: ^24.0.10
+        version: 24.0.10
       echarts:
         specifier: 5.6.0
         version: 5.6.0(patch_hash=f742f5bae49272961dc42e10cbcc7173f08eec344d08dca1f89fe0b18c5ce69b)
