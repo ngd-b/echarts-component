@@ -3,11 +3,14 @@ import {
   getCurrentScope,
   inject,
   provide,
-  ref,
+  reactive,
   Ref,
+  shallowReactive,
+  shallowRef,
+  toRefs,
   useId,
 } from "vue";
-import type { Actions, EchartsContext, EchartsOptions } from "../types";
+import type { EchartsContext, EchartsOptions, EchartsState } from "../types";
 import type {
   GridComponentOption,
   LegendComponentOption,
@@ -17,7 +20,7 @@ import type {
   XAXisOption,
   YAXisOption,
 } from "../components/type";
-import { ECBasicOption, SetOptionOpts } from "echarts/types/dist/shared";
+import { useActions, userMethods } from "../stores";
 
 export const ECHARTS_CONTEXT_KEY = Symbol("vue-echarts");
 type Scope = (EffectScope & { vueEchartsId: string }) | undefined;
@@ -74,14 +77,18 @@ export function useVueEcharts(
   }
 
   if (!vueEcharts || (vueEchartsId && vueEcharts.id !== vueEchartsId)) {
+    const state: EchartsState = {
+      vueEchartsRef: shallowRef(null),
+    };
+    const reactiveState = reactive<EchartsState>(state);
+    // 注册方法
+    const actions = useActions(toRefs(reactiveState));
+    // 注册实例方法
+    const methods = userMethods(toRefs(reactiveState));
+
     let ctx: EchartsContext = {
       id: id ?? useId(),
-      vueEchartsRef: ref(null),
-      setOption,
-      getWidth: vueEcharts?.vueEchartsRef.value?.getWidth,
-      getHeight: vueEcharts?.vueEchartsRef.value?.getHeight,
-      getOption: vueEcharts?.vueEchartsRef.value?.getOption,
-      resize: vueEcharts?.vueEchartsRef.value?.resize,
+      ...toRefs(reactiveState),
       updateSeries: (data: SeriesOption) =>
         update<SeriesOption>(data, "series"),
       updateXAxis: (data: XAXisOption) => update<XAXisOption>(data, "xAxis"),
@@ -94,7 +101,8 @@ export function useVueEcharts(
         update<LegendComponentOption>(data, "legend"),
       updateTooltip: (data: TooltipComponentOption) =>
         update<TooltipComponentOption>(data, "tooltip"),
-      actions: {} as Actions,
+      ...methods,
+      actions: shallowReactive(actions),
     };
     vueEcharts = ctx;
 
@@ -128,21 +136,6 @@ export function useVueEcharts(
       (propData as S[]).push(data);
     }
     (options.value[prop] as S[]) = propData as S[];
-  }
-  function setOption(
-    option: ECBasicOption,
-    arg2?: boolean | SetOptionOpts,
-    arg3?: boolean
-  ) {
-    if (!vueEcharts || !vueEcharts.vueEchartsRef.value) {
-      throw new Error("[Vue Echarts]: echarts instance is not ready.");
-    }
-
-    if (typeof arg2 === "object" || typeof arg2 === "undefined") {
-      vueEcharts.vueEchartsRef.value.setOption(option, arg2);
-    } else {
-      vueEcharts.vueEchartsRef.value.setOption(option, arg2, arg3);
-    }
   }
 
   return vueEcharts;

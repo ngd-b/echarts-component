@@ -73,10 +73,6 @@ watch(
 function initChart() {
   const { theme, config } = props;
   vueEcharts.vueEchartsRef.value = echarts.init(root.value, theme, config);
-
-  // 初始化actions
-  // 初始化events
-  vueEcharts.actions = useActions();
   vueEcharts.vueEchartsRef.value.setOption(options.value);
 }
 

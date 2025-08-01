@@ -3,7 +3,8 @@
 
   <div class="flex flex-wrap gap-20px">
     <VueEcharts class="w-500px h-400px" theme="dark">
-      <Line :data="data" />
+      <Line :data="data" selected-mode />
+      <Line :data="data.map((val) => val * 2)" selected-mode />
       <XAxis name="XAxis">
         <Text prop="nameTextStyle" color="red" font-size="24" />
         <Text prop="axisLabel" color="green" font-size="18" />
@@ -89,11 +90,12 @@ let data = ref([1, 12, 3, 24, 5, 36, 7, 48, 9, 10]);
 const { setOption, actions, vueEchartsRef } = useVueEcharts()!;
 onMounted(() => {
   setTimeout(() => {
-    data.value = [100, 539, 118, 267, 126, 335, 444, 563, 1282, 22];
+    // data.value = [100, 539, 118, 267, 126, 335, 444, 563, 1282, 22];
 
-    console.log(vueEchartsRef);
+    // console.log(vueEchartsRef);
     actions.highlight({ dataIndex: 0 });
-  }, 10 * 1000);
+    actions.select({ seriesIndex: 0 });
+  }, 3 * 1000);
 
   setOption({
     series: [

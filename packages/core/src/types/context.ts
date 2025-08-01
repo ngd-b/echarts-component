@@ -14,7 +14,8 @@ import type {
   ChartOptions,
 } from "../components/type";
 import { Actions } from "./actions";
-import { ShallowRef } from "vue";
+import { ShallowReactive, ShallowRef } from "vue";
+import { Methods } from "./methods";
 
 export type UpdateOption =
   | SeriesOption
@@ -25,18 +26,11 @@ export type UpdateOption =
   | LegendComponentOption
   | TooltipComponentOption;
 
-export interface EchartsContext {
-  readonly id: string;
+export interface EchartsState {
   vueEchartsRef: ShallowRef<echarts.ECharts | null>;
-  // getInstance: () => echarts.ECharts | null;
-  setOption: {
-    (option: ECBasicOption, notMerge?: boolean, lazyUpdate?: boolean): void;
-    (option: ECBasicOption, opts?: SetOptionOpts): void;
-  };
-  getWidth?: () => number;
-  getHeight?: () => number;
-  getOption?: () => ECBasicOption;
-  resize?: (opts?: ResizeOpts) => void;
+}
+export interface EchartsContext extends EchartsState, Methods {
+  readonly id: string;
   updateSeries: (data: SeriesOption) => void;
   updateXAxis: (data: XAXisOption) => void;
   updateYAxis: (data: YAXisOption) => void;
@@ -44,7 +38,7 @@ export interface EchartsContext {
   updateTitle: (data: TitleComponentOption) => void;
   updateLegend: (data: LegendComponentOption) => void;
   updateTooltip: (data: TooltipComponentOption) => void;
-  actions: Actions;
+  actions: ShallowReactive<Actions>;
 }
 
 export type EchartsOptions = ChartOptions & {
