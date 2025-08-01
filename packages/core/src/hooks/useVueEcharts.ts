@@ -10,7 +10,12 @@ import {
   toRefs,
   useId,
 } from "vue";
-import type { EchartsContext, EchartsOptions, EchartsState } from "../types";
+import type {
+  EchartsContext,
+  EchartsOptions,
+  EchartsState,
+  MainType,
+} from "../types";
 import type {
   GridComponentOption,
   LegendComponentOption,
@@ -20,7 +25,7 @@ import type {
   XAXisOption,
   YAXisOption,
 } from "../components/type";
-import { useActions, userMethods } from "../stores";
+import { useActions, useEvents, userMethods } from "../stores";
 
 export const ECHARTS_CONTEXT_KEY = Symbol("vue-echarts");
 type Scope = (EffectScope & { vueEchartsId: string }) | undefined;
@@ -85,6 +90,8 @@ export function useVueEcharts(
     const actions = useActions(toRefs(reactiveState));
     // 注册实例方法
     const methods = userMethods(toRefs(reactiveState));
+    // 注册事件
+    const events = useEvents(toRefs(reactiveState));
 
     let ctx: EchartsContext = {
       id: id ?? useId(),
@@ -103,6 +110,7 @@ export function useVueEcharts(
         update<TooltipComponentOption>(data, "tooltip"),
       ...methods,
       actions: shallowReactive(actions),
+      ...events,
     };
     vueEcharts = ctx;
 
@@ -122,7 +130,7 @@ export function useVueEcharts(
    */
   function update<S extends UpdateOption = UpdateOption>(
     data: S,
-    prop: "series" | "xAxis" | "yAxis" | "grid" | "title" | "legend" | "tooltip"
+    prop: MainType
   ) {
     let propData = options.value[prop] || [];
 

@@ -87,8 +87,15 @@ import {
 import { useVueEcharts } from "./hooks";
 
 let data = ref([1, 12, 3, 24, 5, 36, 7, 48, 9, 10]);
-const { setOption, actions, vueEchartsRef, getWidth, getOption, clear } =
-  useVueEcharts()!;
+const {
+  setOption,
+  actions,
+  vueEchartsRef,
+  getWidth,
+  getOption,
+  clear,
+  onClick,
+} = useVueEcharts()!;
 onMounted(() => {
   setTimeout(() => {
     // data.value = [100, 539, 118, 267, 126, 335, 444, 563, 1282, 22];
@@ -100,6 +107,9 @@ onMounted(() => {
     console.log(getWidth(), getOption());
   }, 3 * 1000);
 
+  onClick((event) => {
+    console.log("点击了", event);
+  });
   setOption({
     series: [
       {

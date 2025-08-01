@@ -1,8 +1,3 @@
-import {
-  ECBasicOption,
-  ResizeOpts,
-  SetOptionOpts,
-} from "echarts/types/dist/shared";
 import type {
   SeriesOption,
   XAXisOption,
@@ -16,6 +11,7 @@ import type {
 import { Actions } from "./actions";
 import { ShallowReactive, ShallowRef } from "vue";
 import { Methods } from "./methods";
+import { EventHooks } from "./events";
 
 export type UpdateOption =
   | SeriesOption
@@ -29,7 +25,7 @@ export type UpdateOption =
 export interface EchartsState {
   vueEchartsRef: ShallowRef<echarts.ECharts | null>;
 }
-export interface EchartsContext extends EchartsState, Methods {
+export interface EchartsContext extends EchartsState, Methods, EventHooks {
   readonly id: string;
   updateSeries: (data: SeriesOption) => void;
   updateXAxis: (data: XAXisOption) => void;
@@ -50,3 +46,12 @@ export type EchartsOptions = ChartOptions & {
   legend?: LegendComponentOption[];
   tooltip?: TooltipComponentOption[];
 };
+
+export type MainType =
+  | "series"
+  | "xAxis"
+  | "yAxis"
+  | "grid"
+  | "title"
+  | "legend"
+  | "tooltip";
