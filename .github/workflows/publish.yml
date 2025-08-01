@@ -36,6 +36,9 @@ jobs:
 
       - run: pnpm run update:full
 
+      - name: Build all packages
+        run: pnpm -r build
+
       - run: pnpm run publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
