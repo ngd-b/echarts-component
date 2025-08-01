@@ -7,6 +7,11 @@ import { AxisType } from "../../../types";
 
 const prop: AxisType = "axisTick";
 
+defineOptions({
+  name: "AxisTick",
+  inheritAttrs: false,
+});
+
 let options = ref<AxisTickOption>({
   show: true,
   // alignWithLabel:false,

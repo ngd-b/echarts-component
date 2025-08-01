@@ -7,6 +7,11 @@ import { AxisType } from "../../../types";
 
 const prop: AxisType = "minorSplitLine";
 
+defineOptions({
+  name: "MinorSplitLine",
+  inheritAttrs: false,
+});
+
 let options = ref<MinorSplitLineOption>({
   show: true,
 });

@@ -7,6 +7,11 @@ import { AxisType } from "../../../types";
 
 const prop: AxisType = "axisLine";
 
+defineOptions({
+  name: "AxisLine",
+  inheritAttrs: false,
+});
+
 let options = ref<AxisLineOption>({
   symbol: "none",
   symbolSize: [10, 15],

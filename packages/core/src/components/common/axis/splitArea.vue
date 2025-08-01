@@ -7,6 +7,11 @@ import { AxisType } from "../../../types";
 
 const prop: AxisType = "splitArea";
 
+defineOptions({
+  name: "SplitArea",
+  inheritAttrs: false,
+});
+
 let options = ref<SplitAreaOption>({
   show: false,
   interval: "auto",

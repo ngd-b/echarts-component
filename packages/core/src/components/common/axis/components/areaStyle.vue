@@ -4,6 +4,11 @@ import { AreaStyleOption, ZRColor } from "../type";
 import { isUndefined, omitBy } from "lodash";
 import { useAxis } from "../../../../hooks/index";
 
+defineOptions({
+  name: "AreaStyle",
+  inheritAttrs: false,
+});
+
 const axisContext = useAxis();
 
 let options = ref<AreaStyleOption<ZRColor | ZRColor[]>>({

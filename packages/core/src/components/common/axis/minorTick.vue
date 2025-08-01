@@ -7,6 +7,11 @@ import { AxisType } from "../../../types";
 
 const prop: AxisType = "minorTick";
 
+defineOptions({
+  name: "MinorTick",
+  inheritAttrs: false,
+});
+
 let options = ref<MinorTickOption>({
   show: false,
   splitNumber: 5,

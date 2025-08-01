@@ -17,6 +17,8 @@ import {
   MinorTick,
   SplitArea,
   SplitLine,
+  LineStyle,
+  AreaStyle,
 } from "./components/index";
 import "virtual:uno.css";
 export * from "./hooks/index";
@@ -41,6 +43,8 @@ export {
   MinorTick,
   SplitArea,
   SplitLine,
+  LineStyle,
+  AreaStyle,
 };
 
 const components = [
@@ -61,6 +65,8 @@ const components = [
   MinorTick,
   SplitArea,
   SplitLine,
+  LineStyle,
+  AreaStyle,
 ];
 export default {
   install(app: App) {
