@@ -1,6 +1,6 @@
 {
   "name": "@echarts-component/vue",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Echarts component for Vue",
   "type": "module",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
-  "author": "hboot<bobolity@163.com>",
+  "author": "hboot <bobolity@163.com>",
   "license": "MIT",
   "keywords": [
     "vue",
