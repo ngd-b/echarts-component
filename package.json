@@ -30,5 +30,10 @@
     "typescript": "~5.8.3",
     "vite": "^7.0.0",
     "vue-tsc": "^2.2.10"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "echarts": ".pnpm_patches/echarts.patch"
+    }
   }
 }
