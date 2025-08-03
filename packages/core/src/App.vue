@@ -95,6 +95,7 @@ const {
   getOption,
   clear,
   onClick,
+  onFinished,
 } = useVueEcharts()!;
 onMounted(() => {
   setTimeout(() => {
@@ -109,6 +110,9 @@ onMounted(() => {
 
   onClick((event) => {
     console.log("点击了", event);
+  });
+  onFinished(() => {
+    console.log("绘制完成");
   });
   setOption({
     series: [

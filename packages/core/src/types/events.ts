@@ -43,6 +43,29 @@ export const Events = [
   "legendselectall",
   "legendinverseselect",
   "legendscroll",
+
+  "datazoom",
+  "datarangeselected",
+  "graphroam",
+  "georoam",
+  "treeroam",
+  "timelinechanged",
+  "timelineplaychanged",
+  "restore",
+
+  "dataviewchanged",
+  "magictypechanged",
+  "geoselectchanged",
+  "geoselected",
+  "geounselected",
+  "axisareaselected",
+  "brush",
+  "brushEnd",
+  "brushselected",
+
+  "globalcursortaken",
+  "rendered",
+  "finished",
 ] as const;
 
 export type EventName = (typeof Events)[number];
