@@ -71,36 +71,35 @@ app.mount('#app')
 ```ts
 <template>
   <VueEcharts :auto-resize="true" style="height: 300px">
-    <!-- 使用组件配置 -->
     <Title text="混合配置示例" />
     <Tooltip />
     <Legend />
-
-    <!-- 使用 JSON 配置 -->
-    <CustomOptions :options="customOptions" />
   </VueEcharts>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      customOptions: {
-        xAxis: {
-          type: 'category',
-          data: ['A', 'B', 'C', 'D', 'E']
-        },
-        yAxis: {
-          type: 'value'
-        },
-        series: [{
-          type: 'bar',
-          data: [10, 20, 30, 40, 50]
-        }]
-      }
-    }
-  }
-}
+<script setup lang="tsx">
+import { useVueEcharts } from "@echarts-component/vue";
+
+
+const {
+  setOption,
+} = useVueEcharts();
+
+onMounted(() => {
+  setOption({
+    xAxis: {
+      type: 'category',
+      data: ['A', 'B', 'C', 'D', 'E']
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: [{
+      type: 'bar',
+      data: [10, 20, 30, 40, 50]
+    }]
+  })
+})
 </script>
 
 ```
@@ -143,16 +142,23 @@ export default defineComponent({
 
 ### 4. 如何使用 ECharts 的事件？
 
-你可以通过 `@` 指令绑定 ECharts 事件：
+可以通过hooks`useVueEcharts`需要监听的函数，直接调用；你也可以通过 `@` 指令绑定 ECharts 事件
 
 ```ts
-<VueEcharts @click="handleChartClick">
+<VueEcharts>
   <!-- 图表配置 -->
 </VueEcharts>
 
-methods: {
-  handleChartClick(params) {
-    console.log('Chart clicked:', params)
-  }
-}
+<script setup lang="tsx">
+import { useVueEcharts } from "@echarts-component/vue";
+
+const {
+  onClick,
+} = useVueEcharts();
+
+onMounted(() => {
+  onClick((event) => {
+    console.log("点击了", event);
+  });
+});
 ```

@@ -24,6 +24,7 @@ export default defineConfig({
       { text: "快速开始", link: "/guide/installer" },
       { text: "组件", link: "/components/" },
       { text: "Composition Api", link: "/composition" },
+      { text: "示例", link: "/example" },
       {
         text: pkg.version,
         items: [
@@ -69,27 +70,27 @@ export default defineConfig({
           link: "/components",
         },
         {
-          text: "title标题",
+          text: "Title标题",
           link: "/components/title",
         },
         {
-          text: "xAixs X轴",
-          link: "/components/xAixs",
+          text: "XAxis X轴",
+          link: "/components/xAxis",
         },
         {
-          text: "yAixs Y轴",
-          link: "/components/yAixs",
+          text: "YAxis Y轴",
+          link: "/components/yAxis",
         },
         {
-          text: "grid 网格",
+          text: "Grid 网格",
           link: "/components/grid",
         },
         {
-          text: "legend图例",
+          text: "Legend 图例",
           link: "/components/legend",
         },
         {
-          text: "tooltip提示框",
+          text: "Tooltip 提示框",
           link: "/components/tooltip",
         },
         {
@@ -112,7 +113,7 @@ export default defineConfig({
         },
         {
           text: "通用系列",
-          collapsed: true,
+          collapsed: false,
           items: [
             {
               text: "Text 文本样式设置",
@@ -120,7 +121,7 @@ export default defineConfig({
             },
             {
               text: "Axis 坐标轴样式",
-              collapsed: true,
+              collapsed: false,
               items: [
                 {
                   text: "AxisLine 轴线样式",
@@ -145,6 +146,14 @@ export default defineConfig({
                 {
                   text: "SplitArea 分割区域样式",
                   link: "/components/common/axis/splitArea",
+                },
+                {
+                  text: "LineStyle 坐标轴线样式",
+                  link: "/components/common/axis/lineStyle",
+                },
+                {
+                  text: "AreaStyle 坐标轴区域样式",
+                  link: "/components/common/axis/areaStyle",
                 },
               ],
             },
