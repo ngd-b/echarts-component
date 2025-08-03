@@ -14,6 +14,22 @@ const Actions = [
   "legendUnSelect",
   "showTip",
   "hideTip",
+
+  "dataZoom",
+  "takeGlobalCursor",
+
+  "selectDataRange",
+  "timelineChange",
+  "timelinePlayChange",
+  "restore",
+  "geoSelect",
+  "geoUnSelect",
+  "geoToggleSelect",
+
+  "brush",
+  "brushEnd",
+  "treemapZoomToNode",
+  "treemapRootToNode",
 ] as const;
 
 type ActionName = (typeof Actions)[number];

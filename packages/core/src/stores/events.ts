@@ -1,4 +1,4 @@
-import type { EchartsState, EventHooks, EventName } from "../types";
+import type { EchartsState, EventHooks } from "../types";
 import { Events } from "../types";
 
 export const useEvents = (state: EchartsState): EventHooks => {
@@ -14,10 +14,10 @@ export const useEvents = (state: EchartsState): EventHooks => {
         throw new Error("[Vue Echarts]: echarts instance is not ready.");
       }
 
-      if (args.length == 1) {
-        state.vueEchartsRef.value.on(eventName, args[0]);
-      } else if (args.length > 1) {
+      if (typeof args[0] === "function") {
         state.vueEchartsRef.value.on(eventName, args[0], args[1]);
+      } else {
+        state.vueEchartsRef.value.on(eventName, args[0], args[1], args[2]);
       }
     };
   });
