@@ -114,6 +114,7 @@ onMounted(() => {
   onFinished(() => {
     console.log("绘制完成");
   });
+
   setOption({
     series: [
       {

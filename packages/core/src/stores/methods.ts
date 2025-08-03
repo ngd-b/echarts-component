@@ -6,10 +6,21 @@ const Methods = [
   "getHeight",
   "getOption",
   "resize",
+  "getDom",
 
   "clear",
   "dispose",
   "isDisposed",
+
+  "renderToSVGString",
+  "convertFromPixel",
+  "convertToPixel",
+  "showLoading",
+  "hideLoading",
+
+  "appendData",
+  "getDataURL",
+  "getConnectedDataURL",
 ] as const;
 
 type MethodName = (typeof Methods)[number];
@@ -33,11 +44,22 @@ export const userMethods = (state: EchartsState): Methods => {
     setOption: callMethod("setOption"),
     getWidth: callMethod("getWidth"),
     getHeight: callMethod("getHeight"),
+    getDom: callMethod("getDom"),
     getOption: callMethod("getOption"),
     resize: callMethod("resize"),
 
     clear: callMethod("clear"),
     dispose: callMethod("dispose"),
     isDisposed: callMethod("isDisposed"),
+
+    renderToSVGString: callMethod("renderToSVGString"),
+    convertFromPixel: callMethod("convertFromPixel"),
+    convertToPixel: callMethod("convertToPixel"),
+    showLoading: callMethod("showLoading"),
+    hideLoading: callMethod("hideLoading"),
+
+    appendData: callMethod("appendData"),
+    getDataURL: callMethod("getDataURL"),
+    getConnectedDataURL: callMethod("getConnectedDataURL"),
   };
 };
