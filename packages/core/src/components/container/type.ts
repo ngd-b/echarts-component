@@ -15,6 +15,7 @@ import type {
   ParallelSeriesOption,
   LinesSeriesOption,
   GraphSeriesOption,
+  SankeySeriesOption,
 } from "echarts/charts";
 import type { ComposeOption, EChartsInitOpts } from "echarts/core";
 import type {
@@ -42,7 +43,8 @@ export type SeriesOption =
   | MapSeriesOption
   | ParallelSeriesOption
   | LinesSeriesOption
-  | GraphSeriesOption;
+  | GraphSeriesOption
+  | SankeySeriesOption;
 
 export type SeriesConfig = Partial<
   Pick<

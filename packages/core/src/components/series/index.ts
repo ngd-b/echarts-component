@@ -14,6 +14,7 @@ import Map from "./map/index.vue";
 import Parallel from "./parallel/index.vue";
 import Lines from "./lines/index.vue";
 import Graph from "./graph/index.vue";
+import Sankey from "./sankey/index.vue";
 
 export {
   Line,
@@ -32,4 +33,5 @@ export {
   Parallel,
   Lines,
   Graph,
+  Sankey,
 };

@@ -18,6 +18,7 @@ import {
   Parallel,
   Lines,
   Graph,
+  Sankey,
   // 功能组件
   XAxis,
   YAxis,
@@ -59,6 +60,7 @@ export {
   Parallel,
   Lines,
   Graph,
+  Sankey,
   XAxis,
   YAxis,
   Title,
@@ -94,6 +96,7 @@ const components = [
   Parallel,
   Lines,
   Graph,
+  Sankey,
   XAxis,
   YAxis,
   Title,
