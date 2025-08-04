@@ -8,6 +8,7 @@ import type {
   TreeSeriesOption,
   TreemapSeriesOption,
   SunburstSeriesOption,
+  BoxplotSeriesOption,
 } from "echarts/charts";
 import type { ComposeOption, EChartsInitOpts } from "echarts/core";
 import type {
@@ -28,7 +29,8 @@ export type SeriesOption =
   | RadarSeriesOption
   | TreeSeriesOption
   | TreemapSeriesOption
-  | SunburstSeriesOption;
+  | SunburstSeriesOption
+  | BoxplotSeriesOption;
 
 export type SeriesConfig = Partial<
   Pick<

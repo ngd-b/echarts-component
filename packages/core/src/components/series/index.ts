@@ -7,6 +7,7 @@ import Radar from "./radar/index.vue";
 import Tree from "./tree/index.vue";
 import Treemap from "./treemap/index.vue";
 import Sunburst from "./sunburst/index.vue";
+import Boxplot from "./boxplot/index.vue";
 
 export {
   Line,
@@ -18,4 +19,5 @@ export {
   Tree,
   Treemap,
   Sunburst,
+  Boxplot,
 };

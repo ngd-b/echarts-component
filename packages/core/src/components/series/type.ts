@@ -7,3 +7,4 @@ export * from "./radar/type";
 export * from "./tree/type";
 export * from "./treemap/type";
 export * from "./sunburst/type";
+export * from "./boxplot/type";
