@@ -10,6 +10,7 @@ import Sunburst from "./sunburst/index.vue";
 import Boxplot from "./boxplot/index.vue";
 import Candlestick from "./candlestick/index.vue";
 import Heatmap from "./heatmap/index.vue";
+import Map from "./map/index.vue";
 
 export {
   Line,
@@ -24,4 +25,5 @@ export {
   Boxplot,
   Candlestick,
   Heatmap,
+  Map,
 };

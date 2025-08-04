@@ -10,3 +10,4 @@ export * from "./sunburst/type";
 export * from "./boxplot/type";
 export * from "./candlestick/type";
 export * from "./heatmap/type";
+export * from "./map/type";

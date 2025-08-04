@@ -14,6 +14,7 @@ import {
   Boxplot,
   Candlestick,
   Heatmap,
+  Map,
   // 功能组件
   XAxis,
   YAxis,
@@ -51,6 +52,7 @@ export {
   Boxplot,
   Candlestick,
   Heatmap,
+  Map,
   XAxis,
   YAxis,
   Title,
@@ -82,6 +84,7 @@ const components = [
   Boxplot,
   Candlestick,
   Heatmap,
+  Map,
   XAxis,
   YAxis,
   Title,
