@@ -98,16 +98,36 @@ export default defineConfig({
           collapsed: false,
           items: [
             {
-              text: "Line",
+              text: "Line 折线图",
               link: "/components/series/line",
             },
             {
-              text: "Bar",
+              text: "Bar 柱状图",
               link: "/components/series/bar",
             },
             {
-              text: "Pie",
+              text: "Pie 饼图",
               link: "/components/series/pie",
+            },
+            {
+              text: "Scatter 散点（气泡）图",
+              link: "/components/series/scatter",
+            },
+            {
+              text: "EffectScatter 涟漪特效动画散点（气泡）图",
+              link: "/components/series/effectScatter",
+            },
+            {
+              text: "Radar 雷达图",
+              link: "/components/series/radar",
+            },
+            {
+              text: "Tree 树图",
+              link: "/components/series/tree",
+            },
+            {
+              text: "Treemap 树面积图",
+              link: "/components/series/treemap",
             },
           ],
         },
