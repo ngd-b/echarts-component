@@ -24,7 +24,10 @@ defineOptions({
   name: "Funnel",
 });
 
-const props = withDefaults(defineProps<FunnelSeries>(), {});
+const props = withDefaults(defineProps<FunnelSeries>(), {
+  legendHoverLink: true,
+  animation: true,
+});
 
 watch(
   () => props,

@@ -24,7 +24,10 @@ defineOptions({
   name: "Sankey",
 });
 
-const props = withDefaults(defineProps<SankeySeries>(), {});
+const props = withDefaults(defineProps<SankeySeries>(), {
+  animation: true,
+  draggable: true,
+});
 
 watch(
   () => props,

@@ -25,7 +25,6 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<RadarSeries>(), {
-  legendHoverLink: true,
   animation: true,
 });
 

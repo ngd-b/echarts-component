@@ -25,8 +25,7 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<CandlestickSeries>(), {
-  clockwise: true,
-  animation: true,
+  legendHoverLink: true,
 });
 
 watch(

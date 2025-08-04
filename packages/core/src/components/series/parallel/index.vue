@@ -24,7 +24,10 @@ defineOptions({
   name: "Parallel",
 });
 
-const props = withDefaults(defineProps<ParallelSeries>(), {});
+const props = withDefaults(defineProps<ParallelSeries>(), {
+  realtime: true,
+  animation: true,
+});
 
 watch(
   () => props,

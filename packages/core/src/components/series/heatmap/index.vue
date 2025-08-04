@@ -24,10 +24,7 @@ defineOptions({
   name: "Heatmap",
 });
 
-const props = withDefaults(defineProps<HeatmapSeries>(), {
-  clockwise: true,
-  animation: true,
-});
+const props = withDefaults(defineProps<HeatmapSeries>(), {});
 
 watch(
   () => props,

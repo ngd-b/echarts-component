@@ -24,7 +24,9 @@ defineOptions({
   name: "Lines",
 });
 
-const props = withDefaults(defineProps<LinesSeries>(), {});
+const props = withDefaults(defineProps<LinesSeries>(), {
+  animation: true,
+});
 
 watch(
   () => props,

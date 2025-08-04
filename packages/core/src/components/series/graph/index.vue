@@ -24,7 +24,10 @@ defineOptions({
   name: "Lines",
 });
 
-const props = withDefaults(defineProps<GraphSeries>(), {});
+const props = withDefaults(defineProps<GraphSeries>(), {
+  legendHoverLink: true,
+  animation: true,
+});
 
 watch(
   () => props,
