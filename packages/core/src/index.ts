@@ -21,6 +21,7 @@ import {
   Sankey,
   Funnel,
   Gauge,
+  PictorialBar,
   // 功能组件
   XAxis,
   YAxis,
@@ -65,6 +66,7 @@ export {
   Sankey,
   Funnel,
   Gauge,
+  PictorialBar,
   XAxis,
   YAxis,
   Title,
@@ -103,6 +105,7 @@ const components = [
   Sankey,
   Funnel,
   Gauge,
+  PictorialBar,
   XAxis,
   YAxis,
   Title,

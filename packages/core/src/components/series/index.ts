@@ -17,6 +17,7 @@ import Graph from "./graph/index.vue";
 import Sankey from "./sankey/index.vue";
 import Funnel from "./funnel/index.vue";
 import Gauge from "./gauge/index.vue";
+import PictorialBar from "./pictorialBar/index.vue";
 
 export {
   Line,
@@ -38,4 +39,5 @@ export {
   Sankey,
   Funnel,
   Gauge,
+  PictorialBar,
 };
