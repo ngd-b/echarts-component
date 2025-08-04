@@ -9,3 +9,4 @@ export * from "./treemap/type";
 export * from "./sunburst/type";
 export * from "./boxplot/type";
 export * from "./candlestick/type";
+export * from "./heatmap/type";

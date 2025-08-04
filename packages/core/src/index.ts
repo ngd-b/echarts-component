@@ -13,6 +13,7 @@ import {
   Sunburst,
   Boxplot,
   Candlestick,
+  Heatmap,
   // 功能组件
   XAxis,
   YAxis,
@@ -49,6 +50,7 @@ export {
   Sunburst,
   Boxplot,
   Candlestick,
+  Heatmap,
   XAxis,
   YAxis,
   Title,
@@ -79,6 +81,7 @@ const components = [
   Sunburst,
   Boxplot,
   Candlestick,
+  Heatmap,
   XAxis,
   YAxis,
   Title,
