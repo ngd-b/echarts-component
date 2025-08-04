@@ -2,6 +2,7 @@ import type {
   LineSeriesOption,
   BarSeriesOption,
   PieSeriesOption,
+  ScatterSeriesOption,
 } from "echarts/charts";
 import type { ComposeOption, EChartsInitOpts } from "echarts/core";
 import type {
@@ -13,7 +14,11 @@ import type {
 } from "echarts/components";
 import { TextCommonOption } from "../common/type";
 
-export type SeriesOption = LineSeriesOption | BarSeriesOption | PieSeriesOption;
+export type SeriesOption =
+  | LineSeriesOption
+  | BarSeriesOption
+  | PieSeriesOption
+  | ScatterSeriesOption;
 
 export type SeriesConfig = Partial<
   Pick<
