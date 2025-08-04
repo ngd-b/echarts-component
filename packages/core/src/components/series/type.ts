@@ -11,3 +11,4 @@ export * from "./boxplot/type";
 export * from "./candlestick/type";
 export * from "./heatmap/type";
 export * from "./map/type";
+export * from "./parallel/type";

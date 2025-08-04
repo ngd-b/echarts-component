@@ -11,6 +11,7 @@ import Boxplot from "./boxplot/index.vue";
 import Candlestick from "./candlestick/index.vue";
 import Heatmap from "./heatmap/index.vue";
 import Map from "./map/index.vue";
+import Parallel from "./parallel/index.vue";
 
 export {
   Line,
@@ -26,4 +27,5 @@ export {
   Candlestick,
   Heatmap,
   Map,
+  Parallel,
 };

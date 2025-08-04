@@ -15,6 +15,7 @@ import {
   Candlestick,
   Heatmap,
   Map,
+  Parallel,
   // 功能组件
   XAxis,
   YAxis,
@@ -53,6 +54,7 @@ export {
   Candlestick,
   Heatmap,
   Map,
+  Parallel,
   XAxis,
   YAxis,
   Title,
@@ -85,6 +87,7 @@ const components = [
   Candlestick,
   Heatmap,
   Map,
+  Parallel,
   XAxis,
   YAxis,
   Title,

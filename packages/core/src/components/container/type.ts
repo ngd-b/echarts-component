@@ -12,6 +12,7 @@ import type {
   CandlestickSeriesOption,
   HeatmapSeriesOption,
   MapSeriesOption,
+  ParallelSeriesOption,
 } from "echarts/charts";
 import type { ComposeOption, EChartsInitOpts } from "echarts/core";
 import type {
@@ -36,7 +37,8 @@ export type SeriesOption =
   | BoxplotSeriesOption
   | CandlestickSeriesOption
   | HeatmapSeriesOption
-  | MapSeriesOption;
+  | MapSeriesOption
+  | ParallelSeriesOption;
 
 export type SeriesConfig = Partial<
   Pick<
