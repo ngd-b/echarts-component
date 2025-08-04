@@ -16,6 +16,7 @@ import {
   Heatmap,
   Map,
   Parallel,
+  Lines,
   // 功能组件
   XAxis,
   YAxis,
@@ -55,6 +56,7 @@ export {
   Heatmap,
   Map,
   Parallel,
+  Lines,
   XAxis,
   YAxis,
   Title,
@@ -88,6 +90,7 @@ const components = [
   Heatmap,
   Map,
   Parallel,
+  Lines,
   XAxis,
   YAxis,
   Title,

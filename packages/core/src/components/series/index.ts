@@ -12,6 +12,7 @@ import Candlestick from "./candlestick/index.vue";
 import Heatmap from "./heatmap/index.vue";
 import Map from "./map/index.vue";
 import Parallel from "./parallel/index.vue";
+import Lines from "./lines/index.vue";
 
 export {
   Line,
@@ -28,4 +29,5 @@ export {
   Heatmap,
   Map,
   Parallel,
+  Lines,
 };

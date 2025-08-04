@@ -12,3 +12,4 @@ export * from "./candlestick/type";
 export * from "./heatmap/type";
 export * from "./map/type";
 export * from "./parallel/type";
+export * from "./lines/type";
