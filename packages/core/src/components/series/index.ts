@@ -8,6 +8,7 @@ import Tree from "./tree/index.vue";
 import Treemap from "./treemap/index.vue";
 import Sunburst from "./sunburst/index.vue";
 import Boxplot from "./boxplot/index.vue";
+import Candlestick from "./candlestick/index.vue";
 
 export {
   Line,
@@ -20,4 +21,5 @@ export {
   Treemap,
   Sunburst,
   Boxplot,
+  Candlestick,
 };

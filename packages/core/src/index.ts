@@ -12,6 +12,7 @@ import {
   Treemap,
   Sunburst,
   Boxplot,
+  Candlestick,
   // 功能组件
   XAxis,
   YAxis,
@@ -47,6 +48,7 @@ export {
   Treemap,
   Sunburst,
   Boxplot,
+  Candlestick,
   XAxis,
   YAxis,
   Title,
@@ -76,6 +78,7 @@ const components = [
   Treemap,
   Sunburst,
   Boxplot,
+  Candlestick,
   XAxis,
   YAxis,
   Title,

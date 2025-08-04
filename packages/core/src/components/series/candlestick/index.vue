@@ -1,31 +1,32 @@
 <script setup lang="tsx">
 import * as echarts from "echarts/core";
-import { BoxplotChart } from "echarts/charts";
+import { CandlestickChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
-import type { BoxplotSeries, BoxplotSeriesOption } from "./type";
+import type { CandlestickSeries, CandlestickSeriesOption } from "./type";
 import { useVueEcharts } from "../../../hooks/index";
 import { ref, useId, watch } from "vue";
 
-import { DefaultBoxplotSeries } from "./type";
+import { DefaultCandlestickSeries } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
-echarts.use([BoxplotChart, CanvasRenderer]);
+echarts.use([CandlestickChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
 
-const options = ref<BoxplotSeriesOption>({
-  type: "boxplot",
+const options = ref<CandlestickSeriesOption>({
+  type: "candlestick",
   id: id,
-  ...DefaultBoxplotSeries,
+  ...DefaultCandlestickSeries,
 });
 const vueEcharts = useVueEcharts();
 
 defineOptions({
-  name: "Boxplot",
+  name: "Candlestick",
 });
 
-const props = withDefaults(defineProps<BoxplotSeries>(), {
-  legendHoverLink: true,
+const props = withDefaults(defineProps<CandlestickSeries>(), {
+  clockwise: true,
+  animation: true,
 });
 
 watch(
