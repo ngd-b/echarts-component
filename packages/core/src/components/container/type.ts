@@ -6,6 +6,7 @@ import type {
   EffectScatterSeriesOption,
   RadarSeriesOption,
   TreeSeriesOption,
+  TreemapSeriesOption,
 } from "echarts/charts";
 import type { ComposeOption, EChartsInitOpts } from "echarts/core";
 import type {
@@ -24,7 +25,8 @@ export type SeriesOption =
   | ScatterSeriesOption
   | EffectScatterSeriesOption
   | RadarSeriesOption
-  | TreeSeriesOption;
+  | TreeSeriesOption
+  | TreemapSeriesOption;
 
 export type SeriesConfig = Partial<
   Pick<

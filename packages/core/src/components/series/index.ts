@@ -5,5 +5,6 @@ import Scatter from "./scatter/index.vue";
 import EffectScatter from "./effectScatter/index.vue";
 import Radar from "./radar/index.vue";
 import Tree from "./tree/index.vue";
+import Treemap from "./treemap/index.vue";
 
-export { Line, Bar, Pie, Scatter, EffectScatter, Radar, Tree };
+export { Line, Bar, Pie, Scatter, EffectScatter, Radar, Tree, Treemap };
