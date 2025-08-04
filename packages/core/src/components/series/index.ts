@@ -6,5 +6,16 @@ import EffectScatter from "./effectScatter/index.vue";
 import Radar from "./radar/index.vue";
 import Tree from "./tree/index.vue";
 import Treemap from "./treemap/index.vue";
+import Sunburst from "./sunburst/index.vue";
 
-export { Line, Bar, Pie, Scatter, EffectScatter, Radar, Tree, Treemap };
+export {
+  Line,
+  Bar,
+  Pie,
+  Scatter,
+  EffectScatter,
+  Radar,
+  Tree,
+  Treemap,
+  Sunburst,
+};

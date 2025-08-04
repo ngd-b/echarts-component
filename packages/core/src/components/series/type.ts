@@ -6,3 +6,4 @@ export * from "./effectScatter/type";
 export * from "./radar/type";
 export * from "./tree/type";
 export * from "./treemap/type";
+export * from "./sunburst/type";

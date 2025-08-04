@@ -10,6 +10,7 @@ import {
   Radar,
   Tree,
   Treemap,
+  Sunburst,
   // 功能组件
   XAxis,
   YAxis,
@@ -43,6 +44,7 @@ export {
   Radar,
   Tree,
   Treemap,
+  Sunburst,
   XAxis,
   YAxis,
   Title,
@@ -70,6 +72,7 @@ const components = [
   Radar,
   Tree,
   Treemap,
+  Sunburst,
   XAxis,
   YAxis,
   Title,
