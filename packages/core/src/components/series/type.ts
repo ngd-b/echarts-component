@@ -15,3 +15,4 @@ export * from "./parallel/type";
 export * from "./lines/type";
 export * from "./graph/type";
 export * from "./sankey/type";
+export * from "./funnel/type";

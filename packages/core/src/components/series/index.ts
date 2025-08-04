@@ -15,6 +15,7 @@ import Parallel from "./parallel/index.vue";
 import Lines from "./lines/index.vue";
 import Graph from "./graph/index.vue";
 import Sankey from "./sankey/index.vue";
+import Funnel from "./funnel/index.vue";
 
 export {
   Line,
@@ -34,4 +35,5 @@ export {
   Lines,
   Graph,
   Sankey,
+  Funnel,
 };

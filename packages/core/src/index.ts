@@ -19,6 +19,7 @@ import {
   Lines,
   Graph,
   Sankey,
+  Funnel,
   // 功能组件
   XAxis,
   YAxis,
@@ -61,6 +62,7 @@ export {
   Lines,
   Graph,
   Sankey,
+  Funnel,
   XAxis,
   YAxis,
   Title,
@@ -97,6 +99,7 @@ const components = [
   Lines,
   Graph,
   Sankey,
+  Funnel,
   XAxis,
   YAxis,
   Title,

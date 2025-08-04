@@ -16,6 +16,7 @@ import type {
   LinesSeriesOption,
   GraphSeriesOption,
   SankeySeriesOption,
+  FunnelSeriesOption,
 } from "echarts/charts";
 import type { ComposeOption, EChartsInitOpts } from "echarts/core";
 import type {
@@ -44,7 +45,8 @@ export type SeriesOption =
   | ParallelSeriesOption
   | LinesSeriesOption
   | GraphSeriesOption
-  | SankeySeriesOption;
+  | SankeySeriesOption
+  | FunnelSeriesOption;
 
 export type SeriesConfig = Partial<
   Pick<
