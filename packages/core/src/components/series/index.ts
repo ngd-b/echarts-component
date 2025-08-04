@@ -13,6 +13,7 @@ import Heatmap from "./heatmap/index.vue";
 import Map from "./map/index.vue";
 import Parallel from "./parallel/index.vue";
 import Lines from "./lines/index.vue";
+import Graph from "./graph/index.vue";
 
 export {
   Line,
@@ -30,4 +31,5 @@ export {
   Map,
   Parallel,
   Lines,
+  Graph,
 };

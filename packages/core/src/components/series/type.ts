@@ -13,3 +13,4 @@ export * from "./heatmap/type";
 export * from "./map/type";
 export * from "./parallel/type";
 export * from "./lines/type";
+export * from "./graph/type";

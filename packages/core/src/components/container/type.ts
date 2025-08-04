@@ -14,6 +14,7 @@ import type {
   MapSeriesOption,
   ParallelSeriesOption,
   LinesSeriesOption,
+  GraphSeriesOption,
 } from "echarts/charts";
 import type { ComposeOption, EChartsInitOpts } from "echarts/core";
 import type {
@@ -40,7 +41,8 @@ export type SeriesOption =
   | HeatmapSeriesOption
   | MapSeriesOption
   | ParallelSeriesOption
-  | LinesSeriesOption;
+  | LinesSeriesOption
+  | GraphSeriesOption;
 
 export type SeriesConfig = Partial<
   Pick<

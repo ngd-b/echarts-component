@@ -17,6 +17,7 @@ import {
   Map,
   Parallel,
   Lines,
+  Graph,
   // 功能组件
   XAxis,
   YAxis,
@@ -57,6 +58,7 @@ export {
   Map,
   Parallel,
   Lines,
+  Graph,
   XAxis,
   YAxis,
   Title,
@@ -91,6 +93,7 @@ const components = [
   Map,
   Parallel,
   Lines,
+  Graph,
   XAxis,
   YAxis,
   Title,
