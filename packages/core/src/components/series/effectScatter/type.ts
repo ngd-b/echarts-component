@@ -1,10 +1,11 @@
-import type { ScatterSeriesOption } from "echarts/charts";
+import type { EffectScatterSeriesOption } from "echarts/charts";
 
-export type { ScatterSeriesOption };
-export type ScatterSeries = Partial<
+export type { EffectScatterSeriesOption };
+export type EffectScatterSeries = Partial<
   Omit<
-    ScatterSeriesOption,
+    EffectScatterSeriesOption,
     | "type"
+    | "rippleEffect"
     | "label"
     | "labelLine"
     | "labelLayout"
@@ -15,27 +16,27 @@ export type ScatterSeries = Partial<
     | "markPoint"
     | "markLine"
     | "markArea"
-    | "universalTransition"
     | "tooltip"
   >
 >;
 
-export const DefaultScatterSeries: ScatterSeries = {
+export const DefaultEffectScatterSeries: EffectScatterSeries = {
   colorBy: "series",
+  legendHoverLink: true,
+  effectType: "ripple",
+  showEffectOn: "render",
   coordinateSystem: "cartesian2d",
   xAxisIndex: 0,
   yAxisIndex: 0,
   polarIndex: 0,
   geoIndex: 0,
   calendarIndex: 0,
-  legendHoverLink: true,
+
   symbol: "circle",
   symbolSize: 10,
   // symbolRotate:0,
   symbolKeepAspect: false,
   symbolOffset: [0, 0],
-  large: false,
-  largeThreshold: 2000,
   cursor: "pointer",
   selectedMode: false,
   progressive: 400,
