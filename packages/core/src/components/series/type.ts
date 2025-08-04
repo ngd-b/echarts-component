@@ -18,3 +18,4 @@ export * from "./sankey/type";
 export * from "./funnel/type";
 export * from "./gauge/type";
 export * from "./pictorialBar/type";
+export * from "./themeRiver/type";

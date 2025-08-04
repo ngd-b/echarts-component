@@ -19,6 +19,7 @@ import type {
   FunnelSeriesOption,
   GaugeSeriesOption,
   PictorialBarSeriesOption,
+  ThemeRiverSeriesOption,
 } from "echarts/charts";
 import type { ComposeOption, EChartsInitOpts } from "echarts/core";
 import type {
@@ -50,7 +51,8 @@ export type SeriesOption =
   | SankeySeriesOption
   | FunnelSeriesOption
   | GaugeSeriesOption
-  | PictorialBarSeriesOption;
+  | PictorialBarSeriesOption
+  | ThemeRiverSeriesOption;
 
 export type SeriesConfig = Partial<
   Pick<

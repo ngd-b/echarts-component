@@ -22,6 +22,7 @@ import {
   Funnel,
   Gauge,
   PictorialBar,
+  ThemeRiver,
   // 功能组件
   XAxis,
   YAxis,
@@ -67,6 +68,7 @@ export {
   Funnel,
   Gauge,
   PictorialBar,
+  ThemeRiver,
   XAxis,
   YAxis,
   Title,
@@ -106,6 +108,7 @@ const components = [
   Funnel,
   Gauge,
   PictorialBar,
+  ThemeRiver,
   XAxis,
   YAxis,
   Title,
