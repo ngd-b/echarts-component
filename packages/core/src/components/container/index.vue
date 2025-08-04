@@ -4,13 +4,12 @@
 </template>
 <script setup lang="tsx">
 import * as echarts from "echarts";
-import { onBeforeMount, onMounted, ref, useAttrs, useId, watch } from "vue";
+import { onBeforeMount, onMounted, ref, useAttrs, watch } from "vue";
 import { useText, useVueEcharts } from "../../hooks/index";
 import type { EchartsOptions } from "../../types/index";
 import type { ChartOptions, SeriesConfig, TextType } from "./type";
 import { DefaultSeriesConfig, TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
-import { useActions } from "../../stores";
 
 defineOptions({
   name: "VueEcharts",
