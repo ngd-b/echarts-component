@@ -1,32 +1,31 @@
 <script setup lang="tsx">
 import * as echarts from "echarts/core";
-import { RadarChart } from "echarts/charts";
+import { TreeChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
-import type { RadarSeriesOption, RadarSeries } from "./type";
+import type { TreeSeries, TreeSeriesOption } from "./type";
 import { useVueEcharts } from "../../../hooks/index";
 import { ref, useId, watch } from "vue";
 
-import { DefaultRadarSeries } from "./type";
+import { DefaultTreeSeries } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
-echarts.use([RadarChart, CanvasRenderer]);
+echarts.use([TreeChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
 
-const options = ref<RadarSeriesOption>({
-  type: "radar",
+const options = ref<TreeSeriesOption>({
+  type: "tree",
   id: id,
-  ...DefaultRadarSeries,
+  ...DefaultTreeSeries,
 });
 const vueEcharts = useVueEcharts();
 
 defineOptions({
-  name: "Radar",
+  name: "Tree",
 });
 
-const props = withDefaults(defineProps<RadarSeries>(), {
-  legendHoverLink: true,
-  animation: true,
+const props = withDefaults(defineProps<TreeSeries>(), {
+  expandAndCollapse: true,
 });
 
 watch(

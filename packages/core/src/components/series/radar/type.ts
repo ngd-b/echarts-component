@@ -19,7 +19,7 @@ export type RadarSeries = Partial<
   >
 >;
 
-export const DefaultEffectRadarSeries: RadarSeries = {
+export const DefaultRadarSeries: RadarSeries = {
   colorBy: "data",
   symbol: "circle",
   symbolSize: 10,
