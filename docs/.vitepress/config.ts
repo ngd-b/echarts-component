@@ -70,31 +70,37 @@ export default defineConfig({
           link: "/components",
         },
         {
-          text: "Title标题",
-          link: "/components/title",
+          text: "功能组件",
+          collapsed: false,
+          items: [
+            {
+              text: "Title 标题",
+              link: "/components/title",
+            },
+            {
+              text: "XAxis X轴",
+              link: "/components/xAxis",
+            },
+            {
+              text: "YAxis Y轴",
+              link: "/components/yAxis",
+            },
+            {
+              text: "Grid 网格",
+              link: "/components/grid",
+            },
+            {
+              text: "Legend 图例",
+              link: "/components/legend",
+            },
+            {
+              text: "Tooltip 提示框",
+              link: "/components/tooltip",
+            },
+          ],
         },
         {
-          text: "XAxis X轴",
-          link: "/components/xAxis",
-        },
-        {
-          text: "YAxis Y轴",
-          link: "/components/yAxis",
-        },
-        {
-          text: "Grid 网格",
-          link: "/components/grid",
-        },
-        {
-          text: "Legend 图例",
-          link: "/components/legend",
-        },
-        {
-          text: "Tooltip 提示框",
-          link: "/components/tooltip",
-        },
-        {
-          text: "Series系列",
+          text: "Series 系列组件",
           collapsed: false,
           items: [
             {
@@ -129,10 +135,62 @@ export default defineConfig({
               text: "Treemap 树面积图",
               link: "/components/series/treemap",
             },
+            {
+              text: "Sunburst 旭日图",
+              link: "/components/series/sunburst",
+            },
+            {
+              text: "Boxplot 箱形图",
+              link: "/components/series/boxplot",
+            },
+            {
+              text: "Candlestick K线图",
+              link: "/components/series/candlestick",
+            },
+            {
+              text: "Heatmap 热力图",
+              link: "/components/series/heatmap",
+            },
+            {
+              text: "Map 地图",
+              link: "/components/series/map",
+            },
+            {
+              text: "Parallel 平行坐标系",
+              link: "/components/series/parallel",
+            },
+            {
+              text: "Lines 路径图",
+              link: "/components/series/lines",
+            },
+            {
+              text: "Graph 关系图",
+              link: "/components/series/graph",
+            },
+            {
+              text: "Sankey 桑基图",
+              link: "/components/series/sankey",
+            },
+            {
+              text: "Funnel 漏斗图",
+              link: "/components/series/funnel",
+            },
+            {
+              text: "Gauge 仪表盘",
+              link: "/components/series/gauge",
+            },
+            {
+              text: "PictorialBar 象形柱图",
+              link: "/components/series/pictorialBar",
+            },
+            {
+              text: "ThemeRiver 主题河流",
+              link: "/components/series/themeRiver",
+            },
           ],
         },
         {
-          text: "通用系列",
+          text: "通用组件",
           collapsed: false,
           items: [
             {
@@ -141,7 +199,7 @@ export default defineConfig({
             },
             {
               text: "Axis 坐标轴样式",
-              collapsed: false,
+              collapsed: true,
               items: [
                 {
                   text: "AxisLine 轴线样式",
