@@ -17,7 +17,7 @@ const vueEcharts = useVueEcharts();
 // 增加文本样式
 useText<TitleComponentOption, TextType>({
   options: options,
-  update: vueEcharts.updateTitle,
+  update,
   defaultTextOptions: (name) => {
     if (!name) {
       return {};
@@ -43,10 +43,18 @@ watch(
       ...options.value,
       ...propsData,
     };
-    vueEcharts.updateTitle(options.value);
+    update(options.value);
   },
   { immediate: true, deep: true }
 );
+
+/**
+ * 更新配置
+ * @param data
+ */
+function update(data: TitleComponentOption) {
+  vueEcharts.update("title", data);
+}
 </script>
 <template>
   <slot></slot>

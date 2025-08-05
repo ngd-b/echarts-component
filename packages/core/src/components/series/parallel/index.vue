@@ -3,11 +3,10 @@ import * as echarts from "echarts/core";
 import { ParallelChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import type { ParallelSeries, ParallelSeriesOption } from "./type";
-import { useVueEcharts } from "../../../hooks/index";
-import { ref, useId, watch } from "vue";
+import { useSeries } from "../../../hooks/index";
+import { ref, useId } from "vue";
 
 import { DefaultParallelSeries } from "./type";
-import { omitBy, isUndefined } from "lodash";
 
 echarts.use([ParallelChart, CanvasRenderer]);
 // 组件唯一id
@@ -18,7 +17,6 @@ const options = ref<ParallelSeriesOption>({
   id: id,
   ...DefaultParallelSeries,
 });
-const vueEcharts = useVueEcharts();
 
 defineOptions({
   name: "Parallel",
@@ -28,15 +26,7 @@ const props = withDefaults(defineProps<ParallelSeries>(), {
   realtime: true,
   animation: true,
 });
-
-watch(
-  () => props,
-  () => {
-    let propsData = omitBy(props, isUndefined);
-    vueEcharts.updateSeries({ ...options.value, ...propsData });
-  },
-  { immediate: true, deep: true }
-);
+useSeries<ParallelSeriesOption>(props, options);
 </script>
 <template>
   <slot></slot>

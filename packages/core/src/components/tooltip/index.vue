@@ -16,7 +16,7 @@ const vueEcharts = useVueEcharts();
 // 增加文本样式
 useText<TooltipComponentOption, TextType>({
   options: options,
-  update: vueEcharts.updateTooltip,
+  update,
   defaultTextOptions: (name) => {
     if (!name) {
       return {};
@@ -42,10 +42,18 @@ watch(
       ...options.value,
       ...propsData,
     };
-    vueEcharts.updateTooltip(options.value);
+    update(options.value);
   },
   { immediate: true, deep: true }
 );
+
+/**
+ * 更新配置
+ * @param data
+ */
+function update(data: TooltipComponentOption) {
+  vueEcharts.update("tooltip", data);
+}
 </script>
 <template>
   <slot></slot>

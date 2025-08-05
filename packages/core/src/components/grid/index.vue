@@ -27,9 +27,17 @@ watch(
   () => props,
   () => {
     let propsData = omitBy(props, isUndefined);
-    vueEcharts.updateGrid({ ...options.value, ...propsData });
+    update({ ...options.value, ...propsData });
   },
   { immediate: true, deep: true }
 );
+
+/**
+ * 更新配置
+ * @param data
+ */
+function update(data: GridComponentOption) {
+  vueEcharts.update("grid", data);
+}
 </script>
 <template></template>

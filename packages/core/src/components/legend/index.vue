@@ -17,7 +17,7 @@ const vueEcharts = useVueEcharts();
 // 增加文本样式
 useText<LegendComponentOption, TextType>({
   options: options,
-  update: vueEcharts.updateLegend,
+  update,
   defaultTextOptions: (name) => {
     if (!name) {
       return {};
@@ -43,10 +43,18 @@ watch(
       ...options.value,
       ...propsData,
     };
-    vueEcharts.updateLegend(options.value);
+    update(options.value);
   },
   { immediate: true, deep: true }
 );
+
+/**
+ * 更新配置
+ * @param data
+ */
+function update(data: LegendComponentOption) {
+  vueEcharts.update("legend", data);
+}
 </script>
 <template>
   <slot></slot>

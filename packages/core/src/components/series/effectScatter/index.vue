@@ -3,11 +3,10 @@ import * as echarts from "echarts/core";
 import { EffectScatterChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import type { EffectScatterSeries, EffectScatterSeriesOption } from "./type";
-import { useVueEcharts } from "../../../hooks/index";
-import { ref, useId, watch } from "vue";
+import { useSeries } from "../../../hooks/index";
+import { ref, useId } from "vue";
 
 import { DefaultEffectScatterSeries } from "./type";
-import { omitBy, isUndefined } from "lodash";
 
 echarts.use([EffectScatterChart, CanvasRenderer]);
 // 组件唯一id
@@ -18,8 +17,6 @@ const options = ref<EffectScatterSeriesOption>({
   id: id,
   ...DefaultEffectScatterSeries,
 });
-const vueEcharts = useVueEcharts();
-
 defineOptions({
   name: "EffectScatter",
 });
@@ -29,14 +26,7 @@ const props = withDefaults(defineProps<EffectScatterSeries>(), {
   animation: true,
 });
 
-watch(
-  () => props,
-  () => {
-    let propsData = omitBy(props, isUndefined);
-    vueEcharts.updateSeries({ ...options.value, ...propsData });
-  },
-  { immediate: true, deep: true }
-);
+useSeries<EffectScatterSeriesOption>(props, options);
 </script>
 <template>
   <slot></slot>

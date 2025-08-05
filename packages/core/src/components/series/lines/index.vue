@@ -3,11 +3,10 @@ import * as echarts from "echarts/core";
 import { LinesChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import type { LinesSeries, LinesSeriesOption } from "./type";
-import { useVueEcharts } from "../../../hooks/index";
-import { ref, useId, watch } from "vue";
+import { useSeries } from "../../../hooks/index";
+import { ref, useId } from "vue";
 
 import { DefaultLinesSeries } from "./type";
-import { omitBy, isUndefined } from "lodash";
 
 echarts.use([LinesChart, CanvasRenderer]);
 // 组件唯一id
@@ -18,7 +17,6 @@ const options = ref<LinesSeriesOption>({
   id: id,
   ...DefaultLinesSeries,
 });
-const vueEcharts = useVueEcharts();
 
 defineOptions({
   name: "Lines",
@@ -28,14 +26,7 @@ const props = withDefaults(defineProps<LinesSeries>(), {
   animation: true,
 });
 
-watch(
-  () => props,
-  () => {
-    let propsData = omitBy(props, isUndefined);
-    vueEcharts.updateSeries({ ...options.value, ...propsData });
-  },
-  { immediate: true, deep: true }
-);
+useSeries<LinesSeriesOption>(props, options);
 </script>
 <template>
   <slot></slot>

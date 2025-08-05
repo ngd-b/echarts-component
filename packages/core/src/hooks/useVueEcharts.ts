@@ -15,33 +15,12 @@ import type {
   EchartsOptions,
   EchartsState,
   MainType,
+  MainTypeMap,
 } from "../types";
-import type {
-  GridComponentOption,
-  LegendComponentOption,
-  SeriesOption,
-  TitleComponentOption,
-  TooltipComponentOption,
-  XAXisOption,
-  YAXisOption,
-  PolarOption,
-  RadarOption,
-} from "../components/type";
 import { useActions, useEvents, userMethods } from "../stores";
 
 export const ECHARTS_CONTEXT_KEY = Symbol("vue-echarts");
 type Scope = (EffectScope & { vueEchartsId: string }) | undefined;
-
-type UpdateOption =
-  | SeriesOption
-  | XAXisOption
-  | YAXisOption
-  | GridComponentOption
-  | TitleComponentOption
-  | LegendComponentOption
-  | TooltipComponentOption
-  | PolarOption
-  | RadarOption;
 
 interface UseVueEchartsOptions {
   id: string;
@@ -100,20 +79,7 @@ export function useVueEcharts(
     let ctx: EchartsContext = {
       id: id ?? useId(),
       ...toRefs(reactiveState),
-      updateSeries: (data: SeriesOption) =>
-        update<SeriesOption>(data, "series"),
-      updateXAxis: (data: XAXisOption) => update<XAXisOption>(data, "xAxis"),
-      updateYAxis: (data: YAXisOption) => update<YAXisOption>(data, "yAxis"),
-      updateGrid: (data: GridComponentOption) =>
-        update<GridComponentOption>(data, "grid"),
-      updateTitle: (data: TitleComponentOption) =>
-        update<TitleComponentOption>(data, "title"),
-      updateLegend: (data: LegendComponentOption) =>
-        update<LegendComponentOption>(data, "legend"),
-      updateTooltip: (data: TooltipComponentOption) =>
-        update<TooltipComponentOption>(data, "tooltip"),
-      updatePolar: (data: PolarOption) => update<PolarOption>(data, "polar"),
-      updateRadar: (data: RadarOption) => update<RadarOption>(data, "radar"),
+      update,
       ...methods,
       actions: shallowReactive(actions),
       ...events,
@@ -134,10 +100,7 @@ export function useVueEcharts(
    * @param data
    * @param prop
    */
-  function update<S extends UpdateOption = UpdateOption>(
-    data: S,
-    prop: MainType
-  ) {
+  function update<K extends MainType>(prop: K, data: MainTypeMap[K]) {
     let propData = options.value[prop] || [];
 
     let index = (propData as Array<{ id: string }>).findIndex(
@@ -147,9 +110,9 @@ export function useVueEcharts(
     if (index > -1) {
       propData[index] = data;
     } else {
-      (propData as S[]).push(data);
+      (propData as MainTypeMap[K][]).push(data);
     }
-    (options.value[prop] as S[]) = propData as S[];
+    (options.value[prop] as MainTypeMap[K][]) = propData as MainTypeMap[K][];
   }
 
   return vueEcharts;

@@ -17,7 +17,7 @@ const vueEcharts = useVueEcharts();
 // 增加文本样式
 useText<RadarOption, TextType>({
   options: options,
-  update: vueEcharts.updateRadar,
+  update,
   defaultTextOptions: (name) => {
     if (!name) {
       return {
@@ -30,7 +30,7 @@ useText<RadarOption, TextType>({
 // 配置坐标系样式
 useAxis<RadarOption>({
   options: options,
-  update: vueEcharts.updateRadar,
+  update,
 });
 
 defineOptions({
@@ -47,10 +47,18 @@ watch(
       ...options.value,
       ...propsData,
     };
-    vueEcharts.updateRadar(options.value);
+    update(options.value);
   },
   { immediate: true, deep: true }
 );
+
+/**
+ * 更新配置
+ * @param data
+ */
+function update(data: RadarOption) {
+  vueEcharts.update("radar", data);
+}
 </script>
 <template>
   <slot></slot>

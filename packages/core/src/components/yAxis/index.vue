@@ -17,7 +17,7 @@ const vueEcharts = useVueEcharts();
 // 增加文本样式
 useText<YAXisOption, TextType>({
   options: options,
-  update: vueEcharts.updateYAxis,
+  update,
   defaultTextOptions: (name) => {
     if (!name) {
       return {
@@ -31,7 +31,7 @@ useText<YAXisOption, TextType>({
 // 配置坐标系样式
 useAxis<YAXisOption>({
   options: options,
-  update: vueEcharts.updateYAxis,
+  update,
 });
 
 defineOptions({
@@ -51,10 +51,18 @@ watch(
       ...options.value,
       ...propsData,
     };
-    vueEcharts.updateYAxis(options.value);
+    update(options.value);
   },
   { immediate: true, deep: true }
 );
+
+/**
+ * 更新配置
+ * @param data
+ */
+function update(data: YAXisOption) {
+  vueEcharts.update("yAxis", data);
+}
 </script>
 <template>
   <slot></slot>

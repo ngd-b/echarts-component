@@ -3,11 +3,10 @@ import * as echarts from "echarts/core";
 import { GaugeChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import type { GaugeSeries, GaugeSeriesOption } from "./type";
-import { useVueEcharts } from "../../../hooks/index";
-import { ref, useId, watch } from "vue";
+import { useSeries } from "../../../hooks/index";
+import { ref, useId } from "vue";
 
 import { DefaultGaugeSeries } from "./type";
-import { omitBy, isUndefined } from "lodash";
 
 echarts.use([GaugeChart, CanvasRenderer]);
 // 组件唯一id
@@ -18,7 +17,6 @@ const options = ref<GaugeSeriesOption>({
   id: id,
   ...DefaultGaugeSeries,
 });
-const vueEcharts = useVueEcharts();
 
 defineOptions({
   name: "Gauge",
@@ -29,15 +27,7 @@ const props = withDefaults(defineProps<GaugeSeries>(), {
   clockwise: true,
   animation: true,
 });
-
-watch(
-  () => props,
-  () => {
-    let propsData = omitBy(props, isUndefined);
-    vueEcharts.updateSeries({ ...options.value, ...propsData });
-  },
-  { immediate: true, deep: true }
-);
+useSeries<GaugeSeriesOption>(props, options);
 </script>
 <template>
   <slot></slot>

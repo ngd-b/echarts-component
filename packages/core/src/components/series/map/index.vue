@@ -3,11 +3,10 @@ import * as echarts from "echarts/core";
 import { MapChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import type { MapSeries, MapSeriesOption } from "./type";
-import { useVueEcharts } from "../../../hooks/index";
-import { ref, useId, watch } from "vue";
+import { useSeries } from "../../../hooks/index";
+import { ref, useId } from "vue";
 
 import { DefaultMapSeries } from "./type";
-import { omitBy, isUndefined } from "lodash";
 
 echarts.use([MapChart, CanvasRenderer]);
 // 组件唯一id
@@ -19,22 +18,13 @@ const options = ref<MapSeriesOption>({
   map: "",
   ...DefaultMapSeries,
 });
-const vueEcharts = useVueEcharts();
 
 defineOptions({
   name: "Map",
 });
 
 const props = withDefaults(defineProps<MapSeries>(), {});
-
-watch(
-  () => props,
-  () => {
-    let propsData = omitBy(props, isUndefined);
-    vueEcharts.updateSeries({ ...options.value, ...propsData });
-  },
-  { immediate: true, deep: true }
-);
+useSeries<MapSeriesOption>(props, options);
 </script>
 <template>
   <slot></slot>

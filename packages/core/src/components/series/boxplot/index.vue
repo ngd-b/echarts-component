@@ -3,11 +3,9 @@ import * as echarts from "echarts/core";
 import { BoxplotChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import type { BoxplotSeries, BoxplotSeriesOption } from "./type";
-import { useVueEcharts } from "../../../hooks/index";
-import { ref, useId, watch } from "vue";
-
+import { useSeries } from "../../../hooks/index";
+import { ref, useId } from "vue";
 import { DefaultBoxplotSeries } from "./type";
-import { omitBy, isUndefined } from "lodash";
 
 echarts.use([BoxplotChart, CanvasRenderer]);
 // 组件唯一id
@@ -18,7 +16,6 @@ const options = ref<BoxplotSeriesOption>({
   id: id,
   ...DefaultBoxplotSeries,
 });
-const vueEcharts = useVueEcharts();
 
 defineOptions({
   name: "Boxplot",
@@ -28,14 +25,7 @@ const props = withDefaults(defineProps<BoxplotSeries>(), {
   legendHoverLink: true,
 });
 
-watch(
-  () => props,
-  () => {
-    let propsData = omitBy(props, isUndefined);
-    vueEcharts.updateSeries({ ...options.value, ...propsData });
-  },
-  { immediate: true, deep: true }
-);
+useSeries<BoxplotSeriesOption>(props, options);
 </script>
 <template>
   <slot></slot>

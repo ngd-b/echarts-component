@@ -3,11 +3,10 @@ import * as echarts from "echarts/core";
 import { PieChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import type { PieSeries, PieSeriesOption } from "./type";
-import { useVueEcharts } from "../../../hooks/index";
-import { ref, useId, watch } from "vue";
+import { useSeries } from "../../../hooks/index";
+import { ref, useId } from "vue";
 
 import { DefaultPieSeries } from "./type";
-import { omitBy, isUndefined } from "lodash";
 
 echarts.use([PieChart, CanvasRenderer]);
 // 组件唯一id
@@ -18,7 +17,6 @@ const options = ref<PieSeriesOption>({
   id: id,
   ...DefaultPieSeries,
 });
-const vueEcharts = useVueEcharts();
 
 defineOptions({
   name: "Pie",
@@ -32,14 +30,8 @@ const props = withDefaults(defineProps<PieSeries>(), {
   showEmptyCircle: true,
   animation: true,
 });
-
-watch(
-  () => props,
-  () => {
-    let propsData = omitBy(props, isUndefined);
-    vueEcharts.updateSeries({ ...options.value, ...propsData });
-  },
-  { immediate: true, deep: true }
-);
+useSeries<PieSeriesOption>(props, options);
 </script>
-<template></template>
+<template>
+  <slot></slot>
+</template>

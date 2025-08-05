@@ -17,7 +17,7 @@ const vueEcharts = useVueEcharts();
 // 配置坐标系样式
 useAxis<PolarOption>({
   options: options,
-  update: vueEcharts.updatePolar,
+  update,
 });
 
 defineOptions({
@@ -34,10 +34,18 @@ watch(
       ...options.value,
       ...propsData,
     };
-    vueEcharts.updatePolar(options.value);
+    update(options.value);
   },
   { immediate: true, deep: true }
 );
+
+/**
+ * 更新配置
+ * @param data
+ */
+function update(data: PolarOption) {
+  vueEcharts.update("polar", data);
+}
 </script>
 <template>
   <slot></slot>

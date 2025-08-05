@@ -30,15 +30,7 @@ export interface EchartsState {
 }
 export interface EchartsContext extends EchartsState, Methods, EventHooks {
   readonly id: string;
-  updateSeries: (data: SeriesOption) => void;
-  updateXAxis: (data: XAXisOption) => void;
-  updateYAxis: (data: YAXisOption) => void;
-  updateGrid: (data: GridComponentOption) => void;
-  updateTitle: (data: TitleComponentOption) => void;
-  updateLegend: (data: LegendComponentOption) => void;
-  updateTooltip: (data: TooltipComponentOption) => void;
-  updatePolar: (data: PolarOption) => void;
-  updateRadar: (data: RadarOption) => void;
+  update: <K extends MainType>(type: K, data: MainTypeMap[K]) => void;
   actions: ShallowReactive<Actions>;
 }
 
@@ -64,3 +56,15 @@ export type MainType =
   | "tooltip"
   | "polar"
   | "radar";
+
+export type MainTypeMap = {
+  series: SeriesOption;
+  xAxis: XAXisOption;
+  yAxis: YAXisOption;
+  grid: GridComponentOption;
+  title: TitleComponentOption;
+  legend: LegendComponentOption;
+  tooltip: TooltipComponentOption;
+  polar: PolarOption;
+  radar: RadarOption;
+};
