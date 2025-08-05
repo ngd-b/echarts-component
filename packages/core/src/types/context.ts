@@ -6,6 +6,7 @@ import type {
   TitleComponentOption,
   LegendComponentOption,
   TooltipComponentOption,
+  PolarOption,
   ChartOptions,
 } from "../components/type";
 import { Actions } from "./actions";
@@ -34,6 +35,7 @@ export interface EchartsContext extends EchartsState, Methods, EventHooks {
   updateTitle: (data: TitleComponentOption) => void;
   updateLegend: (data: LegendComponentOption) => void;
   updateTooltip: (data: TooltipComponentOption) => void;
+  updatePolar: (data: PolarOption) => void;
   actions: ShallowReactive<Actions>;
 }
 
@@ -45,6 +47,7 @@ export type EchartsOptions = ChartOptions & {
   title?: TitleComponentOption[];
   legend?: LegendComponentOption[];
   tooltip?: TooltipComponentOption[];
+  polar?: PolarOption[];
 };
 
 export type MainType =
@@ -54,4 +57,5 @@ export type MainType =
   | "grid"
   | "title"
   | "legend"
-  | "tooltip";
+  | "tooltip"
+  | "polar";

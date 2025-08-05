@@ -13,6 +13,7 @@ import type {
 } from "./series/type";
 import type { XAXisOption, XAxis } from "./xAxis/type";
 import type { YAXisOption, YAxis } from "./yAxis/type";
+import type { Polar, PolarOption } from "./polar/type";
 import type { GridComponentOption, GridOptions } from "./grid/type";
 import type { TooltipComponentOption, TooltipOptions } from "./tooltip/type";
 import type { TitleComponentOption, TitleOptions } from "./title/type";
@@ -34,7 +35,7 @@ export {
   LineSeriesOption,
   BarSeriesOption,
 };
-export { XAxis, XAXisOption, YAXisOption, YAxis };
+export { XAxis, XAXisOption, YAXisOption, YAxis, Polar, PolarOption };
 export {
   GridComponentOption,
   GridOptions,
