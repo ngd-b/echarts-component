@@ -21,7 +21,7 @@ const options = ref<EffectScatterSeriesOption>({
 const vueEcharts = useVueEcharts();
 
 defineOptions({
-  name: "Scatter",
+  name: "EffectScatter",
 });
 
 const props = withDefaults(defineProps<EffectScatterSeries>(), {
