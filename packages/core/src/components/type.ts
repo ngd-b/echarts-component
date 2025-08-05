@@ -14,6 +14,7 @@ import type {
 import type { XAXisOption, XAxis } from "./xAxis/type";
 import type { YAXisOption, YAxis } from "./yAxis/type";
 import type { Polar, PolarOption } from "./polar/type";
+import type { Radar, RadarOption } from "./radar/type";
 import type { GridComponentOption, GridOptions } from "./grid/type";
 import type { TooltipComponentOption, TooltipOptions } from "./tooltip/type";
 import type { TitleComponentOption, TitleOptions } from "./title/type";
@@ -35,7 +36,16 @@ export {
   LineSeriesOption,
   BarSeriesOption,
 };
-export { XAxis, XAXisOption, YAXisOption, YAxis, Polar, PolarOption };
+export {
+  XAxis,
+  XAXisOption,
+  YAXisOption,
+  YAxis,
+  Polar,
+  PolarOption,
+  Radar,
+  RadarOption,
+};
 export {
   GridComponentOption,
   GridOptions,

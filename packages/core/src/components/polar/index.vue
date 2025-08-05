@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText, useAxis } from "../../hooks/index";
+import { useVueEcharts, useAxis } from "../../hooks/index";
 import { omitBy, isUndefined } from "lodash";
 import type { Polar, PolarOption } from "./type";
 import { DefaultPolar } from "./type";

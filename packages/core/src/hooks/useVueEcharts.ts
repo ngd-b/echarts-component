@@ -25,6 +25,7 @@ import type {
   XAXisOption,
   YAXisOption,
   PolarOption,
+  RadarOption,
 } from "../components/type";
 import { useActions, useEvents, userMethods } from "../stores";
 
@@ -39,7 +40,8 @@ type UpdateOption =
   | TitleComponentOption
   | LegendComponentOption
   | TooltipComponentOption
-  | PolarOption;
+  | PolarOption
+  | RadarOption;
 
 interface UseVueEchartsOptions {
   id: string;
@@ -111,6 +113,7 @@ export function useVueEcharts(
       updateTooltip: (data: TooltipComponentOption) =>
         update<TooltipComponentOption>(data, "tooltip"),
       updatePolar: (data: PolarOption) => update<PolarOption>(data, "polar"),
+      updateRadar: (data: RadarOption) => update<RadarOption>(data, "radar"),
       ...methods,
       actions: shallowReactive(actions),
       ...events,

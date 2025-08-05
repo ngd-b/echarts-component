@@ -5,7 +5,8 @@ export type TextType =
   | "subtextStyle"
   | "pageTextStyle"
   | "nameTextStyle"
-  | "axisLabel";
+  | "axisLabel"
+  | "axisName";
 
 export interface TextContext<T extends TextType = TextType> {
   defaultTextProps?: (name?: T) => TextOptions;

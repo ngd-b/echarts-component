@@ -8,6 +8,7 @@ import type {
   TooltipComponentOption,
   PolarOption,
   ChartOptions,
+  RadarOption,
 } from "../components/type";
 import { Actions } from "./actions";
 import { ShallowReactive, ShallowRef } from "vue";
@@ -21,7 +22,8 @@ export type UpdateOption =
   | GridComponentOption
   | TitleComponentOption
   | LegendComponentOption
-  | TooltipComponentOption;
+  | TooltipComponentOption
+  | RadarOption;
 
 export interface EchartsState {
   vueEchartsRef: ShallowRef<echarts.ECharts | null>;
@@ -36,6 +38,7 @@ export interface EchartsContext extends EchartsState, Methods, EventHooks {
   updateLegend: (data: LegendComponentOption) => void;
   updateTooltip: (data: TooltipComponentOption) => void;
   updatePolar: (data: PolarOption) => void;
+  updateRadar: (data: RadarOption) => void;
   actions: ShallowReactive<Actions>;
 }
 
@@ -48,6 +51,7 @@ export type EchartsOptions = ChartOptions & {
   legend?: LegendComponentOption[];
   tooltip?: TooltipComponentOption[];
   polar?: PolarOption[];
+  radar?: RadarOption[];
 };
 
 export type MainType =
@@ -58,4 +62,5 @@ export type MainType =
   | "title"
   | "legend"
   | "tooltip"
-  | "polar";
+  | "polar"
+  | "radar";

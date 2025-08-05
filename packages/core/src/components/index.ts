@@ -10,8 +10,9 @@ import Title from "./title/index.vue";
 import Legend from "./legend/index.vue";
 import Tooltip from "./tooltip/index.vue";
 import PolarAxis from "./polar/index.vue";
+import RadarAxis from "./radar/index.vue";
 
-export { XAxis, YAxis, Grid, Title, Legend, Tooltip, PolarAxis };
+export { XAxis, YAxis, Grid, Title, Legend, Tooltip, PolarAxis, RadarAxis };
 
 // children components
 export * from "./common/index";
