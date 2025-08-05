@@ -22,7 +22,7 @@ const options = ref<MapSeriesOption>({
 const vueEcharts = useVueEcharts();
 
 defineOptions({
-  name: "Heatmap",
+  name: "Map",
 });
 
 const props = withDefaults(defineProps<MapSeries>(), {});
