@@ -6,16 +6,13 @@
 
 ```vue
 <template>
-  <VueEcharts>
-    <!-- 基础折线图 -->
+  <VueEcharts style="width:100%;height:300px;">
     <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" />
-
     <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
     <YAxis />
-    <Title text="一周数据趋势" />
-    <Tooltip />
-    <Legend />
-  </VueEcharts>
+  <Title text="一周数据趋势" />
+</VueEcharts>
+
 </template>
 
 ```
@@ -26,14 +23,12 @@
   const data = ref([12, 19, 3, 5, 2, 3])
 </script>
 
-<div style="width:100%;height:300px;">
-  <VueEcharts>
-      <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" />
-      <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
-      <YAxis />
-      <Title text="一周数据趋势" />
-  </VueEcharts>
-</div>
+<VueEcharts style="width:100%;height:300px;">
+    <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" />
+    <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
+    <YAxis />
+    <Title text="一周数据趋势" />
+</VueEcharts>
 
 ## 多系列折线图
 
@@ -41,29 +36,24 @@
 
 ```vue
 <template>
-  <VueEcharts>
+  <VueEcharts style="width:100%;height:300px;">
     <Line :data="[12, 19, 3, 5, 2, 3]" name="数据A" />
     <Line :data="[5, 20, 8, 15, 10, 8]" name="数据B" />
-
     <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
     <YAxis />
     <Title text="多系列数据对比" />
-    <Tooltip trigger="axis" />
-    <Legend />
-  </VueEcharts>
+</VueEcharts>
 </template>
 
 ```
 
-<div style="width:100%;height:300px;">
-  <VueEcharts>
-      <Line :data="[12, 19, 3, 5, 2, 3]" name="数据A" />
-      <Line :data="[5, 20, 8, 15, 10, 8]" name="数据B" />
-      <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
-      <YAxis />
-      <Title text="多系列数据对比" />
-  </VueEcharts>
-</div>
+<VueEcharts style="width:100%;height:300px;">
+    <Line :data="[12, 19, 3, 5, 2, 3]" name="数据A" />
+    <Line :data="[5, 20, 8, 15, 10, 8]" name="数据B" />
+    <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
+    <YAxis />
+    <Title text="多系列数据对比" />
+</VueEcharts>
 
 ## 平滑曲线
 
@@ -71,27 +61,22 @@
 
 ```vue
 <template>
-  <VueEcharts>
-    <Line :data="[12, 19, 3, 5, 2, 3]" name="平滑曲线" smooth />
-
+  <VueEcharts style="width:100%;height:300px;">
+    <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" smooth />
     <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
     <YAxis />
-    <Title text="平滑曲线示例" />
-    <Tooltip />
-    <Legend />
-  </VueEcharts>
+    <Title text="一周数据趋势" />
+</VueEcharts>
 </template>
 
 ```
 
-<div style="width:100%;height:300px;">
-  <VueEcharts>
-      <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" smooth />
-      <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
-      <YAxis />
-      <Title text="一周数据趋势" />
-  </VueEcharts>
-</div>
+<VueEcharts style="width:100%;height:300px;">
+    <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" smooth />
+    <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
+    <YAxis />
+    <Title text="一周数据趋势" />
+</VueEcharts>
 
 ## 阶梯线
 
@@ -99,24 +84,19 @@
 
 ```vue
 <template>
-  <VueEcharts>
-    <Line :data="[12, 19, 3, 5, 2, 3]" name="阶梯线" step />
-
+  <VueEcharts style="width:100%;height:300px;">
+    <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" step />
     <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
     <YAxis />
-    <Title text="阶梯线示例" />
-    <Tooltip />
-    <Legend />
+    <Title text="一周数据趋势" />
   </VueEcharts>
 </template>
 
 ```
 
-<div style="width:100%;height:300px;">
-  <VueEcharts>
-      <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" step />
-      <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
-      <YAxis />
-      <Title text="一周数据趋势" />
-  </VueEcharts>
-</div>
+<VueEcharts style="width:100%;height:300px;">
+    <Line :data="[12, 19, 3, 5, 2, 3]" name="数据" step />
+    <XAxis :data="['周一', '周二', '周三', '周四', '周五', '周六']" />
+    <YAxis />
+    <Title text="一周数据趋势" />
+</VueEcharts>
