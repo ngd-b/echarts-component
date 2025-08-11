@@ -12,11 +12,7 @@ defineOptions({
   inheritAttrs: false,
 });
 
-let options = ref<MinorTickOption>({
-  show: false,
-  splitNumber: 5,
-  length: 3,
-});
+let options = ref<MinorTickOption>({});
 const props = withDefaults(
   defineProps<Omit<MinorTickOption, "lineStyle">>(),
   {}

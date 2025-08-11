@@ -6,8 +6,6 @@ import type { EffectScatterSeries, EffectScatterSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultEffectScatterSeries } from "./type";
-
 echarts.use([EffectScatterChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<EffectScatterSeriesOption>({
   type: "effectScatter",
   id: id,
-  ...DefaultEffectScatterSeries,
 });
 defineOptions({
   name: "EffectScatter",

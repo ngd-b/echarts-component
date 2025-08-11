@@ -6,8 +6,6 @@ import type { SankeySeries, SankeySeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultSankeySeries } from "./type";
-
 echarts.use([SankeyChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<SankeySeriesOption>({
   type: "sankey",
   id: id,
-  ...DefaultSankeySeries,
 });
 
 defineOptions({

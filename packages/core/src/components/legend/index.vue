@@ -2,7 +2,7 @@
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useText } from "../../hooks/index";
 import type { LegendComponentOption, LegendOptions, TextType } from "./type";
-import { DefaultLegendOptions, TextMapDefault } from "./type";
+import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
@@ -10,7 +10,6 @@ let id = useId();
 
 const options = ref<LegendComponentOption>({
   id,
-  ...DefaultLegendOptions,
 });
 const vueEcharts = useVueEcharts();
 

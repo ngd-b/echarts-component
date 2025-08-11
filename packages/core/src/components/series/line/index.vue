@@ -5,7 +5,6 @@ import { CanvasRenderer } from "echarts/renderers";
 import type { LineSeries, LineSeriesOption } from "./type";
 import { ref, useId } from "vue";
 import { useSeries } from "../../../hooks/index";
-import { DefaultLineSeries } from "./type";
 
 echarts.use([LineChart, CanvasRenderer]);
 
@@ -15,7 +14,6 @@ let id = useId();
 const options = ref<LineSeriesOption>({
   type: "line",
   id: id,
-  ...DefaultLineSeries,
 });
 
 defineOptions({

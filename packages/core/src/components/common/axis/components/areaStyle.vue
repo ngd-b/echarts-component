@@ -12,10 +12,6 @@ defineOptions({
 const axisContext = useAxis();
 
 let options = ref<AreaStyleOption<ZRColor | ZRColor[]>>({
-  color: ["rgba(250,250,250,0.3)", "rgba(200,200,200,0.3)"],
-  shadowOffsetX: 0,
-  shadowOffsetY: 0,
-  opacity: 1,
   ...axisContext.defaultAxisAreaStyle,
 });
 

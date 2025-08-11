@@ -12,16 +12,6 @@ defineOptions({
 const axisContext = useAxis();
 
 let options = ref<LineStyleOption<ZRColor | ZRColor[]>>({
-  color: "#333",
-  width: 1,
-  type: "solid",
-  dashOffset: 0,
-  cap: "butt",
-  join: "bevel",
-  miterLimit: 10,
-  shadowOffsetX: 0,
-  shadowOffsetY: 0,
-  opacity: 1,
   ...axisContext.defaultAxisLineStyle,
 });
 

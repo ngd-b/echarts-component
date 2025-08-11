@@ -6,8 +6,6 @@ import type { ParallelSeries, ParallelSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultParallelSeries } from "./type";
-
 echarts.use([ParallelChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<ParallelSeriesOption>({
   type: "parallel",
   id: id,
-  ...DefaultParallelSeries,
 });
 
 defineOptions({

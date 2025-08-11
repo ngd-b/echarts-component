@@ -2,14 +2,13 @@
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useText } from "../../hooks/index";
 import type { TextType, TooltipComponentOption, TooltipOptions } from "./type";
-import { DefaultTooltipOptions, TextMapDefault } from "./type";
+import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 // 组件唯一id
 let id = useId();
 
 const options = ref<TooltipComponentOption>({
   id,
-  ...DefaultTooltipOptions,
 });
 const vueEcharts = useVueEcharts();
 

@@ -14,10 +14,6 @@ defineOptions({
 
 let options = ref<AxisTickOption>({
   show: true,
-  // alignWithLabel:false,
-  // interval:'auto'
-  inside: false,
-  length: 5,
 });
 const props = withDefaults(defineProps<Omit<AxisTickOption, "lineStyle">>(), {
   show: true,

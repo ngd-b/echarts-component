@@ -16,7 +16,6 @@ let options = ref<SplitLineOption>({
   show: true,
   showMinLine: true,
   showMaxLine: true,
-  interval: "auto",
 });
 const props = withDefaults(defineProps<Omit<SplitLineOption, "lineStyle">>(), {
   show: true,

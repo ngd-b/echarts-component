@@ -3,14 +3,12 @@ import { ref, useId, watch } from "vue";
 import { useVueEcharts, useAxis } from "../../hooks/index";
 import { omitBy, isUndefined } from "lodash";
 import type { Polar, PolarOption } from "./type";
-import { DefaultPolar } from "./type";
 
 // 组件唯一id
 let id = useId();
 
 const options = ref<PolarOption>({
   id,
-  ...DefaultPolar,
 });
 const vueEcharts = useVueEcharts();
 

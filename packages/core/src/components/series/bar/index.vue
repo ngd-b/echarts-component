@@ -5,7 +5,6 @@ import { CanvasRenderer } from "echarts/renderers";
 import type { BarSeries, BarSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
-import { DefaultBarSeries } from "./type";
 
 echarts.use([BarChart, CanvasRenderer]);
 
@@ -15,7 +14,6 @@ let id = useId();
 const options = ref<BarSeriesOption>({
   type: "bar",
   id: id,
-  ...DefaultBarSeries,
 });
 defineOptions({
   name: "Bar",

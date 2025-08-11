@@ -80,31 +80,7 @@ export type SeriesConfig = Partial<
 >;
 
 export const DefaultSeriesConfig: SeriesConfig = {
-  color: [
-    "#5470c6",
-    "#91cc75",
-    "#fac858",
-    "#ee6666",
-    "#73c0de",
-    "#3ba272",
-    "#fc8452",
-    "#9a60b4",
-    "#ea7ccc",
-  ],
   animation: true,
-  animationThreshold: 2000,
-  animationDuration: 1000,
-  animationEasing: "cubicInOut",
-  animationDelay: 0,
-  animationDurationUpdate: 300,
-  animationEasingUpdate: "cubicInOut",
-  animationDelayUpdate: 0,
-  stateAnimation: {
-    duration: 300,
-    easing: "cubicOut",
-  },
-  blendMode: "source-over",
-  hoverLayerThreshold: 3000,
 };
 
 export type ChartOptions = ComposeOption<
@@ -118,31 +94,7 @@ export type ChartOptions = ComposeOption<
 export type TextType = "textStyle";
 export type TextOptions = TextCommonOption;
 
-export const DefaultTextStyleOptions: TextCommonOption = {
-  color: "#fff",
-  fontStyle: "normal",
-  fontWeight: "normal",
-  fontFamily: "sans-serif",
-  fontSize: 12,
-  backgroundColor: "transparent",
-  borderWidth: 0,
-  borderType: "solid",
-  borderDashOffset: 0,
-  borderRadius: 0,
-  padding: 0,
-  shadowColor: "transparent",
-  shadowBlur: 0,
-  shadowOffsetX: 0,
-  shadowOffsetY: 0,
-  textBorderType: "solid",
-  textBorderDashOffset: 0,
-  textShadowColor: "transparent",
-  textShadowBlur: 0,
-  textShadowOffsetX: 0,
-  textShadowOffsetY: 0,
-  // overflow: "none",
-  // ellipsis: "...",
-};
+export const DefaultTextStyleOptions: TextCommonOption = {};
 export const TextMapDefault: Record<TextType, TextOptions> = {
   textStyle: DefaultTextStyleOptions,
 };

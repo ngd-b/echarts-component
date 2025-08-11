@@ -12,11 +12,7 @@ defineOptions({
   inheritAttrs: false,
 });
 
-let options = ref<AxisLineOption>({
-  symbol: "none",
-  symbolSize: [10, 15],
-  symbolOffset: [0, 0],
-});
+let options = ref<AxisLineOption>({});
 const props = withDefaults(defineProps<Omit<AxisLineOption, "lineStyle">>(), {
   show: true,
   onZero: true,

@@ -5,7 +5,7 @@
     <VueEcharts class="w-500px h-400px" theme="dark">
       <Line :data="data" selected-mode />
       <Line :data="data.map((val) => val * 2)" selected-mode />
-      <XAxis name="XAxis">
+      <XAxis name="XAxis" :data="[1, 2, 3, 4, 5, 6, 7, 8, 9]">
         <Text prop="nameTextStyle" color="red" font-size="24" />
         <Text prop="axisLabel" color="green" font-size="18" />
         <AxisLine>
@@ -30,7 +30,7 @@
         </MinorSplitLine>
       </YAxis>
       <Tooltip trigger="axis">
-        <Text prop="textStyle" color="#fff" />
+        <Text prop="textStyle" />
       </Tooltip>
     </VueEcharts>
     <!-- <VueEcharts class="w-500px h-400px">
@@ -99,7 +99,7 @@ const {
 } = useVueEcharts()!;
 onMounted(() => {
   setTimeout(() => {
-    // data.value = [100, 539, 118, 267, 126, 335, 444, 563, 1282, 22];
+    data.value = [100, 539, 118, 267, 126, 335, 444, 563, 1282, 22];
 
     // console.log(vueEchartsRef);
     actions.highlight({ dataIndex: 0 });

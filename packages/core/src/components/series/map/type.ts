@@ -18,23 +18,3 @@ export type MapSeries = Partial<
     | "tooltip"
   >
 >;
-
-export const DefaultMapSeries: MapSeries = {
-  colorBy: "series",
-  roam: false,
-  aspectScale: 0.75,
-  zoom: 1,
-  nameProperty: "name",
-  selectedMode: false,
-  data: [],
-  zlevel: 0,
-  z: 2,
-  left: "auto",
-  right: "auto",
-  top: "auto",
-  bottom: "auto",
-  mapValueCalculation: "sum",
-  seriesLayoutBy: "column",
-  datasetIndex: 0,
-  silent: false,
-};

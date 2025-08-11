@@ -6,8 +6,6 @@ import type { FunnelSeries, FunnelSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultFunnelSeries } from "./type";
-
 echarts.use([FunnelChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<FunnelSeriesOption>({
   type: "funnel",
   id: id,
-  ...DefaultFunnelSeries,
 });
 
 defineOptions({

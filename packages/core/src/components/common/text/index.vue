@@ -1,9 +1,9 @@
 <script setup lang="tsx">
-import { ref, toRaw, watch } from "vue";
+import { ref, watch } from "vue";
 import { useText } from "../../../hooks/index";
 import type { TextCommonOption, TextOptions } from "./type";
-import { DefaultTextOptions } from "./type";
-import { omitBy, isUndefined, isBoolean, pickBy } from "lodash";
+
+import { omitBy, isUndefined } from "lodash";
 import { TextType } from "../../../types/text";
 
 defineOptions({
@@ -11,9 +11,7 @@ defineOptions({
   inheritAttrs: false,
 });
 
-let options = ref<TextCommonOption>({
-  ...DefaultTextOptions,
-});
+let options = ref<TextCommonOption>({});
 
 const textContext = useText();
 

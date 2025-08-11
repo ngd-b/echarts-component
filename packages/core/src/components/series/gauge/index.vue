@@ -6,8 +6,6 @@ import type { GaugeSeries, GaugeSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultGaugeSeries } from "./type";
-
 echarts.use([GaugeChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<GaugeSeriesOption>({
   type: "gauge",
   id: id,
-  ...DefaultGaugeSeries,
 });
 
 defineOptions({

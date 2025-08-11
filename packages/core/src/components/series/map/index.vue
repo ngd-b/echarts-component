@@ -6,8 +6,6 @@ import type { MapSeries, MapSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultMapSeries } from "./type";
-
 echarts.use([MapChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -16,7 +14,6 @@ const options = ref<MapSeriesOption>({
   type: "map",
   id: id,
   map: "",
-  ...DefaultMapSeries,
 });
 
 defineOptions({

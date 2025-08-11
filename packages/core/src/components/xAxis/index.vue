@@ -2,7 +2,7 @@
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useText, useAxis } from "../../hooks/index";
 import type { TextType, XAxis, XAXisOption } from "./type";
-import { DefaultXAxis, TextMapDefault } from "./type";
+import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
@@ -10,7 +10,6 @@ let id = useId();
 
 const options = ref<XAXisOption>({
   id,
-  ...DefaultXAxis,
 });
 const vueEcharts = useVueEcharts();
 

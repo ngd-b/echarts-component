@@ -6,8 +6,6 @@ import type { TreeSeries, TreeSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultTreeSeries } from "./type";
-
 echarts.use([TreeChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<TreeSeriesOption>({
   type: "tree",
   id: id,
-  ...DefaultTreeSeries,
 });
 
 defineOptions({

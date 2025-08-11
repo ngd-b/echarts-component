@@ -6,8 +6,6 @@ import type { GraphSeries, GraphSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultGraphSeries } from "./type";
-
 echarts.use([GraphChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<GraphSeriesOption>({
   type: "graph",
   id: id,
-  ...DefaultGraphSeries,
 });
 
 defineOptions({

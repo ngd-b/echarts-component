@@ -12,10 +12,7 @@ defineOptions({
   inheritAttrs: false,
 });
 
-let options = ref<SplitAreaOption>({
-  show: false,
-  interval: "auto",
-});
+let options = ref<SplitAreaOption>({});
 const props = withDefaults(
   defineProps<Omit<SplitAreaOption, "areaStyle">>(),
   {}

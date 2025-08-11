@@ -6,8 +6,6 @@ import type { RadarSeriesOption, RadarSeries } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultRadarSeries } from "./type";
-
 echarts.use([RadarChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<RadarSeriesOption>({
   type: "radar",
   id: id,
-  ...DefaultRadarSeries,
 });
 
 defineOptions({

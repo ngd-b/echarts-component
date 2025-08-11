@@ -6,8 +6,6 @@ import type { LinesSeries, LinesSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultLinesSeries } from "./type";
-
 echarts.use([LinesChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<LinesSeriesOption>({
   type: "lines",
   id: id,
-  ...DefaultLinesSeries,
 });
 
 defineOptions({

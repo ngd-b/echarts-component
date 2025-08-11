@@ -5,7 +5,6 @@ import { CanvasRenderer } from "echarts/renderers";
 import type { BoxplotSeries, BoxplotSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
-import { DefaultBoxplotSeries } from "./type";
 
 echarts.use([BoxplotChart, CanvasRenderer]);
 // 组件唯一id
@@ -14,7 +13,6 @@ let id = useId();
 const options = ref<BoxplotSeriesOption>({
   type: "boxplot",
   id: id,
-  ...DefaultBoxplotSeries,
 });
 
 defineOptions({

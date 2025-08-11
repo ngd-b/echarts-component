@@ -2,7 +2,7 @@
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useText } from "../../hooks/index";
 import type { TitleComponentOption, TitleOptions, TextType } from "./type";
-import { DefaultTitleOptions, TextMapDefault } from "./type";
+import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
@@ -10,7 +10,6 @@ let id = useId();
 
 const options = ref<TitleComponentOption>({
   id,
-  ...DefaultTitleOptions,
 });
 const vueEcharts = useVueEcharts();
 

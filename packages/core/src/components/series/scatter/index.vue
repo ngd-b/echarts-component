@@ -6,8 +6,6 @@ import type { ScatterSeries, ScatterSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultScatterSeries } from "./type";
-
 echarts.use([ScatterChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<ScatterSeriesOption>({
   type: "scatter",
   id: id,
-  ...DefaultScatterSeries,
 });
 
 defineOptions({

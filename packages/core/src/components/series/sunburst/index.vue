@@ -6,8 +6,6 @@ import type { SunburstSeries, SunburstSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultSunburstSeries } from "./type";
-
 echarts.use([SunburstChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<SunburstSeriesOption>({
   type: "sunburst",
   id: id,
-  ...DefaultSunburstSeries,
 });
 
 defineOptions({

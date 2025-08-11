@@ -6,8 +6,6 @@ import type { PictorialBarSeries, PictorialBarSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultPictorialBarSeries } from "./type";
-
 echarts.use([PictorialBarChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<PictorialBarSeriesOption>({
   type: "pictorialBar",
   id: id,
-  ...DefaultPictorialBarSeries,
 });
 
 defineOptions({

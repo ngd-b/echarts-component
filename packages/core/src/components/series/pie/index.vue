@@ -6,8 +6,6 @@ import type { PieSeries, PieSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultPieSeries } from "./type";
-
 echarts.use([PieChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<PieSeriesOption>({
   type: "pie",
   id: id,
-  ...DefaultPieSeries,
 });
 
 defineOptions({

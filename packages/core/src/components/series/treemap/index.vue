@@ -6,8 +6,6 @@ import type { TreemapSeries, TreemapSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultTreemapSeries } from "./type";
-
 echarts.use([TreemapChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<TreemapSeriesOption>({
   type: "treemap",
   id: id,
-  ...DefaultTreemapSeries,
 });
 
 defineOptions({

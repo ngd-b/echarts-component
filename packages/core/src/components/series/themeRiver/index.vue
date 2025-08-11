@@ -6,8 +6,6 @@ import type { ThemeRiverSeries, ThemeRiverSeriesOption } from "./type";
 import { useSeries } from "../../../hooks/index";
 import { ref, useId } from "vue";
 
-import { DefaultThemeRiverSeries } from "./type";
-
 echarts.use([ThemeRiverChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
@@ -15,7 +13,6 @@ let id = useId();
 const options = ref<ThemeRiverSeriesOption>({
   type: "themeRiver",
   id: id,
-  ...DefaultThemeRiverSeries,
 });
 
 defineOptions({

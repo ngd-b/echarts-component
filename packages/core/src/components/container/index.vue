@@ -8,7 +8,7 @@ import { onBeforeMount, onMounted, ref, useAttrs, watch } from "vue";
 import { useText, useVueEcharts } from "../../hooks/index";
 import type { EchartsOptions } from "../../types/index";
 import type { ChartOptions, SeriesConfig, TextType } from "./type";
-import { DefaultSeriesConfig, TextMapDefault } from "./type";
+import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 defineOptions({
@@ -19,9 +19,7 @@ defineOptions({
 const attrs = useAttrs();
 
 const root = ref(null);
-const options = ref<EchartsOptions>({
-  ...DefaultSeriesConfig,
-});
+const options = ref<EchartsOptions>({});
 const props = withDefaults(defineProps<SeriesConfig>(), {
   animation: true,
 });
