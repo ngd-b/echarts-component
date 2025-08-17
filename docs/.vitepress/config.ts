@@ -97,6 +97,30 @@ export default defineConfig({
               text: "Tooltip 提示框",
               link: "/components/tooltip",
             },
+            {
+              text: "PolarAxis 极坐标系",
+              link: "/components/polarAxis",
+            },
+            {
+              text: "RadarAxis 雷达图坐标系",
+              link: "/components/radarAxis",
+            },
+            {
+              text: "RadiusAxis 极坐标系的角度轴",
+              link: "/components/radiusAxis",
+            },
+            {
+              text: "AngleAxis 极坐标系的角度轴",
+              link: "/components/angleAxis",
+            },
+            {
+              text: "DataZoom 区域缩放",
+              link: "/components/dataZoom",
+            },
+            {
+              text: "VisualMap 视觉映射组件",
+              link: "/components/visualMap",
+            },
           ],
         },
         {
