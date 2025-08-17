@@ -13,6 +13,7 @@ import PolarAxis from "./polar/index.vue";
 import RadarAxis from "./radar/index.vue";
 import RadiusAxis from "./radiusAxis/index.vue";
 import AngleAxis from "./angleAxis/index.vue";
+import DataZoom from "./dataZoom/index.vue";
 
 export {
   XAxis,
@@ -25,6 +26,7 @@ export {
   RadarAxis,
   RadiusAxis,
   AngleAxis,
+  DataZoom,
 };
 
 // children components
