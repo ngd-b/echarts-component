@@ -19,6 +19,7 @@ import type { GridComponentOption, GridOptions } from "./grid/type";
 import type { TooltipComponentOption, TooltipOptions } from "./tooltip/type";
 import type { TitleComponentOption, TitleOptions } from "./title/type";
 import type { RadiusAxis, RadiusAxisOption } from "./radiusAxis/type";
+import type { AngleAxis, AngleAxisOption } from "./angleAxis/type";
 import type {
   TextOptions,
   AxisOption,
@@ -48,6 +49,8 @@ export {
   RadarOption,
   RadiusAxis,
   RadiusAxisOption,
+  AngleAxis,
+  AngleAxisOption,
 };
 export {
   GridComponentOption,

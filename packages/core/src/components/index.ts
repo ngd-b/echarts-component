@@ -12,6 +12,7 @@ import Tooltip from "./tooltip/index.vue";
 import PolarAxis from "./polar/index.vue";
 import RadarAxis from "./radar/index.vue";
 import RadiusAxis from "./radiusAxis/index.vue";
+import AngleAxis from "./angleAxis/index.vue";
 
 export {
   XAxis,
@@ -23,6 +24,7 @@ export {
   PolarAxis,
   RadarAxis,
   RadiusAxis,
+  AngleAxis,
 };
 
 // children components
