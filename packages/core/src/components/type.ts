@@ -21,6 +21,7 @@ import type { TitleComponentOption, TitleOptions } from "./title/type";
 import type { RadiusAxis, RadiusAxisOption } from "./radiusAxis/type";
 import type { AngleAxis, AngleAxisOption } from "./angleAxis/type";
 import type { DataZoomComponentOption } from "./dataZoom/type";
+import type { VisualMapComponentOption } from "./visualMap/type";
 import type {
   TextOptions,
   AxisOption,
@@ -53,6 +54,7 @@ export {
   AngleAxis,
   AngleAxisOption,
   DataZoomComponentOption,
+  VisualMapComponentOption,
 };
 export {
   GridComponentOption,

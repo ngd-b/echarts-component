@@ -14,6 +14,7 @@ import RadarAxis from "./radar/index.vue";
 import RadiusAxis from "./radiusAxis/index.vue";
 import AngleAxis from "./angleAxis/index.vue";
 import DataZoom from "./dataZoom/index.vue";
+import VisualMap from "./visualMap/index.vue";
 
 export {
   XAxis,
@@ -27,6 +28,7 @@ export {
   RadiusAxis,
   AngleAxis,
   DataZoom,
+  VisualMap,
 };
 
 // children components

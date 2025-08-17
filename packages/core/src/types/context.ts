@@ -12,6 +12,7 @@ import type {
   RadiusAxisOption,
   AngleAxisOption,
   DataZoomComponentOption,
+  VisualMapComponentOption,
 } from "../components/type";
 import { Actions } from "./actions";
 import { ShallowReactive, ShallowRef } from "vue";
@@ -53,6 +54,7 @@ export type EchartsOptions = ChartOptions & {
   radiusAxis?: RadiusAxisOption[];
   angleAxis?: AngleAxisOption[];
   dataZoom?: DataZoomComponentOption[];
+  visualMap?: VisualMapComponentOption[];
 };
 
 export type MainType =
@@ -67,7 +69,8 @@ export type MainType =
   | "radar"
   | "radiusAxis"
   | "angleAxis"
-  | "dataZoom";
+  | "dataZoom"
+  | "visualMap";
 
 export type MainTypeMap = {
   series: SeriesOption;
@@ -82,4 +85,5 @@ export type MainTypeMap = {
   radiusAxis: RadiusAxisOption;
   angleAxis: AngleAxisOption;
   dataZoom: DataZoomComponentOption;
+  visualMap: VisualMapComponentOption;
 };
