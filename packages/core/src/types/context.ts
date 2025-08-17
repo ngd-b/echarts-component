@@ -9,6 +9,7 @@ import type {
   PolarOption,
   ChartOptions,
   RadarOption,
+  RadiusAxisOption,
 } from "../components/type";
 import { Actions } from "./actions";
 import { ShallowReactive, ShallowRef } from "vue";
@@ -23,7 +24,8 @@ export type UpdateOption =
   | TitleComponentOption
   | LegendComponentOption
   | TooltipComponentOption
-  | RadarOption;
+  | RadarOption
+  | RadiusAxisOption;
 
 export interface EchartsState {
   vueEchartsRef: ShallowRef<echarts.ECharts | null>;
@@ -55,7 +57,8 @@ export type MainType =
   | "legend"
   | "tooltip"
   | "polar"
-  | "radar";
+  | "radar"
+  | "radiusAxis";
 
 export type MainTypeMap = {
   series: SeriesOption;
@@ -67,4 +70,5 @@ export type MainTypeMap = {
   tooltip: TooltipComponentOption;
   polar: PolarOption;
   radar: RadarOption;
+  radiusAxis: RadiusAxisOption;
 };

@@ -18,6 +18,7 @@ import type { Radar, RadarOption } from "./radar/type";
 import type { GridComponentOption, GridOptions } from "./grid/type";
 import type { TooltipComponentOption, TooltipOptions } from "./tooltip/type";
 import type { TitleComponentOption, TitleOptions } from "./title/type";
+import type { RadiusAxis, RadiusAxisOption } from "./radiusAxis/type";
 import type {
   TextOptions,
   AxisOption,
@@ -45,6 +46,8 @@ export {
   PolarOption,
   Radar,
   RadarOption,
+  RadiusAxis,
+  RadiusAxisOption,
 };
 export {
   GridComponentOption,

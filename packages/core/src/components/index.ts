@@ -11,8 +11,19 @@ import Legend from "./legend/index.vue";
 import Tooltip from "./tooltip/index.vue";
 import PolarAxis from "./polar/index.vue";
 import RadarAxis from "./radar/index.vue";
+import RadiusAxis from "./radiusAxis/index.vue";
 
-export { XAxis, YAxis, Grid, Title, Legend, Tooltip, PolarAxis, RadarAxis };
+export {
+  XAxis,
+  YAxis,
+  Grid,
+  Title,
+  Legend,
+  Tooltip,
+  PolarAxis,
+  RadarAxis,
+  RadiusAxis,
+};
 
 // children components
 export * from "./common/index";
