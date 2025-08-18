@@ -24,6 +24,7 @@ import type { DataZoomComponentOption } from "./dataZoom/type";
 import type { VisualMapComponentOption } from "./visualMap/type";
 import type { AxisPointer, AxisPointerOption } from "./axisPointer/type";
 import type { ToolboxComponentOption, ToolboxOption } from "./toolbox/type";
+import type { BrushOption } from "./brush/type";
 
 import type {
   TextOptions,
@@ -72,6 +73,7 @@ export {
   LegendOptions,
   ToolboxComponentOption,
   ToolboxOption,
+  BrushOption,
 };
 
 export { TextOptions, AxisOption, LineStyleOption, AreaStyleOption };

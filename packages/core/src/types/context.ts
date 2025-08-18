@@ -15,6 +15,7 @@ import type {
   VisualMapComponentOption,
   AxisPointerOption,
   ToolboxComponentOption,
+  BrushOption,
 } from "../components/type";
 import { Actions } from "./actions";
 import { ShallowReactive, ShallowRef } from "vue";
@@ -34,7 +35,8 @@ export type UpdateOption =
   | AngleAxisOption
   | DataZoomComponentOption
   | AxisPointerOption
-  | ToolboxComponentOption;
+  | ToolboxComponentOption
+  | BrushOption;
 
 export interface EchartsState {
   vueEchartsRef: ShallowRef<echarts.ECharts | null>;
@@ -61,6 +63,7 @@ export type EchartsOptions = ChartOptions & {
   visualMap?: VisualMapComponentOption[];
   axisPointer?: AxisPointerOption[];
   toolbox?: ToolboxComponentOption[];
+  brush?: BrushOption[];
 };
 
 export type MainType =
@@ -78,7 +81,8 @@ export type MainType =
   | "dataZoom"
   | "visualMap"
   | "axisPointer"
-  | "toolbox";
+  | "toolbox"
+  | "brush";
 
 export type MainTypeMap = {
   series: SeriesOption;
@@ -96,4 +100,5 @@ export type MainTypeMap = {
   visualMap: VisualMapComponentOption;
   axisPointer: AxisPointerOption;
   toolbox: ToolboxComponentOption;
+  brush: BrushOption;
 };
