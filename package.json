@@ -2,7 +2,7 @@
   "name": "@echarts-component/monorepo",
   "description": "Echarts component",
   "private": true,
-  "version": "0.5.0",
+  "version": "0.6.0",
   "type": "module",
   "keywords": [],
   "author": "hboot <bobolity@163.com>",
