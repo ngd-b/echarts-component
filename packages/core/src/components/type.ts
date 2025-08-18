@@ -23,6 +23,8 @@ import type { AngleAxis, AngleAxisOption } from "./angleAxis/type";
 import type { DataZoomComponentOption } from "./dataZoom/type";
 import type { VisualMapComponentOption } from "./visualMap/type";
 import type { AxisPointer, AxisPointerOption } from "./axisPointer/type";
+import type { ToolboxComponentOption, ToolboxOption } from "./toolbox/type";
+
 import type {
   TextOptions,
   AxisOption,
@@ -68,6 +70,8 @@ export {
   TitleOptions,
   LegendComponentOption,
   LegendOptions,
+  ToolboxComponentOption,
+  ToolboxOption,
 };
 
 export { TextOptions, AxisOption, LineStyleOption, AreaStyleOption };

@@ -16,6 +16,7 @@ import AngleAxis from "./angleAxis/index.vue";
 import DataZoom from "./dataZoom/index.vue";
 import VisualMap from "./visualMap/index.vue";
 import AxisPointer from "./axisPointer/index.vue";
+import Toolbox from "./toolbox/index.vue";
 
 export {
   XAxis,
@@ -31,6 +32,7 @@ export {
   DataZoom,
   VisualMap,
   AxisPointer,
+  Toolbox,
 };
 
 // children components
