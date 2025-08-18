@@ -18,6 +18,7 @@ import VisualMap from "./visualMap/index.vue";
 import AxisPointer from "./axisPointer/index.vue";
 import Toolbox from "./toolbox/index.vue";
 import Brush from "./brush/index.vue";
+import Geo from "./geo/index.vue";
 
 export {
   XAxis,
@@ -35,6 +36,7 @@ export {
   AxisPointer,
   Toolbox,
   Brush,
+  Geo,
 };
 
 // children components

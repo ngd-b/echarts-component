@@ -1,10 +1,10 @@
-import type { BrushOption } from "echarts/types/dist/shared";
+import type { BrushOption as BrushComponentOption } from "echarts/types/dist/shared";
 
-export type { BrushOption };
+export type { BrushComponentOption };
 
-export type Brush = Partial<BrushOption>;
+export type BrushOption = Partial<BrushComponentOption>;
 
-export const DefaultBrush: Brush = {
+export const DefaultBrushOption: BrushOption = {
   transformable: true,
   removeOnClick: true,
 };

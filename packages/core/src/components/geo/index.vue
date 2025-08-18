@@ -1,19 +1,20 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useAxis } from "../../hooks/index";
-import type { BrushOption, BrushComponentOption } from "./type";
+import type { GeoOption, GeoComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
 let id = useId();
 
-const options = ref<BrushComponentOption>({
+const options = ref<GeoComponentOption>({
   id,
+  map: "",
 });
 const vueEcharts = useVueEcharts();
 
 // 配置坐标系样式
-useAxis<BrushComponentOption>({
+useAxis<GeoComponentOption>({
   options: options,
   update,
 });
@@ -22,9 +23,8 @@ defineOptions({
   name: "Brush",
 });
 
-const props = withDefaults(defineProps<BrushOption>(), {
-  transformable: true,
-  removeOnClick: true,
+const props = withDefaults(defineProps<GeoOption>(), {
+  show: true,
 });
 
 watch(
@@ -44,8 +44,8 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: BrushComponentOption) {
-  vueEcharts.update("brush", data);
+function update(data: GeoComponentOption) {
+  vueEcharts.update("geo", data);
 }
 </script>
 <template>
