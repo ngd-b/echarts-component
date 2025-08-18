@@ -22,6 +22,7 @@ import type { RadiusAxis, RadiusAxisOption } from "./radiusAxis/type";
 import type { AngleAxis, AngleAxisOption } from "./angleAxis/type";
 import type { DataZoomComponentOption } from "./dataZoom/type";
 import type { VisualMapComponentOption } from "./visualMap/type";
+import type { AxisPointer, AxisPointerOption } from "./axisPointer/type";
 import type {
   TextOptions,
   AxisOption,
@@ -55,6 +56,8 @@ export {
   AngleAxisOption,
   DataZoomComponentOption,
   VisualMapComponentOption,
+  AxisPointer,
+  AxisPointerOption,
 };
 export {
   GridComponentOption,
