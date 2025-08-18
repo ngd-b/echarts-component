@@ -1,5 +1,5 @@
-import { InsideDataZoom, InsideDataZoomOption } from "./inside/type";
-import { SliderDataZoom, SliderDataZoomOption } from "./slider/type";
+import type { InsideDataZoom, InsideDataZoomOption } from "./inside/type";
+import type { SliderDataZoom, SliderDataZoomOption } from "./slider/type";
 import type { DataZoomComponentOption } from "echarts/types/dist/shared.d.ts";
 
 type Inside = {

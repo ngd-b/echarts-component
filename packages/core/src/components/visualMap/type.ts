@@ -1,8 +1,11 @@
-import {
+import type {
   ContinousVisualMap,
   ContinousVisualMapOption,
 } from "./continuous/type";
-import { PiecewiseVisualMap, PiecewiseVisualMapOption } from "./piecewise/type";
+import type {
+  PiecewiseVisualMap,
+  PiecewiseVisualMapOption,
+} from "./piecewise/type";
 import type { VisualMapComponentOption } from "echarts/types/dist/shared.d.ts";
 
 type Continous = {
