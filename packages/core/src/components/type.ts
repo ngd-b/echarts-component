@@ -26,6 +26,7 @@ import type { AxisPointer, AxisPointerOption } from "./axisPointer/type";
 import type { ToolboxComponentOption, ToolboxOption } from "./toolbox/type";
 import type { BrushComponentOption } from "./brush/type";
 import type { GeoComponentOption } from "./geo/type";
+import type { ParallelComponentOption } from "./parallel/type";
 
 import type {
   TextOptions,
@@ -76,6 +77,7 @@ export {
   ToolboxOption,
   BrushComponentOption,
   GeoComponentOption,
+  ParallelComponentOption,
 };
 
 export { TextOptions, AxisOption, LineStyleOption, AreaStyleOption };

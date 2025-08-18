@@ -19,6 +19,7 @@ import AxisPointer from "./axisPointer/index.vue";
 import Toolbox from "./toolbox/index.vue";
 import Brush from "./brush/index.vue";
 import Geo from "./geo/index.vue";
+import Parallel from "./parallel/index.vue";
 
 export {
   XAxis,
@@ -37,6 +38,7 @@ export {
   Toolbox,
   Brush,
   Geo,
+  Parallel,
 };
 
 // children components
