@@ -67,8 +67,9 @@ const data = [
 | `<Grid />`     | `grid`               | 坐标轴网格配置            |
 | `<Tooltip />`  | `tooltip`            | 悬浮提示               |
 | `<Legend />`   | `legend`             | 图例组件               |
+| `...`    | `...`              | `...`             |
 
-更多组件开发中……
+[更多组件，请查看 API 文档](http://echarts-component.hboot.fun/)
 
 ---
 
@@ -89,11 +90,12 @@ const data = [
   - [x] `Line` 折线图
   - [x] `Bar` 柱状图
   - [x] `Pie` 饼图
-- [ ] 支持 `v-for` 渲染多个图形
-- [ ] `useVueEcharts()` 组合式调用方式
-- [ ] 自动注册组件 / 按需加载
-- [ ] 主题注册 & 暗黑模式支持
-- [ ] 图表容器大小自适应
+  - [x] `more` 更多图表
+- [x] 支持 `v-for` 渲染多个图形
+- [x] `useVueEcharts()` 组合式调用方式
+- [x] 自动注册组件 / 按需加载
+- [x] 主题注册 & 暗黑模式支持
+- [x] 图表容器大小自适应
 
 ---
 

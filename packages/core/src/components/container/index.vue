@@ -74,7 +74,6 @@ function initChart() {
 }
 
 function updateChart() {
-  console.log("======", options.value);
   vueEcharts.vueEchartsRef.value?.setOption(options.value);
 }
 </script>

@@ -53,17 +53,6 @@ app.component('Bar', Bar)
 app.mount('#app')
 ```
 
-## 响应式图表
-
-所有图表默认支持响应式布局。当容器大小变化时，图表会自动重新渲染。你也可以通过 `auto-resize` 属性控制这一行为：
-
-```ts
-<VueEcharts :auto-resize="true" style="height: 400px; width: 100%">
-  <!-- 图表配置 -->
-</VueEcharts>
-
-```
-
 ## 混合使用 JSON 配置
 
 如果你需要使用一些组件库中尚未封装的 ECharts 特性，可以混合使用传统的 JSON 配置：

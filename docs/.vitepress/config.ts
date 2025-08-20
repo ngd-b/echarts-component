@@ -63,6 +63,19 @@ export default defineConfig({
           text: "安装",
           link: "/guide/installer",
         },
+        {
+          text: "其他",
+          items: [
+            {
+              text: "不支持组件的配置说明",
+              link: "/guide/unsupported-components",
+            },
+            {
+              text: "部分组件名和配置名不同说明",
+              link: "/guide/component-name-different-configuration-name",
+            },
+          ],
+        },
       ],
       components: [
         {
@@ -106,7 +119,7 @@ export default defineConfig({
               link: "/components/radarAxis",
             },
             {
-              text: "RadiusAxis 极坐标系的角度轴",
+              text: "RadiusAxis 极坐标系的径向轴",
               link: "/components/radiusAxis",
             },
             {
@@ -120,6 +133,42 @@ export default defineConfig({
             {
               text: "VisualMap 视觉映射组件",
               link: "/components/visualMap",
+            },
+            {
+              text: "AxisPointer 坐标轴指示器组件",
+              link: "/components/axisPointer",
+            },
+            {
+              text: "Toolbox 工具栏组件",
+              link: "/components/toolbox",
+            },
+            {
+              text: "Brush 区域选择组件",
+              link: "/components/brush",
+            },
+            {
+              text: "Geo 地理坐标系组件",
+              link: "/components/geo",
+            },
+            {
+              text: "ParallelAxis 平行坐标系组件",
+              link: "/components/ParallelAxis",
+            },
+            {
+              text: "SingleAxis 单轴组件",
+              link: "/components/singleAxis",
+            },
+            {
+              text: "Timeline 时间轴组件",
+              link: "/components/timeline",
+            },
+            {
+              text: "Calendar 日历组件",
+              link: "/components/calendar",
+            },
+            {
+              text: "Dataset 数据集组件",
+              link: "/components/dataset",
             },
           ],
         },
