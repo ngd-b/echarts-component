@@ -29,6 +29,7 @@ import type { GeoComponentOption } from "./geo/type";
 import type { ParallelComponentOption } from "./parallel/type";
 import type { SingleAxisOption } from "./singleAxis/type";
 import type { TimelineComponentOption } from "./timeline/type";
+import type { CalendarComponentOption } from "./calendar/type";
 
 import type {
   TextOptions,
@@ -82,6 +83,7 @@ export {
   ParallelComponentOption,
   SingleAxisOption,
   TimelineComponentOption,
+  CalendarComponentOption,
 };
 
 export { TextOptions, AxisOption, LineStyleOption, AreaStyleOption };

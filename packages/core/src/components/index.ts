@@ -22,6 +22,7 @@ import Geo from "./geo/index.vue";
 import Parallel from "./parallel/index.vue";
 import SingleAxis from "./singleAxis/index.vue";
 import Timeline from "./timeline/index.vue";
+import Calendar from "./calendar/index.vue";
 
 export {
   XAxis,
@@ -43,6 +44,7 @@ export {
   Parallel,
   SingleAxis,
   Timeline,
+  Calendar,
 };
 
 // children components

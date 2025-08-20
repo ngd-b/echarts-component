@@ -7,7 +7,10 @@ export type TextType =
   | "nameTextStyle"
   | "axisLabel"
   | "axisName"
-  | "label";
+  | "label"
+  | "dayLabel"
+  | "monthLabel"
+  | "yearLabel";
 
 export interface TextContext<T extends TextType = TextType> {
   defaultTextProps?: (name?: T) => TextOptions;

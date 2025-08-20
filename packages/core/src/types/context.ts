@@ -20,6 +20,7 @@ import type {
   ParallelComponentOption,
   SingleAxisOption,
   TimelineComponentOption,
+  CalendarComponentOption,
 } from "../components/type";
 import { Actions } from "./actions";
 import { ShallowReactive, ShallowRef } from "vue";
@@ -44,7 +45,8 @@ export type UpdateOption =
   | GeoComponentOption
   | ParallelComponentOption
   | SingleAxisOption
-  | TimelineComponentOption;
+  | TimelineComponentOption
+  | CalendarComponentOption;
 
 export interface EchartsState {
   vueEchartsRef: ShallowRef<echarts.ECharts | null>;
@@ -76,6 +78,7 @@ export type EchartsOptions = ChartOptions & {
   parallel?: ParallelComponentOption[];
   singleAxis?: SingleAxisOption[];
   timeline?: TimelineComponentOption[];
+  calendar?: CalendarComponentOption[];
 };
 
 export type MainType =
@@ -98,7 +101,8 @@ export type MainType =
   | "geo"
   | "parallel"
   | "singleAxis"
-  | "timeline";
+  | "timeline"
+  | "calendar";
 
 export type MainTypeMap = {
   series: SeriesOption;
@@ -121,4 +125,5 @@ export type MainTypeMap = {
   parallel: ParallelComponentOption;
   singleAxis: SingleAxisOption;
   timeline: TimelineComponentOption;
+  calendar: CalendarComponentOption;
 };
