@@ -19,6 +19,7 @@ import type {
   GeoComponentOption,
   ParallelComponentOption,
   SingleAxisOption,
+  TimelineComponentOption,
 } from "../components/type";
 import { Actions } from "./actions";
 import { ShallowReactive, ShallowRef } from "vue";
@@ -42,7 +43,8 @@ export type UpdateOption =
   | BrushComponentOption
   | GeoComponentOption
   | ParallelComponentOption
-  | SingleAxisOption;
+  | SingleAxisOption
+  | TimelineComponentOption;
 
 export interface EchartsState {
   vueEchartsRef: ShallowRef<echarts.ECharts | null>;
@@ -73,6 +75,7 @@ export type EchartsOptions = ChartOptions & {
   geo?: GeoComponentOption[];
   parallel?: ParallelComponentOption[];
   singleAxis?: SingleAxisOption[];
+  timeline?: TimelineComponentOption[];
 };
 
 export type MainType =
@@ -94,7 +97,8 @@ export type MainType =
   | "brush"
   | "geo"
   | "parallel"
-  | "singleAxis";
+  | "singleAxis"
+  | "timeline";
 
 export type MainTypeMap = {
   series: SeriesOption;
@@ -116,4 +120,5 @@ export type MainTypeMap = {
   geo: GeoComponentOption;
   parallel: ParallelComponentOption;
   singleAxis: SingleAxisOption;
+  timeline: TimelineComponentOption;
 };

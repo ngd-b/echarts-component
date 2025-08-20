@@ -21,6 +21,7 @@ import Brush from "./brush/index.vue";
 import Geo from "./geo/index.vue";
 import Parallel from "./parallel/index.vue";
 import SingleAxis from "./singleAxis/index.vue";
+import Timeline from "./timeline/index.vue";
 
 export {
   XAxis,
@@ -41,6 +42,7 @@ export {
   Geo,
   Parallel,
   SingleAxis,
+  Timeline,
 };
 
 // children components

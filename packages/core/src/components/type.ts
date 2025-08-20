@@ -28,6 +28,7 @@ import type { BrushComponentOption } from "./brush/type";
 import type { GeoComponentOption } from "./geo/type";
 import type { ParallelComponentOption } from "./parallel/type";
 import type { SingleAxisOption } from "./singleAxis/type";
+import type { TimelineComponentOption } from "./timeline/type";
 
 import type {
   TextOptions,
@@ -80,6 +81,7 @@ export {
   GeoComponentOption,
   ParallelComponentOption,
   SingleAxisOption,
+  TimelineComponentOption,
 };
 
 export { TextOptions, AxisOption, LineStyleOption, AreaStyleOption };
