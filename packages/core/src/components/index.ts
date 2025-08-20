@@ -20,6 +20,7 @@ import Toolbox from "./toolbox/index.vue";
 import Brush from "./brush/index.vue";
 import Geo from "./geo/index.vue";
 import Parallel from "./parallel/index.vue";
+import SingleAxis from "./singleAxis/index.vue";
 
 export {
   XAxis,
@@ -39,6 +40,7 @@ export {
   Brush,
   Geo,
   Parallel,
+  SingleAxis,
 };
 
 // children components

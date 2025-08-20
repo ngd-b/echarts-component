@@ -27,6 +27,7 @@ import type { ToolboxComponentOption, ToolboxOption } from "./toolbox/type";
 import type { BrushComponentOption } from "./brush/type";
 import type { GeoComponentOption } from "./geo/type";
 import type { ParallelComponentOption } from "./parallel/type";
+import type { SingleAxisOption } from "./singleAxis/type";
 
 import type {
   TextOptions,
@@ -78,6 +79,7 @@ export {
   BrushComponentOption,
   GeoComponentOption,
   ParallelComponentOption,
+  SingleAxisOption,
 };
 
 export { TextOptions, AxisOption, LineStyleOption, AreaStyleOption };
