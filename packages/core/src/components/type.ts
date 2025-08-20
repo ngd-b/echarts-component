@@ -30,6 +30,7 @@ import type { ParallelComponentOption } from "./parallel/type";
 import type { SingleAxisOption } from "./singleAxis/type";
 import type { TimelineComponentOption } from "./timeline/type";
 import type { CalendarComponentOption } from "./calendar/type";
+import type { DatasetComponentOption } from "./dataset/type";
 
 import type {
   TextOptions,
@@ -84,6 +85,7 @@ export {
   SingleAxisOption,
   TimelineComponentOption,
   CalendarComponentOption,
+  DatasetComponentOption,
 };
 
 export { TextOptions, AxisOption, LineStyleOption, AreaStyleOption };

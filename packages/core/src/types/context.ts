@@ -21,6 +21,7 @@ import type {
   SingleAxisOption,
   TimelineComponentOption,
   CalendarComponentOption,
+  DatasetComponentOption,
 } from "../components/type";
 import { Actions } from "./actions";
 import { ShallowReactive, ShallowRef } from "vue";
@@ -79,6 +80,7 @@ export type EchartsOptions = ChartOptions & {
   singleAxis?: SingleAxisOption[];
   timeline?: TimelineComponentOption[];
   calendar?: CalendarComponentOption[];
+  dataset?: DatasetComponentOption[];
 };
 
 export type MainType =
@@ -102,7 +104,8 @@ export type MainType =
   | "parallel"
   | "singleAxis"
   | "timeline"
-  | "calendar";
+  | "calendar"
+  | "dataset";
 
 export type MainTypeMap = {
   series: SeriesOption;
@@ -126,4 +129,5 @@ export type MainTypeMap = {
   singleAxis: SingleAxisOption;
   timeline: TimelineComponentOption;
   calendar: CalendarComponentOption;
+  dataset: DatasetComponentOption;
 };

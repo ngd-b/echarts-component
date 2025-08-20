@@ -23,6 +23,7 @@ import Parallel from "./parallel/index.vue";
 import SingleAxis from "./singleAxis/index.vue";
 import Timeline from "./timeline/index.vue";
 import Calendar from "./calendar/index.vue";
+import Dataset from "./dataset/index.vue";
 
 export {
   XAxis,
@@ -45,6 +46,7 @@ export {
   SingleAxis,
   Timeline,
   Calendar,
+  Dataset,
 };
 
 // children components
