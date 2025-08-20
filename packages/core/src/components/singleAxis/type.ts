@@ -1,14 +1,14 @@
-import type { SingleAxisOption } from "echarts/types/dist/shared";
+import type { SingleAxisOption as SingleAxisComponentOption } from "echarts/types/dist/shared";
 import { AxisNameTextStyleOption, LabelOption } from "../common/type";
 
 export type TextType = "nameTextStyle" | "axisLabel";
 export type TextOptions = AxisNameTextStyleOption | LabelOption;
 
-export type { SingleAxisOption };
+export type { SingleAxisComponentOption };
 
-export type SingleAxis = Partial<
+export type SingleAxisOption = Partial<
   Omit<
-    SingleAxisOption,
+    SingleAxisComponentOption,
     | "nameTextStyle"
     | "axisLine"
     | "axisTick"
@@ -22,7 +22,7 @@ export type SingleAxis = Partial<
   >
 >;
 
-export const DefaultSingleAxis: SingleAxis = {
+export const DefaultSingleAxisOption: SingleAxisOption = {
   show: true,
   // jitterOverlap:true,
   animation: true,

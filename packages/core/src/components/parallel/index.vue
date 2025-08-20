@@ -19,7 +19,7 @@ useAxis<ParallelComponentOption>({
 });
 
 defineOptions({
-  name: "parallel",
+  name: "ParallelAxis",
 });
 
 const props = withDefaults(defineProps<ParallelOption>(), {});

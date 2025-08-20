@@ -1,14 +1,14 @@
-import type { AngleAxisOption } from "echarts/types/dist/shared";
+import type { AngleAxisOption as AngleAxisComponentOption } from "echarts/types/dist/shared";
 import { LabelOption } from "../common/type";
 
 export type TextType = "axisLabel";
 export type TextOptions = LabelOption;
 
-export type { AngleAxisOption };
+export type { AngleAxisComponentOption };
 
-export type AngleAxis = Partial<
+export type AngleAxisOption = Partial<
   Omit<
-    AngleAxisOption,
+    AngleAxisComponentOption,
     | "axisLine"
     | "axisTick"
     | "minorTick"
@@ -21,7 +21,7 @@ export type AngleAxis = Partial<
   >
 >;
 
-export const DefaultAngleAxis: AngleAxis = {
+export const DefaultAngleAxisOption: AngleAxisOption = {
   show: true,
   // jitterOverlap:true,
   animation: true,

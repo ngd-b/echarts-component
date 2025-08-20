@@ -1,7 +1,7 @@
-import type { PolarOption } from "echarts/types/dist/shared";
+import type { PolarOption as PolarComponentOption } from "echarts/types/dist/shared";
 
-export type { PolarOption };
+export type { PolarComponentOption };
 
-export type Polar = Partial<Omit<PolarOption, "tooltip">>;
+export type PolarOption = Partial<Omit<PolarComponentOption, "tooltip">>;
 
-export const DefaultPolar: Polar = {};
+export const DefaultPolarOption: PolarOption = {};

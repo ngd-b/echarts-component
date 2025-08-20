@@ -1,20 +1,20 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useText, useAxis } from "../../hooks/index";
-import type { TextType, Radar, RadarOption } from "./type";
+import type { TextType, RadarComponentOption, RadarOption } from "./type";
 import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
 let id = useId();
 
-const options = ref<RadarOption>({
+const options = ref<RadarComponentOption>({
   id,
 });
 const vueEcharts = useVueEcharts();
 
 // 增加文本样式
-useText<RadarOption, TextType>({
+useText<RadarComponentOption, TextType>({
   options: options,
   update,
   defaultTextOptions: (name) => {
@@ -27,7 +27,7 @@ useText<RadarOption, TextType>({
   },
 });
 // 配置坐标系样式
-useAxis<RadarOption>({
+useAxis<RadarComponentOption>({
   options: options,
   update,
 });
@@ -36,7 +36,7 @@ defineOptions({
   name: "RadarAxis",
 });
 
-const props = withDefaults(defineProps<Radar>(), {});
+const props = withDefaults(defineProps<RadarOption>(), {});
 
 watch(
   () => props,
@@ -55,7 +55,7 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: RadarOption) {
+function update(data: RadarComponentOption) {
   vueEcharts.update("radar", data);
 }
 </script>

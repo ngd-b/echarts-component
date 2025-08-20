@@ -1,14 +1,14 @@
-import type { YAXisOption } from "echarts/types/dist/shared";
+import type { YAXisOption as YAXisComponentOption } from "echarts/types/dist/shared";
 import { AxisNameTextStyleOption, LabelOption } from "../common/type";
 
-export type { YAXisOption };
+export type { YAXisComponentOption };
 
 export type TextType = "nameTextStyle" | "axisLabel";
 export type TextOptions = AxisNameTextStyleOption | LabelOption;
 
-export type YAxis = Partial<
+export type YAXisOption = Partial<
   Omit<
-    YAXisOption,
+    YAXisComponentOption,
     | "nameTextStyle"
     | "nameTruncate"
     | "axisLine"
@@ -23,7 +23,7 @@ export type YAxis = Partial<
   >
 >;
 
-export const DefaultYAxis: YAxis = {
+export const DefaultYAXisOption: YAXisOption = {
   show: true,
   animation: true,
 };

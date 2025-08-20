@@ -1,14 +1,14 @@
-import type { RadiusAxisOption } from "echarts/types/dist/shared";
+import type { RadiusAxisOption as RadiusAxisComponentOption } from "echarts/types/dist/shared";
 import { AxisNameTextStyleOption, LabelOption } from "../common/type";
 
 export type TextType = "nameTextStyle" | "axisLabel";
 export type TextOptions = AxisNameTextStyleOption | LabelOption;
 
-export type { RadiusAxisOption };
+export type { RadiusAxisComponentOption };
 
-export type RadiusAxis = Partial<
+export type RadiusAxisOption = Partial<
   Omit<
-    RadiusAxisOption,
+    RadiusAxisComponentOption,
     | "nameTextStyle"
     | "axisLine"
     | "axisTick"
@@ -22,7 +22,7 @@ export type RadiusAxis = Partial<
   >
 >;
 
-export const DefaultRadiusAxis: RadiusAxis = {
+export const DefaultRadiusAxisOption: RadiusAxisOption = {
   // jitterOverlap:true,
   animation: true,
 };

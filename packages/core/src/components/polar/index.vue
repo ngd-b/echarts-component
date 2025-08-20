@@ -2,18 +2,18 @@
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useAxis } from "../../hooks/index";
 import { omitBy, isUndefined } from "lodash";
-import type { Polar, PolarOption } from "./type";
+import type { PolarComponentOption, PolarOption } from "./type";
 
 // 组件唯一id
 let id = useId();
 
-const options = ref<PolarOption>({
+const options = ref<PolarComponentOption>({
   id,
 });
 const vueEcharts = useVueEcharts();
 
 // 配置坐标系样式
-useAxis<PolarOption>({
+useAxis<PolarComponentOption>({
   options: options,
   update,
 });
@@ -22,7 +22,7 @@ defineOptions({
   name: "PolarAxis",
 });
 
-const props = withDefaults(defineProps<Polar>(), {});
+const props = withDefaults(defineProps<PolarOption>(), {});
 
 watch(
   () => props,
@@ -41,7 +41,7 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: PolarOption) {
+function update(data: PolarComponentOption) {
   vueEcharts.update("polar", data);
 }
 </script>

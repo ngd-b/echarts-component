@@ -1,20 +1,20 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useText, useAxis } from "../../hooks/index";
-import type { TextType, XAxis, XAXisOption } from "./type";
+import type { TextType, XAXisComponentOption, XAXisOption } from "./type";
 import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
 let id = useId();
 
-const options = ref<XAXisOption>({
+const options = ref<XAXisComponentOption>({
   id,
 });
 const vueEcharts = useVueEcharts();
 
 // 增加文本样式
-useText<XAXisOption, TextType>({
+useText<XAXisComponentOption, TextType>({
   options: options,
   update,
   defaultTextOptions: (name) => {
@@ -27,7 +27,7 @@ useText<XAXisOption, TextType>({
   },
 });
 // 配置坐标系样式
-useAxis<XAXisOption>({
+useAxis<XAXisComponentOption>({
   options: options,
   update,
 });
@@ -36,7 +36,7 @@ defineOptions({
   name: "XAxis",
 });
 
-const props = withDefaults(defineProps<XAxis>(), {
+const props = withDefaults(defineProps<XAXisOption>(), {
   show: true,
   animation: true,
 });
@@ -58,7 +58,7 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: XAXisOption) {
+function update(data: XAXisComponentOption) {
   vueEcharts.update("xAxis", data);
 }
 </script>

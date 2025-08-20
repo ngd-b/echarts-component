@@ -1,13 +1,13 @@
-import type { RadarOption } from "echarts/types/dist/shared";
+import type { RadarOption as RadarComponentOption } from "echarts/types/dist/shared";
 import { AxisNameTextStyleOption, LabelOption } from "../common/type";
 
-export type { RadarOption };
+export type { RadarComponentOption };
 export type TextType = "axisName" | "axisLabel";
 export type TextOptions = AxisNameTextStyleOption | LabelOption;
 
-export type Radar = Partial<
+export type RadarOption = Partial<
   Omit<
-    RadarOption,
+    RadarComponentOption,
     | "axisName"
     | "axisLine"
     | "axisTick"
@@ -17,7 +17,7 @@ export type Radar = Partial<
   >
 >;
 
-export const DefaultRadar: Radar = {};
+export const DefaultRadarOption: RadarOption = {};
 
 export const DefaultAxisNameTextStyleOptions: AxisNameTextStyleOption = {};
 export const DefaultAxisLabelOptions: LabelOption = {

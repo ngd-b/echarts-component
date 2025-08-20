@@ -1,14 +1,14 @@
-import type { XAXisOption } from "echarts/types/dist/shared";
+import type { XAXisOption as XAXisComponentOption } from "echarts/types/dist/shared";
 import { AxisNameTextStyleOption, LabelOption } from "../common/type";
 
 export type TextType = "nameTextStyle" | "axisLabel";
 export type TextOptions = AxisNameTextStyleOption | LabelOption;
 
-export type { XAXisOption };
+export type { XAXisComponentOption };
 
-export type XAxis = Partial<
+export type XAXisOption = Partial<
   Omit<
-    XAXisOption,
+    XAXisComponentOption,
     | "nameTextStyle"
     | "nameTruncate"
     | "axisLine"
@@ -23,7 +23,7 @@ export type XAxis = Partial<
   >
 >;
 
-export const DefaultXAxis: XAxis = {
+export const DefaultXAXisOption: XAXisOption = {
   show: true,
   animation: true,
 };

@@ -1,20 +1,24 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useText, useAxis } from "../../hooks/index";
-import type { TextType, AngleAxis, AngleAxisOption } from "./type";
+import type {
+  TextType,
+  AngleAxisComponentOption,
+  AngleAxisOption,
+} from "./type";
 import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
 let id = useId();
 
-const options = ref<AngleAxisOption>({
+const options = ref<AngleAxisComponentOption>({
   id,
 });
 const vueEcharts = useVueEcharts();
 
 // 增加文本样式
-useText<AngleAxisOption, TextType>({
+useText<AngleAxisComponentOption, TextType>({
   options: options,
   update,
   defaultTextOptions: (name) => {
@@ -27,7 +31,7 @@ useText<AngleAxisOption, TextType>({
   },
 });
 // 配置坐标系样式
-useAxis<AngleAxisOption>({
+useAxis<AngleAxisComponentOption>({
   options: options,
   update,
 });
@@ -36,7 +40,7 @@ defineOptions({
   name: "AngleAxis",
 });
 
-const props = withDefaults(defineProps<AngleAxis>(), {
+const props = withDefaults(defineProps<AngleAxisOption>(), {
   show: true,
   animation: true,
 });
@@ -58,7 +62,7 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: AngleAxisOption) {
+function update(data: AngleAxisComponentOption) {
   vueEcharts.update("angleAxis", data);
 }
 </script>

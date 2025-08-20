@@ -1,27 +1,27 @@
 import type {
   SeriesOption,
-  XAXisOption,
-  YAXisOption,
+  XAXisComponentOption,
+  YAXisComponentOption,
+  RadarComponentOption,
+  RadiusAxisComponentOption,
+  AngleAxisComponentOption,
+  AxisPointerComponentOption,
+  SingleAxisComponentOption,
+  PolarComponentOption,
   GridComponentOption,
   TitleComponentOption,
   LegendComponentOption,
   TooltipComponentOption,
-  PolarOption,
-  ChartOptions,
-  RadarOption,
-  RadiusAxisOption,
-  AngleAxisOption,
   DataZoomComponentOption,
   VisualMapComponentOption,
-  AxisPointerOption,
   ToolboxComponentOption,
   BrushComponentOption,
   GeoComponentOption,
   ParallelComponentOption,
-  SingleAxisOption,
   TimelineComponentOption,
   CalendarComponentOption,
   DatasetComponentOption,
+  ChartOptions,
 } from "../components/type";
 import { Actions } from "./actions";
 import { ShallowReactive, ShallowRef } from "vue";
@@ -30,24 +30,25 @@ import { EventHooks } from "./events";
 
 export type UpdateOption =
   | SeriesOption
-  | XAXisOption
-  | YAXisOption
+  | XAXisComponentOption
+  | YAXisComponentOption
   | GridComponentOption
   | TitleComponentOption
   | LegendComponentOption
   | TooltipComponentOption
-  | RadarOption
-  | RadiusAxisOption
-  | AngleAxisOption
+  | RadarComponentOption
+  | RadiusAxisComponentOption
+  | AngleAxisComponentOption
   | DataZoomComponentOption
-  | AxisPointerOption
+  | AxisPointerComponentOption
   | ToolboxComponentOption
   | BrushComponentOption
   | GeoComponentOption
   | ParallelComponentOption
-  | SingleAxisOption
+  | SingleAxisComponentOption
   | TimelineComponentOption
-  | CalendarComponentOption;
+  | CalendarComponentOption
+  | PolarComponentOption;
 
 export interface EchartsState {
   vueEchartsRef: ShallowRef<echarts.ECharts | null>;
@@ -60,24 +61,24 @@ export interface EchartsContext extends EchartsState, Methods, EventHooks {
 
 export type EchartsOptions = ChartOptions & {
   series?: SeriesOption[];
-  xAxis?: XAXisOption[];
-  yAxis?: YAXisOption[];
+  xAxis?: XAXisComponentOption[];
+  yAxis?: YAXisComponentOption[];
   grid?: GridComponentOption[];
   title?: TitleComponentOption[];
   legend?: LegendComponentOption[];
   tooltip?: TooltipComponentOption[];
-  polar?: PolarOption[];
-  radar?: RadarOption[];
-  radiusAxis?: RadiusAxisOption[];
-  angleAxis?: AngleAxisOption[];
+  polar?: PolarComponentOption[];
+  radar?: RadarComponentOption[];
+  radiusAxis?: RadiusAxisComponentOption[];
+  angleAxis?: AngleAxisComponentOption[];
   dataZoom?: DataZoomComponentOption[];
   visualMap?: VisualMapComponentOption[];
-  axisPointer?: AxisPointerOption[];
+  axisPointer?: AxisPointerComponentOption[];
   toolbox?: ToolboxComponentOption[];
   brush?: BrushComponentOption[];
   geo?: GeoComponentOption[];
   parallel?: ParallelComponentOption[];
-  singleAxis?: SingleAxisOption[];
+  singleAxis?: SingleAxisComponentOption[];
   timeline?: TimelineComponentOption[];
   calendar?: CalendarComponentOption[];
   dataset?: DatasetComponentOption[];
@@ -109,24 +110,24 @@ export type MainType =
 
 export type MainTypeMap = {
   series: SeriesOption;
-  xAxis: XAXisOption;
-  yAxis: YAXisOption;
+  xAxis: XAXisComponentOption;
+  yAxis: YAXisComponentOption;
   grid: GridComponentOption;
   title: TitleComponentOption;
   legend: LegendComponentOption;
   tooltip: TooltipComponentOption;
-  polar: PolarOption;
-  radar: RadarOption;
-  radiusAxis: RadiusAxisOption;
-  angleAxis: AngleAxisOption;
+  polar: PolarComponentOption;
+  radar: RadarComponentOption;
+  radiusAxis: RadiusAxisComponentOption;
+  angleAxis: AngleAxisComponentOption;
   dataZoom: DataZoomComponentOption;
   visualMap: VisualMapComponentOption;
-  axisPointer: AxisPointerOption;
+  axisPointer: AxisPointerComponentOption;
   toolbox: ToolboxComponentOption;
   brush: BrushComponentOption;
   geo: GeoComponentOption;
   parallel: ParallelComponentOption;
-  singleAxis: SingleAxisOption;
+  singleAxis: SingleAxisComponentOption;
   timeline: TimelineComponentOption;
   calendar: CalendarComponentOption;
   dataset: DatasetComponentOption;

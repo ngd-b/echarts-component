@@ -1,20 +1,24 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useText, useAxis } from "../../hooks/index";
-import type { TextType, AxisPointer, AxisPointerOption } from "./type";
+import type {
+  TextType,
+  AxisPointerComponentOption,
+  AxisPointerOption,
+} from "./type";
 import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
 let id = useId();
 
-const options = ref<AxisPointerOption>({
+const options = ref<AxisPointerComponentOption>({
   id,
 });
 const vueEcharts = useVueEcharts();
 
 // 增加文本样式
-useText<AxisPointerOption, TextType>({
+useText<AxisPointerComponentOption, TextType>({
   options: options,
   update,
   defaultTextOptions: (name) => {
@@ -22,7 +26,7 @@ useText<AxisPointerOption, TextType>({
   },
 });
 // 配置坐标系样式
-useAxis<AxisPointerOption>({
+useAxis<AxisPointerComponentOption>({
   options: options,
   update,
 });
@@ -31,7 +35,7 @@ defineOptions({
   name: "AxisPointer",
 });
 
-const props = withDefaults(defineProps<AxisPointer>(), {
+const props = withDefaults(defineProps<AxisPointerOption>(), {
   show: true,
   triggerEmphasis: true,
   triggerTooltip: true,
@@ -54,7 +58,7 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: AxisPointerOption) {
+function update(data: AxisPointerComponentOption) {
   vueEcharts.update("axisPointer", data);
 }
 </script>
