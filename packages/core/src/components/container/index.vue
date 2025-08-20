@@ -6,8 +6,8 @@
 import * as echarts from "echarts";
 import { onBeforeMount, onMounted, ref, useAttrs, watch } from "vue";
 import { useText, useVueEcharts } from "../../hooks/index";
-import type { EchartsOptions } from "../../types/index";
-import type { ChartOptions, SeriesConfig, TextType } from "./type";
+import type { EchartsOptions, ChartOptions } from "../../types/index";
+import type { SeriesConfig, TextType } from "./type";
 import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 

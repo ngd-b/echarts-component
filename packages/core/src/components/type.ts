@@ -1,8 +1,4 @@
-import type {
-  ChartOptions,
-  SeriesOption,
-  SeriesConfig,
-} from "./container/type";
+import type { SeriesOption, SeriesConfig } from "./container/type";
 import type {
   PieSeries,
   PieSeriesOption,
@@ -92,7 +88,7 @@ import type {
   ZRColor,
 } from "./common/type";
 
-export { ChartOptions, SeriesOption, SeriesConfig };
+export { SeriesOption, SeriesConfig };
 export {
   PieSeries,
   LineSeries,

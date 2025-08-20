@@ -21,12 +21,12 @@ import type {
   TimelineComponentOption,
   CalendarComponentOption,
   DatasetComponentOption,
-  ChartOptions,
 } from "../components/type";
 import { Actions } from "./actions";
 import { ShallowReactive, ShallowRef } from "vue";
 import { Methods } from "./methods";
 import { EventHooks } from "./events";
+import type { ComposeOption } from "echarts/core";
 
 export type UpdateOption =
   | SeriesOption
@@ -50,6 +50,30 @@ export type UpdateOption =
   | CalendarComponentOption
   | PolarComponentOption;
 
+export type ChartOptions = ComposeOption<
+  | SeriesOption
+  | XAXisComponentOption
+  | YAXisComponentOption
+  | RadarComponentOption
+  | RadiusAxisComponentOption
+  | AngleAxisComponentOption
+  | AxisPointerComponentOption
+  | SingleAxisComponentOption
+  | PolarComponentOption
+  | GridComponentOption
+  | TitleComponentOption
+  | LegendComponentOption
+  | TooltipComponentOption
+  | DataZoomComponentOption
+  | VisualMapComponentOption
+  | ToolboxComponentOption
+  | BrushComponentOption
+  | GeoComponentOption
+  | ParallelComponentOption
+  | TimelineComponentOption
+  | CalendarComponentOption
+  | DatasetComponentOption
+>;
 export interface EchartsState {
   vueEchartsRef: ShallowRef<echarts.ECharts | null>;
 }
