@@ -4,6 +4,7 @@ import {
   inject,
   provide,
   reactive,
+  ref,
   Ref,
   shallowReactive,
   shallowRef,
@@ -12,8 +13,8 @@ import {
 } from "vue";
 import type {
   EchartsContext,
-  EchartsOptions,
   EchartsState,
+  ChartOptions,
   MainType,
   MainTypeMap,
 } from "../types";
@@ -24,10 +25,9 @@ type Scope = (EffectScope & { vueEchartsId: string }) | undefined;
 
 interface UseVueEchartsOptions {
   id: string;
-  options: Ref<EchartsOptions>;
 }
 
-let options: Ref<EchartsOptions>;
+let options: Ref<ChartOptions> = ref({});
 
 /**
  *
@@ -67,6 +67,7 @@ export function useVueEcharts(
   if (!vueEcharts || (vueEchartsId && vueEcharts.id !== vueEchartsId)) {
     const state: EchartsState = {
       vueEchartsRef: shallowRef(null),
+      options: options,
     };
     const reactiveState = reactive<EchartsState>(state);
     // 注册方法
@@ -92,9 +93,6 @@ export function useVueEcharts(
     scope.vueEchartsId = vueEcharts.id;
   }
 
-  if (isConfigObj && config.options) {
-    options = config.options;
-  }
   /**
    * 更新图标配置
    * @param data

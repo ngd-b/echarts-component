@@ -6,10 +6,10 @@
 import * as echarts from "echarts";
 import { onBeforeMount, onMounted, ref, useAttrs, watch } from "vue";
 import { useText, useVueEcharts } from "../../hooks/index";
-import type { EchartsOptions, ChartOptions } from "../../types/index";
-import type { SeriesConfig, TextType } from "./type";
+import type { EChartsOption, TextType } from "./type";
 import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
+import { ChartOptions } from "../../types";
 
 defineOptions({
   name: "VueEcharts",
@@ -19,17 +19,16 @@ defineOptions({
 const attrs = useAttrs();
 
 const root = ref(null);
-const options = ref<EchartsOptions>({});
-const props = withDefaults(defineProps<SeriesConfig>(), {
-  animation: true,
+
+const props = withDefaults(defineProps<EChartsOption>(), {
+  // animation: true,
 });
 
-const vueEcharts = useVueEcharts({
-  options: options,
-});
+const vueEcharts = useVueEcharts();
+
 // 增加文本样式
 useText<ChartOptions, TextType>({
-  options: options,
+  options: vueEcharts.options,
   update: updateChart,
   defaultTextOptions: (name) => {
     if (!name) {
@@ -50,18 +49,13 @@ onBeforeMount(() => {
 watch(
   () => props,
   () => {
-    let propsData = omitBy(props, isUndefined);
-
-    options.value = {
-      ...options.value,
-      ...propsData,
-    };
+    updateChart();
   },
   { immediate: true, deep: true }
 );
 
 watch(
-  options,
+  vueEcharts.options,
   () => {
     updateChart();
   },
@@ -70,10 +64,25 @@ watch(
 function initChart() {
   const { theme, config } = props;
   vueEcharts.vueEchartsRef.value = echarts.init(root.value, theme, config);
-  vueEcharts.vueEchartsRef.value.setOption(options.value);
+  // vueEcharts.vueEchartsRef.value.setOption(options.value);
+  updateChart();
 }
 
 function updateChart() {
-  vueEcharts.vueEchartsRef.value?.setOption(options.value);
+  let updateProps = omitBy(
+    {
+      ...props,
+    },
+    isUndefined
+  );
+  //
+  ["theme", "config"].forEach((key) =>
+    Reflect.deleteProperty(updateProps, key)
+  );
+
+  vueEcharts.vueEchartsRef.value?.setOption({
+    ...updateProps,
+    ...vueEcharts.options.value,
+  });
 }
 </script>

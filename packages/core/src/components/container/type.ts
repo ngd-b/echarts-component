@@ -1,33 +1,25 @@
-import type { EChartsCoreOption, EChartsInitOpts } from "echarts/core";
+import type { EChartsInitOpts } from "echarts/core";
 import { TextCommonOption } from "../common/type";
+import { AnimationOptionMixin, ZRColor } from "echarts/types/src/util/types.js";
+import { AnimationEasing } from "echarts/types/dist/shared";
 
-export type SeriesConfig = Partial<
-  Pick<
-    EChartsCoreOption,
-    // | "darkMode"
-    | "color"
-    // | "backgroundColor"
-    | "animation"
-    | "animationThreshold"
-    | "animationDuration"
-    | "animationEasing"
-    | "animationDelay"
-    | "animationDurationUpdate"
-    | "animationEasingUpdate"
-    | "animationDelayUpdate"
-    | "stateAnimation"
-    | "blendMode"
-    | "hoverLayerThreshold"
-    // | "useUTC"
-    // | "options"
-  > & {
+export type EChartsOption = Partial<
+  {
+    color?: ZRColor | ZRColor[];
+    stateAnimation?: {
+      duration?: number;
+      easing?: AnimationEasing;
+      delay?: number;
+    };
+    blendMode?: string;
+    hoverLayerThreshold?: number;
     theme?: string | object | null;
     config?: EChartsInitOpts;
-  }
+  } & AnimationOptionMixin
 >;
 
-export const DefaultSeriesConfig: SeriesConfig = {
-  animation: true,
+export const DefaultEChartsOption: EChartsOption = {
+  // animation: true,
 };
 
 export type TextType = "textStyle";

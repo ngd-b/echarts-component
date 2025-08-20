@@ -7,6 +7,7 @@ const Methods = [
   "getOption",
   "resize",
   "getDom",
+  // "setTheme",
 
   "clear",
   "dispose",
@@ -47,6 +48,7 @@ export const userMethods = (state: EchartsState): Methods => {
     getDom: callMethod("getDom"),
     getOption: callMethod("getOption"),
     resize: callMethod("resize"),
+    // setTheme: callMethod("setTheme"),
 
     clear: callMethod("clear"),
     dispose: callMethod("dispose"),

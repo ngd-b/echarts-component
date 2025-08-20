@@ -22,6 +22,7 @@ export type getWidth = () => number;
 export type getHeight = () => number;
 export type getDom = () => HTMLCanvasElement | HTMLDivElement;
 export type resize = (opts?: ResizeOpts) => void;
+export type setTheme = (theme: string, opts?: { silent: boolean }) => void;
 
 //
 export type clear = () => void;
@@ -95,6 +96,7 @@ export interface Methods {
   getDom: getDom;
   getOption: getOption;
   resize: resize;
+  // setTheme: setTheme;
 
   clear: clear;
   dispose: dispose;

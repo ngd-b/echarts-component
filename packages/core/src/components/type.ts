@@ -1,4 +1,4 @@
-import type { SeriesOption, SeriesConfig } from "./container/type";
+import type { EChartsOption } from "./container/type";
 import type {
   PieSeries,
   PieSeriesOption,
@@ -88,7 +88,7 @@ import type {
   ZRColor,
 } from "./common/type";
 
-export { SeriesOption, SeriesConfig };
+export { EChartsOption };
 export {
   PieSeries,
   LineSeries,
@@ -185,3 +185,26 @@ export {
 
 export { TextOptions, AxisOption, LineStyleOption, AreaStyleOption };
 export type { ZRColor };
+
+export type SeriesOption =
+  | PieSeriesOption
+  | LineSeriesOption
+  | BarSeriesOption
+  | BoxplotSeriesOption
+  | CandlestickSeriesOption
+  | EffectScatterSeriesOption
+  | FunnelSeriesOption
+  | GaugeSeriesOption
+  | GraphSeriesOption
+  | HeatmapSeriesOption
+  | LinesSeriesOption
+  | MapSeriesOption
+  | ParallelSeriesOption
+  | PictorialBarSeriesOption
+  | RadarSeriesOption
+  | SankeySeriesOption
+  | ScatterSeriesOption
+  | SunburstSeriesOption
+  | ThemeRiverSeriesOption
+  | TreeSeriesOption
+  | TreemapSeriesOption;
