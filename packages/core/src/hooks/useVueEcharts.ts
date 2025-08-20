@@ -5,7 +5,6 @@ import {
   provide,
   reactive,
   ref,
-  Ref,
   shallowReactive,
   shallowRef,
   toRefs,
@@ -26,8 +25,6 @@ type Scope = (EffectScope & { vueEchartsId: string }) | undefined;
 interface UseVueEchartsOptions {
   id: string;
 }
-
-let options: Ref<ChartOptions> = ref({});
 
 /**
  *
@@ -67,7 +64,7 @@ export function useVueEcharts(
   if (!vueEcharts || (vueEchartsId && vueEcharts.id !== vueEchartsId)) {
     const state: EchartsState = {
       vueEchartsRef: shallowRef(null),
-      options: options,
+      options: ref({}),
     };
     const reactiveState = reactive<EchartsState>(state);
     // 注册方法
@@ -99,7 +96,10 @@ export function useVueEcharts(
    * @param prop
    */
   function update<K extends MainType>(prop: K, data: MainTypeMap[K]) {
-    let propData = options.value[prop] || [];
+    if (!vueEcharts) {
+      throw new Error("[Vue Echarts]: echarts instance is not ready.");
+    }
+    let propData = vueEcharts.options.value[prop] || [];
 
     let index = (propData as Array<{ id: string }>).findIndex(
       (item) => item.id === data.id
@@ -110,7 +110,8 @@ export function useVueEcharts(
     } else {
       (propData as MainTypeMap[K][]).push(data);
     }
-    (options.value[prop] as MainTypeMap[K][]) = propData as MainTypeMap[K][];
+    (vueEcharts.options.value[prop] as MainTypeMap[K][]) =
+      propData as MainTypeMap[K][];
   }
 
   return vueEcharts;
