@@ -38,17 +38,21 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<YAXisOption>(), {
+  type: "value",
   show: true,
   animation: true,
+  boundaryGap: null,
 });
 
 watch(
   () => props,
   () => {
-    let propsData = omitBy(props, isUndefined);
+    let propsData: YAXisOption = omitBy(props, isUndefined);
     options.value = {
       ...options.value,
       ...propsData,
+      boundaryGap:
+        propsData.boundaryGap === null ? props.type === "category" : false,
     };
     update(options.value);
   },

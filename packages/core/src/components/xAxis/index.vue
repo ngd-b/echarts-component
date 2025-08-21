@@ -37,8 +37,10 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<XAXisOption>(), {
+  type: "category",
   show: true,
   animation: true,
+  boundaryGap: null,
 });
 
 watch(
@@ -48,6 +50,8 @@ watch(
     options.value = {
       ...options.value,
       ...propsData,
+      boundaryGap:
+        propsData.boundaryGap === null ? props.type === "category" : false,
     };
     update(options.value);
   },

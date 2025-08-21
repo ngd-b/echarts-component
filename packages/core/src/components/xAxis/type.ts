@@ -20,7 +20,9 @@ export type XAXisOption = Partial<
     | "splitArea"
     | "axisPointer"
     | "tooltip"
-  >
+  > & {
+    boundaryGap?: [number | string, number | string] | null;
+  }
 >;
 
 export const DefaultXAXisOption: XAXisOption = {
