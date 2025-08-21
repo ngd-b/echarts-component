@@ -25,7 +25,7 @@ useText<TooltipComponentOption, TextType>({
 });
 
 defineOptions({
-  name: "Legend",
+  name: "Tooltip",
 });
 
 const props = withDefaults(defineProps<TooltipOptions>(), {

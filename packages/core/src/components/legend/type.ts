@@ -31,7 +31,6 @@ export type LegendOptions = Partial<
 
 export const DefaultLegendOptions: LegendOptions = {
   show: true,
-
   selectedMode: true,
 };
 

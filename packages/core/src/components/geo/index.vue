@@ -20,7 +20,7 @@ useAxis<GeoComponentOption>({
 });
 
 defineOptions({
-  name: "Brush",
+  name: "Geo",
 });
 
 const props = withDefaults(defineProps<GeoOption>(), {

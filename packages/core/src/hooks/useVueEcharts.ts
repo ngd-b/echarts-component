@@ -13,7 +13,6 @@ import {
 import type {
   EchartsContext,
   EchartsState,
-  ChartOptions,
   MainType,
   MainTypeMap,
 } from "../types";

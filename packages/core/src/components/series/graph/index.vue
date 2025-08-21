@@ -16,7 +16,7 @@ const options = ref<GraphSeriesOption>({
 });
 
 defineOptions({
-  name: "Lines",
+  name: "Graph",
 });
 
 const props = withDefaults(defineProps<GraphSeries>(), {
