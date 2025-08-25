@@ -65,7 +65,6 @@ watch(
  * @param data
  */
 function update(data: XAXisComponentOption) {
-  console.log("update", data);
   vueEcharts.update("xAxis", data);
 }
 </script>

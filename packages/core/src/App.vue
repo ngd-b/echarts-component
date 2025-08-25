@@ -37,6 +37,15 @@
       <Tooltip trigger="axis">
         <Text prop="textStyle" />
       </Tooltip>
+      <!-- <VisualMap
+        type="continuous"
+        :min="0"
+        :max="10"
+        calculable
+        orient="horizontal"
+        left="center"
+        bottom="15%"
+      /> -->
     </VueEcharts>
     <!-- <VueEcharts class="w-500px h-400px">
       <Bar :data="data" />
@@ -88,6 +97,7 @@ import {
   SplitArea,
   AreaStyle,
   MinorSplitLine,
+  VisualMap,
 } from "./components";
 import { useVueEcharts } from "./hooks";
 
@@ -121,6 +131,15 @@ onMounted(() => {
   });
 
   setOption({
+    // visualMap: {
+    //   type: "continuous",
+    //   min: 0,
+    //   max: 10,
+    //   calculable: true,
+    //   orient: "horizontal",
+    //   left: "center",
+    //   bottom: "15%",
+    // },
     series: [
       {
         data: [10, 59, 8, 67, 26, 35, 44, 3, 82, 1],

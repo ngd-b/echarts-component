@@ -12,7 +12,14 @@ defineOptions({
   name: "VisualMap",
 });
 
-const props = defineProps<VisualMapOption>();
+const props = withDefaults(defineProps<VisualMapOption>(), {
+  type: "continuous",
+  // 共同的默认值
+  // 布尔值需要单独处理
+  show: true,
+  realtime: true,
+  hoverLink: true,
+});
 
 const omitProps = computed(() => {
   if (props.type === "continuous") {
