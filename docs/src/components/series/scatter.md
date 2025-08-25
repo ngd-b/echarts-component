@@ -516,12 +516,12 @@
     <Legend />
     <Grid left="3%" right="7%" bottom="3%" containLabel  />
     <XAxis type="value" scale>
-      <SplitLine show="false" />
-      <AxisLabel formatter="{value} cm" />
+      <SplitLine :show="false" />
+      <Text prop='axisLabel' formatter="{value} cm" />
     </XAxis>
     <YAxis type="value" scale>
-      <SplitLine show="false" />
-      <AxisLabel formatter="{value} kg" />
+      <SplitLine :show="false" />
+      <Text prop='axisLabel' formatter="{value} kg" />
     </YAxis>
     <Title text="散点（气泡）图" />
   </VueEcharts>
@@ -530,16 +530,16 @@
 ```
 
 <VueEcharts style="width:100%;height:300px;">
-    <Scatter :data="data" name="Male" />
-    <Legend />
-    <Grid left="3%" right="7%" bottom="3%" containLabel  />
-    <XAxis type="value" scale>
-      <SplitLine show="false" />
-      <AxisLabel formatter="{value} cm" />
-    </XAxis>
-    <YAxis type="value" scale>
-      <SplitLine show="false" />
-      <AxisLabel formatter="{value} kg" />
-    </YAxis>
-    <Title text="散点（气泡）图" />
+  <Scatter :data="data" name="Male" />
+  <Legend />
+  <Grid left="3%" right="7%" bottom="3%" containLabel  />
+  <XAxis type="value" scale>
+    <SplitLine :show="false" />
+    <Text prop='axisLabel' formatter="{value} cm" />
+  </XAxis>
+  <YAxis type="value" scale>
+    <SplitLine :show="false" />
+    <Text prop='axisLabel' formatter="{value} kg" />
+  </YAxis>
+  <Title text="散点（气泡）图" />
 </VueEcharts>

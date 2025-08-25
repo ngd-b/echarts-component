@@ -63,7 +63,7 @@
 </script>
 <template>
   <VueEcharts style="width:100%;height:300px;">
-    <EffectScatter :data="data" :symbolSize="formatterSymbolSize" />
+    <EffectScatter :data="data" name='1990' :symbolSize="formatterSymbolSize" />
     <XAxis />
     <YAxis scale />
   </VueEcharts>
@@ -72,7 +72,7 @@
 ```
 
 <VueEcharts style="width:100%;height:300px;">
-    <EffectScatter :data="data"  :symbolSize="formatterSymbolSize" />
+    <EffectScatter :data="data" name='1990' :symbolSize="formatterSymbolSize" />
     <XAxis />
     <YAxis scale />
 </VueEcharts>

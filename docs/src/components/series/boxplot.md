@@ -29,11 +29,12 @@
 <template>
   <VueEcharts style="width:100%;height:300px;">
     <Boxplot :data="data" name="boxplot" />
+    <Title text="Michelson-Morley Experiment" left='center' />
     <YAxis name="km/s minus 299,000">
         <SplitArea show />
     </YAxis>
-    <XAxis :data="["0", "1", "2", "3", "4"]" boundaryGap :nameGap="30" >
-        <AxisLabel formatter="expr {value}" />
+    <XAxis type='category' :data='["0", "1", "2", "3", "4"]' boundaryGap :nameGap="30" >
+        <Text prop='axisLabel' formatter="expr {value}" />
         <SplitLine :show="false" />
         <SplitArea :show="false" />
     </XAxis>
@@ -43,13 +44,14 @@
 ```
 
 <VueEcharts style="width:100%;height:300px;">
-    <Boxplot :data="data" name="boxplot" />
-    <YAxis name="km/s minus 299,000">
-        <SplitArea show />
-    </YAxis>
-    <XAxis :data='["0", "1", "2", "3", "4"]'' boundaryGap :nameGap="30" >
-        <AxisLabel formatter="expr {value}" />
-        <SplitLine :show="false" />
-        <SplitArea :show="false" />
-    </XAxis>
+  <Boxplot :data="data" name="boxplot" />
+  <Title text="Michelson-Morley Experiment" left='center' />
+  <YAxis name="km/s minus 299,000">
+      <SplitArea show />
+  </YAxis>
+  <XAxis type='category' :data='["0", "1", "2", "3", "4"]' boundaryGap :nameGap="30" >
+      <Text prop='axisLabel' formatter="expr {value}" />
+      <SplitLine :show="false" />
+      <SplitArea :show="false" />
+  </XAxis>
 </VueEcharts>

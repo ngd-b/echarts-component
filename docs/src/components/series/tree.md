@@ -76,14 +76,16 @@
 </script>
 <template>
   <VueEcharts style="width:100%;height:300px;">
-    <Tree :data="data" />
-    <Title text="数据关系" />
+    <Tree :data="data">
+      <Text prop='label' position="right" />
+    </Tree>
   </VueEcharts>
 </template>
 
 ```
 
 <VueEcharts style="width:100%;height:300px;">
-    <Tree :data="data"  />
-    <Title text="数据关系" />
+    <Tree :data="data">
+      <Text prop='label' position="right" />
+    </Tree>
 </VueEcharts>

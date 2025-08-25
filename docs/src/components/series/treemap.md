@@ -301,7 +301,6 @@
 <template>
   <VueEcharts style="width:100%;height:300px;">
     <Treemap :data="data" />
-    <Title text="数据关系" />
   </VueEcharts>
 </template>
 
@@ -309,5 +308,4 @@
 
 <VueEcharts style="width:100%;height:300px;">
     <Treemap :data="data"  />
-    <Title text="数据关系" />
 </VueEcharts>
