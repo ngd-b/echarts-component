@@ -368,9 +368,9 @@
 </template>
 ```
 
-<VueEcharts style="width:100%;height:300px;">
+<VueEcharts style="width:100%;height:300px;" :animation="false">
     <Heatmap :data="data" name="Punch Card" />
-    <VisualMap type="continuous" :min="0" :max="10" calculable orient="horizontal"  left="center" bottom="15%" />
+    <VisualMap :min="0" :max="10" calculable orient="horizontal"  left="center" bottom="15%" />
     <YAxis type="category" :data='["Saturday", "Friday", "Thursday", "Wednesday", "Tuesday", "Monday", "Sunday"]'>
         <SplitArea show />
     </YAxis>
