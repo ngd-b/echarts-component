@@ -21,7 +21,7 @@ export type XAXisOption = Partial<
     | "axisPointer"
     | "tooltip"
   > & {
-    boundaryGap?: [number | string, number | string] | null;
+    boundaryGap?: [number | string, number | string] | boolean | null;
   }
 >;
 

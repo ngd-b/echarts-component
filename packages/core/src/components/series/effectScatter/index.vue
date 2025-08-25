@@ -21,6 +21,7 @@ defineOptions({
 const props = withDefaults(defineProps<EffectScatterSeries>(), {
   legendHoverLink: true,
   animation: true,
+  clip: true,
 });
 
 useSeries<EffectScatterSeriesOption>(props, options);

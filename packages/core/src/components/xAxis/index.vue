@@ -47,11 +47,13 @@ watch(
   () => props,
   () => {
     let propsData = omitBy(props, isUndefined);
+
+    if (propsData.boundaryGap === null) {
+      propsData.boundaryGap = props.type === "category";
+    }
     options.value = {
       ...options.value,
       ...propsData,
-      boundaryGap:
-        propsData.boundaryGap === null ? props.type === "category" : false,
     };
     update(options.value);
   },
@@ -63,6 +65,7 @@ watch(
  * @param data
  */
 function update(data: XAXisComponentOption) {
+  console.log("update", data);
   vueEcharts.update("xAxis", data);
 }
 </script>
