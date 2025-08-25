@@ -94,12 +94,16 @@ export function useVueEcharts(
    * @param data
    * @param prop
    */
-  function update<K extends MainType>(prop: K, data: MainTypeMap[K]) {
+  function update<K extends MainType>(prop: K, data: any): void {
     if (!vueEcharts) {
       throw new Error("[Vue Echarts]: echarts instance is not ready.");
     }
-    let propData = vueEcharts.options.value[prop] || [];
 
+    if (Array.isArray(data)) {
+      vueEcharts.options.value[prop] = data;
+      return;
+    }
+    let propData: any[] = vueEcharts.options.value[prop] || [];
     let index = (propData as Array<{ id: string }>).findIndex(
       (item) => item.id === data.id
     );
@@ -107,10 +111,9 @@ export function useVueEcharts(
     if (index > -1) {
       propData[index] = data;
     } else {
-      (propData as MainTypeMap[K][]).push(data);
+      propData.push(data);
     }
-    (vueEcharts.options.value[prop] as MainTypeMap[K][]) =
-      propData as MainTypeMap[K][];
+    vueEcharts.options.value[prop] = propData;
   }
 
   return vueEcharts;

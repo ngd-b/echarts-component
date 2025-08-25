@@ -71,7 +71,12 @@ import type {
 import type { ToolboxComponentOption, ToolboxOption } from "./toolbox/type";
 import type { BrushComponentOption, BrushOption } from "./brush/type";
 import type { GeoComponentOption, GeoOption } from "./geo/type";
-import type { ParallelComponentOption, ParallelOption } from "./parallel/type";
+import type {
+  ParallelComponentOption,
+  ParallelOption,
+  ParallelAxisOption,
+  ParallelAxisComponentOption,
+} from "./parallel/type";
 import type {
   SingleAxisComponentOption,
   SingleAxisOption,
@@ -141,6 +146,7 @@ export {
   RadiusAxisComponentOption,
   AngleAxisComponentOption,
   ParallelComponentOption,
+  ParallelAxisComponentOption,
   SingleAxisComponentOption,
 };
 export {
@@ -165,6 +171,7 @@ export {
   TimelineOption,
   SingleAxisOption,
   ParallelOption,
+  ParallelAxisOption,
   GeoOption,
   BrushOption,
   ToolboxOption,

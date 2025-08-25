@@ -20,6 +20,7 @@ import Toolbox from "./toolbox/index.vue";
 import Brush from "./brush/index.vue";
 import Geo from "./geo/index.vue";
 import ParallelAxis from "./parallel/index.vue";
+import ParallelAxisDefault from "./parallel/parallelAxisDefault.vue";
 import SingleAxis from "./singleAxis/index.vue";
 import Timeline from "./timeline/index.vue";
 import Calendar from "./calendar/index.vue";
@@ -43,6 +44,7 @@ export {
   Brush,
   Geo,
   ParallelAxis,
+  ParallelAxisDefault,
   SingleAxis,
   Timeline,
   Calendar,

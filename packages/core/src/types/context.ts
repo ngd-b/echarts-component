@@ -21,6 +21,7 @@ import type {
   CalendarComponentOption,
   DatasetComponentOption,
   SeriesOption,
+  ParallelAxisComponentOption,
 } from "../components/type";
 import { Actions } from "./actions";
 import type { Ref, ShallowReactive, ShallowRef } from "vue";
@@ -47,7 +48,8 @@ export type UpdateOption =
   | SingleAxisComponentOption
   | TimelineComponentOption
   | CalendarComponentOption
-  | PolarComponentOption;
+  | PolarComponentOption
+  | ParallelAxisComponentOption;
 
 export interface EchartsState {
   options: Ref<ChartOptions>;
@@ -55,7 +57,14 @@ export interface EchartsState {
 }
 export interface EchartsContext extends EchartsState, Methods, EventHooks {
   readonly id: string;
-  update: <K extends MainType>(type: K, data: MainTypeMap[K]) => void;
+
+  update: {
+    <K extends MainType>(
+      type: K,
+      data: MainTypeMap[K] extends (infer T)[] ? T : never
+    ): void;
+    <K extends MainType>(type: K, data: MainTypeMap[K]): void;
+  };
   actions: ShallowReactive<Actions>;
 }
 
@@ -78,6 +87,7 @@ export type ChartOptions = {
   brush?: BrushComponentOption[];
   geo?: GeoComponentOption[];
   parallel?: ParallelComponentOption[];
+  parallelAxis?: ParallelAxisComponentOption[];
   singleAxis?: SingleAxisComponentOption[];
   timeline?: TimelineComponentOption[];
   calendar?: CalendarComponentOption[];
@@ -103,6 +113,7 @@ export type MainType =
   | "brush"
   | "geo"
   | "parallel"
+  | "parallelAxis"
   | "singleAxis"
   | "timeline"
   | "calendar"
@@ -127,6 +138,7 @@ export type MainTypeMap = {
   brush: BrushComponentOption;
   geo: GeoComponentOption;
   parallel: ParallelComponentOption;
+  parallelAxis: ParallelAxisComponentOption[];
   singleAxis: SingleAxisComponentOption;
   timeline: TimelineComponentOption;
   calendar: CalendarComponentOption;

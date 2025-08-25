@@ -1,7 +1,11 @@
 <script setup lang="tsx">
-import { ref, useId, watch } from "vue";
-import { useVueEcharts, useAxis } from "../../hooks/index";
-import type { ParallelOption, ParallelComponentOption } from "./type";
+import { computed, ref, useId, watch } from "vue";
+import { useVueEcharts, useParallel } from "../../hooks/index";
+import type {
+  ParallelOption,
+  ParallelComponentOption,
+  ParallelAxisComponentOption,
+} from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
@@ -11,10 +15,11 @@ const options = ref<ParallelComponentOption>({
   id,
 });
 const vueEcharts = useVueEcharts();
-
-// 配置坐标系样式
-useAxis<ParallelComponentOption>({
-  options: options,
+/**
+ * 平行坐标系
+ */
+useParallel({
+  options,
   update,
 });
 
@@ -24,8 +29,13 @@ defineOptions({
 
 const props = withDefaults(defineProps<ParallelOption>(), {});
 
+const propsWithoutData = computed(() => {
+  const { data, ...rest } = props;
+
+  return rest;
+});
 watch(
-  () => props,
+  () => propsWithoutData,
   () => {
     let propsData = omitBy(props, isUndefined);
     options.value = {
@@ -33,6 +43,14 @@ watch(
       ...propsData,
     };
     update(options.value);
+  },
+  { immediate: true, deep: true }
+);
+
+watch(
+  () => props.data,
+  () => {
+    vueEcharts.update("parallelAxis", props.data || []);
   },
   { immediate: true, deep: true }
 );

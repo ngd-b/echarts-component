@@ -4,3 +4,4 @@ export * from "./axis";
 export * from "./actions";
 export * from "./methods";
 export * from "./events";
+export * from "./parallel";
