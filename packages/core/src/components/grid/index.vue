@@ -17,7 +17,7 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<GridOptions>(), {
-  show: true,
+  show: false,
   containLabel: false,
 });
 
