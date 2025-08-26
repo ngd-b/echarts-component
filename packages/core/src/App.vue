@@ -2,7 +2,7 @@
   <h2>vue-echarts</h2>
 
   <div class="flex flex-wrap gap-20px">
-    <VueEcharts class="w-500px h-400px" theme="dark">
+    <!-- <VueEcharts class="w-500px h-400px" theme="dark">
       <Line :data="data" selected-mode />
       <Line :data="data.map((val) => val * 2)" selected-mode />
       <XAxis
@@ -37,15 +37,26 @@
       <Tooltip trigger="axis">
         <Text prop="textStyle" />
       </Tooltip>
-      <!-- <VisualMap
-        type="continuous"
-        :min="0"
-        :max="10"
-        calculable
-        orient="horizontal"
-        left="center"
-        bottom="15%"
-      /> -->
+    </VueEcharts> -->
+    <VueEcharts
+      style="width: 100%; height: 300px"
+      :color="['#003366', '#006699', '#4cabce', '#e5323e']"
+    >
+      <Legend />
+      <Dataset
+        :source="[
+          ['type', '2012', '2013', '2014', '2015', '2016'],
+          ['Forest', 320, 332, 301, 334, 390],
+          ['Steppe', 220, 182, 191, 234, 290],
+          ['Desert', 150, 232, 201, 154, 190],
+          ['Wetland', 98, 77, 101, 99, 40],
+        ]"
+      />
+      <YAxis />
+      <XAxis type="category">
+        <AxisTick :show="false" />
+      </XAxis>
+      <Bar v-for="val in 4" :key="val" seriesLayoutBy="row" />
     </VueEcharts>
     <!-- <VueEcharts class="w-500px h-400px">
       <Bar :data="data" />
@@ -98,6 +109,7 @@ import {
   AreaStyle,
   MinorSplitLine,
   VisualMap,
+  Dataset,
 } from "./components";
 import { useVueEcharts } from "./hooks";
 
@@ -130,21 +142,43 @@ onMounted(() => {
     console.log("绘制完成");
   });
 
-  setOption({
-    // visualMap: {
-    //   type: "continuous",
-    //   min: 0,
-    //   max: 10,
-    //   calculable: true,
-    //   orient: "horizontal",
-    //   left: "center",
-    //   bottom: "15%",
-    // },
-    series: [
-      {
-        data: [10, 59, 8, 67, 26, 35, 44, 3, 82, 1],
-      },
-    ],
-  });
+  // setOption({
+  //   color: ["#003366", "#006699", "#4cabce", "#e5323e"],
+  //   dataset: {
+  //     source: [
+  //       ["type", "2012", "2013", "2014", "2015", "2016"],
+  //       ["Forest", 320, 332, 301, 334, 390],
+  //       ["Steppe", 220, 182, 191, 234, 290],
+  //       ["Desert", 150, 232, 201, 154, 190],
+  //       ["Wetland", 98, 77, 101, 99, 40],
+  //     ],
+  //   },
+  //   legend: {},
+  //   xAxis: {
+  //     type: "category",
+  //     axisTick: {
+  //       show: false,
+  //     },
+  //   },
+  //   yAxis: {},
+  //   series: [
+  //     {
+  //       type: "bar",
+  //       seriesLayoutBy: "row",
+  //     },
+  //     {
+  //       type: "bar",
+  //       seriesLayoutBy: "row",
+  //     },
+  //     {
+  //       type: "bar",
+  //       seriesLayoutBy: "row",
+  //     },
+  //     {
+  //       type: "bar",
+  //       seriesLayoutBy: "row",
+  //     },
+  //   ],
+  // });
 });
 </script>

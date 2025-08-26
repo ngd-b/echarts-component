@@ -13,10 +13,12 @@ const options = ref<DatasetComponentOption>({
 const vueEcharts = useVueEcharts();
 
 defineOptions({
-  name: "dataset",
+  name: "Dataset",
 });
 
-const props = withDefaults(defineProps<DatasetOption>(), {});
+const props = withDefaults(defineProps<DatasetOption>(), {
+  sourceHeader: undefined,
+});
 
 watch(
   () => props,

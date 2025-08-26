@@ -23,6 +23,7 @@ const props = withDefaults(defineProps<BarSeries>(), {
   legendHoverLink: true,
   clip: true,
   animation: true,
+  sourceHeader: undefined,
 });
 
 useSeries<BarSeriesOption>(props, options);
