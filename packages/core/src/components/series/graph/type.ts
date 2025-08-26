@@ -13,8 +13,6 @@ export type GraphSeries = Partial<
     | "emphasis"
     | "blur"
     | "select"
-    | "categories"
-    | "links"
     | "markPoint"
     | "markLine"
     | "markArea"
