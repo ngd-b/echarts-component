@@ -2,88 +2,8 @@
   <h2>vue-echarts</h2>
 
   <div class="flex flex-wrap gap-20px">
-    <!-- <VueEcharts class="w-500px h-400px" theme="dark">
-      <Line :data="data" selected-mode />
-      <Line :data="data.map((val) => val * 2)" selected-mode />
-      <XAxis
-        type="category"
-        boundaryGap
-        name="XAxis"
-        :data="[1, 2, 3, 4, 5, 6, 7, 8, 9]"
-      >
-        <Text prop="nameTextStyle" color="red" font-size="24" />
-        <Text prop="axisLabel" color="green" font-size="18" />
-        <AxisLine>
-          <line-style color="red" />
-        </AxisLine>
-        <AxisTick>
-          <line-style :width="5" />
-        </AxisTick>
-        <SplitLine>
-          <line-style color="red" />
-        </SplitLine>
-        <SplitArea show></SplitArea>
-      </XAxis>
-      <YAxis name="YAxis">
-        <Text prop="nameTextStyle" color="yellow" />
-
-        <MinorTick show :split-number="10">
-          <line-style color="red" :width="2" />
-        </MinorTick>
-        <MinorSplitLine>
-          <line-style color="red" />
-        </MinorSplitLine>
-      </YAxis>
-      <Tooltip trigger="axis">
-        <Text prop="textStyle" />
-      </Tooltip>
-    </VueEcharts> -->
-    <VueEcharts
-      style="width: 100%; height: 300px"
-      :color="['#003366', '#006699', '#4cabce', '#e5323e']"
-    >
-      <Legend />
-      <Dataset
-        :source="[
-          ['type', '2012', '2013', '2014', '2015', '2016'],
-          ['Forest', 320, 332, 301, 334, 390],
-          ['Steppe', 220, 182, 191, 234, 290],
-          ['Desert', 150, 232, 201, 154, 190],
-          ['Wetland', 98, 77, 101, 99, 40],
-        ]"
-      />
-      <YAxis />
-      <XAxis type="category">
-        <AxisTick :show="false" />
-      </XAxis>
-      <Bar v-for="val in 4" :key="val" seriesLayoutBy="row" />
+    <VueEcharts style="width: 100%; height: 300px" :animation="false">
     </VueEcharts>
-    <!-- <VueEcharts class="w-500px h-400px">
-      <Bar :data="data" />
-      <XAxis :data="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" />
-      <YAxis />
-      <Title text="Hello World" subtext="hboot" left="center">
-        <Text prop="textStyle" color="red" font-size="32" />
-        <Text prop="subtextStyle" color="blue" font-size="16" />
-      </Title>
-      <Tooltip />
-      <Text prop="textStyle" color="#4455da" />
-    </VueEcharts>
-    <VueEcharts class="w-500px h-400px">
-      <Pie
-        :data="[
-          { name: 'A', value: 200 },
-          { name: 'B', value: 300 },
-          { name: 'C', value: 400 },
-        ]"
-      />
-      <Title text="Hello World" left="center" />
-      <Legend top="center" :right="0" orient="vertical" />
-      <Legend left="center" :bottom="0">
-        <Text prop="textStyle" font-size="14" color="#ffaabb" />
-      </Legend>
-      <Tooltip />
-    </VueEcharts> -->
   </div>
 </template>
 <script setup lang="tsx">
@@ -110,10 +30,11 @@ import {
   MinorSplitLine,
   VisualMap,
   Dataset,
+  DataZoom,
 } from "./components";
 import { useVueEcharts } from "./hooks";
 
-let data = ref([1, 12, 3, 24, 5, 36, 7, 48, 9, 10]);
+let data = ref([]);
 const {
   setOption,
   actions,
@@ -126,7 +47,7 @@ const {
 } = useVueEcharts()!;
 onMounted(() => {
   setTimeout(() => {
-    data.value = [100, 539, 118, 267, 126, 335, 444, 563, 1282, 22];
+    // data.value = [100, 539, 118, 267, 126, 335, 444, 563, 1282, 22];
 
     // console.log(vueEchartsRef);
     actions.highlight({ dataIndex: 0 });
@@ -141,44 +62,5 @@ onMounted(() => {
   onFinished(() => {
     console.log("绘制完成");
   });
-
-  // setOption({
-  //   color: ["#003366", "#006699", "#4cabce", "#e5323e"],
-  //   dataset: {
-  //     source: [
-  //       ["type", "2012", "2013", "2014", "2015", "2016"],
-  //       ["Forest", 320, 332, 301, 334, 390],
-  //       ["Steppe", 220, 182, 191, 234, 290],
-  //       ["Desert", 150, 232, 201, 154, 190],
-  //       ["Wetland", 98, 77, 101, 99, 40],
-  //     ],
-  //   },
-  //   legend: {},
-  //   xAxis: {
-  //     type: "category",
-  //     axisTick: {
-  //       show: false,
-  //     },
-  //   },
-  //   yAxis: {},
-  //   series: [
-  //     {
-  //       type: "bar",
-  //       seriesLayoutBy: "row",
-  //     },
-  //     {
-  //       type: "bar",
-  //       seriesLayoutBy: "row",
-  //     },
-  //     {
-  //       type: "bar",
-  //       seriesLayoutBy: "row",
-  //     },
-  //     {
-  //       type: "bar",
-  //       seriesLayoutBy: "row",
-  //     },
-  //   ],
-  // });
 });
 </script>
