@@ -20,8 +20,10 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<ParallelSeries>(), {
-  realtime: true,
-  animation: true,
+  realtime: undefined,
+  smooth: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 useSeries<ParallelSeriesOption>(props, options);
 </script>

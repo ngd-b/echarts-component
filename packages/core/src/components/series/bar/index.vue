@@ -20,9 +20,15 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<BarSeries>(), {
-  legendHoverLink: true,
-  clip: true,
-  animation: true,
+  legendHoverLink: undefined,
+  roundCap: undefined,
+  realtimeSort: undefined,
+  showBackground: undefined,
+  selectedMode: undefined,
+  large: undefined,
+  clip: undefined,
+  silent: undefined,
+  animation: undefined,
   sourceHeader: undefined,
 });
 

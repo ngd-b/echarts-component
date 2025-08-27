@@ -20,9 +20,12 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<ScatterSeries>(), {
-  legendHoverLink: true,
-  clip: true,
-  animation: true,
+  large: undefined,
+  legendHoverLink: undefined,
+  clip: undefined,
+  selectedMode: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 useSeries<ScatterSeriesOption>(props, options);
 </script>

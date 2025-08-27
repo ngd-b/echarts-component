@@ -20,8 +20,11 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<SankeySeries>(), {
-  animation: true,
-  draggable: true,
+  draggable: undefined,
+  roam: undefined,
+  selectedMode: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 useSeries<SankeySeriesOption>(props, options);
 </script>

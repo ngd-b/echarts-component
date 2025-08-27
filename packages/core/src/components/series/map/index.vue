@@ -20,7 +20,13 @@ defineOptions({
   name: "Map",
 });
 
-const props = withDefaults(defineProps<MapSeries>(), {});
+const props = withDefaults(defineProps<MapSeries>(), {
+  roam: undefined,
+  selectedMode: undefined,
+  preserveAspect: undefined,
+  clip: undefined,
+  silent: undefined,
+});
 useSeries<MapSeriesOption>(props, options);
 </script>
 <template>

@@ -20,7 +20,12 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<TreeSeries>(), {
-  expandAndCollapse: true,
+  expandAndCollapse: undefined,
+  roam: undefined,
+  symbolKeepAspect: undefined,
+  selectedMode: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 useSeries<TreeSeriesOption>(props, options);
 </script>

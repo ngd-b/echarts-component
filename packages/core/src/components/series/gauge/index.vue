@@ -20,9 +20,11 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<GaugeSeries>(), {
-  legendHoverLink: true,
-  clockwise: true,
-  animation: true,
+  legendHoverLink: undefined,
+  clockwise: undefined,
+  selectedMode: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 useSeries<GaugeSeriesOption>(props, options);
 </script>

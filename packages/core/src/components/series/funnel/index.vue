@@ -20,8 +20,10 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<FunnelSeries>(), {
-  legendHoverLink: true,
-  animation: true,
+  legendHoverLink: undefined,
+  selectedMode: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 
 useSeries<FunnelSeriesOption>(props, options);

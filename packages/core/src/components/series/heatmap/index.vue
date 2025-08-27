@@ -19,7 +19,11 @@ defineOptions({
   name: "Heatmap",
 });
 
-const props = withDefaults(defineProps<HeatmapSeries>(), {});
+const props = withDefaults(defineProps<HeatmapSeries>(), {
+  selectedMode: undefined,
+  silent: undefined,
+  animation: undefined,
+});
 useSeries<HeatmapSeriesOption>(props, options);
 </script>
 <template>

@@ -20,8 +20,12 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<PictorialBarSeries>(), {
-  legendHoverLink: true,
-  animation: true,
+  legendHoverLink: undefined,
+  selectedMode: undefined,
+  symbolClip: undefined,
+  clip: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 useSeries<PictorialBarSeriesOption>(props, options);
 </script>

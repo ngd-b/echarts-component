@@ -20,12 +20,15 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<PieSeries>(), {
-  legendHoverLink: true,
-  clockwise: true,
-  avoidLabelOverlap: true,
-  stillShowZeroSum: true,
-  showEmptyCircle: true,
-  animation: true,
+  legendHoverLink: undefined,
+  selectedMode: undefined,
+  clockwise: undefined,
+  roseType: undefined,
+  avoidLabelOverlap: undefined,
+  stillShowZeroSum: undefined,
+  showEmptyCircle: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 useSeries<PieSeriesOption>(props, options);
 </script>

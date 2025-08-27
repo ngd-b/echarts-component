@@ -20,7 +20,11 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<CandlestickSeries>(), {
-  legendHoverLink: true,
+  legendHoverLink: undefined,
+  selectedMode: undefined,
+  large: undefined,
+  clip: undefined,
+  silent: undefined,
 });
 
 useSeries<CandlestickSeriesOption>(props, options);

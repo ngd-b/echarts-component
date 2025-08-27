@@ -20,8 +20,11 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<SunburstSeries>(), {
-  clockwise: true,
-  animation: true,
+  clockwise: undefined,
+  renderLabelForZeroData: undefined,
+  selectedMode: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 useSeries<SunburstSeriesOption>(props, options);
 </script>

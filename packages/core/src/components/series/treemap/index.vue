@@ -20,7 +20,10 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<TreemapSeries>(), {
-  roam: true,
+  roam: undefined,
+  selectedMode: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 useSeries<TreemapSeriesOption>(props, options);
 </script>

@@ -21,10 +21,17 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<LineSeries>(), {
-  showSymbol: true,
-  legendHoverLink: true,
-  clip: true,
-  animation: true,
+  showSymbol: undefined,
+  symbolKeepAspect: undefined,
+  legendHoverLink: undefined,
+  connectNulls: undefined,
+  clip: undefined,
+  triggerLineEvent: undefined,
+  step: undefined,
+  selectedMode: undefined,
+  smooth: undefined,
+  silent: undefined,
+  animation: undefined,
   sourceHeader: undefined,
 });
 useSeries<LineSeriesOption>(props, options);

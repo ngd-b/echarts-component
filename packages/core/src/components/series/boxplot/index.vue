@@ -20,7 +20,9 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<BoxplotSeries>(), {
-  legendHoverLink: true,
+  legendHoverLink: undefined,
+  selectedMode: undefined,
+  silent: undefined,
 });
 
 useSeries<BoxplotSeriesOption>(props, options);

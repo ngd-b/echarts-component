@@ -20,7 +20,12 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<LinesSeries>(), {
-  animation: true,
+  polyline: undefined,
+  large: undefined,
+  selectedMode: undefined,
+  clip: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 
 useSeries<LinesSeriesOption>(props, options);

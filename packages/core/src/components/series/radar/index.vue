@@ -20,7 +20,10 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<RadarSeries>(), {
-  animation: true,
+  symbolKeepAspect: undefined,
+  selectedMode: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 useSeries<RadarSeriesOption>(props, options);
 </script>

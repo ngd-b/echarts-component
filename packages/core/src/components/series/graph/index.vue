@@ -20,8 +20,15 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<GraphSeries>(), {
-  legendHoverLink: true,
-  animation: true,
+  legendHoverLink: undefined,
+  roam: undefined,
+  draggable: undefined,
+  symbolKeepAspect: undefined,
+  autoCurveness: undefined,
+  preserveAspect: undefined,
+  selectedMode: undefined,
+  silent: undefined,
+  animation: undefined,
 });
 useSeries<GraphSeriesOption>(props, options);
 </script>

@@ -19,7 +19,12 @@ defineOptions({
   name: "ThemeRiver",
 });
 
-const props = withDefaults(defineProps<ThemeRiverSeries>(), {});
+const props = withDefaults(defineProps<ThemeRiverSeries>(), {
+  boundaryGap: undefined,
+  selectedMode: undefined,
+  silent: undefined,
+  animation: undefined,
+});
 useSeries<ThemeRiverSeriesOption>(props, options);
 </script>
 <template>
