@@ -25,6 +25,7 @@ const props = withDefaults(defineProps<LineSeries>(), {
   legendHoverLink: true,
   clip: true,
   animation: true,
+  sourceHeader: undefined,
 });
 useSeries<LineSeriesOption>(props, options);
 </script>

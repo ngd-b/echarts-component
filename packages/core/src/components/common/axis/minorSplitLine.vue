@@ -12,13 +12,11 @@ defineOptions({
   inheritAttrs: false,
 });
 
-let options = ref<MinorSplitLineOption>({
-  show: true,
-});
+let options = ref<MinorSplitLineOption>({});
 const props = withDefaults(
   defineProps<Omit<MinorSplitLineOption, "lineStyle">>(),
   {
-    show: true,
+    show: undefined,
   }
 );
 

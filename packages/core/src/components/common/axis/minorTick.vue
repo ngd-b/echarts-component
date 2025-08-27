@@ -13,10 +13,9 @@ defineOptions({
 });
 
 let options = ref<MinorTickOption>({});
-const props = withDefaults(
-  defineProps<Omit<MinorTickOption, "lineStyle">>(),
-  {}
-);
+const props = withDefaults(defineProps<Omit<MinorTickOption, "lineStyle">>(), {
+  show: undefined,
+});
 
 const axisContext = useAxis();
 // 提供子级服务

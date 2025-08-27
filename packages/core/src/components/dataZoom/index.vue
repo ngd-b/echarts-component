@@ -12,7 +12,16 @@ defineOptions({
   name: "DataZoom",
 });
 
-const props = defineProps<DataZoomOption>();
+const props = withDefaults(defineProps<DataZoomOption>(), {
+  type: "inside",
+  show: undefined,
+  zoomOnMouseWheel: undefined,
+  moveOnMouseMove: undefined,
+  moveOnMouseWheel: undefined,
+  preventDefaultMouseMove: undefined,
+  showDetail: undefined,
+  brushSelect: undefined,
+});
 
 const omitProps = computed(() => {
   if (props.type === "inside") {

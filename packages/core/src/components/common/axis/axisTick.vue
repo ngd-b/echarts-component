@@ -12,11 +12,11 @@ defineOptions({
   inheritAttrs: false,
 });
 
-let options = ref<AxisTickOption>({
-  show: true,
-});
+let options = ref<AxisTickOption>({});
 const props = withDefaults(defineProps<Omit<AxisTickOption, "lineStyle">>(), {
-  show: true,
+  show: undefined,
+  alignWithLabel: undefined,
+  inside: undefined,
 });
 
 const axisContext = useAxis();

@@ -14,8 +14,8 @@ defineOptions({
 
 let options = ref<AxisLineOption>({});
 const props = withDefaults(defineProps<Omit<AxisLineOption, "lineStyle">>(), {
-  show: true,
-  onZero: true,
+  show: undefined,
+  onZero: undefined,
 });
 
 const axisContext = useAxis();

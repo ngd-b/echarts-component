@@ -38,4 +38,6 @@ function update(data: GridComponentOption) {
   vueEcharts.update("grid", data);
 }
 </script>
-<template></template>
+<template>
+  <slot></slot>
+</template>

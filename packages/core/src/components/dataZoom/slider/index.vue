@@ -18,15 +18,20 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<SliderDataZoom>(), {
-  show: true,
-  brushSelect: true,
+  show: undefined,
+  brushSelect: undefined,
+  showDetail: undefined,
 });
 
 watch(
   () => props,
   () => {
     let propsData = omitBy(props, isUndefined);
-    update({ ...options.value, ...propsData });
+    options.value = {
+      ...options.value,
+      ...propsData,
+    };
+    update(options.value);
   },
   { immediate: true, deep: true }
 );

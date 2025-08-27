@@ -12,15 +12,11 @@ defineOptions({
   inheritAttrs: false,
 });
 
-let options = ref<SplitLineOption>({
-  show: true,
-  showMinLine: true,
-  showMaxLine: true,
-});
+let options = ref<SplitLineOption>({});
 const props = withDefaults(defineProps<Omit<SplitLineOption, "lineStyle">>(), {
-  show: true,
-  showMinLine: true,
-  showMaxLine: true,
+  show: undefined,
+  showMinLine: undefined,
+  showMaxLine: undefined,
 });
 
 const axisContext = useAxis();

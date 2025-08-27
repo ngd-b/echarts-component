@@ -10,7 +10,8 @@ export type TextType =
   | "label"
   | "dayLabel"
   | "monthLabel"
-  | "yearLabel";
+  | "yearLabel"
+  | "selectorLabel";
 
 export interface TextContext<T extends TextType = TextType> {
   defaultTextProps?: (name?: T) => TextOptions;

@@ -37,10 +37,13 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<XAXisOption>(), {
-  type: "category",
+  type: undefined,
   show: true,
-  animation: true,
-  boundaryGap: null,
+  animation: undefined,
+  boundaryGap: undefined,
+  scale: undefined,
+  alignTicks: undefined,
+  deduplication: undefined,
 });
 
 watch(
@@ -48,9 +51,6 @@ watch(
   () => {
     let propsData = omitBy(props, isUndefined);
 
-    if (propsData.boundaryGap === null) {
-      propsData.boundaryGap = props.type === "category";
-    }
     options.value = {
       ...options.value,
       ...propsData,

@@ -18,17 +18,21 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<InsideDataZoom>(), {
-  zoomOnMouseWheel: true,
-  moveOnMouseMove: true,
-  moveOnMouseWheel: true,
-  preventDefaultMouseMove: true,
+  zoomOnMouseWheel: undefined,
+  moveOnMouseMove: undefined,
+  moveOnMouseWheel: undefined,
+  preventDefaultMouseMove: undefined,
 });
 
 watch(
   () => props,
   () => {
     let propsData = omitBy(props, isUndefined);
-    update({ ...options.value, ...propsData });
+    options.value = {
+      ...options.value,
+      ...propsData,
+    };
+    update(options.value);
   },
   { immediate: true, deep: true }
 );

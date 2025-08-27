@@ -13,10 +13,9 @@ defineOptions({
 });
 
 let options = ref<SplitAreaOption>({});
-const props = withDefaults(
-  defineProps<Omit<SplitAreaOption, "areaStyle">>(),
-  {}
-);
+const props = withDefaults(defineProps<Omit<SplitAreaOption, "areaStyle">>(), {
+  show: undefined,
+});
 
 const axisContext = useAxis();
 // 提供子级服务

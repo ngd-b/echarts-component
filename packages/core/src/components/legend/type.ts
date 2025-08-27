@@ -2,7 +2,7 @@ import type { LegendComponentOption } from "echarts/components";
 import { TextCommonOption } from "../common/type";
 
 export type { LegendComponentOption };
-export type TextType = "textStyle" | "pageTextStyle";
+export type TextType = "textStyle" | "pageTextStyle" | "selectorLabel";
 export type TextOptions = TextCommonOption;
 
 export type LegendOptions = Partial<
@@ -12,17 +12,6 @@ export type LegendOptions = Partial<
     | "lineStyle"
     | "textStyle"
     | "tooltip"
-    | "formatter"
-    | "selected"
-    | "scrollDataIndex"
-    | "pageButtonItemGap"
-    | "pageButtonGap"
-    | "pageButtonPosition"
-    | "pageFormatter"
-    | "pageIcons"
-    | "pageIconColor"
-    | "pageIconInactiveColor"
-    | "pageIconSize"
     | "pageTextStyle"
     | "emphasis"
     | "selectorLabel"
@@ -38,4 +27,5 @@ export const DefaultTextStyleOptions: TextCommonOption = {};
 export const TextMapDefault: Record<TextType, TextOptions> = {
   textStyle: DefaultTextStyleOptions,
   pageTextStyle: DefaultTextStyleOptions,
+  selectorLabel: DefaultTextStyleOptions,
 };
