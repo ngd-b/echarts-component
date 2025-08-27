@@ -1312,6 +1312,11 @@
 
 ## 基本用法
 
+<VueEcharts style="width:100%;height:300px;" backgroundColor="#111" :progressive="2000">
+    <Lines :data='linesData'></Lines>
+    <Geo map="shanxi" roam :center="[108.92813841, 34.35656909]"></Geo>
+</VueEcharts>
+
 ```vue
 <script setup>
     import { ref } from 'vue'
@@ -1347,8 +1352,3 @@
   </VueEcharts>
 </template>
 ```
-
- <VueEcharts style="width:100%;height:300px;" backgroundColor="#111" :progressive="2000">
-    <Lines :data='linesData'></Lines>
-    <Geo map="shanxi" roam :center="[108.92813841, 34.35656909]"></Geo>
-</VueEcharts>

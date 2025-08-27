@@ -256,6 +256,21 @@
 
 ## 基本用法
 
+<VueEcharts style="width:100%;height:300px;">
+  <Scatter :data="data" name="Male" />
+  <Legend />
+  <Grid left="3%" right="7%" bottom="3%" containLabel  />
+  <XAxis type="value" scale>
+    <SplitLine :show="false" />
+    <Text prop='axisLabel' formatter="{value} cm" />
+  </XAxis>
+  <YAxis type="value" scale>
+    <SplitLine :show="false" />
+    <Text prop='axisLabel' formatter="{value} kg" />
+  </YAxis>
+  <Title text="散点（气泡）图" />
+</VueEcharts>
+
 ```vue
 <script setup>
   import { ref } from 'vue'
@@ -528,18 +543,3 @@
 </template>
 
 ```
-
-<VueEcharts style="width:100%;height:300px;">
-  <Scatter :data="data" name="Male" />
-  <Legend />
-  <Grid left="3%" right="7%" bottom="3%" containLabel  />
-  <XAxis type="value" scale>
-    <SplitLine :show="false" />
-    <Text prop='axisLabel' formatter="{value} cm" />
-  </XAxis>
-  <YAxis type="value" scale>
-    <SplitLine :show="false" />
-    <Text prop='axisLabel' formatter="{value} kg" />
-  </YAxis>
-  <Title text="散点（气泡）图" />
-</VueEcharts>

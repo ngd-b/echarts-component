@@ -150,6 +150,10 @@
 
 ## 基本用法
 
+<VueEcharts style="width:100%;height:300px;">
+   <Sunburst :data="data" />
+</VueEcharts>
+
 ```vue
 <script setup>
   import { ref } from 'vue'
@@ -306,7 +310,3 @@
 </template>
 
 ```
-
-<VueEcharts style="width:100%;height:300px;">
-   <Sunburst :data="data" />
-</VueEcharts>

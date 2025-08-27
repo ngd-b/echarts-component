@@ -139,6 +139,18 @@
 
 ## 基本用法
 
+<VueEcharts style="width:100%;height:300px;" :color='["#c23531", "#91c7ae", "#dd8668"]'>
+  <Parallel :data="data[0]" name="北京"  />
+  <Parallel :data="data[1]" name="上海"  />
+  <Parallel :data="data[2]" name="广州"  />
+  <ParallelAxis left="5%" right="13%" bottom="10%" top="20%" :data="axisData">
+      <ParallelAxisDefault type="value" name="AQI指数" nameLocation='end' :nameGap='20'>
+          <Text prop='nameTextStyle' :fontSize="12" />
+      </ParallelAxisDefault>
+  </ParallelAxis>
+  <Legend :top="10" :data='["北京", "上海", "广州"]' :itemGap="20" />
+</VueEcharts>
+
 ```vue
 <script setup>
   import { ref } from 'vue'
@@ -289,15 +301,3 @@
   </VueEcharts>
 </template>
 ```
-
-<VueEcharts style="width:100%;height:300px;" :color='["#c23531", "#91c7ae", "#dd8668"]'>
-    <Parallel :data="data[0]" name="北京"  />
-    <Parallel :data="data[1]" name="上海"  />
-    <Parallel :data="data[2]" name="广州"  />
-    <ParallelAxis left="5%" right="13%" bottom="10%" top="20%" :data="axisData">
-        <ParallelAxisDefault type="value" name="AQI指数" nameLocation='end' :nameGap='20'>
-            <Text prop='nameTextStyle' :fontSize="12" />
-        </ParallelAxisDefault>
-    </ParallelAxis>
-    <Legend :top="10" :data='["北京", "上海", "广州"]' :itemGap="20" />
-  </VueEcharts>

@@ -32,6 +32,12 @@
 
 ## 基本用法
 
+<VueEcharts style="width:100%;height:300px;">
+    <EffectScatter :data="data" name='1990' :symbolSize="formatterSymbolSize" />
+    <XAxis />
+    <YAxis scale />
+</VueEcharts>
+
 ```vue
 <script setup>
   import { ref } from 'vue'
@@ -70,9 +76,3 @@
 </template>
 
 ```
-
-<VueEcharts style="width:100%;height:300px;">
-    <EffectScatter :data="data" name='1990' :symbolSize="formatterSymbolSize" />
-    <XAxis />
-    <YAxis scale />
-</VueEcharts>

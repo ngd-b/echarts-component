@@ -98,6 +98,22 @@
 
 ## 基本用法
 
+<VueEcharts style="width:100%;height:300px;">
+  <Candlestick :data="data" name="日K" />
+  <YAxis scale name="km/s minus 299,000">
+      <SplitArea show />
+  </YAxis>
+  <XAxis type="category" :data="axisData" scale :boundaryGap='false'  :splitNumber="20" min="dataMin" max="dataMax" >
+      <AxisLine :onZero="false" />
+      <SplitLine :show="false" />
+  </XAxis>
+  <DataZoom type="inside" :start="50" :end="100" />
+  <DataZoom type="slider" show top="90%" :start="50" :end="100" />
+  <Grid left="10%" right="10%" bottom="15%" />
+  <Legend :data='["日K", "MA5", "MA10", "MA20", "MA30"]' />
+  <Tooltip trigger="axis" :axisPointer="{type: 'cross'}" />
+</VueEcharts>
+
 ```vue
 <script setup>
   import { ref } from 'vue'
@@ -213,19 +229,3 @@
 </template>
 
 ```
-
-<VueEcharts style="width:100%;height:300px;">
-  <Candlestick :data="data" name="日K" />
-  <YAxis scale name="km/s minus 299,000">
-      <SplitArea show />
-  </YAxis>
-  <XAxis type="category" :data="axisData" scale :boundaryGap='false'  :splitNumber="20" min="dataMin" max="dataMax" >
-      <AxisLine :onZero="false" />
-      <SplitLine :show="false" />
-  </XAxis>
-  <DataZoom type="inside" :start="50" :end="100" />
-  <DataZoom type="slider" show top="90%" :start="50" :end="100" />
-  <Grid left="10%" right="10%" bottom="15%" />
-  <Legend :data='["日K", "MA5", "MA10", "MA20", "MA30"]' />
-  <Tooltip trigger="axis" :axisPointer="{type: 'cross'}" />
-</VueEcharts>

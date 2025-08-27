@@ -1299,6 +1299,10 @@
 
 ## 基本用法
 
+<VueEcharts style="width:100%;height:300px;">
+    <Map map="shanxi" roam :aspectScale='1' />
+</VueEcharts>
+
 ```vue
 <script setup>
   import { ref } from 'vue'
@@ -1315,7 +1319,3 @@
   </VueEcharts>
 </template>
 ```
-
-<VueEcharts style="width:100%;height:300px;">
-    <Map map="shanxi" roam :aspectScale='1' />
-</VueEcharts>

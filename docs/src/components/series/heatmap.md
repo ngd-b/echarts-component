@@ -177,6 +177,19 @@
 
 ## 基本用法
 
+<VueEcharts style="width:100%;height:300px;" :animation="false">
+    <Heatmap :data="data" name="Punch Card" />
+    <VisualMap :min="0" :max="10" calculable orient="horizontal"  left="center" bottom="15%" />
+    <YAxis type="category" :data='["Saturday", "Friday", "Thursday", "Wednesday", "Tuesday", "Monday", "Sunday"]'>
+        <SplitArea show />
+    </YAxis>
+    <XAxis type="category"  :data='["12a", "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12p", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p"]' >
+       <SplitArea show />
+    </XAxis>
+    <Grid height="50%" top="10%" />
+    <Tooltip position="top" />
+</VueEcharts>
+
 ```vue
 <script setup>
   import { ref } from 'vue'
@@ -367,16 +380,3 @@
   </VueEcharts>
 </template>
 ```
-
-<VueEcharts style="width:100%;height:300px;" :animation="false">
-    <Heatmap :data="data" name="Punch Card" />
-    <VisualMap :min="0" :max="10" calculable orient="horizontal"  left="center" bottom="15%" />
-    <YAxis type="category" :data='["Saturday", "Friday", "Thursday", "Wednesday", "Tuesday", "Monday", "Sunday"]'>
-        <SplitArea show />
-    </YAxis>
-    <XAxis type="category"  :data='["12a", "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12p", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p"]' >
-       <SplitArea show />
-    </XAxis>
-    <Grid height="50%" top="10%" />
-    <Tooltip position="top" />
-</VueEcharts>

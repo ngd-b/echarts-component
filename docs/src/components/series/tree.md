@@ -38,6 +38,12 @@
 
 ## 基本用法
 
+<VueEcharts style="width:100%;height:300px;">
+    <Tree :data="data">
+      <Text prop='label' position="right" />
+    </Tree>
+</VueEcharts>
+
 ```vue
 <script setup>
   import { ref } from 'vue'
@@ -83,9 +89,3 @@
 </template>
 
 ```
-
-<VueEcharts style="width:100%;height:300px;">
-    <Tree :data="data">
-      <Text prop='label' position="right" />
-    </Tree>
-</VueEcharts>

@@ -14,6 +14,32 @@
 
 ## 基本用法
 
+<VueEcharts style="width:100%;height:300px;">
+  <Radar :data="data" name="预算 vs 开销（Budget vs spending）" />
+  <Legend :data='["Allocated Budget", "Actual Spending"]' />
+  <Tooltip />
+  <RadarAxis :indicator='[{
+    name: "sales",
+    max: 6500
+  }, {
+    name: "Administration",
+    max: 16000
+  }, {
+    name: "Information Techology",
+    max: 30000
+  }, {
+    name: "Customer Support",
+    max: 38000
+  }, {
+    name: "Development",
+    max: 52000
+  }, {
+    name: "Marketing",
+    max: 25000
+  }]' />
+  <Title text="基础雷达图" />
+</VueEcharts>
+
 ```vue
 
 <template>
@@ -45,29 +71,3 @@
 </template>
 
 ```
-
-<VueEcharts style="width:100%;height:300px;">
-  <Radar :data="data" name="预算 vs 开销（Budget vs spending）" />
-  <Legend :data='["Allocated Budget", "Actual Spending"]' />
-  <Tooltip />
-  <RadarAxis :indicator='[{
-    name: "sales",
-    max: 6500
-  }, {
-    name: "Administration",
-    max: 16000
-  }, {
-    name: "Information Techology",
-    max: 30000
-  }, {
-    name: "Customer Support",
-    max: 38000
-  }, {
-    name: "Development",
-    max: 52000
-  }, {
-    name: "Marketing",
-    max: 25000
-  }]' />
-  <Title text="基础雷达图" />
-</VueEcharts>

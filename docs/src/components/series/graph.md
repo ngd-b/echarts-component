@@ -1661,6 +1661,13 @@
 
 ## 基本用法
 
+<VueEcharts style="width:100%;height:300px;" :animationDuration="1500" animationEasingUpdate="quinticInOut">
+    <Graph :data="data" :links="links" :categories="categories" name="Les Miserables" layout="none" />
+    <Legend :data='["类目0", "类目1", "类目2", "类目3", "类目4", "类目5", "类目6", "类目7", "类目8"]' />
+    <Tooltip />
+    <Title text="Les Miserable" subtext="Default layout" top='bottom' left='right' />
+</VueEcharts>
+
 ```vue
 <script setup>
     import { ref } from 'vue'
@@ -1684,10 +1691,3 @@
   </VueEcharts>
 </template>
 ```
-
-<VueEcharts style="width:100%;height:300px;" :animationDuration="1500" animationEasingUpdate="quinticInOut">
-    <Graph :data="data" :links="links" :categories="categories" name="Les Miserables" layout="none" />
-    <Legend :data='["类目0", "类目1", "类目2", "类目3", "类目4", "类目5", "类目6", "类目7", "类目8"]' />
-    <Tooltip />
-    <Title text="Les Miserable" subtext="Default layout" top='bottom' left='right' />
-</VueEcharts>

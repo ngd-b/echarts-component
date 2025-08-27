@@ -379,6 +379,11 @@
 
 ## 基本用法
 
+<VueEcharts style="width:100%;height:300px;" >
+    <Sankey :data="data" :links="links" />
+    <Tooltip trigger="item" triggerOn="mousemove" />
+</VueEcharts>
+
 ```vue
 <script setup>
     import { ref } from 'vue'
@@ -397,8 +402,3 @@
   </VueEcharts>
 </template>
 ```
-
-<VueEcharts style="width:100%;height:300px;" >
-    <Sankey :data="data" :links="links" />
-    <Tooltip trigger="item" triggerOn="mousemove" />
-</VueEcharts>
