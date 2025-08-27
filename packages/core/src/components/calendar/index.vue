@@ -36,7 +36,9 @@ defineOptions({
   name: "Calendar",
 });
 
-const props = withDefaults(defineProps<CalendarOption>(), {});
+const props = withDefaults(defineProps<CalendarOption>(), {
+  // silent: undefined,
+});
 
 watch(
   () => props,

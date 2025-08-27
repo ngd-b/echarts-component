@@ -29,8 +29,12 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<TooltipOptions>(), {
-  show: true,
-  showContent: true,
+  show: undefined,
+  showContent: undefined,
+  alwaysShowContent: undefined,
+  enterable: undefined,
+  confine: undefined,
+  appendToBody: undefined,
 });
 
 watch(

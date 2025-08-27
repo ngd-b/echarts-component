@@ -24,7 +24,12 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<GeoOption>(), {
-  show: true,
+  show: undefined,
+  roam: undefined,
+  selectedMode: undefined,
+  preserveAspect: undefined,
+  clip: undefined,
+  silent: undefined,
 });
 
 watch(

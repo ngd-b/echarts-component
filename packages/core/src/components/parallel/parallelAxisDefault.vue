@@ -42,20 +42,19 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<ParallelAxisOption>(), {
-  type: "value",
-  show: true,
-  animation: true,
-  boundaryGap: null,
+  type: undefined,
+  show: undefined,
+  animation: undefined,
+  boundaryGap: undefined,
+  scale: undefined,
+  silent: undefined,
+  triggerEvent: undefined,
 });
 
 watch(
   () => props,
   () => {
     let propsData = omitBy(props, isUndefined);
-
-    if (propsData.boundaryGap === null) {
-      propsData.boundaryGap = props.type === "category";
-    }
     options.value = {
       ...options.value,
       ...propsData,

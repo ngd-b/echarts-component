@@ -30,8 +30,8 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<TitleOptions>(), {
-  show: true,
-  triggerEvent: false,
+  show: undefined,
+  triggerEvent: undefined,
 });
 
 watch(

@@ -36,9 +36,11 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<AxisPointerOption>(), {
-  show: true,
-  triggerEmphasis: true,
-  triggerTooltip: true,
+  show: undefined,
+  snap: undefined,
+  status: undefined,
+  triggerEmphasis: undefined,
+  triggerTooltip: undefined,
 });
 
 watch(

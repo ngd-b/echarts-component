@@ -36,7 +36,11 @@ defineOptions({
   name: "RadarAxis",
 });
 
-const props = withDefaults(defineProps<RadarOption>(), {});
+const props = withDefaults(defineProps<RadarOption>(), {
+  scale: undefined,
+  silent: undefined,
+  triggerEvent: undefined,
+});
 
 watch(
   () => props,

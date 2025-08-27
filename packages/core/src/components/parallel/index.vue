@@ -27,7 +27,9 @@ defineOptions({
   name: "ParallelAxis",
 });
 
-const props = withDefaults(defineProps<ParallelOption>(), {});
+const props = withDefaults(defineProps<ParallelOption>(), {
+  axisExpandable: undefined,
+});
 
 const propsWithoutData = computed(() => {
   const { data, ...rest } = props;

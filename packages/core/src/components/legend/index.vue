@@ -30,8 +30,11 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<LegendOptions>(), {
-  show: true,
-  selectedMode: true,
+  show: undefined,
+  selectedMode: undefined,
+  animation: undefined,
+  selector: undefined,
+  triggerEvent: undefined,
 });
 
 watch(

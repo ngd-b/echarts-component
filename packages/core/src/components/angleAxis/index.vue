@@ -41,8 +41,13 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<AngleAxisOption>(), {
-  show: true,
-  animation: true,
+  show: undefined,
+  clockwise: undefined,
+  boundaryGap: undefined,
+  scale: undefined,
+  silent: undefined,
+  triggerEvent: undefined,
+  animation: undefined,
 });
 
 watch(

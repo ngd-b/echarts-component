@@ -37,8 +37,14 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<TimelineOption>(), {
-  show: true,
-  animation: true,
+  show: undefined,
+  autoPlay: undefined,
+  rewind: undefined,
+  loop: undefined,
+  realtime: undefined,
+  inverse: undefined,
+  symbolKeepAspect: undefined,
+  animation: undefined,
 });
 
 watch(

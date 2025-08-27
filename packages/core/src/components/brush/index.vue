@@ -23,8 +23,8 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<BrushOption>(), {
-  transformable: true,
-  removeOnClick: true,
+  transformable: undefined,
+  removeOnClick: undefined,
 });
 
 watch(

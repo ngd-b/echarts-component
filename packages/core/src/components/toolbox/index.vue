@@ -23,9 +23,10 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<ToolboxOption>(), {
-  show: true,
-  triggerEmphasis: true,
-  triggerTooltip: true,
+  show: undefined,
+  showTitle: undefined,
+  triggerEmphasis: undefined,
+  triggerTooltip: undefined,
 });
 
 watch(

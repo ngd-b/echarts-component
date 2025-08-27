@@ -41,8 +41,13 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<RadiusAxisOption>(), {
-  show: true,
-  animation: true,
+  show: undefined,
+  inverse: undefined,
+  boundaryGap: undefined,
+  scale: undefined,
+  silent: undefined,
+  triggerEvent: undefined,
+  animation: undefined,
 });
 
 watch(

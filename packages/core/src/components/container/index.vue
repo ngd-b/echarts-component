@@ -21,7 +21,8 @@ const attrs = useAttrs();
 const root = ref(null);
 
 const props = withDefaults(defineProps<EChartsOption>(), {
-  // animation: true,
+  animation: undefined,
+  richInheritPlainLabel: undefined,
 });
 
 const vueEcharts = useVueEcharts();

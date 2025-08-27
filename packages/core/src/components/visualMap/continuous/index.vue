@@ -18,9 +18,11 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<ContinousVisualMap>(), {
-  show: true,
-  realtime: true,
-  hoverLink: true,
+  show: undefined,
+  realtime: undefined,
+  hoverLink: undefined,
+  calculable: undefined,
+  inverse: undefined,
 });
 
 watch(

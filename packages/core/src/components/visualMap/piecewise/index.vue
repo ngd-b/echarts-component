@@ -18,8 +18,10 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<PiecewiseVisualMap>(), {
-  show: true,
-  brushSelect: true,
+  show: undefined,
+  brushSelect: undefined,
+  inverse: undefined,
+  hoverLink: undefined,
 });
 
 watch(
