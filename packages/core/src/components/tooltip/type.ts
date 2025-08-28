@@ -6,5 +6,5 @@ export type { TooltipComponentOption };
 export type TextType = "textStyle";
 
 export type TooltipOptions = Partial<
-  Omit<TooltipComponentOption, "axisPointer" | "formatter" | "textStyle">
+  Omit<TooltipComponentOption, "axisPointer" | "textStyle">
 >;

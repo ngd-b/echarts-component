@@ -8,14 +8,9 @@ import type {
 } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
-// 组件唯一id
-let id = useId();
-
 const parallel = useParallel();
 
-const options = ref<ParallelAxisComponentOption>({
-  id,
-});
+const options = ref<ParallelAxisComponentOption>({});
 
 // 增加文本样式
 useText<ParallelAxisComponentOption, TextType>({
