@@ -15,18 +15,3 @@ export type ThemeRiverSeries = Partial<
     | "tooltip"
   >
 >;
-
-export const DefaultThemeRiverSeries: ThemeRiverSeries = {
-  colorBy: "data",
-  left: "5%",
-  top: "5%",
-  right: "5%",
-  bottom: "5%",
-  coordinateSystem: "singleAxis",
-  boundaryGap: ["10%", "10%"],
-  singleAxisIndex: 0,
-  selectedMode: false,
-  data: [],
-  z: 2,
-  zlevel: 0,
-};

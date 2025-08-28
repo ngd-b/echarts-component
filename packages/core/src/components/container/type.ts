@@ -18,14 +18,5 @@ export type EChartsOption = Partial<
   } & AnimationOptionMixin
 >;
 
-export const DefaultEChartsOption: EChartsOption = {
-  // animation: true,
-};
-
 export type TextType = "textStyle";
 export type TextOptions = TextCommonOption;
-
-export const DefaultTextStyleOptions: TextCommonOption = {};
-export const TextMapDefault: Record<TextType, TextOptions> = {
-  textStyle: DefaultTextStyleOptions,
-};

@@ -7,10 +7,3 @@ export type ContinousVisualMap = Partial<
     "type" | "textStyle" | "handleStyle" | "indicatorStyle"
   >
 >;
-
-export const DefaultContinousVisualMap: ContinousVisualMap = {
-  // unboundedRange:true,
-  show: true,
-  realtime: true,
-  hoverLink: true,
-};

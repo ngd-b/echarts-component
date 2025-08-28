@@ -17,15 +17,3 @@ export type LegendOptions = Partial<
     | "selectorLabel"
   >
 >;
-
-export const DefaultLegendOptions: LegendOptions = {
-  show: true,
-  selectedMode: true,
-};
-
-export const DefaultTextStyleOptions: TextCommonOption = {};
-export const TextMapDefault: Record<TextType, TextOptions> = {
-  textStyle: DefaultTextStyleOptions,
-  pageTextStyle: DefaultTextStyleOptions,
-  selectorLabel: DefaultTextStyleOptions,
-};

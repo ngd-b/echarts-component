@@ -14,7 +14,3 @@ export type GeoOption = Partial<
     | "tooltip"
   >
 >;
-
-export const DefaultGeoOption: GeoOption = {
-  show: true,
-};

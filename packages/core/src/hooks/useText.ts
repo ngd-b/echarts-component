@@ -8,7 +8,6 @@ export const ECHARTS_TEXT_KEY = Symbol("vue-echarts-text");
 interface UseTextOptions<O, E> {
   options: Ref<O>;
   update: (data: O) => void;
-  defaultTextOptions: (name?: E) => TextOptions;
 }
 export function useText<O extends UpdateOption, E extends TextType>(
   config?: Partial<UseTextOptions<O, E>>
@@ -23,7 +22,7 @@ export function useText<O extends UpdateOption, E extends TextType>(
       "[Vue Echarts]: useTitle() requires options and update function."
     );
   }
-  const { options, update, defaultTextOptions } = config;
+  const { options, update } = config;
 
   /**
    * 更新text配置
@@ -32,7 +31,6 @@ export function useText<O extends UpdateOption, E extends TextType>(
    */
   const updateTextStyle = <T extends E = E>(name: T, data: TextOptions) => {
     (options.value as Record<E, TextOptions>)[name] = {
-      ...defaultTextOptions!(name),
       ...data,
     };
     update(options.value);
@@ -40,7 +38,6 @@ export function useText<O extends UpdateOption, E extends TextType>(
 
   // 提供消费
   const ctx: TextContext<E> = {
-    defaultTextProps: defaultTextOptions,
     updateTextStyle,
   };
 

@@ -14,6 +14,5 @@ export type TextType =
   | "selectorLabel";
 
 export interface TextContext<T extends TextType = TextType> {
-  defaultTextProps?: (name?: T) => TextOptions;
   updateTextStyle: (name: T, data: TextOptions) => void;
 }

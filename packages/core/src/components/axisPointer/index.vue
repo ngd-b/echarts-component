@@ -6,7 +6,6 @@ import type {
   AxisPointerComponentOption,
   AxisPointerOption,
 } from "./type";
-import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
@@ -21,9 +20,6 @@ const vueEcharts = useVueEcharts();
 useText<AxisPointerComponentOption, TextType>({
   options: options,
   update,
-  defaultTextOptions: (name) => {
-    return name ? TextMapDefault[name] : { show: true };
-  },
 });
 // 配置坐标系样式
 useAxis<AxisPointerComponentOption>({

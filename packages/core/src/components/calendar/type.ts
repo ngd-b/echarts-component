@@ -12,24 +12,3 @@ export type CalendarOption = Partial<
     "splitLine" | "itemStyle" | "dayLabel" | "monthLabel" | "yearLabel"
   >
 >;
-
-export const DefaultCalendarOption: CalendarOption = {};
-
-export const DefaultDayLabelOptions: LabelOption = {
-  show: true,
-  // richInheritPlainLabel:true,
-};
-export const DefaultMonthLabelOptions: LabelOption = {
-  show: true,
-  // richInheritPlainLabel:true,
-};
-export const DefaultYearLabelOptions: LabelOption = {
-  show: true,
-  // richInheritPlainLabel:true,
-};
-
-export const TextMapDefault: Record<TextType, TextOptions> = {
-  dayLabel: DefaultDayLabelOptions,
-  monthLabel: DefaultMonthLabelOptions,
-  yearLabel: DefaultYearLabelOptions,
-};

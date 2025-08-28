@@ -2,7 +2,6 @@
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useText } from "../../hooks/index";
 import type { TextType, TooltipComponentOption, TooltipOptions } from "./type";
-import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 // 组件唯一id
 let id = useId();
@@ -16,12 +15,6 @@ const vueEcharts = useVueEcharts();
 useText<TooltipComponentOption, TextType>({
   options: options,
   update,
-  defaultTextOptions: (name) => {
-    if (!name) {
-      return {};
-    }
-    return TextMapDefault[name];
-  },
 });
 
 defineOptions({

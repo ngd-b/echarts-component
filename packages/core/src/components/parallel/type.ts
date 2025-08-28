@@ -27,15 +27,3 @@ export type ParallelAxisOption = Partial<
     boundaryGap?: [number | string, number | string] | boolean | null;
   }
 >;
-
-export const DefaultParallelOption: ParallelOption = {};
-
-export const DefaultNameTextStyleOptions: AxisNameTextStyleOption = {};
-export const DefaultAxisLabelOptions: LabelOption = {
-  show: true,
-};
-
-export const TextMapDefault: Record<TextType, TextOptions> = {
-  nameTextStyle: DefaultNameTextStyleOptions,
-  axisLabel: DefaultAxisLabelOptions,
-};

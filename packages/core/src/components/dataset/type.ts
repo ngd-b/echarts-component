@@ -3,5 +3,3 @@ import type { DatasetOption as DatasetComponentOption } from "echarts/types/dist
 export type { DatasetComponentOption };
 
 export type DatasetOption = Partial<Omit<DatasetComponentOption, "transform">>;
-
-export const DefaultDatasetOption: DatasetOption = {};

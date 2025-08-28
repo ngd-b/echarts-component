@@ -11,5 +11,3 @@ export type TextOptions = (
   | AxisNameTextStyleOption
   | LabelOption
 ) & { show?: boolean };
-
-export const DefaultTextOptions: TextOptions = {};

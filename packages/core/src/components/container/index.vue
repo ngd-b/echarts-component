@@ -7,7 +7,6 @@ import * as echarts from "echarts";
 import { onBeforeMount, onMounted, ref, useAttrs, watch } from "vue";
 import { useText, useVueEcharts } from "../../hooks/index";
 import type { EChartsOption, TextType } from "./type";
-import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 import { ChartOptions } from "../../types";
 
@@ -31,12 +30,6 @@ const vueEcharts = useVueEcharts();
 useText<ChartOptions, TextType>({
   options: vueEcharts.options,
   update: updateChart,
-  defaultTextOptions: (name) => {
-    if (!name) {
-      return {};
-    }
-    return TextMapDefault[name];
-  },
 });
 
 onMounted(() => {

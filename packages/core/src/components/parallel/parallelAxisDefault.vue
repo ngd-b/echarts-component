@@ -6,7 +6,6 @@ import type {
   ParallelAxisOption,
   ParallelAxisComponentOption,
 } from "./type";
-import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
@@ -22,14 +21,6 @@ const options = ref<ParallelAxisComponentOption>({
 useText<ParallelAxisComponentOption, TextType>({
   options: options,
   update,
-  defaultTextOptions: (name) => {
-    if (!name) {
-      return {
-        show: true,
-      };
-    }
-    return TextMapDefault[name];
-  },
 });
 // 配置坐标系样式
 useAxis<ParallelAxisComponentOption>({

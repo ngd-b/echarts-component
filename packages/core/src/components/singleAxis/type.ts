@@ -21,20 +21,3 @@ export type SingleAxisOption = Partial<
     | "tooltip"
   >
 >;
-
-export const DefaultSingleAxisOption: SingleAxisOption = {
-  show: true,
-  // jitterOverlap:true,
-  animation: true,
-};
-
-export const DefaultNameTextStyleOptions: AxisNameTextStyleOption = {};
-export const DefaultAxisLabelOptions: LabelOption = {
-  show: true,
-  // richInheritPlainLabel:true,
-};
-
-export const TextMapDefault: Record<TextType, TextOptions> = {
-  nameTextStyle: DefaultNameTextStyleOptions,
-  axisLabel: DefaultAxisLabelOptions,
-};

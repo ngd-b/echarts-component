@@ -17,15 +17,6 @@ const textContext = useText();
 
 const props = withDefaults(defineProps<TextOptions & { prop: TextType }>(), {
   prop: "textStyle",
-  show: () => {
-    const textContext = useText();
-    if (!textContext) {
-      return false;
-    }
-    return textContext.defaultTextProps
-      ? textContext.defaultTextProps()?.show || false
-      : false;
-  },
 });
 watch(
   () => props,

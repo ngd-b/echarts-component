@@ -21,21 +21,3 @@ export type RadiusAxisOption = Partial<
     | "tooltip"
   >
 >;
-
-export const DefaultRadiusAxisOption: RadiusAxisOption = {
-  // jitterOverlap:true,
-  animation: true,
-};
-
-export const DefaultNameTextStyleOptions: AxisNameTextStyleOption = {
-  // richInheritPlainLabel:true
-};
-export const DefaultAxisLabelOptions: LabelOption = {
-  show: true,
-  // richInheritPlainLabel:true
-};
-
-export const TextMapDefault: Record<TextType, TextOptions> = {
-  nameTextStyle: DefaultNameTextStyleOptions,
-  axisLabel: DefaultAxisLabelOptions,
-};

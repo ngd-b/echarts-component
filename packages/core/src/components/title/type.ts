@@ -9,12 +9,3 @@ export type TextOptions = TextCommonOption;
 export type TitleOptions = Partial<
   Omit<TitleComponentOption, "textStyle" | "subtextStyle">
 >;
-
-export const DefaultTitleOptions: TitleOptions = {};
-
-export const DefaultTextStyleOptions: TextOptions = {};
-
-export const TextMapDefault: Record<TextType, TextOptions> = {
-  textStyle: DefaultTextStyleOptions,
-  subtextStyle: DefaultTextStyleOptions,
-};

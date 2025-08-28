@@ -12,17 +12,3 @@ export type AxisPointerOption = Partial<
     "label" | "lineStyle" | "shadowStyle" | "handle"
   >
 >;
-
-export const DefaultAxisPointerOption: AxisPointerOption = {
-  show: true,
-  triggerEmphasis: true,
-  triggerTooltip: true,
-};
-
-export const DefaultLabelOptions: LabelOption = {
-  show: true,
-};
-
-export const TextMapDefault: Record<TextType, TextOptions> = {
-  label: DefaultLabelOptions,
-};

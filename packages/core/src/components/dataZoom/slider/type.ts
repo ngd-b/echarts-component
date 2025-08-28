@@ -14,8 +14,3 @@ export type SliderDataZoom = Partial<
     | "emphasis"
   >
 >;
-
-export const DefaultSliderDataZoom: SliderDataZoom = {
-  show: true,
-  brushSelect: true,
-};

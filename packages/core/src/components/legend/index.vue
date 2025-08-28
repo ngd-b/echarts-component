@@ -2,7 +2,6 @@
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useText } from "../../hooks/index";
 import type { LegendComponentOption, LegendOptions, TextType } from "./type";
-import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
@@ -17,12 +16,6 @@ const vueEcharts = useVueEcharts();
 useText<LegendComponentOption, TextType>({
   options: options,
   update,
-  defaultTextOptions: (name) => {
-    if (!name) {
-      return {};
-    }
-    return TextMapDefault[name];
-  },
 });
 
 defineOptions({
@@ -33,7 +26,7 @@ const props = withDefaults(defineProps<LegendOptions>(), {
   show: undefined,
   selectedMode: undefined,
   animation: undefined,
-  selector: undefined,
+  // selector: undefined,
   triggerEvent: undefined,
 });
 

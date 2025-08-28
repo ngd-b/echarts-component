@@ -18,18 +18,3 @@ export type TimelineOption = Partial<
     | "emphasis"
   >
 >;
-
-export const DefaultTimelineOption: TimelineOption = {
-  show: true,
-  loop: true,
-  realtime: true,
-};
-
-export const DefaultLabelOptions: LabelOption = {
-  show: true,
-  // richInheritPlainLabel:true,
-};
-
-export const TextMapDefault: Record<TextType, TextOptions> = {
-  label: DefaultLabelOptions,
-};

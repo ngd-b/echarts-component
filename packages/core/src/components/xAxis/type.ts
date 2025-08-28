@@ -22,18 +22,3 @@ export type XAXisOption = Partial<
     | "tooltip"
   >
 >;
-
-export const DefaultXAXisOption: XAXisOption = {
-  show: true,
-  animation: true,
-};
-
-export const DefaultNameTextStyleOptions: AxisNameTextStyleOption = {};
-export const DefaultAxisLabelOptions: LabelOption = {
-  show: true,
-};
-
-export const TextMapDefault: Record<TextType, TextOptions> = {
-  nameTextStyle: DefaultNameTextStyleOptions,
-  axisLabel: DefaultAxisLabelOptions,
-};

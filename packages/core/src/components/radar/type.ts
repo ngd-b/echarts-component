@@ -16,15 +16,3 @@ export type RadarOption = Partial<
     | "splitArea"
   >
 >;
-
-export const DefaultRadarOption: RadarOption = {};
-
-export const DefaultAxisNameTextStyleOptions: AxisNameTextStyleOption = {};
-export const DefaultAxisLabelOptions: LabelOption = {
-  show: true,
-};
-
-export const TextMapDefault: Record<TextType, TextOptions> = {
-  axisName: DefaultAxisNameTextStyleOptions,
-  axisLabel: DefaultAxisLabelOptions,
-};

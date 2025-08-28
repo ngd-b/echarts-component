@@ -6,7 +6,6 @@ import type {
   SingleAxisComponentOption,
   SingleAxisOption,
 } from "./type";
-import { TextMapDefault } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
@@ -21,14 +20,6 @@ const vueEcharts = useVueEcharts();
 useText<SingleAxisComponentOption, TextType>({
   options: options,
   update,
-  defaultTextOptions: (name) => {
-    if (!name) {
-      return {
-        show: true,
-      };
-    }
-    return TextMapDefault[name];
-  },
 });
 // 配置坐标系样式
 useAxis<SingleAxisComponentOption>({
