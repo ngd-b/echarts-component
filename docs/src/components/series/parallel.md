@@ -145,7 +145,7 @@
   <Parallel :data="data[2]" name="广州"  />
   <ParallelAxis left="5%" right="13%" bottom="10%" top="20%" :data="axisData">
       <ParallelAxisDefault type="value" name="AQI指数" nameLocation='end' :nameGap='20'>
-          <Text prop='nameTextStyle' :fontSize="12" />
+        <Text prop='nameTextStyle' :fontSize="12" />
       </ParallelAxisDefault>
   </ParallelAxis>
   <Legend :top="10" :data='["北京", "上海", "广州"]' :itemGap="20" />

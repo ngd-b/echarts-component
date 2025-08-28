@@ -137,7 +137,7 @@
   <ThemeRiver :data="data" />
   <SingleAxis type='time' :top='50' :bottom='50'>
     <AxisTick />
-    <AxisLabel />
+    <Text prop="axisLabel" />
     <SplitLine show>
         <LineStyle type='dashed' :opacity='0.2' />
     </SplitLine>
@@ -284,19 +284,19 @@
 </script>
 
 <template>
-<VueEcharts style="width:100%;height:300px;">
-  <ThemeRiver :data="data" />
-  <SingleAxis type='time' :top='50' :bottom='50'>
-    <AxisTick />
-    <AxisLabel />
-    <SplitLine show>
-        <LineStyle type='dashed' :opacity='0.2' />
-    </SplitLine>
-    <AxisPointer animation>
-        <Text prop="label" show />
-    </AxisPointer>
-  </SingleAxis>
-</VueEcharts>
+  <VueEcharts style="width:100%;height:300px;">
+    <ThemeRiver :data="data" />
+    <SingleAxis type='time' :top='50' :bottom='50'>
+      <AxisTick />
+      <Text prop="axisLabel" />
+      <SplitLine show>
+          <LineStyle type='dashed' :opacity='0.2' />
+      </SplitLine>
+      <AxisPointer animation>
+          <Text prop="label" show />
+      </AxisPointer>
+    </SingleAxis>
+  </VueEcharts>
 </template>
 
 ```
