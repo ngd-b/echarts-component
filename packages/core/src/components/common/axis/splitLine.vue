@@ -23,9 +23,7 @@ const axisContext = useAxis();
 // 提供子级服务
 useAxis<SplitLineOption>({
   options: options,
-  defaultAxisLineStyle: {
-    color: ["#ccc"],
-  },
+
   update: (data) => axisContext.updateAxisStyle(prop, data),
 });
 

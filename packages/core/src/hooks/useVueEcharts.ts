@@ -10,12 +10,7 @@ import {
   toRefs,
   useId,
 } from "vue";
-import type {
-  EchartsContext,
-  EchartsState,
-  MainType,
-  MainTypeMap,
-} from "../types";
+import type { EchartsContext, EchartsState, MainType } from "../types";
 import { useActions, useEvents, userMethods } from "../stores";
 
 export const ECHARTS_CONTEXT_KEY = Symbol("vue-echarts");

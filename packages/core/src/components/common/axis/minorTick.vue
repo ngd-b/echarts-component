@@ -21,9 +21,7 @@ const axisContext = useAxis();
 // 提供子级服务
 useAxis<MinorTickOption>({
   options: options,
-  defaultAxisLineStyle: {
-    color: "",
-  },
+
   update: (data) => axisContext.updateAxisStyle(prop, data),
 });
 

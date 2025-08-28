@@ -11,9 +11,7 @@ defineOptions({
 
 const axisContext = useAxis();
 
-let options = ref<LineStyleOption<ZRColor | ZRColor[]>>({
-  ...axisContext.defaultAxisLineStyle,
-});
+let options = ref<LineStyleOption<ZRColor | ZRColor[]>>({});
 
 const props = withDefaults(defineProps<LineStyleOption>(), {});
 

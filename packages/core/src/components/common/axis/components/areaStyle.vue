@@ -11,9 +11,7 @@ defineOptions({
 
 const axisContext = useAxis();
 
-let options = ref<AreaStyleOption<ZRColor | ZRColor[]>>({
-  ...axisContext.defaultAxisAreaStyle,
-});
+let options = ref<AreaStyleOption<ZRColor | ZRColor[]>>({});
 
 const props = withDefaults(defineProps<AreaStyleOption>(), {});
 

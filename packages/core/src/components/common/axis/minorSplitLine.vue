@@ -24,9 +24,7 @@ const axisContext = useAxis();
 // 提供子级服务
 useAxis<MinorSplitLineOption>({
   options: options,
-  defaultAxisLineStyle: {
-    color: "#eee",
-  },
+
   update: (data) => axisContext.updateAxisStyle(prop, data),
 });
 

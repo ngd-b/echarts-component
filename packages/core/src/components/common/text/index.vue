@@ -17,6 +17,12 @@ const textContext = useText();
 
 const props = withDefaults(defineProps<TextOptions & { prop: TextType }>(), {
   prop: "textStyle",
+  show: undefined,
+  inside: undefined,
+  showMinLabel: undefined,
+  showMaxLabel: undefined,
+  hideOverlap: undefined,
+  richInheritPlainLabel: undefined,
 });
 watch(
   () => props,

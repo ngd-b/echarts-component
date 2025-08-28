@@ -14,8 +14,6 @@ export type AxisType =
   | "splitArea";
 
 export interface AxisContext {
-  defaultAxisLineStyle?: LineStyleOption<ZRColor | ZRColor[]>;
-  defaultAxisAreaStyle?: AreaStyleOption<ZRColor | ZRColor[]>;
   updateAxisStyle: (name: AxisType, data: AxisOption) => void;
   updateAxisLineStyle: (data: LineStyleOption<ZRColor | ZRColor[]>) => void;
   updateAxisAreaStyle: (data: AreaStyleOption<ZRColor | ZRColor[]>) => void;

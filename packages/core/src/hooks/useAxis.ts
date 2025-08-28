@@ -11,8 +11,6 @@ export const ECHARTS_AXIS_KEY = Symbol("vue-echarts-axis");
 
 interface UseAxisOptions<O> {
   options: Ref<O>;
-  defaultAxisLineStyle: LineStyleOption<ZRColor | ZRColor[]>;
-  defaultAxisAreaStyle: AreaStyleOption<ZRColor | ZRColor[]>;
   update: (data: O) => void;
 }
 export const useAxis = <O>(
@@ -29,8 +27,7 @@ export const useAxis = <O>(
     );
   }
 
-  const { options, update, defaultAxisLineStyle, defaultAxisAreaStyle } =
-    config;
+  const { options, update } = config;
 
   /**
    * 更新axis配置
@@ -65,8 +62,6 @@ export const useAxis = <O>(
   };
 
   const ctx: AxisContext = {
-    defaultAxisLineStyle,
-    defaultAxisAreaStyle,
     updateAxisStyle,
     updateAxisLineStyle,
     updateAxisAreaStyle,
