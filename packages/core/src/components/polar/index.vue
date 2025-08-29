@@ -19,7 +19,7 @@ useAxis<PolarComponentOption>({
 });
 
 defineOptions({
-  name: "PolarAxis",
+  name: "Polar",
 });
 
 const props = withDefaults(defineProps<PolarOption>(), {});
