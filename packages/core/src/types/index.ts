@@ -5,3 +5,4 @@ export * from "./actions";
 export * from "./methods";
 export * from "./events";
 export * from "./parallel";
+export * from "./style";

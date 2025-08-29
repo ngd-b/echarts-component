@@ -1,17 +1,17 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { LineStyleOption, ZRColor } from "../type";
+import { LineStyleOption } from "./type";
 import { isUndefined, omitBy } from "lodash";
-import { useAxis } from "../../../../hooks/index";
+import { useStyle } from "../../../hooks/index";
 
 defineOptions({
   name: "LineStyle",
   inheritAttrs: false,
 });
 
-const axisContext = useAxis();
+const styleContext = useStyle();
 
-let options = ref<LineStyleOption<ZRColor | ZRColor[]>>({});
+let options = ref<LineStyleOption>({});
 
 const props = withDefaults(defineProps<LineStyleOption>(), {});
 
@@ -24,7 +24,7 @@ watch(
       ...options.value,
       ...propsData,
     };
-    axisContext.updateAxisLineStyle(options.value);
+    styleContext.update("lineStyle", options.value);
   },
   { immediate: true, deep: true }
 );

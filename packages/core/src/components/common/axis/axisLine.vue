@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import { AxisLineOption } from "./type";
 import { isUndefined, omitBy } from "lodash";
-import { useAxis } from "../../../hooks/useAxis";
+import { useAxis, useStyle } from "../../../hooks";
 import { AxisType } from "../../../types";
 
 const prop: AxisType = "axisLine";
@@ -20,9 +20,8 @@ const props = withDefaults(defineProps<Omit<AxisLineOption, "lineStyle">>(), {
 
 const axisContext = useAxis();
 // 提供子级服务
-useAxis<AxisLineOption>({
+useStyle<AxisLineOption>({
   options: options,
-
   update: (data) => axisContext.updateAxisStyle(prop, data),
 });
 

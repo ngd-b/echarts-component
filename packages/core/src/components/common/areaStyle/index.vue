@@ -1,17 +1,17 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { AreaStyleOption, ZRColor } from "../type";
+import { AreaStyleOption } from "./type";
 import { isUndefined, omitBy } from "lodash";
-import { useAxis } from "../../../../hooks/index";
+import { useStyle } from "../../../hooks/index";
 
 defineOptions({
   name: "AreaStyle",
   inheritAttrs: false,
 });
 
-const axisContext = useAxis();
+const styleContext = useStyle();
 
-let options = ref<AreaStyleOption<ZRColor | ZRColor[]>>({});
+let options = ref<AreaStyleOption>({});
 
 const props = withDefaults(defineProps<AreaStyleOption>(), {});
 
@@ -24,7 +24,7 @@ watch(
       ...options.value,
       ...propsData,
     };
-    axisContext.updateAxisAreaStyle(options.value);
+    styleContext.update("areaStyle", options.value);
   },
   { immediate: true, deep: true }
 );
