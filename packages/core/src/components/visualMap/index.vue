@@ -19,6 +19,13 @@ const props = withDefaults(defineProps<VisualMapOption>(), {
   show: undefined,
   realtime: undefined,
   hoverLink: undefined,
+  calculable: undefined,
+  inverse: undefined,
+  brushSelect: undefined,
+  minOpen: undefined,
+  maxOpen: undefined,
+  selectedMode: undefined,
+  showLabel: undefined,
 });
 
 const omitProps = computed(() => {

@@ -22,6 +22,10 @@ const props = withDefaults(defineProps<PiecewiseVisualMap>(), {
   brushSelect: undefined,
   inverse: undefined,
   hoverLink: undefined,
+  minOpen: undefined,
+  maxOpen: undefined,
+  selectedMode: undefined,
+  showLabel: undefined,
 });
 
 watch(
