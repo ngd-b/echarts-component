@@ -111,7 +111,7 @@ export default defineConfig({
               link: "/components/tooltip",
             },
             {
-              text: "PolarAxis 极坐标系",
+              text: "Polar 极坐标系",
               link: "/components/polarAxis",
             },
             {

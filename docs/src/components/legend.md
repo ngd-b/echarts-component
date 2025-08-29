@@ -17,7 +17,7 @@
     <Legend />
     <Dataset :source="data" />
     <YAxis />
-    <XAxis>
+    <XAxis type="category">
         <AxisTick :show="false" />
     </XAxis>
     <Bar v-for="val in 4" :key="val" seriesLayoutBy='row' />

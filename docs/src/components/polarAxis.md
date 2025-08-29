@@ -1,4 +1,4 @@
-# PolarAxis 极坐标系
+# Polar 极坐标系
 
 <script setup>
   import { ref } from 'vue'
@@ -183,7 +183,7 @@
 <VueEcharts style="width:100%;height:300px;">
     <Title text='Punch Card of Github' link='https://github.com/pissang/echarts-next/graphs/punch-card' />
     <Legend left='right' :data='["Punch Card"]' />
-    <PolarAxis />
+    <Polar />
     <AngleAxis type='category' :data='["12a", "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12p", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p"]' :boundaryGap='false'>
         <SplitLine show>
             <LineStyle color='#999' type='dashed' />
@@ -382,7 +382,7 @@
     <VueEcharts style="width:100%;height:300px;">
         <Title text='Punch Card of Github' link='https://github.com/pissang/echarts-next/graphs/punch-card' />
         <Legend left='right' :data='["Punch Card"]' />
-        <PolarAxis />
+        <Polar />
         <AngleAxis type='category' :data='["12a", "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12p", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p"]' :boundaryGap='false'>
             <SplitLine show>
                 <LineStyle color='#999' type='dashed' />
