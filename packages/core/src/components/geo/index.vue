@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useAxis } from "../../hooks/index";
+import { useVueEcharts, useStyle, useTooltip } from "../../hooks/index";
 import type { GeoOption, GeoComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -14,7 +14,12 @@ const options = ref<GeoComponentOption>({
 const vueEcharts = useVueEcharts();
 
 // 配置坐标系样式
-useAxis<GeoComponentOption>({
+useStyle<GeoComponentOption>({
+  options: options,
+  update,
+});
+
+useTooltip({
   options: options,
   update,
 });

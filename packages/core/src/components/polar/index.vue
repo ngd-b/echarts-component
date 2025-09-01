@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useAxis } from "../../hooks/index";
+import { useVueEcharts, useAxis, useTooltip } from "../../hooks/index";
 import { omitBy, isUndefined } from "lodash";
 import type { PolarComponentOption, PolarOption } from "./type";
 
@@ -18,6 +18,10 @@ useAxis<PolarComponentOption>({
   update,
 });
 
+useTooltip({
+  options: options,
+  update,
+});
 defineOptions({
   name: "Polar",
 });

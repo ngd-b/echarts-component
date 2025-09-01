@@ -1,6 +1,6 @@
 <script setup lang="tsx">
-import { ref, useId, watch } from "vue";
-import { useText, useAxis, useParallel } from "../../hooks/index";
+import { ref, watch } from "vue";
+import { useText, useAxis, useParallel, useTooltip } from "../../hooks/index";
 import type {
   TextType,
   ParallelAxisOption,
@@ -19,6 +19,11 @@ useText<ParallelAxisComponentOption, TextType>({
 });
 // 配置坐标系样式
 useAxis<ParallelAxisComponentOption>({
+  options: options,
+  update,
+});
+
+useTooltip({
   options: options,
   update,
 });

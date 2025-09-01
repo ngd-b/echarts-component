@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts } from "../../hooks/index";
+import { useVueEcharts, useTooltip } from "../../hooks/index";
 import type { GridComponentOption, GridOptions } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -11,6 +11,11 @@ const options = ref<GridComponentOption>({
   id,
 });
 const vueEcharts = useVueEcharts();
+
+useTooltip({
+  options: options,
+  update,
+});
 
 defineOptions({
   name: "Grid",

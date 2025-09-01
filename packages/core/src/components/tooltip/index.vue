@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText } from "../../hooks/index";
+import { useVueEcharts, useText, useTooltip } from "../../hooks/index";
 import type { TextType, TooltipComponentOption, TooltipOptions } from "./type";
 import { omitBy, isUndefined } from "lodash";
 // 组件唯一id
@@ -16,6 +16,8 @@ useText<TooltipComponentOption, TextType>({
   options: options,
   update,
 });
+// 特定组件内使用
+const tooltipCtx = useTooltip();
 
 defineOptions({
   name: "Tooltip",
@@ -48,6 +50,10 @@ watch(
  * @param data
  */
 function update(data: TooltipComponentOption) {
+  if (tooltipCtx) {
+    tooltipCtx.update(data);
+    return;
+  }
   vueEcharts.update("tooltip", data);
 }
 </script>

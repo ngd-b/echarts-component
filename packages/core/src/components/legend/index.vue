@@ -1,6 +1,11 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText, useStyle } from "../../hooks/index";
+import {
+  useVueEcharts,
+  useText,
+  useStyle,
+  useTooltip,
+} from "../../hooks/index";
 import type { LegendComponentOption, LegendOptions, TextType } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -19,6 +24,11 @@ useText<LegendComponentOption, TextType>({
 });
 
 useStyle<LegendComponentOption>({
+  options: options,
+  update,
+});
+
+useTooltip({
   options: options,
   update,
 });

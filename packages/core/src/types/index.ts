@@ -6,3 +6,4 @@ export * from "./methods";
 export * from "./events";
 export * from "./parallel";
 export * from "./style";
+export * from "./tooltip";

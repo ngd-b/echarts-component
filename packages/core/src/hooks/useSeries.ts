@@ -1,6 +1,6 @@
 import { Ref, watch } from "vue";
 import { omitBy, isUndefined } from "lodash";
-import { useVueEcharts, useStyle } from "./index";
+import { useVueEcharts, useStyle, useTooltip } from "./index";
 import { MainTypeMap } from "../types";
 
 /**
@@ -17,6 +17,13 @@ export const useSeries = <T extends MainTypeMap["series"]>(
    * lineStyle \ areaStyle \ itemStyle 等。
    */
   useStyle<T>({
+    options: options,
+    update,
+  });
+  /**
+   * 系列特定的tooltip配置
+   */
+  useTooltip({
     options: options,
     update,
   });

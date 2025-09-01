@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText, useAxis } from "../../hooks/index";
+import { useVueEcharts, useText, useAxis, useTooltip } from "../../hooks/index";
 import type {
   TextType,
   RadiusAxisComponentOption,
@@ -23,6 +23,11 @@ useText<RadiusAxisComponentOption, TextType>({
 });
 // 配置坐标系样式
 useAxis<RadiusAxisComponentOption>({
+  options: options,
+  update,
+});
+
+useTooltip({
   options: options,
   update,
 });

@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText, useAxis } from "../../hooks/index";
+import { useVueEcharts, useText, useAxis, useTooltip } from "../../hooks/index";
 import type { TextType, XAXisComponentOption, XAXisOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -19,6 +19,11 @@ useText<XAXisComponentOption, TextType>({
 });
 // 配置坐标系样式
 useAxis<XAXisComponentOption>({
+  options: options,
+  update,
+});
+
+useTooltip({
   options: options,
   update,
 });
