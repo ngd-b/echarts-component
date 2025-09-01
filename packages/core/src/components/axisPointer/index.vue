@@ -1,6 +1,11 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText, useStyle } from "../../hooks/index";
+import {
+  useVueEcharts,
+  useText,
+  useStyle,
+  useAxisPointer,
+} from "../../hooks/index";
 import type {
   TextType,
   AxisPointerComponentOption,
@@ -26,6 +31,9 @@ useStyle<AxisPointerComponentOption>({
   options: options,
   update,
 });
+
+// 特定组件内使用
+const axisPointerCtx = useAxisPointer();
 
 defineOptions({
   name: "AxisPointer",
@@ -57,6 +65,10 @@ watch(
  * @param data
  */
 function update(data: AxisPointerComponentOption) {
+  if (axisPointerCtx) {
+    axisPointerCtx.update(data);
+    return;
+  }
   vueEcharts.update("axisPointer", data);
 }
 </script>

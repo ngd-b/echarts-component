@@ -1,6 +1,12 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText, useAxis, useTooltip } from "../../hooks/index";
+import {
+  useVueEcharts,
+  useText,
+  useAxis,
+  useTooltip,
+  useAxisPointer,
+} from "../../hooks/index";
 import type {
   TextType,
   RadiusAxisComponentOption,
@@ -28,6 +34,11 @@ useAxis<RadiusAxisComponentOption>({
 });
 
 useTooltip({
+  options: options,
+  update,
+});
+
+useAxisPointer({
   options: options,
   update,
 });

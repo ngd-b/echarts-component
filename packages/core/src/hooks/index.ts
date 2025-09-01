@@ -5,3 +5,4 @@ export * from "./useSeries";
 export * from "./useParallel";
 export * from "./useStyle";
 export * from "./useTooltip";
+export * from "./useAxisPointer";

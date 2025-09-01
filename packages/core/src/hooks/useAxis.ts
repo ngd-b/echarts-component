@@ -48,7 +48,7 @@ export const useAxis = <O>(
     provide<AxisContext>(ECHARTS_AXIS_KEY, ctx);
   } else {
     console.warn(
-      "[Vue Echarts] useVueEcharts() is called outside of a component setup()."
+      "[Vue Echarts] useAxis() is called outside of a component setup()."
     );
   }
   return ctx;

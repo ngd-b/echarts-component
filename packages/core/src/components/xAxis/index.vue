@@ -1,6 +1,12 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText, useAxis, useTooltip } from "../../hooks/index";
+import {
+  useVueEcharts,
+  useText,
+  useAxis,
+  useTooltip,
+  useAxisPointer,
+} from "../../hooks/index";
 import type { TextType, XAXisComponentOption, XAXisOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -28,6 +34,10 @@ useTooltip({
   update,
 });
 
+useAxisPointer({
+  options: options,
+  update,
+});
 defineOptions({
   name: "XAxis",
 });

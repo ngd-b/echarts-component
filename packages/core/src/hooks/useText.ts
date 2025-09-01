@@ -19,7 +19,7 @@ export function useText<O extends UpdateOption, E extends TextType>(
 
   if (!config || !config.options || !config.update) {
     throw new Error(
-      "[Vue Echarts]: useTitle() requires options and update function."
+      "[Vue Echarts]: useText() requires options and update function."
     );
   }
   const { options, update } = config;
@@ -46,7 +46,7 @@ export function useText<O extends UpdateOption, E extends TextType>(
     provide<TextContext<E>>(ECHARTS_TEXT_KEY, ctx);
   } else {
     console.warn(
-      "[Vue Echarts] useVueEcharts() is called outside of a component setup()."
+      "[Vue Echarts] useText() is called outside of a component setup()."
     );
   }
   return ctx;

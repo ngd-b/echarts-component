@@ -5,7 +5,7 @@ import { getCurrentInstance, inject, provide, Ref } from "vue";
 import { TooltipComponentOption } from "../components/type";
 import { TooltipContext } from "../types/index";
 
-export const ECHARTS_TOOLTIP_KEY = "ECHARTS_TOOLTIP_KEY";
+export const ECHARTS_TOOLTIP_KEY = Symbol("ECHARTS_TOOLTIP_KEY");
 
 interface TooltipOption<T> {
   options: Ref<T>;
@@ -32,7 +32,7 @@ export const useTooltip = <T>(config?: TooltipOption<T>) => {
     provide<TooltipContext>(ECHARTS_TOOLTIP_KEY, ctx);
   } else {
     console.warn(
-      "[Vue Echarts] useStyle() is called outside of a component setup()."
+      "[Vue Echarts] useTooltip() is called outside of a component setup()."
     );
   }
 
