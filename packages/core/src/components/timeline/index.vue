@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText, useAxis } from "../../hooks/index";
+import { useVueEcharts, useText, useStyle } from "../../hooks/index";
 import type { TextType, TimelineOption, TimelineComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -17,8 +17,8 @@ useText<TimelineComponentOption, TextType>({
   options: options,
   update,
 });
-// 配置坐标系样式
-useAxis<TimelineComponentOption>({
+
+useStyle<TimelineComponentOption>({
   options: options,
   update,
 });

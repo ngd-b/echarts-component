@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText } from "../../hooks/index";
+import { useVueEcharts, useText, useStyle } from "../../hooks/index";
 import type { LegendComponentOption, LegendOptions, TextType } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -14,6 +14,11 @@ const vueEcharts = useVueEcharts();
 
 // 增加文本样式
 useText<LegendComponentOption, TextType>({
+  options: options,
+  update,
+});
+
+useStyle<LegendComponentOption>({
   options: options,
   update,
 });

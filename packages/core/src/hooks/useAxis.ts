@@ -39,32 +39,8 @@ export const useAxis = <O>(
     update(options.value);
   };
 
-  /**
-   * 更新lineStyle
-   * @param data
-   */
-  const updateAxisLineStyle = (data: LineStyleOption<ZRColor | ZRColor[]>) => {
-    (
-      options.value as { lineStyle: LineStyleOption<ZRColor | ZRColor[]> }
-    ).lineStyle = data;
-    update(options.value);
-  };
-
-  /**
-   * 更新areaStyle
-   * @param data
-   */
-  const updateAxisAreaStyle = (data: AreaStyleOption<ZRColor | ZRColor[]>) => {
-    (
-      options.value as { areaStyle: AreaStyleOption<ZRColor | ZRColor[]> }
-    ).areaStyle = data;
-    update(options.value);
-  };
-
   const ctx: AxisContext = {
     updateAxisStyle,
-    updateAxisLineStyle,
-    updateAxisAreaStyle,
   };
 
   const instance = getCurrentInstance();

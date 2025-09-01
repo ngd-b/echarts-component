@@ -1,6 +1,6 @@
 import { Ref, watch } from "vue";
 import { omitBy, isUndefined } from "lodash";
-import { useVueEcharts } from "./useVueEcharts";
+import { useVueEcharts, useStyle } from "./index";
 import { MainTypeMap } from "../types";
 
 /**
@@ -11,8 +11,15 @@ import { MainTypeMap } from "../types";
 export const useSeries = <T extends MainTypeMap["series"]>(
   props: Readonly<Record<string, any>>,
   options: Ref<T>
-) => {
+): { update: (data: T) => void } => {
   const vueEcharts = useVueEcharts();
+  /**
+   * lineStyle \ areaStyle \ itemStyle 等。
+   */
+  useStyle<T>({
+    options: options,
+    update,
+  });
 
   watch(
     () => ({ ...props }),
@@ -34,4 +41,8 @@ export const useSeries = <T extends MainTypeMap["series"]>(
   function update(data: T) {
     vueEcharts.update("series", data);
   }
+
+  return {
+    update,
+  };
 };

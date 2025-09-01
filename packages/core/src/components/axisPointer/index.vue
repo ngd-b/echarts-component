@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText, useAxis } from "../../hooks/index";
+import { useVueEcharts, useText, useStyle } from "../../hooks/index";
 import type {
   TextType,
   AxisPointerComponentOption,
@@ -21,8 +21,8 @@ useText<AxisPointerComponentOption, TextType>({
   options: options,
   update,
 });
-// 配置坐标系样式
-useAxis<AxisPointerComponentOption>({
+
+useStyle<AxisPointerComponentOption>({
   options: options,
   update,
 });

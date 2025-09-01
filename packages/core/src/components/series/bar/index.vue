@@ -34,4 +34,6 @@ const props = withDefaults(defineProps<BarSeries>(), {
 
 useSeries<BarSeriesOption>(props, options);
 </script>
-<template></template>
+<template>
+  <slot></slot>
+</template>
