@@ -36,7 +36,7 @@
     <XAxis type='time'>
         <SplitLine :show='false' />
         <AxisPointer value='2016-10-7' snap>
-            <Text prop='label' show formatter="(params)=>echarts.format.formatTime('yyyy-MM-dd', params.value)" />
+            <Text prop='label' show :formatter="(params)=>echarts.format.formatTime('yyyy-MM-dd', params.value)" />
             <Handle show />
         </AxisPointer>
     </XAxis>

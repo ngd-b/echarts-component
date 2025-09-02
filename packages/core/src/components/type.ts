@@ -90,6 +90,7 @@ import type {
   AxisOption,
   LineStyleOption,
   AreaStyleOption,
+  ItemStyleOption,
   ZRColor,
 } from "./common/type";
 
@@ -190,7 +191,13 @@ export {
   XAXisOption,
 };
 
-export { TextOptions, AxisOption, LineStyleOption, AreaStyleOption };
+export {
+  TextOptions,
+  AxisOption,
+  LineStyleOption,
+  AreaStyleOption,
+  ItemStyleOption,
+};
 export type { ZRColor };
 
 export type SeriesOption =

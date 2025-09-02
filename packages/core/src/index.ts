@@ -56,6 +56,7 @@ import {
   SplitLine,
   LineStyle,
   AreaStyle,
+  ItemStyle,
 } from "./components/index";
 import "virtual:uno.css";
 export * from "./hooks/index";
@@ -116,6 +117,7 @@ export {
   SplitLine,
   LineStyle,
   AreaStyle,
+  ItemStyle,
 };
 
 const components = [
@@ -172,6 +174,7 @@ const components = [
   SplitLine,
   LineStyle,
   AreaStyle,
+  ItemStyle,
 ];
 export default {
   install(app: App) {
