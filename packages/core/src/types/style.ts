@@ -4,12 +4,13 @@ import {
   ItemStyleOption,
 } from "../components/type";
 
-export type StyleType = "lineStyle" | "areaStyle" | "itemStyle";
+export type StyleType = "lineStyle" | "areaStyle" | "itemStyle" | "shadowStyle";
 
 export type StyleTypeMap = {
   lineStyle: LineStyleOption;
   areaStyle: AreaStyleOption;
   itemStyle: ItemStyleOption;
+  shadowStyle: AreaStyleOption;
 };
 
 export type StyleTypeOption =
