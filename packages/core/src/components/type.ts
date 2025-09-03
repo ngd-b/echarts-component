@@ -67,6 +67,7 @@ import type {
 import type {
   AxisPointerComponentOption,
   AxisPointerOption,
+  HandleStyleOption,
 } from "./axisPointer/type";
 import type { ToolboxComponentOption, ToolboxOption } from "./toolbox/type";
 import type { BrushComponentOption, BrushOption } from "./brush/type";
@@ -197,6 +198,7 @@ export {
   LineStyleOption,
   AreaStyleOption,
   ItemStyleOption,
+  HandleStyleOption,
 };
 export type { ZRColor };
 

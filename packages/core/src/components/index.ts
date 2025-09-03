@@ -26,6 +26,9 @@ import Timeline from "./timeline/index.vue";
 import Calendar from "./calendar/index.vue";
 import Dataset from "./dataset/index.vue";
 
+//
+import Handle from "./axisPointer/handle.vue";
+
 export {
   XAxis,
   YAxis,
@@ -51,6 +54,7 @@ export {
   Dataset,
 };
 
+export { Handle };
 // children components
 export * from "./common/index";
 // series type

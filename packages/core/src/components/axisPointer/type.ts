@@ -12,3 +12,17 @@ export type AxisPointerOption = Partial<
     "label" | "lineStyle" | "shadowStyle" | "handle"
   >
 >;
+
+type ColorString = string;
+export type HandleStyleOption = {
+  show?: boolean;
+  icon?: string;
+  size?: number | number[];
+  margin?: number;
+  color?: ColorString;
+  throttle?: number;
+  shadowBlur?: number;
+  shadowColor?: ColorString;
+  shadowOffsetX?: number;
+  shadowOffsetY?: number;
+};
