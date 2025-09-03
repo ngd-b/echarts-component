@@ -1,8 +1,9 @@
 # Tooltip 提示框组件
 
 <script setup>
-  import { ref } from 'vue'
+  import { ref,onMounted } from 'vue'
   import * as echarts from 'echarts';
+  import { useVueEcharts } from '@echarts-component/vue'
 
     const data =[
         [
@@ -28,6 +29,10 @@
             ["2016-10-12", 13]
         ]
     ]
+    const { getOption } = useVueEcharts();
+    onMounted(() => {
+        console.log(getOption())
+    })
 </script>
 
 <VueEcharts style="width:100%;height:300px;" :animationDuration='2000'>
@@ -43,9 +48,9 @@
     <YAxis type='value' :z='10'>
         <AxisTick show />
         <SplitLine :show='false' />
-        <Text prop='axisLabel' inside />
+        <Text prop='axisLabel' :inside='true'  />
     </YAxis>
-    <Grid :top='110' :left='15' :right='15' :height='160' />
+    <Grid :top='110' :left='15' :right='15'  :bottom='80' />
     <Line name='模拟数据' smooth symbol='circle' :symbolSize='5' sampling='lttb' stack='a' :data='data[0]'>
         <AreaStyle />
         <ItemStyle color='#8ec6ad' />
@@ -94,16 +99,16 @@
         <XAxis type='time'>
             <SplitLine :show='false' />
             <AxisPointer value='2016-10-7' snap>
-                <Text prop='label' show formatter="(params)=>echarts.format.formatTime('yyyy-MM-dd', params.value)" />
+                <Text prop='label' show :formatter="(params)=>echarts.format.formatTime('yyyy-MM-dd', params.value)" />
                 <Handle show />
             </AxisPointer>
         </XAxis>
         <YAxis type='value' :z='10'>
             <AxisTick show />
             <SplitLine :show='false' />
-            <Text prop='axisLabel' inside />
+            <Text prop='axisLabel' :inside='true'  />
         </YAxis>
-        <Grid :top='110' :left='15' :right='15' :height='160' />
+        <Grid :top='110' :left='15' :right='15'  :bottom='80' />
         <Line name='模拟数据' smooth symbol='circle' :symbolSize='5' sampling='lttb' stack='a' :data='data[0]'>
             <AreaStyle />
             <ItemStyle color='#8ec6ad' />
