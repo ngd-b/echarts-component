@@ -10,7 +10,8 @@ export type StyleType =
   | "areaStyle"
   | "itemStyle"
   | "shadowStyle"
-  | "handle";
+  | "handle"
+  | "iconStyle";
 
 export type StyleTypeMap = {
   lineStyle: LineStyleOption;
@@ -18,6 +19,7 @@ export type StyleTypeMap = {
   itemStyle: ItemStyleOption;
   shadowStyle: AreaStyleOption;
   handle: HandleStyleOption;
+  iconStyle: ItemStyleOption;
 };
 
 export type StyleTypeOption =

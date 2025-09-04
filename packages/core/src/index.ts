@@ -59,6 +59,7 @@ import {
   ItemStyle,
   ShadowStyle,
   Handle,
+  IconStyle,
 } from "./components/index";
 import "virtual:uno.css";
 export * from "./hooks/index";
@@ -122,6 +123,7 @@ export {
   ItemStyle,
   ShadowStyle,
   Handle,
+  IconStyle,
 };
 
 const components = [
@@ -181,6 +183,7 @@ const components = [
   ItemStyle,
   ShadowStyle,
   Handle,
+  IconStyle,
 ];
 export default {
   install(app: App) {

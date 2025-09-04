@@ -4,3 +4,4 @@ export * from "./lineStyle/type";
 export * from "./areaStyle/type";
 export * from "./itemStyle/type";
 export * from "./shadowStyle/type";
+export * from "./iconStyle/type";
