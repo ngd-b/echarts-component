@@ -97,6 +97,9 @@ import type {
   AreaStyleOption,
   ItemStyleOption,
   ZRColor,
+  MarkPointComponentOption,
+  MarkLineComponentOption,
+  MarkAreaComponentOption,
 } from "./common/type";
 
 export { EChartsOption };
@@ -204,6 +207,9 @@ export {
   ItemStyleOption,
   HandleStyleOption,
   FeatureOption,
+  MarkPointComponentOption,
+  MarkLineComponentOption,
+  MarkAreaComponentOption,
 };
 export type { ZRColor };
 

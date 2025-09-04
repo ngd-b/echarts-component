@@ -23,6 +23,8 @@ const props = withDefaults(
   {
     show: undefined,
     readOnly: undefined,
+    yAxisIndex: undefined,
+    xAxisIndex: undefined,
   }
 );
 

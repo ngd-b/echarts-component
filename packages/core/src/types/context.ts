@@ -22,6 +22,9 @@ import type {
   DatasetComponentOption,
   SeriesOption,
   ParallelAxisComponentOption,
+  MarkPointComponentOption,
+  MarkLineComponentOption,
+  MarkAreaComponentOption,
 } from "../components/type";
 import { Actions } from "./actions";
 import type { Ref, ShallowReactive, ShallowRef } from "vue";
@@ -49,7 +52,10 @@ export type UpdateOption =
   | TimelineComponentOption
   | CalendarComponentOption
   | PolarComponentOption
-  | ParallelAxisComponentOption;
+  | ParallelAxisComponentOption
+  | MarkPointComponentOption
+  | MarkLineComponentOption
+  | MarkAreaComponentOption;
 
 export interface EchartsState {
   options: Ref<ChartOptions>;

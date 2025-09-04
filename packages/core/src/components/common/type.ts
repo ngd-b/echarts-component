@@ -5,3 +5,6 @@ export * from "./areaStyle/type";
 export * from "./itemStyle/type";
 export * from "./shadowStyle/type";
 export * from "./iconStyle/type";
+export { MarkPointComponentOption } from "./markPoint/type";
+export { MarkLineComponentOption } from "./markLine/type";
+export { MarkAreaComponentOption } from "./markArea/type";

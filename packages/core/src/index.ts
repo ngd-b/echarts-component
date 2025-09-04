@@ -61,6 +61,9 @@ import {
   Handle,
   IconStyle,
   Feature,
+  MarkArea,
+  MarkPoint,
+  MarkLine,
 } from "./components/index";
 import "virtual:uno.css";
 export * from "./hooks/index";
@@ -126,6 +129,9 @@ export {
   Handle,
   IconStyle,
   Feature,
+  MarkArea,
+  MarkPoint,
+  MarkLine,
 };
 
 const components = [
@@ -187,6 +193,9 @@ const components = [
   Handle,
   IconStyle,
   Feature,
+  MarkArea,
+  MarkPoint,
+  MarkLine,
 ];
 export default {
   install(app: App) {
