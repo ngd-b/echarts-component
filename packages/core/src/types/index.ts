@@ -8,3 +8,4 @@ export * from "./parallel";
 export * from "./style";
 export * from "./tooltip";
 export * from "./axisPointer";
+export * from "./feature";

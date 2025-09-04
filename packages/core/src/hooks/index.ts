@@ -6,3 +6,4 @@ export * from "./useParallel";
 export * from "./useStyle";
 export * from "./useTooltip";
 export * from "./useAxisPointer";
+export * from "./useFeature";

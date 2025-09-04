@@ -1,6 +1,11 @@
 <script setup lang="tsx">
-import { ref, useId, watch } from "vue";
-import { useVueEcharts, useStyle, useTooltip } from "../../hooks/index";
+import { computed, ref, useId, watch } from "vue";
+import {
+  useVueEcharts,
+  useStyle,
+  useTooltip,
+  useFeature,
+} from "../../hooks/index";
 import type { ToolboxOption, ToolboxComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -12,7 +17,8 @@ const options = ref<ToolboxComponentOption>({
 });
 const vueEcharts = useVueEcharts();
 
-// 配置坐标系样式
+const feature = computed(() => options.value.feature || {});
+
 useStyle({
   options: options,
   update,
@@ -21,6 +27,14 @@ useStyle({
 useTooltip({
   options: options,
   update,
+});
+
+useFeature({
+  options: feature,
+  update(data) {
+    options.value.feature = data;
+    update(options.value);
+  },
 });
 
 defineOptions({
