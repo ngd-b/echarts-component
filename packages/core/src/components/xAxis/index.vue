@@ -44,10 +44,13 @@ defineOptions({
 
 const props = withDefaults(defineProps<XAXisOption>(), {
   type: undefined,
-  show: true,
+  show: undefined,
   animation: undefined,
   boundaryGap: undefined,
   scale: undefined,
+  inverse: undefined,
+  triggerEvent: undefined,
+  silent: undefined,
   alignTicks: undefined,
   deduplication: undefined,
 });

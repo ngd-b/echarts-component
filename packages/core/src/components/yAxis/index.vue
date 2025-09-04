@@ -46,12 +46,15 @@ defineOptions({
 
 const props = withDefaults(defineProps<YAXisOption>(), {
   type: undefined,
-  show: true,
+  show: undefined,
   animation: undefined,
   boundaryGap: undefined,
   scale: undefined,
   alignTicks: undefined,
   deduplication: undefined,
+  inverse: undefined,
+  triggerEvent: undefined,
+  silent: undefined,
 });
 
 watch(

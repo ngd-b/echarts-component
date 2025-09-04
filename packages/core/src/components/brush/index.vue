@@ -25,6 +25,13 @@ defineOptions({
 const props = withDefaults(defineProps<BrushOption>(), {
   transformable: undefined,
   removeOnClick: undefined,
+  bmapIndex: undefined,
+  brushType: undefined,
+  geoIndex: undefined,
+  gridIndex: undefined,
+  seriesIndex: undefined,
+  xAxisIndex: undefined,
+  yAxisIndex: undefined,
 });
 
 watch(

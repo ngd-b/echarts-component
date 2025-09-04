@@ -41,8 +41,9 @@ const props = withDefaults(defineProps<LegendOptions>(), {
   show: undefined,
   selectedMode: undefined,
   animation: undefined,
-  // selector: undefined,
+  //selector: undefined,
   triggerEvent: undefined,
+  symbolKeepAspect: undefined,
 });
 
 watch(
