@@ -298,15 +298,57 @@ export default defineConfig({
                   text: "SplitArea 分割区域样式",
                   link: "/components/common/axis/splitArea",
                 },
-                {
-                  text: "LineStyle 坐标轴线样式",
-                  link: "/components/common/axis/lineStyle",
-                },
-                {
-                  text: "AreaStyle 坐标轴区域样式",
-                  link: "/components/common/axis/areaStyle",
-                },
               ],
+            },
+            {
+              text: "LineStyle 线条样式",
+              link: "/components/common/lineStyle",
+            },
+            {
+              text: "AreaStyle 区域样式",
+              link: "/components/common/areaStyle",
+            },
+            {
+              text: "Itemstyle 元素项样式",
+              link: "/components/common/itemStyle",
+            },
+            {
+              text: "IconStyle 图标样式",
+              link: "/components/common/iconStyle",
+            },
+            {
+              text: "ShadowStyle 阴影样式",
+              link: "/components/common/shadowStyle",
+            },
+            {
+              text: "MarkLine 标记线样式",
+              link: "/components/common/markLine",
+            },
+            {
+              text: "MarkPoint 标记点样式",
+              link: "/components/common/markPoint",
+            },
+            {
+              text: "MarkArea 标记区域样式",
+              link: "/components/common/markArea",
+            },
+          ],
+        },
+        {
+          text: "其他",
+          collapsed: false,
+          items: [
+            {
+              text: "Handle 手柄样式",
+              link: "/components/common/handle",
+            },
+            {
+              text: "ParallelAxisDefault 平行坐标系样式",
+              link: "/components/common/parallelAxisDefault",
+            },
+            {
+              text: "Feature 工具箱工具样式",
+              link: "/components/common/feature",
             },
           ],
         },
