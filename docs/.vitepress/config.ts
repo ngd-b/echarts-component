@@ -53,6 +53,34 @@ export default defineConfig({
           text: "useText",
           link: "/composition/useText",
         },
+        {
+          text: "useAxisPointer",
+          link: "/composition/useAxisPointer",
+        },
+        {
+          text: "useFeature",
+          link: "/composition/useFeature",
+        },
+        {
+          text: "useMark",
+          link: "/composition/useMark",
+        },
+        {
+          text: "useParallel",
+          link: "/composition/useParallel",
+        },
+        {
+          text: "useSeries",
+          link: "/composition/useSeries",
+        },
+        {
+          text: "useStyle",
+          link: "/composition/useStyle",
+        },
+        {
+          text: "useTooltip",
+          link: "/composition/useTooltip",
+        },
       ],
       guide: [
         {
@@ -268,7 +296,7 @@ export default defineConfig({
           items: [
             {
               text: "Text 文本样式设置",
-              link: "/components/common/axis",
+              link: "/components/common/text",
             },
             {
               text: "Axis 坐标轴样式",
