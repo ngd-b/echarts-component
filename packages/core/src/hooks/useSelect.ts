@@ -25,13 +25,13 @@ export const useSelect = <T>(config?: UseSelectOption<T>) => {
   }
   const { options, update } = config;
 
-  function updateEmphasis(data: SelectComponentOption) {
+  function updateSelect(data: SelectComponentOption) {
     (options.value as Record<"select", SelectComponentOption>).select = data;
     update(options.value);
   }
 
   const ctx: SelectContext = {
-    update: updateEmphasis,
+    update: updateSelect,
   };
   const instance = getCurrentInstance();
   if (instance) {

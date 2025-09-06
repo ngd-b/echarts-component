@@ -12,3 +12,4 @@ export * from "./feature";
 export * from "./mark";
 export * from "./emphasis";
 export * from "./select";
+export * from "./blur";

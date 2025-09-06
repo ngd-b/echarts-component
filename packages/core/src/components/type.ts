@@ -102,6 +102,7 @@ import type {
   MarkAreaComponentOption,
   EmphasisComponentOption,
   SelectComponentOption,
+  BlurComponentOption,
 } from "./common/type";
 
 export { EChartsOption };
@@ -214,6 +215,7 @@ export {
   MarkAreaComponentOption,
   EmphasisComponentOption,
   SelectComponentOption,
+  BlurComponentOption,
 };
 export type { ZRColor };
 

@@ -1,21 +1,19 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
 import { isUndefined, omitBy } from "lodash";
-import { SelectComponentOption, SelectOption } from "./type";
-import { useSelect, useText, useStyle } from "../../../hooks/index";
+import { BlurComponentOption, BlurOption } from "./type";
+import { useBlur, useText, useStyle } from "../../../hooks/index";
 
 defineOptions({
-  name: "Select",
+  name: "Blur",
   inheritAttrs: false,
 });
 
-let options = ref<SelectComponentOption>({});
+let options = ref<BlurComponentOption>({});
 
-const props = withDefaults(defineProps<SelectOption>(), {
-  disabled: undefined,
-});
+const props = withDefaults(defineProps<BlurOption>(), {});
 
-const selectCtx = useSelect();
+const blurCtx = useBlur();
 
 /**
  * 文本
@@ -51,8 +49,8 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: SelectComponentOption) {
-  selectCtx.update(data);
+function update(data: BlurComponentOption) {
+  blurCtx.update(data);
 }
 </script>
 <template>

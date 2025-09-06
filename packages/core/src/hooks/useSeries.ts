@@ -8,6 +8,7 @@ import {
   useText,
   useEmphasis,
   useSelect,
+  useBlur,
 } from "./index";
 import { MainTypeMap } from "../types";
 
@@ -64,6 +65,14 @@ export const useSeries = <T extends MainTypeMap["series"]>(
    * 选中
    */
   useSelect({
+    options: options,
+    update,
+  });
+
+  /**
+   * 失焦
+   */
+  useBlur({
     options: options,
     update,
   });

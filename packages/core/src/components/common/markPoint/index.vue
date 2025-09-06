@@ -2,7 +2,13 @@
 import { ref, watch } from "vue";
 import { MarkPointComponentOption, MarkPointOption, TextType } from "./type";
 import { isUndefined, omitBy } from "lodash";
-import { useStyle, useMark, useText, useEmphasis } from "../../../hooks/index";
+import {
+  useStyle,
+  useMark,
+  useText,
+  useEmphasis,
+  useBlur,
+} from "../../../hooks/index";
 
 defineOptions({
   name: "MarkPoint",
@@ -24,6 +30,11 @@ useText<MarkPointComponentOption, TextType>({
 });
 
 useEmphasis({
+  options,
+  update,
+});
+
+useBlur({
   options,
   update,
 });

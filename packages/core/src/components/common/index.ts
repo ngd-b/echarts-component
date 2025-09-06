@@ -9,6 +9,7 @@ import MarkLine from "./markLine/index.vue";
 import MarkArea from "./markArea/index.vue";
 import Emphasis from "./emphasis/index.vue";
 import Select from "./select/index.vue";
+import Blur from "./blur/index.vue";
 
 export * from "./axis/index";
 export {
@@ -23,4 +24,5 @@ export {
   MarkArea,
   Emphasis,
   Select,
+  Blur,
 };

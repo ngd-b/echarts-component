@@ -6,6 +6,7 @@ import {
   useTooltip,
   useEmphasis,
   useSelect,
+  useBlur,
 } from "../../hooks/index";
 import type { GeoOption, GeoComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
@@ -36,6 +37,11 @@ useEmphasis({
 });
 
 useSelect({
+  options,
+  update,
+});
+
+useBlur({
   options,
   update,
 });
