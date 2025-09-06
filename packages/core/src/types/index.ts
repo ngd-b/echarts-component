@@ -10,3 +10,4 @@ export * from "./tooltip";
 export * from "./axisPointer";
 export * from "./feature";
 export * from "./mark";
+export * from "./emphasis";

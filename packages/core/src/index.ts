@@ -64,6 +64,7 @@ import {
   MarkArea,
   MarkPoint,
   MarkLine,
+  Emphasis,
 } from "./components/index";
 import "virtual:uno.css";
 export * from "./hooks/index";
@@ -132,6 +133,7 @@ export {
   MarkArea,
   MarkPoint,
   MarkLine,
+  Emphasis,
 };
 
 const components = [
@@ -196,6 +198,7 @@ const components = [
   MarkArea,
   MarkPoint,
   MarkLine,
+  Emphasis,
 ];
 export default {
   install(app: App) {

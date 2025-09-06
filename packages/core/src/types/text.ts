@@ -8,6 +8,7 @@ export type TextType =
   | "axisLabel"
   | "axisName"
   | "label"
+  | 'endLabel'
   | "dayLabel"
   | "monthLabel"
   | "yearLabel"

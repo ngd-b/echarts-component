@@ -1,6 +1,13 @@
 import { Ref, watch } from "vue";
 import { omitBy, isUndefined } from "lodash";
-import { useVueEcharts, useStyle, useTooltip, useMark } from "./index";
+import {
+  useVueEcharts,
+  useStyle,
+  useTooltip,
+  useMark,
+  useText,
+  useEmphasis,
+} from "./index";
 import { MainTypeMap } from "../types";
 
 /**
@@ -32,6 +39,22 @@ export const useSeries = <T extends MainTypeMap["series"]>(
    * 系列mark
    */
   useMark({
+    options: options,
+    update,
+  });
+
+  /**
+   * 文本样式
+   */
+  useText({
+    options: options,
+    update,
+  });
+
+  /**
+   * 高亮
+   */
+  useEmphasis({
     options: options,
     update,
   });
