@@ -1,6 +1,11 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText, useStyle } from "../../hooks/index";
+import {
+  useVueEcharts,
+  useText,
+  useStyle,
+  useEmphasis,
+} from "../../hooks/index";
 import type { TextType, TimelineOption, TimelineComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -20,6 +25,11 @@ useText<TimelineComponentOption, TextType>({
 
 useStyle<TimelineComponentOption>({
   options: options,
+  update,
+});
+
+useEmphasis({
+  options,
   update,
 });
 

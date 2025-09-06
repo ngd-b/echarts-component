@@ -1,6 +1,11 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useStyle, useTooltip } from "../../hooks/index";
+import {
+  useVueEcharts,
+  useStyle,
+  useTooltip,
+  useEmphasis,
+} from "../../hooks/index";
 import type { GeoOption, GeoComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -21,6 +26,11 @@ useStyle<GeoComponentOption>({
 
 useTooltip({
   options: options,
+  update,
+});
+
+useEmphasis({
+  options,
   update,
 });
 

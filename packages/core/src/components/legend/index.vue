@@ -5,6 +5,7 @@ import {
   useText,
   useStyle,
   useTooltip,
+  useEmphasis,
 } from "../../hooks/index";
 import type { LegendComponentOption, LegendOptions, TextType } from "./type";
 import { omitBy, isUndefined } from "lodash";
@@ -30,6 +31,11 @@ useStyle<LegendComponentOption>({
 
 useTooltip({
   options: options,
+  update,
+});
+
+useEmphasis({
+  options,
   update,
 });
 

@@ -2,7 +2,7 @@
 import { computed, ref, watch } from "vue";
 import { FeatureOption, FeatureType } from "./type";
 import { isUndefined, omitBy } from "lodash";
-import { useFeature, useStyle } from "../../hooks/index";
+import { useFeature, useStyle, useEmphasis } from "../../hooks/index";
 
 defineOptions({
   name: "Feature",
@@ -15,6 +15,11 @@ const featureCtx = useFeature();
 
 useStyle({
   options: options,
+  update,
+});
+
+useEmphasis({
+  options,
   update,
 });
 

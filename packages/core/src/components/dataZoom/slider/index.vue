@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts } from "../../../hooks/index";
+import { useVueEcharts, useEmphasis } from "../../../hooks/index";
 import type { SliderDataZoom, SliderDataZoomOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -12,6 +12,11 @@ const options = ref<SliderDataZoomOption>({
   type: "slider",
 });
 const vueEcharts = useVueEcharts();
+
+useEmphasis({
+  options,
+  update,
+});
 
 defineOptions({
   name: "SliderDataZoom",

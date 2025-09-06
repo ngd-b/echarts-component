@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import { MarkAreaComponentOption, MarkAreaOption, TextType } from "./type";
 import { isUndefined, omitBy } from "lodash";
-import { useStyle, useMark, useText } from "../../../hooks/index";
+import { useStyle, useMark, useText, useEmphasis } from "../../../hooks/index";
 
 defineOptions({
   name: "MarkArea",
@@ -20,6 +20,11 @@ useStyle({
 
 useText<MarkAreaComponentOption, TextType>({
   options: options,
+  update,
+});
+
+useEmphasis({
+  options,
   update,
 });
 

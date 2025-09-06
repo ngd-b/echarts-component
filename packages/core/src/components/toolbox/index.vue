@@ -5,6 +5,7 @@ import {
   useStyle,
   useTooltip,
   useFeature,
+  useEmphasis,
 } from "../../hooks/index";
 import type { ToolboxOption, ToolboxComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
@@ -35,6 +36,11 @@ useFeature({
     options.value.feature = data;
     update(options.value);
   },
+});
+
+useEmphasis({
+  options,
+  update,
 });
 
 defineOptions({
