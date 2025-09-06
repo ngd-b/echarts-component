@@ -8,6 +8,7 @@ import type {
 export type EmphasisComponentOption = {
   disabled?: boolean;
   scale?: boolean;
+  scaleSize?: number;
   focus?: "none" | "self" | "series";
   blurScope?: "coordinateSystem" | "series" | "global";
   label?: LabelOption;

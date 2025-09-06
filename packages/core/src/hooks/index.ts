@@ -9,3 +9,4 @@ export * from "./useAxisPointer";
 export * from "./useFeature";
 export * from "./useMark";
 export * from "./useEmphasis";
+export * from "./useSelect";

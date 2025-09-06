@@ -7,6 +7,7 @@ import {
   useMark,
   useText,
   useEmphasis,
+  useSelect,
 } from "./index";
 import { MainTypeMap } from "../types";
 
@@ -55,6 +56,14 @@ export const useSeries = <T extends MainTypeMap["series"]>(
    * 高亮
    */
   useEmphasis({
+    options: options,
+    update,
+  });
+
+  /**
+   * 选中
+   */
+  useSelect({
     options: options,
     update,
   });

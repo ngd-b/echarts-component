@@ -9,3 +9,4 @@ export { MarkPointComponentOption } from "./markPoint/type";
 export { MarkLineComponentOption } from "./markLine/type";
 export { MarkAreaComponentOption } from "./markArea/type";
 export { EmphasisComponentOption } from "./emphasis/type";
+export { SelectComponentOption } from "./select/type";
