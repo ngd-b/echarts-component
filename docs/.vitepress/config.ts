@@ -81,6 +81,18 @@ export default defineConfig({
           text: "useTooltip",
           link: "/composition/useTooltip",
         },
+        {
+          text: "useBlur",
+          link: "/composition/useBlur",
+        },
+        {
+          text: "useSelect",
+          link: "/composition/useSelect",
+        },
+        {
+          text: "useEmphasis",
+          link: "/composition/useEmphasis",
+        },
       ],
       guide: [
         {
@@ -359,6 +371,18 @@ export default defineConfig({
             {
               text: "MarkArea 标记区域样式",
               link: "/components/common/markArea",
+            },
+            {
+              text: "Blur 失焦样式",
+              link: "/components/common/blur",
+            },
+            {
+              text: "Select 选中样式",
+              link: "/components/common/select",
+            },
+            {
+              text: "Emphasis 高亮样式",
+              link: "/components/common/emphasis",
             },
           ],
         },

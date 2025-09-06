@@ -3,6 +3,7 @@
 <script setup>
   import { ref, onMounted } from 'vue'
   import * as echarts from 'echarts';
+    import { useVueEcharts } from '@echarts-component/vue'
 
   const data =[
       [0, 0, 50],
@@ -447,6 +448,11 @@
       [20, 19, 49.889978124999914],
       [20, 20, 50]
     ]
+
+    // const { getOption,options } = useVueEcharts();
+    // onMounted(() => {
+    //     console.log(getOption(),options.value)
+    // })
 </script>
 
 ## `continuous` 连续视觉映射组件
