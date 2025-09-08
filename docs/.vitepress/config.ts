@@ -391,16 +391,69 @@ export default defineConfig({
           collapsed: false,
           items: [
             {
-              text: "Handle 手柄样式",
-              link: "/components/common/handle",
+              text: "ParallelAxis 平行坐标系",
+              collapsed: true,
+              items: [
+                {
+                  text: "ParallelAxisDefault 平行坐标系样式",
+                  link: "/components/common/parallelAxis/parallelAxisDefault",
+                },
+              ],
+            },
+
+            {
+              text: "AxisPointer 坐标轴指示器",
+              collapsed: true,
+              items: [
+                {
+                  text: "Handle 手柄样式",
+                  link: "/components/common/axisPointer/handle",
+                },
+              ],
             },
             {
-              text: "ParallelAxisDefault 平行坐标系样式",
-              link: "/components/common/parallelAxisDefault",
+              text: "Toolbox 工具箱",
+              collapsed: true,
+              items: [
+                {
+                  text: "Feature 定义工具样式",
+                  link: "/components/common/toolbox/feature",
+                },
+              ],
             },
+
             {
-              text: "Feature 工具箱工具样式",
-              link: "/components/common/feature",
+              text: "Dataset 数据集",
+              collapsed: true,
+              items: [
+                {
+                  text: "Transform 数据转换配置组件",
+                  link: "/components/common/dataset/transform",
+                },
+              ],
+            },
+
+            {
+              text: "DataZoom Slider样式",
+              collapsed: true,
+              items: [
+                {
+                  text: "DataBackground 数据区域背景样式",
+                  link: "/components/common/dataZoomSlider/dataBackground",
+                },
+                {
+                  text: "HandleStyle 手柄样式",
+                  link: "/components/common/dataZoomSlider/handleStyle",
+                },
+                {
+                  text: "MoveHandleStyle 移动手柄样式",
+                  link: "/components/common/dataZoomSlider/moveHandleStyle",
+                },
+                {
+                  text: "BrushStyle 刷选样式",
+                  link: "/components/common/dataZoomSlider/brushStyle",
+                },
+              ],
             },
           ],
         },

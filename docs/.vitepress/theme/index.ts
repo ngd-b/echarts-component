@@ -1,7 +1,6 @@
 import DefaultTheme from "vitepress/theme";
 import type { Theme } from "vitepress";
 import VueEcharts from "@echarts-component/vue";
-import "@echarts-component/vue/style.css";
 
 import "./index.less";
 
