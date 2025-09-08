@@ -1,20 +1,30 @@
-import type { InsideDataZoom, InsideDataZoomOption } from "./inside/type";
-import type { SliderDataZoom, SliderDataZoomOption } from "./slider/type";
+import type {
+  InsideDataZoomComponentOption,
+  InsideDataZoomOption,
+} from "./inside/type";
+import type {
+  SliderDataZoomComponentOption,
+  SliderDataZoomOption,
+  DataBackgroundComponentOption,
+  DataBackgroundOption,
+} from "./slider/type";
 import type { DataZoomComponentOption } from "echarts/types/dist/shared.d.ts";
 
 type Inside = {
   type: "inside";
-} & InsideDataZoom;
+} & InsideDataZoomOption;
 type Slider = {
   type: "slider";
-} & SliderDataZoom;
+} & SliderDataZoomOption;
 
 export type DataZoomOption = Inside | Slider;
 
 export {
-  InsideDataZoom,
+  InsideDataZoomComponentOption,
   InsideDataZoomOption,
-  SliderDataZoom,
   SliderDataZoomOption,
+  SliderDataZoomComponentOption,
+  DataBackgroundComponentOption,
+  DataBackgroundOption,
   DataZoomComponentOption,
 };

@@ -14,3 +14,4 @@ export * from "./emphasis";
 export * from "./select";
 export * from "./blur";
 export * from "./transform";
+export * from "./slider";

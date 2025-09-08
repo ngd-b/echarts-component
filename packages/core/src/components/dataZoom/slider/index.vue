@@ -1,17 +1,25 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useEmphasis } from "../../../hooks/index";
-import type { SliderDataZoom, SliderDataZoomOption } from "./type";
+import { useVueEcharts, useEmphasis, useSlider } from "../../../hooks/index";
+import type {
+  SliderDataZoomOption,
+  SliderDataZoomComponentOption,
+} from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
 let id = useId();
 
-const options = ref<SliderDataZoomOption>({
+const options = ref<SliderDataZoomComponentOption>({
   id,
   type: "slider",
 });
 const vueEcharts = useVueEcharts();
+
+useSlider({
+  options,
+  update,
+});
 
 useEmphasis({
   options,
@@ -22,7 +30,7 @@ defineOptions({
   name: "SliderDataZoom",
 });
 
-const props = withDefaults(defineProps<SliderDataZoom>(), {
+const props = withDefaults(defineProps<SliderDataZoomOption>(), {
   show: undefined,
   brushSelect: undefined,
   showDetail: undefined,
@@ -45,7 +53,7 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: SliderDataZoomOption) {
+function update(data: SliderDataZoomComponentOption) {
   vueEcharts.update("dataZoom", data);
 }
 </script>

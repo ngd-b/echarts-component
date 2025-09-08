@@ -1,13 +1,16 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
 import { useVueEcharts } from "../../../hooks/index";
-import type { InsideDataZoom, InsideDataZoomOption } from "./type";
+import type {
+  InsideDataZoomComponentOption,
+  InsideDataZoomOption,
+} from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 // 组件唯一id
 let id = useId();
 
-const options = ref<InsideDataZoomOption>({
+const options = ref<InsideDataZoomComponentOption>({
   id,
   type: "inside",
 });
@@ -17,7 +20,7 @@ defineOptions({
   name: "InsideDataZoom",
 });
 
-const props = withDefaults(defineProps<InsideDataZoom>(), {
+const props = withDefaults(defineProps<InsideDataZoomOption>(), {
   zoomOnMouseWheel: undefined,
   moveOnMouseMove: undefined,
   moveOnMouseWheel: undefined,
@@ -41,7 +44,7 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: InsideDataZoomOption) {
+function update(data: InsideDataZoomComponentOption) {
   vueEcharts.update("dataZoom", data);
 }
 </script>

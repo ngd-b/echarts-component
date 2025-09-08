@@ -1,4 +1,6 @@
-import type { InsideDataZoomOption } from "echarts/types/dist/shared.d.ts";
+import type { InsideDataZoomOption as InsideDataZoomComponentOption } from "echarts/types/dist/shared.d.ts";
 
-export type { InsideDataZoomOption };
-export type InsideDataZoom = Partial<Omit<InsideDataZoomOption, "type">>;
+export type { InsideDataZoomComponentOption };
+export type InsideDataZoomOption = Partial<
+  Omit<InsideDataZoomComponentOption, "type">
+>;

@@ -59,7 +59,11 @@ import type {
   AngleAxisComponentOption,
   AngleAxisOption,
 } from "./angleAxis/type";
-import type { DataZoomComponentOption, DataZoomOption } from "./dataZoom/type";
+import type {
+  DataZoomComponentOption,
+  DataZoomOption,
+  DataBackgroundComponentOption,
+} from "./dataZoom/type";
 import type {
   VisualMapComponentOption,
   VisualMapOption,
@@ -221,6 +225,7 @@ export {
   SelectComponentOption,
   BlurComponentOption,
   DatasetTransformOption,
+  DataBackgroundComponentOption,
 };
 export type { ZRColor };
 

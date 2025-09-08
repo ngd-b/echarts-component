@@ -1,9 +1,10 @@
-import type { SliderDataZoomOption } from "echarts/types/dist/shared.d.ts";
+import type { SliderDataZoomOption as SliderDataZoomComponentOption } from "echarts/types/dist/shared.d.ts";
+import type { LineStyleOption, AreaStyleOption } from "../../type";
 
-export type { SliderDataZoomOption };
-export type SliderDataZoom = Partial<
+export type { SliderDataZoomComponentOption };
+export type SliderDataZoomOption = Partial<
   Omit<
-    SliderDataZoomOption,
+    SliderDataZoomComponentOption,
     | "type"
     | "dataBackground"
     | "selectedDataBackground"
@@ -13,4 +14,13 @@ export type SliderDataZoom = Partial<
     | "brushStyle"
     | "emphasis"
   >
+>;
+
+export type DataBackgroundComponentOption = {
+  lineStyle?: LineStyleOption;
+  areaStyle?: AreaStyleOption;
+};
+
+export type DataBackgroundOption = Partial<
+  Omit<DataBackgroundComponentOption, "lineStyle" | "areaStyle">
 >;

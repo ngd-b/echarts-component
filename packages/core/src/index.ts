@@ -66,6 +66,7 @@ import {
   MarkLine,
   Emphasis,
   Transfrom,
+  DataBackground,
 } from "./components/index";
 
 export * from "./hooks/index";
@@ -136,6 +137,7 @@ export {
   MarkLine,
   Emphasis,
   Transfrom,
+  DataBackground,
 };
 
 const components = [
@@ -202,6 +204,7 @@ const components = [
   MarkLine,
   Emphasis,
   Transfrom,
+  DataBackground,
 ];
 export default {
   install(app: App) {
