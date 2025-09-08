@@ -29,6 +29,8 @@ const props = withDefaults(defineProps<PieSeries>(), {
   showEmptyCircle: undefined,
   silent: undefined,
   animation: undefined,
+  progressive: undefined,
+  sourceHeader: undefined,
 });
 useSeries<PieSeriesOption>(props, options);
 </script>

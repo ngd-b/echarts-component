@@ -29,6 +29,7 @@ import Dataset from "./dataset/index.vue";
 //
 import Handle from "./axisPointer/handle.vue";
 import Feature from "./toolbox/feature.vue";
+import Transfrom from "./dataset/transfrom.vue";
 
 export {
   XAxis,
@@ -55,7 +56,7 @@ export {
   Dataset,
 };
 
-export { Handle, Feature };
+export { Handle, Feature, Transfrom };
 // children components
 export * from "./common/index";
 // series type

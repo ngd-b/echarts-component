@@ -88,7 +88,11 @@ import type {
 } from "./singleAxis/type";
 import type { TimelineComponentOption, TimelineOption } from "./timeline/type";
 import type { CalendarComponentOption, CalendarOption } from "./calendar/type";
-import type { DatasetComponentOption, DatasetOption } from "./dataset/type";
+import type {
+  DatasetComponentOption,
+  DatasetOption,
+  DatasetTransformOption,
+} from "./dataset/type";
 
 import type {
   TextOptions,
@@ -216,6 +220,7 @@ export {
   EmphasisComponentOption,
   SelectComponentOption,
   BlurComponentOption,
+  DatasetTransformOption,
 };
 export type { ZRColor };
 

@@ -65,8 +65,9 @@ import {
   MarkPoint,
   MarkLine,
   Emphasis,
+  Transfrom,
 } from "./components/index";
-import "virtual:uno.css";
+
 export * from "./hooks/index";
 
 export type * from "./types/index";
@@ -134,6 +135,7 @@ export {
   MarkPoint,
   MarkLine,
   Emphasis,
+  Transfrom,
 };
 
 const components = [
@@ -199,6 +201,7 @@ const components = [
   MarkPoint,
   MarkLine,
   Emphasis,
+  Transfrom,
 ];
 export default {
   install(app: App) {
