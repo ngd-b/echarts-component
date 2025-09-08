@@ -67,6 +67,9 @@ import {
   Emphasis,
   Transfrom,
   DataBackground,
+  HandleStyle,
+  MoveHandleStyle,
+  BrushStyle,
 } from "./components/index";
 
 export * from "./hooks/index";
@@ -138,6 +141,9 @@ export {
   Emphasis,
   Transfrom,
   DataBackground,
+  HandleStyle,
+  MoveHandleStyle,
+  BrushStyle,
 };
 
 const components = [
@@ -205,6 +211,9 @@ const components = [
   Emphasis,
   Transfrom,
   DataBackground,
+  HandleStyle,
+  MoveHandleStyle,
+  BrushStyle,
 ];
 export default {
   install(app: App) {

@@ -11,7 +11,10 @@ export type StyleType =
   | "itemStyle"
   | "shadowStyle"
   | "handle"
-  | "iconStyle";
+  | "iconStyle"
+  | "handleStyle"
+  | "moveHandleStyle"
+  | "brushStyle";
 
 export type StyleTypeMap = {
   lineStyle: LineStyleOption;
@@ -20,6 +23,9 @@ export type StyleTypeMap = {
   shadowStyle: AreaStyleOption;
   handle: HandleStyleOption;
   iconStyle: ItemStyleOption;
+  handleStyle: ItemStyleOption;
+  moveHandleStyle: ItemStyleOption;
+  brushStyle: ItemStyleOption;
 };
 
 export type StyleTypeOption =

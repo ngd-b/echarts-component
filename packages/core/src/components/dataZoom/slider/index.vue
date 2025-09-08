@@ -1,6 +1,12 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useEmphasis, useSlider } from "../../../hooks/index";
+import {
+  useVueEcharts,
+  useEmphasis,
+  useSlider,
+  useStyle,
+  useText,
+} from "../../../hooks/index";
 import type {
   SliderDataZoomOption,
   SliderDataZoomComponentOption,
@@ -22,6 +28,16 @@ useSlider({
 });
 
 useEmphasis({
+  options,
+  update,
+});
+
+useStyle({
+  options,
+  update,
+});
+
+useText({
   options,
   update,
 });

@@ -1,7 +1,11 @@
 import type { SliderDataZoomOption as SliderDataZoomComponentOption } from "echarts/types/dist/shared.d.ts";
-import type { LineStyleOption, AreaStyleOption } from "../../type";
+import type {
+  ItemStyleOption,
+  LineStyleOption,
+  AreaStyleOption,
+} from "echarts/types/dist/shared";
 
-export type { SliderDataZoomComponentOption };
+export type { SliderDataZoomComponentOption, ItemStyleOption };
 export type SliderDataZoomOption = Partial<
   Omit<
     SliderDataZoomComponentOption,

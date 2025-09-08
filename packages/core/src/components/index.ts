@@ -13,7 +13,13 @@ import Polar from "./polar/index.vue";
 import RadarAxis from "./radar/index.vue";
 import RadiusAxis from "./radiusAxis/index.vue";
 import AngleAxis from "./angleAxis/index.vue";
-import { DataBackground, DataZoom } from "./dataZoom/index";
+import {
+  DataBackground,
+  DataZoom,
+  HandleStyle,
+  MoveHandleStyle,
+  BrushStyle,
+} from "./dataZoom/index";
 import VisualMap from "./visualMap/index.vue";
 import AxisPointer from "./axisPointer/index.vue";
 import Toolbox from "./toolbox/index.vue";
@@ -56,7 +62,15 @@ export {
   Dataset,
 };
 
-export { Handle, Feature, Transfrom, DataBackground };
+export {
+  Handle,
+  Feature,
+  Transfrom,
+  DataBackground,
+  HandleStyle,
+  MoveHandleStyle,
+  BrushStyle,
+};
 // children components
 export * from "./common/index";
 // series type
