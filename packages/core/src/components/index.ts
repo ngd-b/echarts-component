@@ -24,7 +24,7 @@ import VisualMap from "./visualMap/index.vue";
 import AxisPointer from "./axisPointer/index.vue";
 import Toolbox from "./toolbox/index.vue";
 import Brush from "./brush/index.vue";
-import Geo from "./geo/index.vue";
+import { Geo, Region } from "./geo/index";
 import ParallelAxis from "./parallel/index.vue";
 import ParallelAxisDefault from "./parallel/parallelAxisDefault.vue";
 import SingleAxis from "./singleAxis/index.vue";
@@ -70,6 +70,7 @@ export {
   HandleStyle,
   MoveHandleStyle,
   BrushStyle,
+  Region,
 };
 // children components
 export * from "./common/index";

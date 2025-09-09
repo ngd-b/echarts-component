@@ -70,6 +70,7 @@ import {
   HandleStyle,
   MoveHandleStyle,
   BrushStyle,
+  Region,
 } from "./components/index";
 
 export * from "./hooks/index";
@@ -144,6 +145,7 @@ export {
   HandleStyle,
   MoveHandleStyle,
   BrushStyle,
+  Region,
 };
 
 const components = [
@@ -214,6 +216,7 @@ const components = [
   HandleStyle,
   MoveHandleStyle,
   BrushStyle,
+  Region,
 ];
 export default {
   install(app: App) {

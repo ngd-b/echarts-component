@@ -15,3 +15,4 @@ export * from "./select";
 export * from "./blur";
 export * from "./transform";
 export * from "./slider";
+export * from "./region";

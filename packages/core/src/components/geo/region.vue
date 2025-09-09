@@ -1,7 +1,6 @@
 <script setup lang="tsx">
-import { ref, useId, watch } from "vue";
+import { ref, watch } from "vue";
 import {
-  useVueEcharts,
   useStyle,
   useTooltip,
   useEmphasis,
@@ -10,17 +9,12 @@ import {
   useText,
   useRegion,
 } from "../../hooks/index";
-import type { GeoOption, GeoComponentOption } from "./type";
+import type { GeoRegionOption, GeoRegionComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
-// 组件唯一id
-let id = useId();
+const options = ref<GeoRegionComponentOption>({});
 
-const options = ref<GeoComponentOption>({
-  id,
-  map: "",
-});
-const vueEcharts = useVueEcharts();
+const regionCtx = useRegion();
 
 useText({
   options,
@@ -53,23 +47,13 @@ useBlur({
   update,
 });
 
-useRegion({
-  options,
-  update,
-});
-
 defineOptions({
-  name: "Geo",
+  name: "Region",
 });
 
-const props = withDefaults(defineProps<GeoOption>(), {
-  show: undefined,
-  roam: undefined,
-  selectedMode: undefined,
-  preserveAspect: undefined,
-  clip: undefined,
+const props = withDefaults(defineProps<GeoRegionOption>(), {
+  selected: undefined,
   silent: undefined,
-  animation: undefined,
 });
 
 watch(
@@ -89,8 +73,8 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: GeoComponentOption) {
-  vueEcharts.update("geo", data);
+function update(data: GeoRegionComponentOption) {
+  regionCtx.update(data);
 }
 </script>
 <template>

@@ -26,6 +26,8 @@ const props = withDefaults(defineProps<LinesSeries>(), {
   clip: undefined,
   silent: undefined,
   animation: undefined,
+  progressive: undefined,
+  legendHoverLink: undefined,
 });
 
 useSeries<LinesSeriesOption>(props, options);

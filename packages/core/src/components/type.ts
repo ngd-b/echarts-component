@@ -79,7 +79,11 @@ import type {
   FeatureOption,
 } from "./toolbox/type";
 import type { BrushComponentOption, BrushOption } from "./brush/type";
-import type { GeoComponentOption, GeoOption } from "./geo/type";
+import type {
+  GeoComponentOption,
+  GeoOption,
+  GeoRegionComponentOption,
+} from "./geo/type";
 import type {
   ParallelComponentOption,
   ParallelOption,
@@ -226,6 +230,7 @@ export {
   BlurComponentOption,
   DatasetTransformOption,
   DataBackgroundComponentOption,
+  GeoRegionComponentOption,
 };
 export type { ZRColor };
 
