@@ -1,8 +1,9 @@
 # Lines 路径图
 
 <script setup>
-  import { ref } from 'vue'
+  import { ref, onMounted } from 'vue'
   import * as echarts from 'echarts';
+  import { useVueEcharts } from '@echarts-component/vue'
 
   const data = {
   "type": "FeatureCollection",
@@ -1307,14 +1308,23 @@
             ]
         }
     ]
- echarts.registerMap('shanxi', {geoJSON: data});
+    echarts.registerMap('shanxi', {geoJSON: data});
+
+    const { getOption,options } = useVueEcharts();
+    onMounted(() => {
+        console.log(getOption(),options.value)
+    })
 </script>
 
 ## 基本用法
 
 <VueEcharts style="width:100%;height:300px;" backgroundColor="#111" :progressive="2000">
-    <Lines :data='linesData'></Lines>
-    <Geo map="shanxi" roam :center="[108.92813841, 34.35656909]"></Geo>
+    <Lines :data='linesData'>
+      <LineStyle color="orange" :width="3" :opacity="1"  />
+    </Lines>
+    <Geo map="shanxi" roam :center="[108.92813841, 34.35656909]">
+      <ItemStyle borderColor="rgba(255,255,255,0.1)" :borderWidth="1" />
+    </Geo>
 </VueEcharts>
 
 ```vue
@@ -1344,10 +1354,10 @@
 <template>
   <VueEcharts style="width:100%;height:300px;" backgroundColor="#111" :progressive="2000">
     <Lines :data='linesData'>
-        <!-- <LineStyle color="orange" :width="0.5" :opacity="0.3"  /> -->
+      <LineStyle color="orange" :width="0.5" :opacity="0.3"  />
     </Lines>
     <Geo map="shanxi" roam :center="[108.92813841, 34.35656909]">
-        <!-- <ItemStyle color="transparent" borderColor="rgba(255,255,255,0.1)" :borderWidth="1" /> -->
+      <ItemStyle color="transparent" borderColor="rgba(255,255,255,0.1)" :borderWidth="1" />
     </Geo>
   </VueEcharts>
 </template>

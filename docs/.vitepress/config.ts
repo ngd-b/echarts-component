@@ -455,6 +455,16 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              text: "Geo 地理坐标系",
+              collapsed: true,
+              items: [
+                {
+                  text: "Region 地理区域样式",
+                  link: "/components/common/geo/region",
+                },
+              ],
+            },
           ],
         },
       ],

@@ -29,9 +29,9 @@
             ["2016-10-12", 13]
         ]
     ]
-    const { getOption } = useVueEcharts();
+    const { getOption,options } = useVueEcharts();
     onMounted(() => {
-        console.log(getOption())
+        console.log(getOption(),options.value)
     })
 </script>
 
