@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { ItemStyleOption } from "./type";
+import { IcontyleOption } from "./type";
 import { isUndefined, omitBy } from "lodash";
 import { useStyle } from "../../../hooks/index";
 
@@ -11,9 +11,9 @@ defineOptions({
 
 const styleContext = useStyle();
 
-let options = ref<ItemStyleOption>({});
+let options = ref<IcontyleOption>({});
 
-const props = withDefaults(defineProps<ItemStyleOption>(), {});
+const props = withDefaults(defineProps<IcontyleOption>(), {});
 
 watch(
   () => props,

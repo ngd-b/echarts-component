@@ -1,9 +1,4 @@
-import {
-  AxisOption,
-  LineStyleOption,
-  ZRColor,
-  AreaStyleOption,
-} from "../components/type";
+import { AxisOption } from "../components/type";
 import { AxisContext, AxisType } from "../types";
 import { getCurrentInstance, inject, provide, Ref } from "vue";
 

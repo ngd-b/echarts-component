@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { AreaStyleOption } from "./type";
+import { ShadowStyleOption } from "./type";
 import { isUndefined, omitBy } from "lodash";
 import { useStyle } from "../../../hooks/index";
 
@@ -11,9 +11,9 @@ defineOptions({
 
 const styleContext = useStyle();
 
-let options = ref<AreaStyleOption>({});
+let options = ref<ShadowStyleOption>({});
 
-const props = withDefaults(defineProps<AreaStyleOption>(), {});
+const props = withDefaults(defineProps<ShadowStyleOption>(), {});
 
 watch(
   () => props,

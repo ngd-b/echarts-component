@@ -48,4 +48,6 @@ function update(data: InsideDataZoomComponentOption) {
   vueEcharts.update("dataZoom", data);
 }
 </script>
-<template></template>
+<template>
+  <slot></slot>
+</template>

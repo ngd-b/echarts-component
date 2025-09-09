@@ -1,3 +1,3 @@
-import type { AreaStyleOption, ZRColor } from "echarts/types/dist/shared";
+import type { ItemStyleOption as ItemStyleComponentOption } from "echarts/types/dist/shared";
 
-export { AreaStyleOption, ZRColor };
+export type ShadowStyleOption = ItemStyleComponentOption;

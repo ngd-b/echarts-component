@@ -73,4 +73,6 @@ function update(data: SliderDataZoomComponentOption) {
   vueEcharts.update("dataZoom", data);
 }
 </script>
-<template></template>
+<template>
+  <slot></slot>
+</template>

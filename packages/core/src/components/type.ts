@@ -108,7 +108,8 @@ import type {
   LineStyleOption,
   AreaStyleOption,
   ItemStyleOption,
-  ZRColor,
+  IcontyleOption,
+  ShadowStyleOption,
   MarkPointComponentOption,
   MarkLineComponentOption,
   MarkAreaComponentOption,
@@ -220,6 +221,8 @@ export {
   LineStyleOption,
   AreaStyleOption,
   ItemStyleOption,
+  IcontyleOption,
+  ShadowStyleOption,
   HandleStyleOption,
   FeatureOption,
   MarkPointComponentOption,
@@ -232,7 +235,6 @@ export {
   DataBackgroundComponentOption,
   GeoRegionComponentOption,
 };
-export type { ZRColor };
 
 export type SeriesOption =
   | PieSeriesOption

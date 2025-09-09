@@ -26,6 +26,11 @@ const props = withDefaults(defineProps<MapSeries>(), {
   preserveAspect: undefined,
   clip: undefined,
   silent: undefined,
+  animation: undefined,
+  legendHoverLink: undefined,
+  progressive: undefined,
+  showLegendSymbol: undefined,
+  sourceHeader: undefined,
 });
 useSeries<MapSeriesOption>(props, options);
 </script>

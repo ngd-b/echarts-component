@@ -1,10 +1,10 @@
 export * from "./text/type";
 export * from "./axis/type";
-export * from "./lineStyle/type";
-export * from "./areaStyle/type";
-export * from "./itemStyle/type";
-export * from "./shadowStyle/type";
-export * from "./iconStyle/type";
+export type { LineStyleOption } from "./lineStyle/type";
+export type { AreaStyleOption } from "./areaStyle/type";
+export type { ItemStyleOption } from "./itemStyle/type";
+export type { ShadowStyleOption } from "./shadowStyle/type";
+export type { IcontyleOption } from "./iconStyle/type";
 export type { MarkPointComponentOption } from "./markPoint/type";
 export type { MarkLineComponentOption } from "./markLine/type";
 export type { MarkAreaComponentOption } from "./markArea/type";

@@ -1,6 +1,10 @@
 <template>
-  <Inside v-if="type === 'inside'" v-bind="omitProps" />
-  <Slider v-else-if="type === 'slider'" v-bind="omitProps" />
+  <Inside v-if="type === 'inside'" v-bind="omitProps">
+    <slot></slot>
+  </Inside>
+  <Slider v-else-if="type === 'slider'" v-bind="omitProps">
+    <slot></slot>
+  </Slider>
 </template>
 <script setup lang="tsx">
 import { computed } from "vue";

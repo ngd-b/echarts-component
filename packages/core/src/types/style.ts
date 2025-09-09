@@ -3,6 +3,8 @@ import {
   AreaStyleOption,
   ItemStyleOption,
   HandleStyleOption,
+  ShadowStyleOption,
+  IcontyleOption,
 } from "../components/type";
 
 export type StyleType =
@@ -20,9 +22,9 @@ export type StyleTypeMap = {
   lineStyle: LineStyleOption;
   areaStyle: AreaStyleOption;
   itemStyle: ItemStyleOption;
-  shadowStyle: AreaStyleOption;
+  shadowStyle: ShadowStyleOption;
   handle: HandleStyleOption;
-  iconStyle: ItemStyleOption;
+  iconStyle: IcontyleOption;
   handleStyle: ItemStyleOption;
   moveHandleStyle: ItemStyleOption;
   brushStyle: ItemStyleOption;
