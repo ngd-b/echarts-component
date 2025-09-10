@@ -465,6 +465,24 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              text: "Timeline 时间轴",
+              collapsed: true,
+              items: [
+                {
+                  text: "CheckpointStyle 当前图形样式",
+                  link: "/components/common/timeline/checkpointStyle",
+                },
+                {
+                  text: "ControlStyle 控制按钮样式",
+                  link: "/components/common/timeline/controlStyle",
+                },
+                {
+                  text: "Progress 进度条样式",
+                  link: "/components/common/timeline/progress",
+                },
+              ],
+            },
           ],
         },
       ],
