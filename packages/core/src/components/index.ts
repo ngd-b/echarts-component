@@ -13,34 +13,12 @@ import Polar from "./polar/index.vue";
 import RadarAxis from "./radar/index.vue";
 import RadiusAxis from "./radiusAxis/index.vue";
 import AngleAxis from "./angleAxis/index.vue";
-import {
-  DataBackground,
-  DataZoom,
-  HandleStyle,
-  MoveHandleStyle,
-  BrushStyle,
-} from "./dataZoom/index";
 import VisualMap from "./visualMap/index.vue";
-import AxisPointer from "./axisPointer/index.vue";
-import Toolbox from "./toolbox/index.vue";
 import Brush from "./brush/index.vue";
-import { Geo, Region } from "./geo/index";
 import ParallelAxis from "./parallel/index.vue";
 import ParallelAxisDefault from "./parallel/parallelAxisDefault.vue";
 import SingleAxis from "./singleAxis/index.vue";
-import {
-  Timeline,
-  CheckpointStyle,
-  ControlStyle,
-  Progress,
-} from "./timeline/index";
 import Calendar from "./calendar/index.vue";
-import Dataset from "./dataset/index.vue";
-
-//
-import Handle from "./axisPointer/handle.vue";
-import Feature from "./toolbox/feature.vue";
-import Transfrom from "./dataset/transfrom.vue";
 
 export {
   XAxis,
@@ -53,33 +31,20 @@ export {
   RadarAxis,
   RadiusAxis,
   AngleAxis,
-  DataZoom,
   VisualMap,
-  AxisPointer,
-  Toolbox,
   Brush,
-  Geo,
   ParallelAxis,
   ParallelAxisDefault,
   SingleAxis,
-  Timeline,
   Calendar,
-  Dataset,
 };
+export * from "./dataZoom/index";
+export * from "./axisPointer/index";
+export * from "./toolbox/index";
+export * from "./geo/index";
+export * from "./timeline/index";
+export * from "./dataset/index";
 
-export {
-  Handle,
-  Feature,
-  Transfrom,
-  DataBackground,
-  HandleStyle,
-  MoveHandleStyle,
-  BrushStyle,
-  Region,
-  CheckpointStyle,
-  ControlStyle,
-  Progress,
-};
 // children components
 export * from "./common/index";
 // series type
