@@ -4,6 +4,10 @@ import type {
   LabelOption,
   LineStyleOption,
 } from "../type";
+import type {
+  TimelineCheckpointStyle,
+  TimelineControlStyle,
+} from "echarts/types/dist/shared";
 
 export type EmphasisComponentOption = {
   disabled?: boolean;
@@ -19,8 +23,13 @@ export type EmphasisComponentOption = {
   itemStyle?: ItemStyleOption;
   lineStyle?: LineStyleOption;
   areaStyle?: AreaStyleOption;
+  controlStyle?: TimelineControlStyle;
+  checkpointStyle?: TimelineCheckpointStyle;
 };
 
 export type EmphasisOption = Partial<
-  Pick<EmphasisComponentOption, "disabled" | "scale">
+  Pick<
+    EmphasisComponentOption,
+    "disabled" | "scale" | "scaleSize" | "focus" | "blurScope"
+  >
 >;

@@ -2,7 +2,12 @@
 import { ref, watch } from "vue";
 import { isUndefined, omitBy } from "lodash";
 import { EmphasisOption, EmphasisComponentOption } from "./type";
-import { useEmphasis, useText, useStyle } from "../../../hooks/index";
+import {
+  useEmphasis,
+  useText,
+  useStyle,
+  useTimeline,
+} from "../../../hooks/index";
 
 defineOptions({
   name: "Emphasis",
@@ -30,6 +35,11 @@ useText({
  * 样式
  */
 useStyle({
+  options,
+  update,
+});
+
+useTimeline({
   options,
   update,
 });

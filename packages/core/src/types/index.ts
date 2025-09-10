@@ -16,3 +16,4 @@ export * from "./blur";
 export * from "./transform";
 export * from "./slider";
 export * from "./region";
+export * from "./timeline";

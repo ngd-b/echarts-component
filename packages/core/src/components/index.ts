@@ -28,7 +28,12 @@ import { Geo, Region } from "./geo/index";
 import ParallelAxis from "./parallel/index.vue";
 import ParallelAxisDefault from "./parallel/parallelAxisDefault.vue";
 import SingleAxis from "./singleAxis/index.vue";
-import Timeline from "./timeline/index.vue";
+import {
+  Timeline,
+  CheckpointStyle,
+  ControlStyle,
+  Progress,
+} from "./timeline/index";
 import Calendar from "./calendar/index.vue";
 import Dataset from "./dataset/index.vue";
 
@@ -71,6 +76,9 @@ export {
   MoveHandleStyle,
   BrushStyle,
   Region,
+  CheckpointStyle,
+  ControlStyle,
+  Progress,
 };
 // children components
 export * from "./common/index";

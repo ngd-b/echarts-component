@@ -94,7 +94,13 @@ import type {
   SingleAxisComponentOption,
   SingleAxisOption,
 } from "./singleAxis/type";
-import type { TimelineComponentOption, TimelineOption } from "./timeline/type";
+import type {
+  TimelineComponentOption,
+  TimelineOption,
+  CheckpointStyleComponentOption,
+  ControlStyleComponentOption,
+  ProgressComponentOption,
+} from "./timeline/type";
 import type { CalendarComponentOption, CalendarOption } from "./calendar/type";
 import type {
   DatasetComponentOption,
@@ -234,6 +240,9 @@ export {
   DatasetTransformOption,
   DataBackgroundComponentOption,
   GeoRegionComponentOption,
+  CheckpointStyleComponentOption,
+  ControlStyleComponentOption,
+  ProgressComponentOption,
 };
 
 export type SeriesOption =

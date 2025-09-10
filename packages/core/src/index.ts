@@ -73,6 +73,9 @@ import {
   MoveHandleStyle,
   BrushStyle,
   Region,
+  CheckpointStyle,
+  ControlStyle,
+  Progress,
 } from "./components/index";
 
 export * from "./hooks/index";
@@ -150,6 +153,9 @@ export {
   MoveHandleStyle,
   BrushStyle,
   Region,
+  CheckpointStyle,
+  ControlStyle,
+  Progress,
 };
 
 const components = [
@@ -223,6 +229,9 @@ const components = [
   MoveHandleStyle,
   BrushStyle,
   Region,
+  CheckpointStyle,
+  ControlStyle,
+  Progress,
 ];
 export default {
   install(app: App) {

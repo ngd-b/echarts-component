@@ -1,3 +1,3 @@
-import type { LineStyleOption, ZRColor } from "echarts/types/dist/shared";
+import type { LineStyleOption as LineStyleComponentOption } from "echarts/types/dist/shared";
 
-export { LineStyleOption, ZRColor };
+export type LineStyleOption = LineStyleComponentOption & { show?: boolean };

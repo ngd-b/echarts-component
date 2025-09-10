@@ -5,6 +5,7 @@ import {
   useText,
   useStyle,
   useEmphasis,
+  useTimeline,
 } from "../../hooks/index";
 import type { TextType, TimelineOption, TimelineComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
@@ -29,6 +30,11 @@ useStyle<TimelineComponentOption>({
 });
 
 useEmphasis({
+  options,
+  update,
+});
+
+useTimeline({
   options,
   update,
 });
