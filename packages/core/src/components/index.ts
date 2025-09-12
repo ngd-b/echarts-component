@@ -13,7 +13,7 @@ import Polar from "./polar/index.vue";
 import RadarAxis from "./radar/index.vue";
 import RadiusAxis from "./radiusAxis/index.vue";
 import AngleAxis from "./angleAxis/index.vue";
-import VisualMap from "./visualMap/index.vue";
+
 import Brush from "./brush/index.vue";
 import ParallelAxis from "./parallel/index.vue";
 import ParallelAxisDefault from "./parallel/parallelAxisDefault.vue";
@@ -31,7 +31,6 @@ export {
   RadarAxis,
   RadiusAxis,
   AngleAxis,
-  VisualMap,
   Brush,
   ParallelAxis,
   ParallelAxisDefault,
@@ -44,6 +43,7 @@ export * from "./toolbox/index";
 export * from "./geo/index";
 export * from "./timeline/index";
 export * from "./dataset/index";
+export * from "./visualMap/index";
 
 // children components
 export * from "./common/index";
