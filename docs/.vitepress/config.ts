@@ -483,6 +483,16 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              text: "VisualMap 视觉映射组件",
+              collapsed: true,
+              items: [
+                {
+                  text: "IndicatorStyle 指示器样式",
+                  link: "/components/common/visualMap/indicatorStyle",
+                },
+              ],
+            },
           ],
         },
       ],
