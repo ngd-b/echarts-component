@@ -9,6 +9,7 @@ import {
   useEmphasis,
   useSelect,
   useBlur,
+  useSeriesOption,
 } from "./index";
 import { MainTypeMap } from "../types";
 
@@ -74,6 +75,14 @@ export const useSeries = <T extends MainTypeMap["series"]>(
    */
   useBlur({
     options: options,
+    update,
+  });
+
+  /**
+   * 配置项
+   */
+  useSeriesOption({
+    options,
     update,
   });
 

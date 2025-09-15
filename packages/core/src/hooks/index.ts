@@ -15,3 +15,4 @@ export * from "./useTransform";
 export * from "./useSlider";
 export * from "./useRegion";
 export * from "./useTimeline";
+export * from "./useSeriesOption";

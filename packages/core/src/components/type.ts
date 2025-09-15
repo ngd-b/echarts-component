@@ -1,48 +1,5 @@
 import type { EChartsOption } from "./container/type";
-import type {
-  PieSeries,
-  PieSeriesOption,
-  LineSeries,
-  LineSeriesOption,
-  BarSeries,
-  BarSeriesOption,
-  BoxplotSeries,
-  BoxplotSeriesOption,
-  CandlestickSeries,
-  CandlestickSeriesOption,
-  EffectScatterSeries,
-  EffectScatterSeriesOption,
-  FunnelSeries,
-  FunnelSeriesOption,
-  GaugeSeries,
-  GaugeSeriesOption,
-  GraphSeries,
-  GraphSeriesOption,
-  HeatmapSeries,
-  HeatmapSeriesOption,
-  LinesSeries,
-  LinesSeriesOption,
-  MapSeries,
-  MapSeriesOption,
-  ParallelSeries,
-  ParallelSeriesOption,
-  PictorialBarSeries,
-  PictorialBarSeriesOption,
-  RadarSeries,
-  RadarSeriesOption,
-  SankeySeries,
-  SankeySeriesOption,
-  ScatterSeries,
-  ScatterSeriesOption,
-  SunburstSeries,
-  SunburstSeriesOption,
-  ThemeRiverSeries,
-  ThemeRiverSeriesOption,
-  TreeSeries,
-  TreeSeriesOption,
-  TreemapSeries,
-  TreemapSeriesOption,
-} from "./series/type";
+
 import type { XAXisComponentOption, XAXisOption } from "./xAxis/type";
 import type { YAXisComponentOption, YAXisOption } from "./yAxis/type";
 import type { PolarComponentOption, PolarOption } from "./polar/type";
@@ -125,51 +82,10 @@ import type {
   BackgroundStyleOption,
 } from "./common/type";
 
+export type * from "./series/type";
+
 export { EChartsOption };
-export {
-  PieSeries,
-  LineSeries,
-  BarSeries,
-  PieSeriesOption,
-  LineSeriesOption,
-  BarSeriesOption,
-  BoxplotSeries,
-  BoxplotSeriesOption,
-  CandlestickSeries,
-  CandlestickSeriesOption,
-  EffectScatterSeries,
-  EffectScatterSeriesOption,
-  FunnelSeries,
-  FunnelSeriesOption,
-  GaugeSeries,
-  GaugeSeriesOption,
-  GraphSeries,
-  GraphSeriesOption,
-  HeatmapSeries,
-  HeatmapSeriesOption,
-  LinesSeries,
-  LinesSeriesOption,
-  MapSeries,
-  MapSeriesOption,
-  ParallelSeries,
-  ParallelSeriesOption,
-  PictorialBarSeries,
-  PictorialBarSeriesOption,
-  RadarSeries,
-  RadarSeriesOption,
-  SankeySeries,
-  SankeySeriesOption,
-  ScatterSeries,
-  ScatterSeriesOption,
-  SunburstSeries,
-  SunburstSeriesOption,
-  ThemeRiverSeries,
-  ThemeRiverSeriesOption,
-  TreeSeries,
-  TreeSeriesOption,
-  TreemapSeries,
-  TreemapSeriesOption,
-};
+
 export {
   XAXisComponentOption,
   YAXisComponentOption,
@@ -246,26 +162,3 @@ export {
   ProgressComponentOption,
   BackgroundStyleOption,
 };
-
-export type SeriesOption =
-  | PieSeriesOption
-  | LineSeriesOption
-  | BarSeriesOption
-  | BoxplotSeriesOption
-  | CandlestickSeriesOption
-  | EffectScatterSeriesOption
-  | FunnelSeriesOption
-  | GaugeSeriesOption
-  | GraphSeriesOption
-  | HeatmapSeriesOption
-  | LinesSeriesOption
-  | MapSeriesOption
-  | ParallelSeriesOption
-  | PictorialBarSeriesOption
-  | RadarSeriesOption
-  | SankeySeriesOption
-  | ScatterSeriesOption
-  | SunburstSeriesOption
-  | ThemeRiverSeriesOption
-  | TreeSeriesOption
-  | TreemapSeriesOption;

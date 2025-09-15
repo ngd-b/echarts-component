@@ -39,7 +39,9 @@ export type StyleTypeOption =
   | LineStyleOption
   | AreaStyleOption
   | ItemStyleOption
-  | HandleStyleOption;
+  | HandleStyleOption
+  | IcontyleOption
+  | BackgroundStyleOption;
 
 export interface StyleContext {
   update: <K extends StyleType>(name: K, data: StyleTypeMap[K]) => void;
