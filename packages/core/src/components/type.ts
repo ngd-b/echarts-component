@@ -122,6 +122,7 @@ import type {
   EmphasisComponentOption,
   SelectComponentOption,
   BlurComponentOption,
+  BackgroundStyleOption,
 } from "./common/type";
 
 export { EChartsOption };
@@ -243,6 +244,7 @@ export {
   CheckpointStyleComponentOption,
   ControlStyleComponentOption,
   ProgressComponentOption,
+  BackgroundStyleOption,
 };
 
 export type SeriesOption =

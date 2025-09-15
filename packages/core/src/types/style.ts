@@ -5,6 +5,7 @@ import {
   HandleStyleOption,
   ShadowStyleOption,
   IcontyleOption,
+  BackgroundStyleOption,
 } from "../components/type";
 
 export type StyleType =
@@ -17,7 +18,8 @@ export type StyleType =
   | "handleStyle"
   | "moveHandleStyle"
   | "brushStyle"
-  | "indicatorStyle";
+  | "indicatorStyle"
+  | "backgroundStyle";
 
 export type StyleTypeMap = {
   lineStyle: LineStyleOption;
@@ -30,6 +32,7 @@ export type StyleTypeMap = {
   moveHandleStyle: ItemStyleOption;
   brushStyle: ItemStyleOption;
   indicatorStyle: ItemStyleOption;
+  backgroundStyle: BackgroundStyleOption;
 };
 
 export type StyleTypeOption =

@@ -10,6 +10,7 @@ import MarkArea from "./markArea/index.vue";
 import Emphasis from "./emphasis/index.vue";
 import Select from "./select/index.vue";
 import Blur from "./blur/index.vue";
+import BackgroundStyle from "./backgroundStyle/index.vue";
 
 export * from "./axis/index";
 export {
@@ -25,4 +26,5 @@ export {
   Emphasis,
   Select,
   Blur,
+  BackgroundStyle,
 };
