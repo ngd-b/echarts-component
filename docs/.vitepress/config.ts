@@ -169,18 +169,64 @@ export default defineConfig({
             {
               text: "DataZoom 区域缩放",
               link: "/components/dataZoom",
+              collapsed: false,
+              items: [
+                {
+                  text: "Slider ",
+                  collapsed: true,
+                  items: [
+                    {
+                      text: "DataBackground 数据区域背景样式",
+                      link: "/components/dataZoom/slider/dataBackground",
+                    },
+                    {
+                      text: "HandleStyle 手柄样式",
+                      link: "/components/dataZoom/slider/handleStyle",
+                    },
+                    {
+                      text: "MoveHandleStyle 移动手柄样式",
+                      link: "/components/dataZoom/slider/moveHandleStyle",
+                    },
+                    {
+                      text: "BrushStyle 刷选样式",
+                      link: "/components/dataZoom/slider/brushStyle",
+                    },
+                  ],
+                },
+              ],
             },
             {
               text: "VisualMap 视觉映射组件",
               link: "/components/visualMap",
+              collapsed: false,
+              items: [
+                {
+                  text: "IndicatorStyle 指示器样式",
+                  link: "/components/visualMap/indicatorStyle",
+                },
+              ],
             },
             {
               text: "AxisPointer 坐标轴指示器组件",
               link: "/components/axisPointer",
+              collapsed: false,
+              items: [
+                {
+                  text: "Handle 手柄样式",
+                  link: "/components/axisPointer/handle",
+                },
+              ],
             },
             {
               text: "Toolbox 工具栏组件",
               link: "/components/toolbox",
+              collapsed: false,
+              items: [
+                {
+                  text: "Feature 定义工具样式",
+                  link: "/components/toolbox/feature",
+                },
+              ],
             },
             {
               text: "Brush 区域选择组件",
@@ -189,10 +235,24 @@ export default defineConfig({
             {
               text: "Geo 地理坐标系组件",
               link: "/components/geo",
+              collapsed: false,
+              items: [
+                {
+                  text: "Region 地理区域样式",
+                  link: "/components/geo/region",
+                },
+              ],
             },
             {
               text: "ParallelAxis 平行坐标系组件",
-              link: "/components/ParallelAxis",
+              link: "/components/parallelAxis",
+              collapsed: false,
+              items: [
+                {
+                  text: "ParallelAxisDefault 平行坐标系样式",
+                  link: "/components/parallelAxis/parallelAxisDefault",
+                },
+              ],
             },
             {
               text: "SingleAxis 单轴组件",
@@ -201,6 +261,21 @@ export default defineConfig({
             {
               text: "Timeline 时间轴组件",
               link: "/components/timeline",
+              collapsed: false,
+              items: [
+                {
+                  text: "CheckpointStyle 当前图形样式",
+                  link: "/components/timeline/checkpointStyle",
+                },
+                {
+                  text: "ControlStyle 控制按钮样式",
+                  link: "/components/timeline/controlStyle",
+                },
+                {
+                  text: "Progress 进度条样式",
+                  link: "/components/timeline/progress",
+                },
+              ],
             },
             {
               text: "Calendar 日历组件",
@@ -209,6 +284,13 @@ export default defineConfig({
             {
               text: "Dataset 数据集组件",
               link: "/components/dataset",
+              collapsed: false,
+              items: [
+                {
+                  text: "Transform 数据转换配置组件",
+                  link: "/components/dataset/transform",
+                },
+              ],
             },
           ],
         },
@@ -383,115 +465,6 @@ export default defineConfig({
             {
               text: "Emphasis 高亮样式",
               link: "/components/common/emphasis",
-            },
-          ],
-        },
-        {
-          text: "其他",
-          collapsed: false,
-          items: [
-            {
-              text: "ParallelAxis 平行坐标系",
-              collapsed: true,
-              items: [
-                {
-                  text: "ParallelAxisDefault 平行坐标系样式",
-                  link: "/components/common/parallelAxis/parallelAxisDefault",
-                },
-              ],
-            },
-
-            {
-              text: "AxisPointer 坐标轴指示器",
-              collapsed: true,
-              items: [
-                {
-                  text: "Handle 手柄样式",
-                  link: "/components/common/axisPointer/handle",
-                },
-              ],
-            },
-            {
-              text: "Toolbox 工具箱",
-              collapsed: true,
-              items: [
-                {
-                  text: "Feature 定义工具样式",
-                  link: "/components/common/toolbox/feature",
-                },
-              ],
-            },
-
-            {
-              text: "Dataset 数据集",
-              collapsed: true,
-              items: [
-                {
-                  text: "Transform 数据转换配置组件",
-                  link: "/components/common/dataset/transform",
-                },
-              ],
-            },
-
-            {
-              text: "DataZoom Slider样式",
-              collapsed: true,
-              items: [
-                {
-                  text: "DataBackground 数据区域背景样式",
-                  link: "/components/common/dataZoomSlider/dataBackground",
-                },
-                {
-                  text: "HandleStyle 手柄样式",
-                  link: "/components/common/dataZoomSlider/handleStyle",
-                },
-                {
-                  text: "MoveHandleStyle 移动手柄样式",
-                  link: "/components/common/dataZoomSlider/moveHandleStyle",
-                },
-                {
-                  text: "BrushStyle 刷选样式",
-                  link: "/components/common/dataZoomSlider/brushStyle",
-                },
-              ],
-            },
-            {
-              text: "Geo 地理坐标系",
-              collapsed: true,
-              items: [
-                {
-                  text: "Region 地理区域样式",
-                  link: "/components/common/geo/region",
-                },
-              ],
-            },
-            {
-              text: "Timeline 时间轴",
-              collapsed: true,
-              items: [
-                {
-                  text: "CheckpointStyle 当前图形样式",
-                  link: "/components/common/timeline/checkpointStyle",
-                },
-                {
-                  text: "ControlStyle 控制按钮样式",
-                  link: "/components/common/timeline/controlStyle",
-                },
-                {
-                  text: "Progress 进度条样式",
-                  link: "/components/common/timeline/progress",
-                },
-              ],
-            },
-            {
-              text: "VisualMap 视觉映射组件",
-              collapsed: true,
-              items: [
-                {
-                  text: "IndicatorStyle 指示器样式",
-                  link: "/components/common/visualMap/indicatorStyle",
-                },
-              ],
             },
           ],
         },
