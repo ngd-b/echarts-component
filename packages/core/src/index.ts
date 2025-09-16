@@ -80,6 +80,7 @@ import {
   BackgroundStyle,
   LabelLine,
   LabelLayout,
+  RippleEffect,
 } from "./components/index";
 
 export * from "./hooks/index";
@@ -167,6 +168,7 @@ const components = [
   BackgroundStyle,
   LabelLine,
   LabelLayout,
+  RippleEffect,
 ];
 export default {
   install(app: App) {

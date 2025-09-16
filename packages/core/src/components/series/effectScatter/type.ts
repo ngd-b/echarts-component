@@ -8,7 +8,6 @@ export type EffectScatterSeries = Partial<
     | "rippleEffect"
     | "label"
     | "labelLine"
-    | "labelLayout"
     | "itemStyle"
     | "emphasis"
     | "blur"
@@ -16,6 +15,7 @@ export type EffectScatterSeries = Partial<
     | "markPoint"
     | "markLine"
     | "markArea"
+    | "universalTransition"
     | "tooltip"
   >
 >;
