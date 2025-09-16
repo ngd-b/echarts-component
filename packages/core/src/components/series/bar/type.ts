@@ -8,7 +8,6 @@ export type BarSeries = Partial<
     | "backgroundStyle"
     | "label"
     | "labelLine"
-    | "labelLayout"
     | "itemStyle"
     | "emphasis"
     | "blur"

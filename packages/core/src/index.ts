@@ -77,6 +77,9 @@ import {
   ControlStyle,
   Progress,
   IndicatorStyle,
+  BackgroundStyle,
+  LabelLine,
+  LabelLayout,
 } from "./components/index";
 
 export * from "./hooks/index";
@@ -161,6 +164,9 @@ const components = [
   ControlStyle,
   Progress,
   IndicatorStyle,
+  BackgroundStyle,
+  LabelLine,
+  LabelLayout,
 ];
 export default {
   install(app: App) {

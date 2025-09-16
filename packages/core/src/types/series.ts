@@ -1,9 +1,13 @@
-import { LabelLineComponentOption } from "../components/type";
+import {
+  LabelLineComponentOption,
+  LabelLayoutComponentOption,
+} from "../components/type";
 
-export type SeriesType = "labelLine";
+export type SeriesType = "labelLine" | "labelLayout";
 
 export type SeriesTypeMap = {
   labelLine: LabelLineComponentOption;
+  labelLayout: LabelLayoutComponentOption;
 };
 
 export interface SeriesContext {
