@@ -81,6 +81,7 @@ import {
   LabelLine,
   LabelLayout,
   RippleEffect,
+  Pointer,
 } from "./components/index";
 
 export * from "./hooks/index";
@@ -169,6 +170,7 @@ const components = [
   LabelLine,
   LabelLayout,
   RippleEffect,
+  Pointer,
 ];
 export default {
   install(app: App) {

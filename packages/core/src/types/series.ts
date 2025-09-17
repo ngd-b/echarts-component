@@ -3,19 +3,22 @@ import {
   LabelLayoutComponentOption,
   UniversalTransitionComponentOption,
   RippleEffectComponentOption,
+  PointerComponentOption,
 } from "../components/type";
 
 export type SeriesType =
   | "labelLine"
   | "labelLayout"
   | "universalTransition"
-  | "rippleEffect";
+  | "rippleEffect"
+  | "pointer";
 
 export type SeriesTypeMap = {
   labelLine: LabelLineComponentOption;
   labelLayout: LabelLayoutComponentOption;
   universalTransition: UniversalTransitionComponentOption;
   rippleEffect: RippleEffectComponentOption;
+  pointer: PointerComponentOption;
 };
 
 export interface SeriesContext {

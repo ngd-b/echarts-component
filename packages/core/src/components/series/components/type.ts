@@ -1,4 +1,5 @@
-export { LabelLineComponentOption } from "./labelLine/type";
-export { LabelLayoutComponentOption } from "./labelLayout/type";
-export { UniversalTransitionComponentOption } from "./universalTransition/type";
-export { RippleEffectComponentOption } from "./rippleEffect/type";
+export type { LabelLineComponentOption } from "./labelLine/type";
+export type { LabelLayoutComponentOption } from "./labelLayout/type";
+export type { UniversalTransitionComponentOption } from "./universalTransition/type";
+export type { RippleEffectComponentOption } from "./rippleEffect/type";
+export type { PointerComponentOption } from "./pointer/type";
