@@ -1,5 +1,12 @@
 export * from "./text/type";
-export * from "./axis/type";
+export type {
+  AxisLineComponentOption,
+  AxisTickComponentOption,
+  MinorTickComponentOption,
+  MinorSplitLineComponentOption,
+  SplitAreaComponentOption,
+  SplitLineComponentOption,
+} from "./axis/type";
 export type { LineStyleOption } from "./lineStyle/type";
 export type { AreaStyleOption } from "./areaStyle/type";
 export type { ItemStyleOption } from "./itemStyle/type";

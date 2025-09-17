@@ -37,4 +37,6 @@ watch(
 );
 </script>
 
-<template></template>
+<template>
+  <slot></slot>
+</template>

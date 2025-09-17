@@ -1,5 +1,4 @@
-import { AxisOption } from "../components/type";
-import { AxisContext, AxisType } from "../types";
+import { AxisContext, AxisType, AxisTypeMap } from "../types";
 import { getCurrentInstance, inject, provide, Ref } from "vue";
 
 export const ECHARTS_AXIS_KEY = Symbol("vue-echarts-axis");
@@ -29,8 +28,11 @@ export const useAxis = <O>(
    * @param name
    * @param data
    */
-  const updateAxisStyle = (name: AxisType, data: AxisOption) => {
-    (options.value as Record<AxisType, AxisOption>)[name] = data;
+  const updateAxisStyle = <K extends AxisType>(
+    name: K,
+    data: AxisTypeMap[K]
+  ) => {
+    (options.value as Record<K, AxisTypeMap[K]>)[name] = data;
     update(options.value);
   };
 

@@ -10,6 +10,7 @@ import {
   useSelect,
   useBlur,
   useSeriesOption,
+  useAxis,
 } from "./index";
 import { MainTypeMap } from "../types";
 
@@ -82,6 +83,14 @@ export const useSeries = <T extends MainTypeMap["series"]>(
    * 配置项
    */
   useSeriesOption({
+    options,
+    update,
+  });
+
+  /**
+   * 类坐标轴样式
+   */
+  useAxis({
     options,
     update,
   });

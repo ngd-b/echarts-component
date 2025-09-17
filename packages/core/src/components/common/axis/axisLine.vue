@@ -16,6 +16,7 @@ let options = ref<AxisLineOption>({});
 const props = withDefaults(defineProps<Omit<AxisLineOption, "lineStyle">>(), {
   show: undefined,
   onZero: undefined,
+  roundCap: undefined,
 });
 
 const axisContext = useAxis();

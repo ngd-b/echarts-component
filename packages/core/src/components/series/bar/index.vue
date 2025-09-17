@@ -31,6 +31,7 @@ const props = withDefaults(defineProps<BarSeries>(), {
   animation: undefined,
   sourceHeader: undefined,
   progressive: undefined,
+  universalTransition: undefined,
 });
 
 useSeries<BarSeriesOption>(props, options);

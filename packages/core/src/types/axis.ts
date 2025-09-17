@@ -1,4 +1,11 @@
-import type { AxisOption } from "../components/type";
+import type {
+  AxisLineComponentOption,
+  AxisTickComponentOption,
+  MinorTickComponentOption,
+  SplitLineComponentOption,
+  MinorSplitLineComponentOption,
+  SplitAreaComponentOption,
+} from "../components/type";
 
 export type AxisType =
   | "axisLine"
@@ -8,6 +15,14 @@ export type AxisType =
   | "minorSplitLine"
   | "splitArea";
 
+export type AxisTypeMap = {
+  axisLine: AxisLineComponentOption;
+  axisTick: AxisTickComponentOption;
+  minorTick: MinorTickComponentOption;
+  splitLine: SplitLineComponentOption;
+  minorSplitLine: MinorSplitLineComponentOption;
+  splitArea: SplitAreaComponentOption;
+};
 export interface AxisContext {
-  updateAxisStyle: (name: AxisType, data: AxisOption) => void;
+  updateAxisStyle: <K extends AxisType>(name: K, data: AxisTypeMap[K]) => void;
 }

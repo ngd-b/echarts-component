@@ -25,6 +25,7 @@ const props = withDefaults(defineProps<EffectScatterSeries>(), {
   symbolKeepAspect: undefined,
   selectedMode: undefined,
   silent: undefined,
+  universalTransition: undefined,
 });
 
 useSeries<EffectScatterSeriesOption>(props, options);

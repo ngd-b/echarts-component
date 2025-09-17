@@ -24,6 +24,7 @@ const props = withDefaults(defineProps<FunnelSeries>(), {
   selectedMode: undefined,
   silent: undefined,
   animation: undefined,
+  universalTransition: undefined,
 });
 
 useSeries<FunnelSeriesOption>(props, options);

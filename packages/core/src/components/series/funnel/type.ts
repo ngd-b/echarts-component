@@ -7,7 +7,6 @@ export type FunnelSeries = Partial<
     | "type"
     | "label"
     | "labelLine"
-    | "labelLayout"
     | "itemStyle"
     | "emphasis"
     | "blur"
@@ -15,7 +14,6 @@ export type FunnelSeries = Partial<
     | "markPoint"
     | "markLine"
     | "markArea"
-    | "universalTransition"
     | "tooltip"
   >
 >;

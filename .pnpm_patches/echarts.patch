@@ -1,5 +1,5 @@
 diff --git a/types/dist/shared.d.ts b/types/dist/shared.d.ts
-index 8f54be7ab427a4d44b3e996d14d1fc502201bb87..222953243b65a3cc88aaa5c9b1377b6a7b4552ce 100644
+index 8f54be7ab427a4d44b3e996d14d1fc502201bb87..e546e3db786670704c5733cf5fec62b219f92280 100644
 --- a/types/dist/shared.d.ts
 +++ b/types/dist/shared.d.ts
 @@ -11137,3 +11137,11 @@ declare function installUniversalTransition(registers: EChartsExtensionInstallRe
@@ -13,4 +13,4 @@ index 8f54be7ab427a4d44b3e996d14d1fc502201bb87..222953243b65a3cc88aaa5c9b1377b6a
 +export { AnimationOptionMixin,AnimationEasing }
 +export { ParallelAxisOption, RegionOption }
 +export { ToolboxBrushFeatureOption,ToolboxDataViewFeatureOption,ToolboxMagicTypeFeatureOption,ToolboxRestoreFeatureOption,ToolboxDataZoomFeatureOption,ToolboxSaveAsImageFeatureOption,ToolboxFeatureOption }
-+export { TimelineCheckpointStyle,TimelineControlStyle,UniversalTransitionOption,RippleEffectOption }
++export { TimelineCheckpointStyle,TimelineControlStyle,UniversalTransitionOption,RippleEffectOption,LabelLayoutOption }

@@ -23,6 +23,7 @@ const props = withDefaults(defineProps<BoxplotSeries>(), {
   legendHoverLink: undefined,
   selectedMode: undefined,
   silent: undefined,
+  universalTransition: undefined,
 });
 
 useSeries<BoxplotSeriesOption>(props, options);

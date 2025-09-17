@@ -25,6 +25,7 @@ const props = withDefaults(defineProps<CandlestickSeries>(), {
   large: undefined,
   clip: undefined,
   silent: undefined,
+  universalTransition: undefined,
 });
 
 useSeries<CandlestickSeriesOption>(props, options);

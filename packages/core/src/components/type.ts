@@ -65,22 +65,7 @@ import type {
   DatasetTransformOption,
 } from "./dataset/type";
 
-import type {
-  TextOptions,
-  AxisOption,
-  LineStyleOption,
-  AreaStyleOption,
-  ItemStyleOption,
-  IcontyleOption,
-  ShadowStyleOption,
-  MarkPointComponentOption,
-  MarkLineComponentOption,
-  MarkAreaComponentOption,
-  EmphasisComponentOption,
-  SelectComponentOption,
-  BlurComponentOption,
-  BackgroundStyleOption,
-} from "./common/type";
+export type * from "./common/type";
 
 export type * from "./series/type";
 
@@ -139,26 +124,12 @@ export {
 };
 
 export {
-  TextOptions,
-  AxisOption,
-  LineStyleOption,
-  AreaStyleOption,
-  ItemStyleOption,
-  IcontyleOption,
-  ShadowStyleOption,
   HandleStyleOption,
   FeatureOption,
-  MarkPointComponentOption,
-  MarkLineComponentOption,
-  MarkAreaComponentOption,
-  EmphasisComponentOption,
-  SelectComponentOption,
-  BlurComponentOption,
   DatasetTransformOption,
   DataBackgroundComponentOption,
   GeoRegionComponentOption,
   CheckpointStyleComponentOption,
   ControlStyleComponentOption,
   ProgressComponentOption,
-  BackgroundStyleOption,
 };
