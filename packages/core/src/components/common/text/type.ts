@@ -4,6 +4,7 @@ import type {
   LabelOption,
   AxisLabelBaseOption,
   TimelineLabelOption,
+  DetailOption,
 } from "echarts/types/dist/shared";
 
 export {
@@ -12,6 +13,7 @@ export {
   LabelOption,
   AxisLabelBaseOption,
   TimelineLabelOption,
+  DetailOption,
 };
 
 export type TextOptions = (
@@ -20,4 +22,5 @@ export type TextOptions = (
   | LabelOption
   | AxisLabelBaseOption
   | TimelineLabelOption
+  | DetailOption
 ) & { show?: boolean };

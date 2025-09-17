@@ -16,7 +16,6 @@ export type PieSeries = Partial<
     | "markPoint"
     | "markLine"
     | "markArea"
-    | "universalTransition"
     | "tooltip"
   >
 >;

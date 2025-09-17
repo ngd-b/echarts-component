@@ -1,10 +1,10 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
 import { useStyle, useSeriesOption } from "../../../../hooks/index";
-import type { PointerComponentOption, PointerOption } from "./type";
+import type { EffectComponentOption, EffectOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
-const options = ref<PointerComponentOption>({});
+const options = ref<EffectComponentOption>({});
 
 const seriesOption = useSeriesOption();
 
@@ -15,13 +15,13 @@ useStyle({
 });
 
 defineOptions({
-  name: "Pointer",
+  name: "Effect",
 });
 
-const props = withDefaults(defineProps<PointerOption>(), {
+const props = withDefaults(defineProps<EffectOption>(), {
   show: undefined,
-  showAbove: undefined,
-  keepAspect: undefined,
+  loop: undefined,
+  roundTrip: undefined,
 });
 
 watch(
@@ -41,8 +41,8 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: PointerComponentOption) {
-  seriesOption.update("pointer", data);
+function update(data: EffectComponentOption) {
+  seriesOption.update("effect", data);
 }
 </script>
 <template>

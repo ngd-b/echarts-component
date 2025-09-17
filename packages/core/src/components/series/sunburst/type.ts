@@ -12,7 +12,6 @@ export type SunburstSeries = Partial<
     | "emphasis"
     | "blur"
     | "select"
-    | "levels"
     | "tooltip"
   >
 >;

@@ -14,7 +14,6 @@ export type HeatmapSeries = Partial<
     | "markPoint"
     | "markLine"
     | "markArea"
-    | "universalTransition"
     | "tooltip"
   >
 >;

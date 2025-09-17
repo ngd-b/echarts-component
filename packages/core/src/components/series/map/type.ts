@@ -14,7 +14,6 @@ export type MapSeries = Partial<
     | "markPoint"
     | "markLine"
     | "markArea"
-    | "universalTransition"
     | "tooltip"
   >
 >;

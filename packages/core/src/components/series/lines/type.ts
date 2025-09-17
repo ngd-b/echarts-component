@@ -15,7 +15,6 @@ export type LinesSeries = Partial<
     | "markPoint"
     | "markLine"
     | "markArea"
-    | "universalTransition"
     | "tooltip"
   >
 >;

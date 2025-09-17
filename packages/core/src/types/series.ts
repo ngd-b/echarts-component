@@ -4,6 +4,8 @@ import {
   UniversalTransitionComponentOption,
   RippleEffectComponentOption,
   PointerComponentOption,
+  AnchorComponentOption,
+  EffectComponentOption,
 } from "../components/type";
 
 export type SeriesType =
@@ -11,7 +13,9 @@ export type SeriesType =
   | "labelLayout"
   | "universalTransition"
   | "rippleEffect"
-  | "pointer";
+  | "pointer"
+  | "anchor"
+  | "effect";
 
 export type SeriesTypeMap = {
   labelLine: LabelLineComponentOption;
@@ -19,6 +23,8 @@ export type SeriesTypeMap = {
   universalTransition: UniversalTransitionComponentOption;
   rippleEffect: RippleEffectComponentOption;
   pointer: PointerComponentOption;
+  anchor: AnchorComponentOption;
+  effect: EffectComponentOption;
 };
 
 export interface SeriesContext {

@@ -15,7 +15,6 @@ export type ScatterSeries = Partial<
     | "markPoint"
     | "markLine"
     | "markArea"
-    | "universalTransition"
     | "tooltip"
   >
 >;

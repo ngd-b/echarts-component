@@ -1,10 +1,10 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
 import { useStyle, useSeriesOption } from "../../../../hooks/index";
-import type { PointerComponentOption, PointerOption } from "./type";
+import type { AnchorComponentOption, AnchorOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
-const options = ref<PointerComponentOption>({});
+const options = ref<AnchorComponentOption>({});
 
 const seriesOption = useSeriesOption();
 
@@ -15,10 +15,10 @@ useStyle({
 });
 
 defineOptions({
-  name: "Pointer",
+  name: "Anchor",
 });
 
-const props = withDefaults(defineProps<PointerOption>(), {
+const props = withDefaults(defineProps<AnchorOption>(), {
   show: undefined,
   showAbove: undefined,
   keepAspect: undefined,
@@ -41,8 +41,8 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: PointerComponentOption) {
-  seriesOption.update("pointer", data);
+function update(data: AnchorComponentOption) {
+  seriesOption.update("anchor", data);
 }
 </script>
 <template>
