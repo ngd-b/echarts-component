@@ -12,6 +12,7 @@ import Select from "./select/index.vue";
 import Blur from "./blur/index.vue";
 import BackgroundStyle from "./backgroundStyle/index.vue";
 import Progress from "./progress/index.vue";
+import EmptyCircleStyle from "./emptyCircleStyle/index.vue";
 
 export * from "./axis/index";
 export {
@@ -29,4 +30,5 @@ export {
   Blur,
   BackgroundStyle,
   Progress,
+  EmptyCircleStyle,
 };

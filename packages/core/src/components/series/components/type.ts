@@ -5,3 +5,5 @@ export type { RippleEffectComponentOption } from "./rippleEffect/type";
 export type { PointerComponentOption } from "./pointer/type";
 export type { AnchorComponentOption } from "./anchor/type";
 export type { EffectComponentOption } from "./effect/type";
+export type { LevelComponentOption } from "./level/type";
+export type { LeavesComponentOption } from "./leaves/type";

@@ -84,6 +84,7 @@ import {
   Pointer,
   Anchor,
   Effect,
+  EmptyCircleStyle,
 } from "./components/index";
 
 export * from "./hooks/index";
@@ -175,6 +176,7 @@ const components = [
   Pointer,
   Anchor,
   Effect,
+  EmptyCircleStyle,
 ];
 export default {
   install(app: App) {

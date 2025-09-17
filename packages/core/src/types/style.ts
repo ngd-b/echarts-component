@@ -7,6 +7,7 @@ import {
   IcontyleOption,
   BackgroundStyleOption,
   ProgressComponentOption,
+  EmptyCircleStyleOption,
 } from "../components/type";
 
 export type StyleType =
@@ -21,7 +22,8 @@ export type StyleType =
   | "brushStyle"
   | "indicatorStyle"
   | "backgroundStyle"
-  | "progress";
+  | "progress"
+  | "emptyCircleStyle";
 
 export type StyleTypeMap = {
   lineStyle: LineStyleOption;
@@ -36,6 +38,7 @@ export type StyleTypeMap = {
   indicatorStyle: ItemStyleOption;
   backgroundStyle: BackgroundStyleOption;
   progress: ProgressComponentOption;
+  emptyCircleStyle: EmptyCircleStyleOption;
 };
 
 export interface StyleContext {

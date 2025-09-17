@@ -20,3 +20,4 @@ export type { SelectComponentOption } from "./select/type";
 export type { BlurComponentOption } from "./blur/type";
 export type { BackgroundStyleOption } from "./backgroundStyle/type";
 export type { ProgressComponentOption } from "./progress/type";
+export type { EmptyCircleStyleOption } from "./emptyCircleStyle/type";
