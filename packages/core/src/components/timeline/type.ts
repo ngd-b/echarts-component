@@ -8,8 +8,6 @@ import { LabelOption } from "../common/type";
 export type TextType = "label";
 export type TextOptions = LabelOption;
 
-export type ProgressComponentOption = {};
-
 export type {
   TimelineComponentOption,
   ControlStyleComponentOption,
@@ -32,5 +30,3 @@ export type TimelineOption = Partial<
 export type ControlStyleOption = ControlStyleComponentOption;
 
 export type CheckpointStyleOption = CheckpointStyleComponentOption;
-
-export type ProgressOption = ProgressComponentOption;

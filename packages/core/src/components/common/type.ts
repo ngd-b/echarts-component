@@ -19,3 +19,4 @@ export type { EmphasisComponentOption } from "./emphasis/type";
 export type { SelectComponentOption } from "./select/type";
 export type { BlurComponentOption } from "./blur/type";
 export type { BackgroundStyleOption } from "./backgroundStyle/type";
+export type { ProgressComponentOption } from "./progress/type";

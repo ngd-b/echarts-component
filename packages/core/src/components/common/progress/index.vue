@@ -1,12 +1,12 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { useStyle, useText, useTimeline } from "../../hooks/index";
+import { useStyle, useText } from "../../../hooks/index";
 import type { ProgressComponentOption, ProgressOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
 const options = ref<ProgressComponentOption>({});
 
-const timelineCtx = useTimeline();
+const styleContext = useStyle();
 
 useText({
   options,
@@ -23,7 +23,12 @@ defineOptions({
   name: "Progress",
 });
 
-const props = withDefaults(defineProps<ProgressOption>(), {});
+const props = withDefaults(defineProps<ProgressOption>(), {
+  show: undefined,
+  overlap: undefined,
+  roundCap: undefined,
+  clip: undefined,
+});
 
 watch(
   () => props,
@@ -43,7 +48,7 @@ watch(
  * @param data
  */
 function update(data: ProgressComponentOption) {
-  timelineCtx.update("progress", data);
+  styleContext.update("progress", data);
 }
 </script>
 <template>

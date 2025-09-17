@@ -56,7 +56,6 @@ import type {
   TimelineOption,
   CheckpointStyleComponentOption,
   ControlStyleComponentOption,
-  ProgressComponentOption,
 } from "./timeline/type";
 import type { CalendarComponentOption, CalendarOption } from "./calendar/type";
 import type {
@@ -131,5 +130,4 @@ export {
   GeoRegionComponentOption,
   CheckpointStyleComponentOption,
   ControlStyleComponentOption,
-  ProgressComponentOption,
 };

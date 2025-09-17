@@ -3,12 +3,7 @@
  * @param {*}
  * @return {*}
  */
-import type {
-  StyleContext,
-  StyleType,
-  StyleTypeMap,
-  StyleTypeOption,
-} from "../types";
+import type { StyleContext, StyleType, StyleTypeMap } from "../types";
 import { getCurrentInstance, inject, provide, Ref } from "vue";
 
 export const ECHARTS_STYLE_KEY = Symbol("ECHARTS_STYLE_KEY");
@@ -31,7 +26,7 @@ export const useStyle = <T>(config?: StyleOption<T>) => {
   const { options, update } = config;
 
   function updateStyle<K extends StyleType>(name: K, data: StyleTypeMap[K]) {
-    (options.value as Record<StyleType, StyleTypeOption>)[name] = data;
+    (options.value as Record<K, StyleTypeMap[K]>)[name] = data;
     update(options.value);
   }
 

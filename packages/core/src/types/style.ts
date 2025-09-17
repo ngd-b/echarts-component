@@ -6,6 +6,7 @@ import {
   ShadowStyleOption,
   IcontyleOption,
   BackgroundStyleOption,
+  ProgressComponentOption,
 } from "../components/type";
 
 export type StyleType =
@@ -19,7 +20,8 @@ export type StyleType =
   | "moveHandleStyle"
   | "brushStyle"
   | "indicatorStyle"
-  | "backgroundStyle";
+  | "backgroundStyle"
+  | "progress";
 
 export type StyleTypeMap = {
   lineStyle: LineStyleOption;
@@ -33,15 +35,8 @@ export type StyleTypeMap = {
   brushStyle: ItemStyleOption;
   indicatorStyle: ItemStyleOption;
   backgroundStyle: BackgroundStyleOption;
+  progress: ProgressComponentOption;
 };
-
-export type StyleTypeOption =
-  | LineStyleOption
-  | AreaStyleOption
-  | ItemStyleOption
-  | HandleStyleOption
-  | IcontyleOption
-  | BackgroundStyleOption;
 
 export interface StyleContext {
   update: <K extends StyleType>(name: K, data: StyleTypeMap[K]) => void;

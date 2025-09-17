@@ -1,10 +1,5 @@
 import { getCurrentInstance, inject, provide, Ref } from "vue";
-import type {
-  TimelineContext,
-  TimelineType,
-  TimelineTypeMap,
-  TimelineTypeOption,
-} from "../types";
+import type { TimelineContext, TimelineType, TimelineTypeMap } from "../types";
 
 export const ECHARTS_TIMELINE_KEY = Symbol("ECHARTS_TIMELINE_KEY");
 
@@ -37,7 +32,7 @@ export function useTimeline<T>(config?: Partial<UseTimelineOptions<T>>) {
     name: T,
     data: TimelineTypeMap[T]
   ) => {
-    (options.value as Record<TimelineType, TimelineTypeOption>)[name] = {
+    (options.value as Record<T, TimelineTypeMap[T]>)[name] = {
       ...data,
     };
     update(options.value);

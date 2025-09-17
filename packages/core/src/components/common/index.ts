@@ -11,6 +11,7 @@ import Emphasis from "./emphasis/index.vue";
 import Select from "./select/index.vue";
 import Blur from "./blur/index.vue";
 import BackgroundStyle from "./backgroundStyle/index.vue";
+import Progress from "./progress/index.vue";
 
 export * from "./axis/index";
 export {
@@ -27,4 +28,5 @@ export {
   Select,
   Blur,
   BackgroundStyle,
+  Progress,
 };
