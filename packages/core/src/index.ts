@@ -85,6 +85,9 @@ import {
   Anchor,
   Effect,
   EmptyCircleStyle,
+  Leaves,
+  UniversalTransition,
+  Level,
 } from "./components/index";
 
 export * from "./hooks/index";
@@ -177,6 +180,9 @@ const components = [
   Anchor,
   Effect,
   EmptyCircleStyle,
+  Leaves,
+  UniversalTransition,
+  Level,
 ];
 export default {
   install(app: App) {
