@@ -1,10 +1,28 @@
-import { DownplayPayload, HighlightPayload, Payload } from "echarts";
+import {
+  DownplayPayload,
+  HighlightPayload,
+  Payload,
+  ExpandAxisBreakPayload,
+  CollapseAxisBreakPayload,
+  ToggleAxisBreakPayload,
+} from "echarts";
 
 export type highlight = (param: Omit<HighlightPayload, "type">) => void;
 export type downplay = (param: Omit<DownplayPayload, "type">) => void;
 export type select = (param: Omit<Payload, "type">) => void;
 export type unselect = (param: Omit<Payload, "type">) => void;
 export type toggleSelect = (param: Omit<Payload, "type">) => void;
+
+// axis
+export type expandAxisBreak = (
+  param: Omit<ExpandAxisBreakPayload, "type">
+) => void;
+export type collapseAxisBreak = (
+  param: Omit<CollapseAxisBreakPayload, "type">
+) => void;
+export type toggleAxisBreak = (
+  param: Omit<ToggleAxisBreakPayload, "type">
+) => void;
 
 // legend
 export type legendSelect = (param: Omit<Payload, "type">) => void;
@@ -52,6 +70,10 @@ export interface Actions {
   select: select;
   unselect: unselect;
   toggleSelect: toggleSelect;
+
+  expandAxisBreak: expandAxisBreak;
+  collapseAxisBreak: collapseAxisBreak;
+  toggleAxisBreak: toggleAxisBreak;
 
   legendAllSelect: legendAllSelect;
   legendInverseSelect: legendInverseSelect;

@@ -6,12 +6,18 @@ const Actions = [
   "select",
   "unselect",
   "toggleSelect",
+
+  "expandAxisBreak",
+  "collapseAxisBreak",
+  "toggleAxisBreak",
+
   "legendAllSelect",
   "legendInverseSelect",
   "legendScroll",
   "legendToggleSelect",
   "legendSelect",
   "legendUnSelect",
+
   "showTip",
   "hideTip",
 

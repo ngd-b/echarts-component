@@ -4,13 +4,29 @@ import {
   SetOptionOpts,
 } from "echarts/types/dist/shared";
 
-type Coordinate = "series" | "xAxis" | "yAxis" | "grid" | "geo";
+type Coordinate =
+  | "series"
+  | "xAxis"
+  | "yAxis"
+  | "grid"
+  | "geo"
+  | "polar"
+  | "singleAxis"
+  | "calendar"
+  | "matrix";
 type CoordinateQuery<T extends Coordinate = Coordinate> = {
   [K in `${T}Index`]: number;
 } & {
   [K in `${T}Name`]: string;
 } & {
   [K in `${T}Id`]: string;
+};
+
+type CoordinateValue = string | number;
+type CoordinateValueGroup = [CoordinateValue, CoordinateValue];
+type CoordinateOpt = {
+  clamp?: null | undefined | 0 | 1 | 2 | 3;
+  ignoreMergeCells?: boolean;
 };
 
 export type setOption =
@@ -33,12 +49,32 @@ export type renderToSVGString = (opts?: { useViewBox?: boolean }) => string;
 
 export type convertFromPixel = (
   finder: CoordinateQuery,
-  value: number[] | number
-) => number[] | number;
+  value: CoordinateValueGroup | CoordinateValueGroup[] | CoordinateValue,
+  opt?: CoordinateOpt
+) => [number, number] | number;
+
 export type convertToPixel = (
   finder: CoordinateQuery,
-  value: number[] | number
-) => number[] | number;
+  value: [number, number] | number,
+  opt?: CoordinateOpt
+) => [number, number] | [[number, number], [number, number]] | number;
+
+export type convertToLayout = (
+  finder: CoordinateQuery<"calendar" | "matrix">,
+  value: CoordinateValueGroup | CoordinateValueGroup[] | CoordinateValue,
+  opt?: CoordinateOpt
+) => {
+  rect?: { x: number; y: number; width: number; height: number };
+  contentRect?: { x: number; y: number; width: number; height: number };
+  matrixXYLocatorRange?: [[number, number], [number, number]];
+};
+
+export type containPixel = (
+  finder: CoordinateQuery<
+    "xAxis" | "yAxis" | "grid" | "geo" | "series" | "matrix"
+  >,
+  value: CoordinateValue[]
+) => boolean;
 
 type LoadingType = "default";
 interface LoadingOption {
@@ -96,7 +132,7 @@ export interface Methods {
   getDom: getDom;
   getOption: getOption;
   resize: resize;
-  // setTheme: setTheme;
+  setTheme: setTheme;
 
   clear: clear;
   dispose: dispose;
@@ -104,7 +140,9 @@ export interface Methods {
 
   renderToSVGString: renderToSVGString;
   convertFromPixel: convertFromPixel;
+  convertToLayout: convertToLayout;
   convertToPixel: convertToPixel;
+  containPixel: containPixel;
   showLoading: showLoading;
   hideLoading: hideLoading;
 

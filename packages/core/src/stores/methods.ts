@@ -7,7 +7,7 @@ const Methods = [
   "getOption",
   "resize",
   "getDom",
-  // "setTheme",
+  "setTheme",
 
   "clear",
   "dispose",
@@ -15,7 +15,9 @@ const Methods = [
 
   "renderToSVGString",
   "convertFromPixel",
+  "convertToLayout",
   "convertToPixel",
+  "containPixel",
   "showLoading",
   "hideLoading",
 
@@ -48,7 +50,7 @@ export const userMethods = (state: EchartsState): Methods => {
     getDom: callMethod("getDom"),
     getOption: callMethod("getOption"),
     resize: callMethod("resize"),
-    // setTheme: callMethod("setTheme"),
+    setTheme: callMethod("setTheme"),
 
     clear: callMethod("clear"),
     dispose: callMethod("dispose"),
@@ -56,7 +58,9 @@ export const userMethods = (state: EchartsState): Methods => {
 
     renderToSVGString: callMethod("renderToSVGString"),
     convertFromPixel: callMethod("convertFromPixel"),
+    convertToLayout: callMethod("convertToLayout"),
     convertToPixel: callMethod("convertToPixel"),
+    containPixel: callMethod("containPixel"),
     showLoading: callMethod("showLoading"),
     hideLoading: callMethod("hideLoading"),
 
