@@ -12,22 +12,21 @@ export default defineConfig({
     dts({
       entryRoot: "src",
       insertTypesEntry: true,
+      exclude: ["src/App.vue", "src/main.ts"],
     }),
   ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/index.ts"), // 你的主入口文件
-      name: "VueEchartsComponents", // UMD 名称（可选）
+      entry: path.resolve(__dirname, "src/index.ts"),
+      name: "VueEchartsComponents",
       fileName: "echarts-component-vue",
-      formats: ["es", "cjs"],
+      formats: ["es"],
     },
     rollupOptions: {
       external: ["vue", "echarts"], // 不打包 vue 和 echarts，让用户自己装
       output: {
-        globals: {
-          vue: "Vue",
-          echarts: "echarts",
-        },
+        dir: "dist",
+        format: "es",
       },
     },
     minify: "terser",

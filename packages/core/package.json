@@ -3,6 +3,7 @@
   "version": "0.9.0",
   "description": "Echarts component for Vue",
   "type": "module",
+  "sideEffects": false,
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -20,15 +21,13 @@
     "charts",
     "vue-echarts"
   ],
-  "main": "./dist/echarts-component-vue.js.",
-  "module": "./dist/echarts-component-vue.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/echarts-component-vue.js",
-      "require": "./dist/echarts-component-vue.cjs"
-    },
-    "./style.css": "./dist/echarts-component-vue.css"
+      "import": "./dist/index.js",
+      "require": "./dist/index.d.ts"
+    }
   },
   "files": [
     "dist",
