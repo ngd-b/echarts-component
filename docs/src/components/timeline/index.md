@@ -5904,7 +5904,7 @@
 
 <VueEcharts style="width:100%;height:300px;position:relative;" calculable>
     <Timeline axisType='category' autoPlay :data='timelineData'>
-        <Text prop='label' :formatter='(val)=>(new Date(s)).getFullYear()' />
+        <Text prop='label' :formatter='(val)=>(new Date(val)).getFullYear()' />
     </Timeline>
     <Title subtext='数据来自国家统计局' />
     <Tooltip />
@@ -11832,7 +11832,7 @@
 <template>
     <VueEcharts style="width:100%;height:300px;position:relative;" calculable>
         <Timeline axisType='category' autoPlay :data='timelineData'>
-            <Text prop='label' :formatter='(val)=>(new Date(s)).getFullYear()' />
+            <Text prop='label' :formatter='(val)=>(new Date(val)).getFullYear()' />
         </Timeline>
         <Title subtext='数据来自国家统计局' />
         <Tooltip />

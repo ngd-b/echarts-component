@@ -138,6 +138,10 @@ export default defineConfig({
               text: "配置项为数组的组件使用",
               link: "/guide/array-type-components-to-use",
             },
+            {
+              text: "如何手动触发图标的事件",
+              link: "/guide/how-to-trigger-action",
+            },
           ],
         },
       ],
