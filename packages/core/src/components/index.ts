@@ -15,8 +15,6 @@ import RadiusAxis from "./radiusAxis/index.vue";
 import AngleAxis from "./angleAxis/index.vue";
 
 import Brush from "./brush/index.vue";
-import ParallelAxis from "./parallel/index.vue";
-import ParallelAxisDefault from "./parallel/parallelAxisDefault.vue";
 import SingleAxis from "./singleAxis/index.vue";
 import Calendar from "./calendar/index.vue";
 
@@ -32,8 +30,6 @@ export {
   RadiusAxis,
   AngleAxis,
   Brush,
-  ParallelAxis,
-  ParallelAxisDefault,
   SingleAxis,
   Calendar,
 };
@@ -44,6 +40,7 @@ export * from "./geo/index";
 export * from "./timeline/index";
 export * from "./dataset/index";
 export * from "./visualMap/index";
+export * from "./parallel/index";
 
 // children components
 export * from "./common/index";
