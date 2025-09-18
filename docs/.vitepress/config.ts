@@ -93,6 +93,26 @@ export default defineConfig({
           text: "useEmphasis",
           link: "/composition/useEmphasis",
         },
+        {
+          text: "useRegion",
+          link: "/composition/useRegion",
+        },
+        {
+          text: "useSeriesOption",
+          link: "/composition/useSeriesOption",
+        },
+        {
+          text: "useTimeline",
+          link: "/composition/useTimeline",
+        },
+        {
+          text: "useTransform",
+          link: "/composition/useTransform",
+        },
+        {
+          text: "useSlider",
+          link: "/composition/useSlider",
+        },
       ],
       guide: [
         {
@@ -113,6 +133,10 @@ export default defineConfig({
             {
               text: "部分组件名和配置名不同说明",
               link: "/guide/component-name-different-configuration-name",
+            },
+            {
+              text: "配置项为数组的组件使用",
+              link: "/guide/array-type-components-to-use",
             },
           ],
         },
@@ -271,10 +295,6 @@ export default defineConfig({
                   text: "ControlStyle 控制按钮样式",
                   link: "/components/timeline/controlStyle",
                 },
-                {
-                  text: "Progress 进度条样式",
-                  link: "/components/timeline/progress",
-                },
               ],
             },
             {
@@ -382,6 +402,48 @@ export default defineConfig({
               text: "ThemeRiver 主题河流",
               link: "/components/series/themeRiver",
             },
+            {
+              text: "series系列通用组件",
+              collapsed: true,
+              items: [
+                {
+                  text: "Anchor 指针锚点样式",
+                  link: "/components/series/components/anchor",
+                },
+                {
+                  text: "Effect 线特效样式",
+                  link: "/components/series/components/effect",
+                },
+                {
+                  text: "LabelLayout 标签布局样式",
+                  link: "/components/series/components/labelLayout",
+                },
+                {
+                  text: "LabelLine 标签引导线样式",
+                  link: "/components/series/components/labelLine",
+                },
+                {
+                  text: "Leaves 叶子节点样式",
+                  link: "/components/series/components/leaves",
+                },
+                {
+                  text: "Level 层级节点样式",
+                  link: "/components/series/components/level",
+                },
+                {
+                  text: "Pointer 指针样式",
+                  link: "/components/series/components/pointer",
+                },
+                {
+                  text: "RippleEffect 涟漪特效配置",
+                  link: "/components/series/components/rippleEffect",
+                },
+                {
+                  text: "UniversalTransition 全局过渡动画配置",
+                  link: "/components/series/components/universalTransition",
+                },
+              ],
+            },
           ],
         },
         {
@@ -465,6 +527,18 @@ export default defineConfig({
             {
               text: "Emphasis 高亮样式",
               link: "/components/common/emphasis",
+            },
+            {
+              text: "BackgroundStyle 背景样式",
+              link: "/components/common/backgroundStyle",
+            },
+            {
+              text: "EmptyCircleStyle 空心圆样式",
+              link: "/components/common/emptyCircleStyle",
+            },
+            {
+              text: "Progress 进度条样式",
+              link: "/components/common/progress",
             },
           ],
         },
