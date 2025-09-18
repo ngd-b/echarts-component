@@ -14,8 +14,8 @@
   "description": "",
   "devDependencies": {
     "@echarts-component/vue": "workspace:*",
-    "echarts": "^5.6.0",
-    "less": "^4.3.0",
+    "echarts": "catalog:",
+    "less": "catalog:",
     "vitepress": "^1.6.3"
   }
 }
