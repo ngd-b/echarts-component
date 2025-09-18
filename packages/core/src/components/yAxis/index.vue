@@ -60,7 +60,7 @@ const props = withDefaults(defineProps<YAXisOption>(), {
 watch(
   () => props,
   () => {
-    let propsData: YAXisOption = omitBy(props, isUndefined);
+    let propsData = omitBy(props, isUndefined);
 
     options.value = {
       ...options.value,

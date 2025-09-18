@@ -10,7 +10,6 @@ export type XAXisOption = Partial<
   Omit<
     XAXisComponentOption,
     | "nameTextStyle"
-    | "nameTruncate"
     | "axisLine"
     | "axisTick"
     | "minorTick"

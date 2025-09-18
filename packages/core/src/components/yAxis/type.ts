@@ -10,7 +10,6 @@ export type YAXisOption = Partial<
   Omit<
     YAXisComponentOption,
     | "nameTextStyle"
-    | "nameTruncate"
     | "axisLine"
     | "axisTick"
     | "minorTick"

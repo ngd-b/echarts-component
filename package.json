@@ -17,18 +17,21 @@
     "release:prepare": "npm run build:types && tsx scripts/update.ts",
     "publish": "tsx scripts/publish.ts"
   },
-  "dependencies": {
-    "echarts": "5.6.0",
-    "vue": "^3.5.21"
-  },
   "devDependencies": {
+    "@types/lodash": "catalog:",
     "@types/node": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "@vue/tsconfig": "catalog:",
     "bumpp": "catalog:",
+    "echarts": "catalog:",
+    "less": "catalog:",
+    "terser": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",
+    "unocss": "catalog:",
     "vite": "catalog:",
+    "vite-plugin-dts": "catalog:",
+    "vue": "catalog:",
     "vue-tsc": "catalog:"
   },
   "pnpm": {
