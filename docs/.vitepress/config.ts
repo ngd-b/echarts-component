@@ -316,6 +316,29 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              text: "Matrix 矩阵坐标系组件",
+              link: "/components/matrix",
+              collapsed: false,
+              items: [
+                {
+                  text: "X x 轴表头区样式",
+                  link: "/components/matrix/x",
+                },
+                {
+                  text: "Y y 轴表头区样式",
+                  link: "/components/matrix/y",
+                },
+                {
+                  text: "Body 内容区单元格样式",
+                  link: "/components/matrix/body",
+                },
+                {
+                  text: "Corner 角区单元格样式",
+                  link: "/components/matrix/corner",
+                },
+              ],
+            },
           ],
         },
         {
@@ -543,6 +566,10 @@ export default defineConfig({
             {
               text: "Progress 进度条样式",
               link: "/components/common/progress",
+            },
+            {
+              text: "DividerLineStyle 分割线条样式",
+              link: "/components/common/dividerLineStyle",
             },
           ],
         },
