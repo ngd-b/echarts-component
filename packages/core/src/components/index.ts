@@ -41,6 +41,7 @@ export * from "./timeline/index";
 export * from "./dataset/index";
 export * from "./visualMap/index";
 export * from "./parallel/index";
+export * from "./matrix/index";
 
 // children components
 export * from "./common/index";

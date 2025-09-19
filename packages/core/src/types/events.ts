@@ -44,6 +44,8 @@ export const Events = [
   "legendinverseselect",
   "legendscroll",
 
+  "axisbreakchanged",
+
   "datazoom",
   "datarangeselected",
   "graphroam",

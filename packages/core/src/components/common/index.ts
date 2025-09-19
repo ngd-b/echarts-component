@@ -13,6 +13,7 @@ import Blur from "./blur/index.vue";
 import BackgroundStyle from "./backgroundStyle/index.vue";
 import Progress from "./progress/index.vue";
 import EmptyCircleStyle from "./emptyCircleStyle/index.vue";
+import DividerLineStyle from "./dividerLineStyle/index.vue";
 
 export * from "./axis/index";
 export {
@@ -31,4 +32,5 @@ export {
   BackgroundStyle,
   Progress,
   EmptyCircleStyle,
+  DividerLineStyle,
 };

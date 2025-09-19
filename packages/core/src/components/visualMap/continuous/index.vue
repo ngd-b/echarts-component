@@ -23,6 +23,8 @@ const props = withDefaults(defineProps<ContinousVisualMap>(), {
   hoverLink: undefined,
   calculable: undefined,
   inverse: undefined,
+  hoverLinkOnHandle: undefined,
+  unboundedRange: undefined,
 });
 
 watch(

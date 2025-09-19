@@ -23,6 +23,10 @@ const props = withDefaults(defineProps<HeatmapSeries>(), {
   selectedMode: undefined,
   silent: undefined,
   animation: undefined,
+  legendHoverLink: undefined,
+  progressive: undefined,
+  sourceHeader: undefined,
+  universalTransition: undefined,
 });
 useSeries<HeatmapSeriesOption>(props, options);
 </script>

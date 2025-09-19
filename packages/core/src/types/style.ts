@@ -23,7 +23,8 @@ export type StyleType =
   | "indicatorStyle"
   | "backgroundStyle"
   | "progress"
-  | "emptyCircleStyle";
+  | "emptyCircleStyle"
+  | "dividerLineStyle";
 
 export type StyleTypeMap = {
   lineStyle: LineStyleOption;
@@ -39,6 +40,7 @@ export type StyleTypeMap = {
   backgroundStyle: BackgroundStyleOption;
   progress: ProgressComponentOption;
   emptyCircleStyle: EmptyCircleStyleOption;
+  dividerLineStyle: LineStyleOption;
 };
 
 export interface StyleContext {

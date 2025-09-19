@@ -46,6 +46,11 @@ import {
   Timeline,
   Calendar,
   Dataset,
+  Matrix,
+  X,
+  Y,
+  Body,
+  Corner,
   // 通用组件
   Text,
   AxisLine,
@@ -88,6 +93,7 @@ import {
   Leaves,
   UniversalTransition,
   Level,
+  DividerLineStyle,
 } from "./components/index";
 
 export * from "./hooks/index";
@@ -142,6 +148,11 @@ const components = [
   Timeline,
   Calendar,
   Dataset,
+  Matrix,
+  X,
+  Y,
+  Body,
+  Corner,
   Text,
   AxisLine,
   AxisTick,
@@ -183,6 +194,7 @@ const components = [
   Leaves,
   UniversalTransition,
   Level,
+  DividerLineStyle,
 ];
 export default {
   install(app: App) {

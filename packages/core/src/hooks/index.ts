@@ -16,3 +16,4 @@ export * from "./useSlider";
 export * from "./useRegion";
 export * from "./useTimeline";
 export * from "./useSeriesOption";
+export * from "./useMatrix";

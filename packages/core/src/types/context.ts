@@ -25,6 +25,7 @@ import type {
   MarkPointComponentOption,
   MarkLineComponentOption,
   MarkAreaComponentOption,
+  MatrixComponentOption,
 } from "../components/type";
 import { Actions } from "./actions";
 import type { Ref, ShallowReactive, ShallowRef } from "vue";
@@ -98,6 +99,7 @@ export type ChartOptions = {
   timeline?: TimelineComponentOption[];
   calendar?: CalendarComponentOption[];
   dataset?: DatasetComponentOption[];
+  matrix?: MatrixComponentOption[];
 };
 
 export type MainType =
@@ -123,7 +125,8 @@ export type MainType =
   | "singleAxis"
   | "timeline"
   | "calendar"
-  | "dataset";
+  | "dataset"
+  | "matrix";
 
 export type MainTypeMap = {
   series: SeriesOption;
@@ -149,4 +152,5 @@ export type MainTypeMap = {
   timeline: TimelineComponentOption;
   calendar: CalendarComponentOption;
   dataset: DatasetComponentOption;
+  matrix: MatrixComponentOption;
 };
