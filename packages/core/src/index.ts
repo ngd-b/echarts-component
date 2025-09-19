@@ -96,6 +96,9 @@ import {
   Level,
   DividerLineStyle,
   WindowStyle,
+  Break,
+  BreakArea,
+  BreakLabelLayout,
 } from "./components/index";
 
 export * from "./hooks/index";
@@ -201,6 +204,9 @@ const components = [
   Level,
   DividerLineStyle,
   WindowStyle,
+  Break,
+  BreakArea,
+  BreakLabelLayout,
 ];
 export default {
   install(app: App) {

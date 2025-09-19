@@ -45,6 +45,7 @@ const props = withDefaults(defineProps<AxisPointerOption>(), {
   status: undefined,
   triggerEmphasis: undefined,
   triggerTooltip: undefined,
+  animation: undefined,
 });
 
 watch(

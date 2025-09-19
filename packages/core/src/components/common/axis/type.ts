@@ -5,7 +5,25 @@ import type {
   MinorSplitLineOption as MinorSplitLineComponentOption,
   SplitAreaOption as SplitAreaComponentOption,
   SplitLineOption as SplitLineComponentOption,
+  AxisBreakOption,
+  ItemStyleOption,
 } from "echarts/types/dist/shared";
+
+type BreakComponentOption = AxisBreakOption & { id: string };
+
+type BreakAreaComponentOption = {
+  show?: boolean;
+  itemStyle?: ItemStyleOption;
+  zigzagAmplitude?: number;
+  zigzagMinSpan?: number;
+  zigzagMaxSpan?: number;
+  zigzagZ: number;
+  expandOnClick?: boolean;
+};
+
+type BreakLabelLayoutComponentOption = {
+  moveOverlap?: "auto" | boolean;
+};
 
 export type AxisLineOption = AxisLineComponentOption & {
   roundCap?: boolean;
@@ -28,6 +46,14 @@ export type MinorSplitLineOption = MinorSplitLineComponentOption & {};
 
 export type SplitAreaOption = SplitAreaComponentOption & {};
 
+export type BreakOption = BreakComponentOption & {};
+
+export type BreakAreaOption = Partial<
+  Omit<BreakAreaComponentOption, "itemStyle">
+>;
+
+export type BreakLabelLayoutOption = BreakLabelLayoutComponentOption;
+
 export {
   AxisLineComponentOption,
   AxisTickComponentOption,
@@ -35,4 +61,7 @@ export {
   MinorSplitLineComponentOption,
   SplitAreaComponentOption,
   SplitLineComponentOption,
+  BreakComponentOption,
+  BreakAreaComponentOption,
+  BreakLabelLayoutComponentOption,
 };

@@ -40,6 +40,7 @@ const props = withDefaults(defineProps<TooltipOptions>(), {
   enterable: undefined,
   confine: undefined,
   appendToBody: undefined,
+  displayTransition: undefined,
 });
 
 watch(

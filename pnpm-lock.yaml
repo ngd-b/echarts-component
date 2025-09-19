@@ -57,7 +57,7 @@ catalogs:
 
 patchedDependencies:
   echarts:
-    hash: 3b6fbb412d25aaf3afacc50554317e90b8f4f39d841f055dcd01bcd78e4d3de9
+    hash: ae0e14942c52df9d3f453698168c3f02496e8e55326f4d1f5851086be1833ace
     path: .pnpm_patches/echarts.patch
 
 importers:
@@ -81,7 +81,7 @@ importers:
         version: 10.2.3
       echarts:
         specifier: 'catalog:'
-        version: 6.0.0(patch_hash=3b6fbb412d25aaf3afacc50554317e90b8f4f39d841f055dcd01bcd78e4d3de9)
+        version: 6.0.0(patch_hash=ae0e14942c52df9d3f453698168c3f02496e8e55326f4d1f5851086be1833ace)
       less:
         specifier: 'catalog:'
         version: 4.3.0
@@ -117,7 +117,7 @@ importers:
         version: link:../packages/core
       echarts:
         specifier: 'catalog:'
-        version: 6.0.0(patch_hash=3b6fbb412d25aaf3afacc50554317e90b8f4f39d841f055dcd01bcd78e4d3de9)
+        version: 6.0.0(patch_hash=ae0e14942c52df9d3f453698168c3f02496e8e55326f4d1f5851086be1833ace)
       less:
         specifier: 'catalog:'
         version: 4.3.0
@@ -145,7 +145,7 @@ importers:
         version: 0.7.0(typescript@5.9.2)(vue@3.5.21(typescript@5.9.2))
       echarts:
         specifier: 'catalog:'
-        version: 6.0.0(patch_hash=3b6fbb412d25aaf3afacc50554317e90b8f4f39d841f055dcd01bcd78e4d3de9)
+        version: 6.0.0(patch_hash=ae0e14942c52df9d3f453698168c3f02496e8e55326f4d1f5851086be1833ace)
       terser:
         specifier: 'catalog:'
         version: 5.43.1
@@ -3379,7 +3379,7 @@ snapshots:
 
   duplexer@0.1.2: {}
 
-  echarts@6.0.0(patch_hash=3b6fbb412d25aaf3afacc50554317e90b8f4f39d841f055dcd01bcd78e4d3de9):
+  echarts@6.0.0(patch_hash=ae0e14942c52df9d3f453698168c3f02496e8e55326f4d1f5851086be1833ace):
     dependencies:
       tslib: 2.3.0
       zrender: 6.0.0

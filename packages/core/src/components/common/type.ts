@@ -6,6 +6,9 @@ export type {
   MinorSplitLineComponentOption,
   SplitAreaComponentOption,
   SplitLineComponentOption,
+  BreakAreaComponentOption,
+  BreakComponentOption,
+  BreakLabelLayoutComponentOption,
 } from "./axis/type";
 export type { LineStyleOption } from "./lineStyle/type";
 export type { AreaStyleOption } from "./areaStyle/type";

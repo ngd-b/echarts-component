@@ -19,5 +19,8 @@ export type XAXisOption = Partial<
     | "splitArea"
     | "axisPointer"
     | "tooltip"
+    | "breaks"
+    | "breakArea"
+    | "breakLabelLayout"
   >
 >;

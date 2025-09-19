@@ -1,4 +1,10 @@
-import { AxisContext, AxisType, AxisTypeMap } from "../types";
+import {
+  AxisContext,
+  AxisType,
+  AxisTypeMap,
+  AxisTypeMulti,
+  AxisTypeMultimap,
+} from "../types";
 import { getCurrentInstance, inject, provide, Ref } from "vue";
 
 export const ECHARTS_AXIS_KEY = Symbol("vue-echarts-axis");
@@ -36,8 +42,29 @@ export const useAxis = <O>(
     update(options.value);
   };
 
+  function updateMulti<K extends AxisTypeMulti>(
+    name: K,
+    data: AxisTypeMultimap[K]
+  ) {
+    const axisOptions = options.value as Record<K, AxisTypeMultimap[K][]>;
+    if (!axisOptions[name]) {
+      axisOptions[name] = [];
+    }
+    const index = axisOptions[name].findIndex((item) => item.id === data.id);
+    if (index > -1) {
+      axisOptions[name][index] = data;
+    } else {
+      axisOptions[name].push(data);
+    }
+
+    (options.value as Record<K, AxisTypeMultimap[K][]>)[name] =
+      axisOptions[name];
+    update(options.value);
+  }
+
   const ctx: AxisContext = {
     updateAxisStyle,
+    updateMulti,
   };
 
   const instance = getCurrentInstance();

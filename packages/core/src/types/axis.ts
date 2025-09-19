@@ -5,6 +5,9 @@ import type {
   SplitLineComponentOption,
   MinorSplitLineComponentOption,
   SplitAreaComponentOption,
+  BreakAreaComponentOption,
+  BreakComponentOption,
+  BreakLabelLayoutComponentOption,
 } from "../components/type";
 
 export type AxisType =
@@ -13,7 +16,11 @@ export type AxisType =
   | "minorTick"
   | "splitLine"
   | "minorSplitLine"
-  | "splitArea";
+  | "splitArea"
+  | "breakArea"
+  | "breakLabelLayout";
+
+export type AxisTypeMulti = "breaks";
 
 export type AxisTypeMap = {
   axisLine: AxisLineComponentOption;
@@ -22,7 +29,18 @@ export type AxisTypeMap = {
   splitLine: SplitLineComponentOption;
   minorSplitLine: MinorSplitLineComponentOption;
   splitArea: SplitAreaComponentOption;
+  breakArea: BreakAreaComponentOption;
+  breakLabelLayout: BreakLabelLayoutComponentOption;
 };
+
+export type AxisTypeMultimap = {
+  breaks: BreakComponentOption;
+};
+
 export interface AxisContext {
   updateAxisStyle: <K extends AxisType>(name: K, data: AxisTypeMap[K]) => void;
+  updateMulti: <K extends AxisTypeMulti>(
+    name: K,
+    data: AxisTypeMultimap[K]
+  ) => void;
 }

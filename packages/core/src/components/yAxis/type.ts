@@ -19,5 +19,8 @@ export type YAXisOption = Partial<
     | "splitArea"
     | "axisPointer"
     | "tooltip"
+    | "breaks"
+    | "breakArea"
+    | "breakLabelLayout"
   >
 >;

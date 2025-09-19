@@ -1,5 +1,5 @@
 diff --git a/types/dist/shared.d.ts b/types/dist/shared.d.ts
-index 8d9cc1bb5024e7c2c4b4a960fbd6cd7165aa36f7..0da740800a836cec8097b5e19b98b873d81c5338 100644
+index 8d9cc1bb5024e7c2c4b4a960fbd6cd7165aa36f7..72c9518b81d6ba5ec5da4717e604351e2d329aaa 100644
 --- a/types/dist/shared.d.ts
 +++ b/types/dist/shared.d.ts
 @@ -12159,3 +12159,11 @@ declare function installAxisBreak(registers: EChartsExtensionInstallRegisters):
@@ -13,4 +13,4 @@ index 8d9cc1bb5024e7c2c4b4a960fbd6cd7165aa36f7..0da740800a836cec8097b5e19b98b873
 +export { ParallelAxisOption, RegionOption,PointerOption,DetailOption,SankeyLevelOption,TreeSeriesLeavesOption,TreemapSeriesLevelOption }
 +export { ToolboxBrushFeatureOption,ToolboxDataViewFeatureOption,ToolboxMagicTypeFeatureOption,ToolboxRestoreFeatureOption,ToolboxDataZoomFeatureOption,ToolboxSaveAsImageFeatureOption,ToolboxFeatureOption }
 +export { TimelineCheckpointStyle,TimelineControlStyle,UniversalTransitionOption,RippleEffectOption,LabelLayoutOption }
-+export { MatrixDimensionOption, MatrixBodyOption, MatrixCornerOption}
++export { MatrixDimensionOption, MatrixBodyOption, MatrixCornerOption, AxisBreakOption}
