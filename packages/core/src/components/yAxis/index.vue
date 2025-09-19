@@ -55,6 +55,8 @@ const props = withDefaults(defineProps<YAXisOption>(), {
   inverse: undefined,
   triggerEvent: undefined,
   silent: undefined,
+  jitterOverlap: undefined,
+  nameMoveOverlap: undefined,
 });
 
 watch(

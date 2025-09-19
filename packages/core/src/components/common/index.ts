@@ -15,6 +15,7 @@ import Progress from "./progress/index.vue";
 import EmptyCircleStyle from "./emptyCircleStyle/index.vue";
 import DividerLineStyle from "./dividerLineStyle/index.vue";
 import WindowStyle from "./windowStyle/index.vue";
+import BrushStyle from "./brushStyle/index.vue";
 
 export * from "./axis/index";
 export {
@@ -35,4 +36,5 @@ export {
   EmptyCircleStyle,
   DividerLineStyle,
   WindowStyle,
+  BrushStyle,
 };

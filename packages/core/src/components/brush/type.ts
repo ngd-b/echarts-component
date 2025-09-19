@@ -2,4 +2,4 @@ import type { BrushOption as BrushComponentOption } from "echarts/types/dist/sha
 
 export type { BrushComponentOption };
 
-export type BrushOption = Partial<BrushComponentOption>;
+export type BrushOption = Partial<Omit<BrushComponentOption, "brushStyle">>;

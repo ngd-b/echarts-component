@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useAxis } from "../../hooks/index";
+import { useVueEcharts, useStyle } from "../../hooks/index";
 import type { BrushOption, BrushComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash";
 
@@ -12,9 +12,8 @@ const options = ref<BrushComponentOption>({
 });
 const vueEcharts = useVueEcharts();
 
-// 配置坐标系样式
-useAxis<BrushComponentOption>({
-  options: options,
+useStyle({
+  options,
   update,
 });
 

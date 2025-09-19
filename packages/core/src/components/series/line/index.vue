@@ -33,6 +33,9 @@ const props = withDefaults(defineProps<LineSeries>(), {
   silent: undefined,
   animation: undefined,
   sourceHeader: undefined,
+  progressive: undefined,
+  universalTransition: undefined,
+  showAllSymbol: undefined,
 });
 useSeries<LineSeriesOption>(props, options);
 </script>

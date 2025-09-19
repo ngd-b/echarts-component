@@ -17,6 +17,7 @@ const options = ref<InsideDataZoomComponentOption>({
 const vueEcharts = useVueEcharts();
 
 defineOptions({
+  inheritAttrs: false,
   name: "InsideDataZoom",
 });
 

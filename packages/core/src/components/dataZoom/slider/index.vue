@@ -43,6 +43,7 @@ useText({
 });
 
 defineOptions({
+  inheritAttrs: false,
   name: "SliderDataZoom",
 });
 

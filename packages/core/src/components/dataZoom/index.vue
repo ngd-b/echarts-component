@@ -13,12 +13,15 @@ import Slider from "./slider/index.vue";
 import type { DataZoomOption } from "./type";
 
 defineOptions({
+  inheritAttrs: false,
   name: "DataZoom",
 });
 
 const props = withDefaults(defineProps<DataZoomOption>(), {
   type: "inside",
   show: undefined,
+  disabled: undefined,
+  zoomLock: undefined,
   zoomOnMouseWheel: undefined,
   moveOnMouseMove: undefined,
   moveOnMouseWheel: undefined,

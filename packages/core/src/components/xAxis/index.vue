@@ -53,6 +53,8 @@ const props = withDefaults(defineProps<XAXisOption>(), {
   silent: undefined,
   alignTicks: undefined,
   deduplication: undefined,
+  jitterOverlap: undefined,
+  nameMoveOverlap: undefined,
 });
 
 watch(
