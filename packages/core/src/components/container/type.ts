@@ -6,6 +6,7 @@ import { AnimationEasing } from "echarts/types/dist/shared";
 export type EChartsOption = Partial<
   {
     color?: ZRColor | ZRColor[];
+    backgroundColor: ZRColor;
     stateAnimation?: {
       duration?: number;
       easing?: AnimationEasing;
@@ -13,6 +14,9 @@ export type EChartsOption = Partial<
     };
     blendMode?: string;
     hoverLayerThreshold?: number;
+    useUTC: boolean;
+    richInheritPlainLabel: boolean;
+
     theme?: string | object | null;
     config?: EChartsInitOpts;
   } & AnimationOptionMixin

@@ -21,6 +21,7 @@ const root = ref(null);
 
 const props = withDefaults(defineProps<EChartsOption>(), {
   animation: undefined,
+  useUTC: undefined,
   richInheritPlainLabel: undefined,
 });
 
