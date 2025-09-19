@@ -54,7 +54,7 @@ export type BreakAreaOption = Partial<
 
 export type BreakLabelLayoutOption = BreakLabelLayoutComponentOption;
 
-export {
+export type {
   AxisLineComponentOption,
   AxisTickComponentOption,
   MinorTickComponentOption,

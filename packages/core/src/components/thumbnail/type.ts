@@ -1,4 +1,4 @@
-import { ThumbnailComponentOption } from "echarts/types/dist/echarts";
+import type { ThumbnailComponentOption } from "echarts/types/dist/echarts";
 
 export { ThumbnailComponentOption };
 
