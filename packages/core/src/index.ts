@@ -51,6 +51,7 @@ import {
   Y,
   Body,
   Corner,
+  Thumbnail,
   // 通用组件
   Text,
   AxisLine,
@@ -94,6 +95,7 @@ import {
   UniversalTransition,
   Level,
   DividerLineStyle,
+  WindowStyle,
 } from "./components/index";
 
 export * from "./hooks/index";
@@ -153,6 +155,9 @@ const components = [
   Y,
   Body,
   Corner,
+  Thumbnail,
+
+  // 通用组件
   Text,
   AxisLine,
   AxisTick,
@@ -195,6 +200,7 @@ const components = [
   UniversalTransition,
   Level,
   DividerLineStyle,
+  WindowStyle,
 ];
 export default {
   install(app: App) {

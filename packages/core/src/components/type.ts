@@ -69,6 +69,7 @@ export type {
   MatrixCornerComponentOption,
   MatrixDimensionComponentOption,
 } from "./matrix/type";
+export type { ThumbnailComponentOption } from "./thumbnail/type";
 
 export type * from "./common/type";
 

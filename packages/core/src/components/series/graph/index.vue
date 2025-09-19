@@ -29,6 +29,9 @@ const props = withDefaults(defineProps<GraphSeries>(), {
   selectedMode: undefined,
   silent: undefined,
   animation: undefined,
+  focusNodeAdjacency: undefined,
+  universalTransition: undefined,
+  progressive: undefined,
 });
 useSeries<GraphSeriesOption>(props, options);
 </script>

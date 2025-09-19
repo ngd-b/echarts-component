@@ -26,6 +26,7 @@ import type {
   MarkLineComponentOption,
   MarkAreaComponentOption,
   MatrixComponentOption,
+  ThumbnailComponentOption,
 } from "../components/type";
 import { Actions } from "./actions";
 import type { Ref, ShallowReactive, ShallowRef } from "vue";
@@ -56,7 +57,8 @@ export type UpdateOption =
   | ParallelAxisComponentOption
   | MarkPointComponentOption
   | MarkLineComponentOption
-  | MarkAreaComponentOption;
+  | MarkAreaComponentOption
+  | ThumbnailComponentOption;
 
 export interface EchartsState {
   options: Ref<ChartOptions>;
@@ -100,6 +102,7 @@ export type ChartOptions = {
   calendar?: CalendarComponentOption[];
   dataset?: DatasetComponentOption[];
   matrix?: MatrixComponentOption[];
+  thumbnail?: ThumbnailComponentOption[];
 };
 
 export type MainType =
@@ -126,7 +129,8 @@ export type MainType =
   | "timeline"
   | "calendar"
   | "dataset"
-  | "matrix";
+  | "matrix"
+  | "thumbnail";
 
 export type MainTypeMap = {
   series: SeriesOption;
@@ -153,4 +157,5 @@ export type MainTypeMap = {
   calendar: CalendarComponentOption;
   dataset: DatasetComponentOption;
   matrix: MatrixComponentOption;
+  thumbnail: ThumbnailComponentOption;
 };

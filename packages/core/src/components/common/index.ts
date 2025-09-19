@@ -14,6 +14,7 @@ import BackgroundStyle from "./backgroundStyle/index.vue";
 import Progress from "./progress/index.vue";
 import EmptyCircleStyle from "./emptyCircleStyle/index.vue";
 import DividerLineStyle from "./dividerLineStyle/index.vue";
+import WindowStyle from "./windowStyle/index.vue";
 
 export * from "./axis/index";
 export {
@@ -33,4 +34,5 @@ export {
   Progress,
   EmptyCircleStyle,
   DividerLineStyle,
+  WindowStyle,
 };
