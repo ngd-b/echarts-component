@@ -1,9 +1,14 @@
 # XAxis x轴组件
 
 <script setup>
-  import { ref } from 'vue'
-  import * as echarts from 'echarts';
+    import { ref,onMounted } from 'vue'
+    import * as echarts from 'echarts';
+    import { useVueEcharts } from '@echarts-component/vue'
 
+    const { getOption,options } = useVueEcharts();
+    onMounted(() => {
+        console.log(getOption(),options.value)
+    })
   const data =[
       [-100, -7.28568859177975],
       [-99.5, -10.308641686442629],

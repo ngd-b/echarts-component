@@ -215,10 +215,6 @@ export default defineConfig({
                       text: "MoveHandleStyle 移动手柄样式",
                       link: "/components/dataZoom/slider/moveHandleStyle",
                     },
-                    {
-                      text: "BrushStyle 刷选样式",
-                      link: "/components/dataZoom/slider/brushStyle",
-                    },
                   ],
                 },
               ],
@@ -513,6 +509,18 @@ export default defineConfig({
                   text: "SplitArea 分割区域样式",
                   link: "/components/common/axis/splitArea",
                 },
+                {
+                  text: "Break 断轴的截断数据",
+                  link: "/components/common/axis/break",
+                },
+                {
+                  text: "BreakArea 断轴截断区域的样式",
+                  link: "/components/common/axis/breakArea",
+                },
+                {
+                  text: "BreakLabelLayout 断轴文字布局",
+                  link: "/components/common/axis/breakLabelLayout",
+                },
               ],
             },
             {
@@ -578,6 +586,10 @@ export default defineConfig({
             {
               text: "WindowStyle 窗口样式",
               link: "/components/common/windowStyle",
+            },
+            {
+              text: "BrushStyle 刷选样式",
+              link: "/components/common/brushStyle",
             },
           ],
         },
