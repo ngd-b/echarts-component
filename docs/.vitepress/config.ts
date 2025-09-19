@@ -339,6 +339,10 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              text: "Thumbnail 缩略图组件",
+              link: "/components/thumbnail",
+            },
           ],
         },
         {
@@ -570,6 +574,10 @@ export default defineConfig({
             {
               text: "DividerLineStyle 分割线条样式",
               link: "/components/common/dividerLineStyle",
+            },
+            {
+              text: "WindowStyle 窗口样式",
+              link: "/components/common/windowStyle",
             },
           ],
         },
