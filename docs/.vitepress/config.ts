@@ -604,6 +604,7 @@ export default defineConfig({
   },
   srcDir: "src",
   lastUpdated: true,
+  ignoreDeadLinks: true,
   sitemap: {
     hostname: "https://echarts-component.hboot.fun",
   },
