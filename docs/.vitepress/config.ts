@@ -180,7 +180,7 @@ export default defineConfig({
             },
             {
               text: "Polar 极坐标系",
-              link: "/components/polarAxis",
+              link: "/components/polar",
             },
             {
               text: "RadarAxis 雷达图坐标系",
