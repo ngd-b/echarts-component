@@ -13,9 +13,10 @@ const options = ref<PolarComponentOption>({
 const vueEcharts = useVueEcharts();
 
 useTooltip({
-  options: options,
+  options,
   update,
 });
+
 defineOptions({
   name: "Polar",
 });

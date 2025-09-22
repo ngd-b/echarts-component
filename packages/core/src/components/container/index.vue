@@ -30,7 +30,7 @@ const vueEcharts = useVueEcharts();
 // 增加文本样式
 useText<ChartOptions, TextType>({
   options: vueEcharts.options,
-  update: updateChart,
+  update,
 });
 
 onMounted(() => {
@@ -44,40 +44,34 @@ onBeforeMount(() => {
 watch(
   () => props,
   () => {
-    updateChart();
+    update();
   },
-  { immediate: true, deep: true }
+  { deep: true }
 );
 
 watch(
-  vueEcharts.options,
+  () => vueEcharts.options,
   () => {
-    updateChart();
+    update();
   },
-  { immediate: true, deep: true }
+  { deep: true }
 );
+
 function initChart() {
   const { theme, config } = props;
   vueEcharts.vueEchartsRef.value = echarts.init(root.value, theme, config);
-  // vueEcharts.vueEchartsRef.value.setOption(options.value);
-  updateChart();
+
+  update();
 }
 
-function updateChart() {
-  let updateProps = omitBy(
-    {
-      ...props,
-    },
-    isUndefined
-  );
-  //
-  ["theme", "config"].forEach((key) =>
-    Reflect.deleteProperty(updateProps, key)
-  );
+function update() {
+  let propsData = omitBy(props, (value, key) => {
+    return isUndefined(value) || ["theme", "config"].includes(key);
+  });
 
   vueEcharts.vueEchartsRef.value?.setOption({
-    ...updateProps,
     ...vueEcharts.options.value,
+    ...propsData,
   });
 }
 </script>
