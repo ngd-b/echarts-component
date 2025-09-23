@@ -1,6 +1,6 @@
 {
   "name": "@echarts-component/extend-vue",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Echarts advance extend component for Vue.",
   "type": "module",
   "sideEffects": false,
