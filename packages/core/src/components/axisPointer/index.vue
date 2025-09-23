@@ -5,7 +5,7 @@ import {
   useText,
   useStyle,
   useAxisPointer,
-} from "../../hooks/index";
+} from "@/hooks/index";
 import type {
   TextType,
   AxisPointerComponentOption,

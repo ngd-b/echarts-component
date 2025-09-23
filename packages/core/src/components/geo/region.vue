@@ -8,7 +8,7 @@ import {
   useBlur,
   useText,
   useRegion,
-} from "../../hooks/index";
+} from "@/hooks/index";
 import type { GeoRegionOption, GeoRegionComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

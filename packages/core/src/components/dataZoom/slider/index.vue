@@ -6,7 +6,7 @@ import {
   useSlider,
   useStyle,
   useText,
-} from "../../../hooks/index";
+} from "@/hooks/index";
 import type {
   SliderDataZoomOption,
   SliderDataZoomComponentOption,

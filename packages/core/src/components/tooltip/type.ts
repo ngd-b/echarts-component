@@ -1,5 +1,4 @@
 import type { TooltipOption as TooltipComponentOption } from "echarts/types/dist/shared.js";
-import { TextOptions } from "../common/type";
 
 export type { TooltipComponentOption };
 

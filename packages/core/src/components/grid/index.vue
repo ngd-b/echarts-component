@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useTooltip } from "../../hooks/index";
+import { useVueEcharts, useTooltip } from "@/hooks/index";
 import type { GridComponentOption, GridOptions } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

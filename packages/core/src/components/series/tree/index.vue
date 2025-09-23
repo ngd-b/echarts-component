@@ -1,12 +1,8 @@
 <script setup lang="tsx">
-import * as echarts from "echarts/core";
-import { TreeChart } from "echarts/charts";
-import { CanvasRenderer } from "echarts/renderers";
 import type { TreeSeries, TreeSeriesOption } from "./type";
-import { useSeries } from "../../../hooks/index";
+import { useSeries } from "@/hooks/index";
 import { ref, useId } from "vue";
 
-echarts.use([TreeChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
 

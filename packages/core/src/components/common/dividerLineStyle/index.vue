@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import { LineStyleOption } from "./type";
 import { isUndefined, omitBy } from "lodash-es";
-import { useStyle } from "../../../hooks/index";
+import { useStyle } from "@/hooks/index";
 
 defineOptions({
   name: "DividerLineStyle",

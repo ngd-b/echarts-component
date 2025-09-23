@@ -6,7 +6,7 @@ import {
   useStyle,
   useEmphasis,
   useTimeline,
-} from "../../hooks/index";
+} from "@/hooks/index";
 import type { TextType, TimelineOption, TimelineComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

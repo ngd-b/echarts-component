@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import { isUndefined, omitBy } from "lodash-es";
 import { BlurComponentOption, BlurOption } from "./type";
-import { useBlur, useText, useStyle } from "../../../hooks/index";
+import { useBlur, useText, useStyle } from "@/hooks/index";
 
 defineOptions({
   name: "Blur",

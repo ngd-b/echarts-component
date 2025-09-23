@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import { LabelLineComponentOption, LabelLineOption } from "./type";
 import { isUndefined, omitBy } from "lodash-es";
-import { useStyle, useSeriesOption } from "../../../../hooks/index";
+import { useStyle, useSeriesOption } from "@/hooks/index";
 
 defineOptions({
   name: "LabelLine",

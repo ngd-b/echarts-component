@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import { RippleEffectComponentOption, RippleEffectOption } from "./type";
 import { isUndefined, omitBy } from "lodash-es";
-import { useStyle, useSeriesOption } from "../../../../hooks/index";
+import { useStyle, useSeriesOption } from "@/hooks/index";
 
 defineOptions({
   name: "RippleEffect",

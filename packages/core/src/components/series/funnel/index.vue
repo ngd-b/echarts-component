@@ -1,12 +1,8 @@
 <script setup lang="tsx">
-import * as echarts from "echarts/core";
-import { FunnelChart } from "echarts/charts";
-import { CanvasRenderer } from "echarts/renderers";
 import type { FunnelSeries, FunnelSeriesOption } from "./type";
-import { useSeries } from "../../../hooks/index";
+import { useSeries } from "@/hooks/index";
 import { ref, useId } from "vue";
 
-echarts.use([FunnelChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
 

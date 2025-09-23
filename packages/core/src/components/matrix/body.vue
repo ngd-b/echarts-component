@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { useText, useStyle, useMatrix } from "../../hooks/index";
+import { useText, useStyle, useMatrix } from "@/hooks/index";
 import type { MatrixBodyComponentOption, MatrixBodyOption } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

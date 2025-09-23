@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useTransform } from "../../hooks/index";
+import { useVueEcharts, useTransform } from "@/hooks/index";
 import type { DatasetOption, DatasetComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

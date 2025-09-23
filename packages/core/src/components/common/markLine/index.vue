@@ -8,7 +8,7 @@ import {
   useText,
   useEmphasis,
   useBlur,
-} from "../../../hooks/index";
+} from "@/hooks/index";
 
 defineOptions({
   name: "MarkLine",

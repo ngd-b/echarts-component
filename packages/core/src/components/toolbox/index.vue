@@ -6,7 +6,7 @@ import {
   useTooltip,
   useFeature,
   useEmphasis,
-} from "../../hooks/index";
+} from "@/hooks/index";
 import type { ToolboxOption, ToolboxComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

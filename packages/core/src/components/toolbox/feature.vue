@@ -2,7 +2,7 @@
 import { computed, ref, watch } from "vue";
 import { FeatureOption, FeatureType } from "./type";
 import { isUndefined, omitBy } from "lodash-es";
-import { useFeature, useStyle, useEmphasis } from "../../hooks/index";
+import { useFeature, useStyle, useEmphasis } from "@/hooks/index";
 
 defineOptions({
   name: "Feature",

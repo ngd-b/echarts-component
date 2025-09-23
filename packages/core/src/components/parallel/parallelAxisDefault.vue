@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { useText, useAxis, useParallel, useTooltip } from "../../hooks/index";
+import { useText, useAxis, useParallel, useTooltip } from "@/hooks/index";
 import type {
   TextType,
   ParallelAxisOption,

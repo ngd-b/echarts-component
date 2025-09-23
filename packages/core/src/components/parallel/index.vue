@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { computed, ref, useId, watch } from "vue";
-import { useVueEcharts, useParallel } from "../../hooks/index";
+import { useVueEcharts, useParallel } from "@/hooks/index";
 import type {
   ParallelOption,
   ParallelComponentOption,

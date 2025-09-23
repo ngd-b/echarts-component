@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts } from "../../../hooks/index";
+import { useVueEcharts } from "@/hooks/index";
 import type { ContinousVisualMap, ContinousVisualMapOption } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

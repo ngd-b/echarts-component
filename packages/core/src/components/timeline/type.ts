@@ -3,10 +3,8 @@ import type {
   TimelineCheckpointStyle as CheckpointStyleComponentOption,
   TimelineControlStyle as ControlStyleComponentOption,
 } from "echarts/types/dist/shared";
-import { LabelOption } from "../common/type";
 
 export type TextType = "label";
-export type TextOptions = LabelOption;
 
 export type {
   TimelineComponentOption,

@@ -2,7 +2,7 @@
 import { ref, watch, useId } from "vue";
 import { BreakComponentOption, BreakOption } from "./type";
 import { isUndefined, omitBy } from "lodash-es";
-import { useAxis } from "../../../hooks";
+import { useAxis } from "@/hooks";
 
 const id = useId();
 

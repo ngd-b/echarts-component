@@ -1,11 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import {
-  useVueEcharts,
-  useStyle,
-  useTooltip,
-  useMatrix,
-} from "../../hooks/index";
+import { useVueEcharts, useStyle, useTooltip, useMatrix } from "@/hooks/index";
 import type { MatrixComponentOption, MatrixOption } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

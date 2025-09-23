@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import { LabelLayoutComponentOption, LabelLayoutOption } from "./type";
 import { isUndefined, omitBy } from "lodash-es";
-import { useStyle, useSeriesOption } from "../../../../hooks/index";
+import { useStyle, useSeriesOption } from "@/hooks/index";
 
 defineOptions({
   name: "LabelLayout",

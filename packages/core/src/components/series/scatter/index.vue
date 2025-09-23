@@ -1,12 +1,8 @@
 <script setup lang="tsx">
-import * as echarts from "echarts/core";
-import { ScatterChart } from "echarts/charts";
-import { CanvasRenderer } from "echarts/renderers";
 import type { ScatterSeries, ScatterSeriesOption } from "./type";
-import { useSeries } from "../../../hooks/index";
+import { useSeries } from "@/hooks/index";
 import { ref, useId } from "vue";
 
-echarts.use([ScatterChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
 

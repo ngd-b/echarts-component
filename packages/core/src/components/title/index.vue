@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText } from "../../hooks/index";
+import { useVueEcharts, useText } from "@/hooks/index";
 import type { TitleComponentOption, TitleOptions, TextType } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

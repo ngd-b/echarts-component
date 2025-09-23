@@ -2,8 +2,8 @@
 import { ref, watch } from "vue";
 import { AxisLineOption } from "./type";
 import { isUndefined, omitBy } from "lodash-es";
-import { useAxis, useStyle } from "../../../hooks";
-import { AxisType } from "../../../types";
+import { useAxis, useStyle } from "@/hooks";
+import { AxisType } from "@/types";
 
 const prop: AxisType = "axisLine";
 

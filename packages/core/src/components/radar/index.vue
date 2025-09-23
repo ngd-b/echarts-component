@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useText, useAxis } from "../../hooks/index";
+import { useVueEcharts, useText, useAxis } from "@/hooks/index";
 import type { TextType, RadarComponentOption, RadarOption } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

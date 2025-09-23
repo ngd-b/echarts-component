@@ -1,10 +1,10 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { useText } from "../../../hooks/index";
+import { useText } from "@/hooks/index";
 import type { TextCommonOption, TextOptions } from "./type";
 
 import { omitBy, isUndefined } from "lodash-es";
-import { TextType } from "../../../types/text";
+import { TextType } from "@/types/text";
 
 defineOptions({
   name: "Text",

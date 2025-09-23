@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { useText, useStyle, useMatrix } from "../../hooks/index";
+import { useText, useStyle, useMatrix } from "@/hooks/index";
 import type {
   MatrixDimensionComponentOption,
   MatrixDimensionOption,

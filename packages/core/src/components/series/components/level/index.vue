@@ -7,7 +7,7 @@ import {
   useSelect,
   useEmphasis,
   useBlur,
-} from "../../../../hooks/index";
+} from "@/hooks/index";
 import type { LevelComponentOption, LevelOption } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

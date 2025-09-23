@@ -6,7 +6,7 @@ import {
   useAxis,
   useTooltip,
   useAxisPointer,
-} from "../../hooks/index";
+} from "@/hooks/index";
 import type {
   TextType,
   SingleAxisComponentOption,

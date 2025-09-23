@@ -3,12 +3,12 @@
   <slot></slot>
 </template>
 <script setup lang="tsx">
-import * as echarts from "echarts";
+import { init as EchartsInit } from "echarts";
 import { onBeforeMount, onMounted, ref, useAttrs, watch } from "vue";
-import { useText, useVueEcharts } from "../../hooks/index";
+import { useText, useVueEcharts } from "@/hooks/index";
 import type { EChartsOption, TextType } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
-import { ChartOptions } from "../../types";
+import { ChartOptions } from "@/types";
 
 defineOptions({
   name: "VueEcharts",
@@ -59,7 +59,7 @@ watch(
 
 function initChart() {
   const { theme, config } = props;
-  vueEcharts.vueEchartsRef.value = echarts.init(root.value, theme, config);
+  vueEcharts.vueEchartsRef.value = EchartsInit(root.value, theme, config);
 
   update();
 }

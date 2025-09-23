@@ -1,12 +1,8 @@
 <script setup lang="tsx">
-import * as echarts from "echarts/core";
-import { BoxplotChart } from "echarts/charts";
-import { CanvasRenderer } from "echarts/renderers";
 import type { BoxplotSeries, BoxplotSeriesOption } from "./type";
-import { useSeries } from "../../../hooks/index";
+import { useSeries } from "@/hooks/index";
 import { ref, useId } from "vue";
 
-echarts.use([BoxplotChart, CanvasRenderer]);
 // 组件唯一id
 let id = useId();
 

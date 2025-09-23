@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { useTimeline } from "../../hooks/index";
+import { useTimeline } from "@/hooks/index";
 import type {
   CheckpointStyleComponentOption,
   CheckpointStyleOption,

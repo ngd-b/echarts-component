@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, useId, watch } from "vue";
-import { useVueEcharts, useStyle } from "../../hooks/index";
+import { useVueEcharts, useStyle } from "@/hooks/index";
 import type { BrushOption, BrushComponentOption } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

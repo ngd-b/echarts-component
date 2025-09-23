@@ -1,12 +1,7 @@
 <script setup lang="tsx">
-import * as echarts from "echarts/core";
-import { LineChart } from "echarts/charts";
-import { CanvasRenderer } from "echarts/renderers";
 import type { LineSeries, LineSeriesOption } from "./type";
 import { ref, useId } from "vue";
-import { useSeries } from "../../../hooks/index";
-
-echarts.use([LineChart, CanvasRenderer]);
+import { useSeries } from "@/hooks/index";
 
 // 组件唯一id
 let id = useId();

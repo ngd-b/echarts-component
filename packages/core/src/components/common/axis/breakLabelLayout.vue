@@ -5,7 +5,7 @@ import {
   BreakLabelLayoutOption,
 } from "./type";
 import { isUndefined, omitBy } from "lodash-es";
-import { useAxis } from "../../../hooks";
+import { useAxis } from "@/hooks";
 
 defineOptions({
   name: "BreakLabelLayout",

@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { useStyle, useSeriesOption } from "../../../../hooks/index";
+import { useStyle, useSeriesOption } from "@/hooks/index";
 import type { EffectComponentOption, EffectOption } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

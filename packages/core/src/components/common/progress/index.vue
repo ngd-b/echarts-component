@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { useStyle, useText } from "../../../hooks/index";
+import { useStyle, useText } from "@/hooks/index";
 import type { ProgressComponentOption, ProgressOption } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 

@@ -6,7 +6,7 @@ import {
   useStyle,
   useTooltip,
   useEmphasis,
-} from "../../hooks/index";
+} from "@/hooks/index";
 import type { LegendComponentOption, LegendOptions, TextType } from "./type";
 import { omitBy, isUndefined } from "lodash-es";
 
