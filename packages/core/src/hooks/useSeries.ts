@@ -1,5 +1,5 @@
 import { Ref, watch } from "vue";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 import {
   useVueEcharts,
   useStyle,

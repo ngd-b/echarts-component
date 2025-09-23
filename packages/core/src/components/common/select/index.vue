@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { isUndefined, omitBy } from "lodash";
+import { isUndefined, omitBy } from "lodash-es";
 import { SelectComponentOption, SelectOption } from "./type";
 import { useSelect, useText, useStyle } from "../../../hooks/index";
 

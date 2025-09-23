@@ -7,7 +7,7 @@ import {
   useAxisPointer,
 } from "../../hooks/index";
 import type { TextType, TooltipComponentOption, TooltipOptions } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 // 组件唯一id
 let id = useId();
 

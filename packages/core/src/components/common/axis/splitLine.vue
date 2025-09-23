@@ -1,7 +1,7 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
 import { SplitLineOption } from "./type";
-import { isUndefined, omitBy } from "lodash";
+import { isUndefined, omitBy } from "lodash-es";
 import { useAxis, useStyle } from "../../../hooks";
 import { AxisType } from "../../../types";
 

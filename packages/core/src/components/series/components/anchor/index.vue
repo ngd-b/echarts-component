@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import { useStyle, useSeriesOption } from "../../../../hooks/index";
 import type { AnchorComponentOption, AnchorOption } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 const options = ref<AnchorComponentOption>({});
 

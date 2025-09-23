@@ -2,7 +2,7 @@
 import { ref, useId, watch } from "vue";
 import { useVueEcharts } from "../../../hooks/index";
 import type { ContinousVisualMap, ContinousVisualMapOption } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 // 组件唯一id
 let id = useId();

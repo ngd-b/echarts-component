@@ -1,7 +1,7 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
 import { IcontyleOption } from "./type";
-import { isUndefined, omitBy } from "lodash";
+import { isUndefined, omitBy } from "lodash-es";
 import { useStyle } from "../../../hooks/index";
 
 defineOptions({

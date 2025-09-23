@@ -44,10 +44,10 @@
     "url": "https://github.com/ngd-b/echarts-component/issues"
   },
   "dependencies": {
-    "lodash": "catalog:"
+    "lodash-es": "catalog:"
   },
   "devDependencies": {
-    "@types/lodash": "catalog:",
+    "@types/lodash-es": "catalog:",
     "@types/node": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "@vue/tsconfig": "catalog:",

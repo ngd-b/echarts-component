@@ -6,13 +6,13 @@ import {
   useAxis,
   useTooltip,
   useAxisPointer,
-} from "../../hooks/index";
+} from "@/hooks/index";
 import type {
   TextType,
   AngleAxisComponentOption,
   AngleAxisOption,
 } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 // 组件唯一id
 let id = useId();

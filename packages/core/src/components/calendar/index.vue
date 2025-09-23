@@ -2,7 +2,7 @@
 import { ref, useId, watch } from "vue";
 import { useVueEcharts, useText, useAxis, useStyle } from "../../hooks/index";
 import type { TextType, CalendarComponentOption, CalendarOption } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 // 组件唯一id
 let id = useId();

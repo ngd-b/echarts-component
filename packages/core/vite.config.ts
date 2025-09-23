@@ -15,6 +15,11 @@ export default defineConfig({
       exclude: ["src/App.vue", "src/main.ts"],
     }),
   ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),

@@ -7,7 +7,7 @@ import * as echarts from "echarts";
 import { onBeforeMount, onMounted, ref, useAttrs, watch } from "vue";
 import { useText, useVueEcharts } from "../../hooks/index";
 import type { EChartsOption, TextType } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 import { ChartOptions } from "../../types";
 
 defineOptions({

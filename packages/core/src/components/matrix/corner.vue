@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import { useText, useStyle, useMatrix } from "../../hooks/index";
 import type { MatrixCornerComponentOption, MatrixCornerOption } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 const options = ref<MatrixCornerComponentOption>({});
 

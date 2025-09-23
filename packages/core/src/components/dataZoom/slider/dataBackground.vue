@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
-import { isUndefined, omitBy } from "lodash";
+import { isUndefined, omitBy } from "lodash-es";
 import { DataBackgroundComponentOption, DataBackgroundOption } from "./type";
 import { useStyle, useSlider } from "../../../hooks/index";
 

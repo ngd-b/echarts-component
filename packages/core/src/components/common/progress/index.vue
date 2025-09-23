@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import { useStyle, useText } from "../../../hooks/index";
 import type { ProgressComponentOption, ProgressOption } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 const options = ref<ProgressComponentOption>({});
 

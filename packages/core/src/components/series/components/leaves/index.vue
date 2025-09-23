@@ -9,7 +9,7 @@ import {
   useBlur,
 } from "../../../../hooks/index";
 import type { LeavesComponentOption, LeavesOption } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 const options = ref<LeavesComponentOption>({});
 

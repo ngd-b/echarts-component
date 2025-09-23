@@ -8,7 +8,7 @@ import {
   useTimeline,
 } from "../../hooks/index";
 import type { TextType, TimelineOption, TimelineComponentOption } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 // 组件唯一id
 let id = useId();

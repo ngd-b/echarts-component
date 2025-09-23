@@ -6,7 +6,7 @@ import type {
   ParallelAxisOption,
   ParallelAxisComponentOption,
 } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 const parallel = useParallel();
 

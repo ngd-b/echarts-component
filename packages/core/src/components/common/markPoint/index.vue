@@ -1,7 +1,7 @@
 <script setup lang="tsx">
 import { ref, watch } from "vue";
 import { MarkPointComponentOption, MarkPointOption, TextType } from "./type";
-import { isUndefined, omitBy } from "lodash";
+import { isUndefined, omitBy } from "lodash-es";
 import {
   useStyle,
   useMark,

@@ -1,7 +1,7 @@
 <script setup lang="tsx">
 import { ref, watch, useId } from "vue";
 import { DatasetTransformOption } from "./type";
-import { isUndefined, omitBy } from "lodash";
+import { isUndefined, omitBy } from "lodash-es";
 import { useTransform } from "../../hooks/index";
 
 const id = useId();

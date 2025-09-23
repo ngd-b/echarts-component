@@ -11,7 +11,7 @@ import {
   useRegion,
 } from "../../hooks/index";
 import type { GeoOption, GeoComponentOption } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 // 组件唯一id
 let id = useId();

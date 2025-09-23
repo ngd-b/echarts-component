@@ -5,7 +5,7 @@ import type {
   CheckpointStyleComponentOption,
   CheckpointStyleOption,
 } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 const options = ref<CheckpointStyleComponentOption>({});
 

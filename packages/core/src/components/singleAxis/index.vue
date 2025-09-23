@@ -12,7 +12,7 @@ import type {
   SingleAxisComponentOption,
   SingleAxisOption,
 } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 // 组件唯一id
 let id = useId();

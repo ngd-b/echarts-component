@@ -10,7 +10,7 @@ import {
   useRegion,
 } from "../../hooks/index";
 import type { GeoRegionOption, GeoRegionComponentOption } from "./type";
-import { omitBy, isUndefined } from "lodash";
+import { omitBy, isUndefined } from "lodash-es";
 
 const options = ref<GeoRegionComponentOption>({});
 
