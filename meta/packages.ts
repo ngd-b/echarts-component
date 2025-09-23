@@ -18,4 +18,10 @@ export const packages: PackageManifest[] = [
     utils: true,
     iife: false,
   },
+  {
+    name: "extend",
+    display: "Echarts advance extend component for Vue.",
+    utils: true,
+    iife: false,
+  },
 ];

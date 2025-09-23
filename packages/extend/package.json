@@ -1,0 +1,70 @@
+{
+  "name": "@echarts-component/extend-vue",
+  "version": "0.10.1",
+  "description": "Echarts advance extend component for Vue.",
+  "type": "module",
+  "sideEffects": false,
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "author": "hboot <bobolity@163.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.4.1",
+  "keywords": [
+    "vue",
+    "vue3",
+    "echarts",
+    "components",
+    "data-visualization",
+    "charts",
+    "vue-echarts",
+    "echarts-custom"
+  ],
+  "module": "./dist/echarts-component-vue.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/echarts-component-vue.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngd-b/echarts-component"
+  },
+  "homepage": "http://echarts-component.hboot.fun/",
+  "bugs": {
+    "url": "https://github.com/ngd-b/echarts-component/issues"
+  },
+  "dependencies": {
+    "lodash-es": "catalog:"
+  },
+  "devDependencies": {
+    "@echarts-component/vue": "workspace:*",
+    "@types/lodash-es": "catalog:",
+    "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/tsconfig": "catalog:",
+    "echarts": "catalog:",
+    "terser": "catalog:",
+    "typescript": "catalog:",
+    "unocss": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:",
+    "vue": "catalog:",
+    "vue-tsc": "catalog:"
+  },
+  "peerDependencies": {
+    "echarts": "^5.6.0",
+    "vue": "^3.5.17"
+  }
+}
