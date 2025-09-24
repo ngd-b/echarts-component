@@ -19,6 +19,7 @@ import type { FunnelSeriesOption } from "./funnel/type";
 import type { GaugeSeriesOption } from "./gauge/type";
 import type { PictorialBarSeriesOption } from "./pictorialBar/type";
 import type { ThemeRiverSeriesOption } from "./themeRiver/type";
+import type { CustomSeriesOption } from "./custom/type";
 //
 export type * from "./components/type";
 
@@ -44,6 +45,7 @@ export type {
   ThemeRiverSeriesOption,
   TreemapSeriesOption,
   ParallelSeriesOption,
+  CustomSeriesOption,
 };
 
 export type SeriesOption =
@@ -67,4 +69,5 @@ export type SeriesOption =
   | PictorialBarSeriesOption
   | ThemeRiverSeriesOption
   | TreemapSeriesOption
-  | ParallelSeriesOption;
+  | ParallelSeriesOption
+  | CustomSeriesOption;

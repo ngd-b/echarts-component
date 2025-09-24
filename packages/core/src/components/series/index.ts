@@ -19,7 +19,9 @@ import Funnel from "./funnel/index.vue";
 import Gauge from "./gauge/index.vue";
 import PictorialBar from "./pictorialBar/index.vue";
 import ThemeRiver from "./themeRiver/index.vue";
-//
+// 自定义系列
+import Custom from "./custom/index.vue";
+// 系列共用组件
 export * from "./components/index";
 
 export {
@@ -44,4 +46,5 @@ export {
   Gauge,
   PictorialBar,
   ThemeRiver,
+  Custom,
 };

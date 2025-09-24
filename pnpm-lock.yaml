@@ -57,7 +57,7 @@ catalogs:
 
 patchedDependencies:
   echarts:
-    hash: 128f86c0f2092101bb0c2e18a57e73d4a508dce6b3c9f7d1d1685215ca66df3b
+    hash: a283fdc0def6600a1d09e70b4880d91459584d512fd2c49d51e0cf8311154fd5
     path: .pnpm_patches/echarts.patch
 
 importers:
@@ -81,7 +81,7 @@ importers:
         version: 10.2.3
       echarts:
         specifier: 'catalog:'
-        version: 6.0.0(patch_hash=128f86c0f2092101bb0c2e18a57e73d4a508dce6b3c9f7d1d1685215ca66df3b)
+        version: 6.0.0(patch_hash=a283fdc0def6600a1d09e70b4880d91459584d512fd2c49d51e0cf8311154fd5)
       less:
         specifier: 'catalog:'
         version: 4.3.0
@@ -117,7 +117,7 @@ importers:
         version: link:../packages/core
       echarts:
         specifier: 'catalog:'
-        version: 6.0.0(patch_hash=128f86c0f2092101bb0c2e18a57e73d4a508dce6b3c9f7d1d1685215ca66df3b)
+        version: 6.0.0(patch_hash=a283fdc0def6600a1d09e70b4880d91459584d512fd2c49d51e0cf8311154fd5)
       less:
         specifier: 'catalog:'
         version: 4.3.0
@@ -145,7 +145,7 @@ importers:
         version: 0.7.0(typescript@5.9.2)(vue@3.5.21(typescript@5.9.2))
       echarts:
         specifier: 'catalog:'
-        version: 6.0.0(patch_hash=128f86c0f2092101bb0c2e18a57e73d4a508dce6b3c9f7d1d1685215ca66df3b)
+        version: 6.0.0(patch_hash=a283fdc0def6600a1d09e70b4880d91459584d512fd2c49d51e0cf8311154fd5)
       terser:
         specifier: 'catalog:'
         version: 5.43.1
@@ -191,7 +191,7 @@ importers:
         version: 0.7.0(typescript@5.9.2)(vue@3.5.21(typescript@5.9.2))
       echarts:
         specifier: 'catalog:'
-        version: 6.0.0(patch_hash=128f86c0f2092101bb0c2e18a57e73d4a508dce6b3c9f7d1d1685215ca66df3b)
+        version: 6.0.0(patch_hash=a283fdc0def6600a1d09e70b4880d91459584d512fd2c49d51e0cf8311154fd5)
       terser:
         specifier: 'catalog:'
         version: 5.43.1
@@ -3435,7 +3435,7 @@ snapshots:
 
   duplexer@0.1.2: {}
 
-  echarts@6.0.0(patch_hash=128f86c0f2092101bb0c2e18a57e73d4a508dce6b3c9f7d1d1685215ca66df3b):
+  echarts@6.0.0(patch_hash=a283fdc0def6600a1d09e70b4880d91459584d512fd2c49d51e0cf8311154fd5):
     dependencies:
       tslib: 2.3.0
       zrender: 6.0.0
