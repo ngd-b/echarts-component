@@ -20,6 +20,8 @@ import type { GaugeSeriesOption } from "./gauge/type";
 import type { PictorialBarSeriesOption } from "./pictorialBar/type";
 import type { ThemeRiverSeriesOption } from "./themeRiver/type";
 import type { CustomSeriesOption } from "./custom/type";
+// 自定义系列其他组件类型
+export type * from "./custom/type";
 //
 export type * from "./components/type";
 

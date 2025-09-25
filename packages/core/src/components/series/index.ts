@@ -20,7 +20,7 @@ import Gauge from "./gauge/index.vue";
 import PictorialBar from "./pictorialBar/index.vue";
 import ThemeRiver from "./themeRiver/index.vue";
 // 自定义系列
-import Custom from "./custom/index.vue";
+export * from "./custom/index";
 // 系列共用组件
 export * from "./components/index";
 
@@ -46,5 +46,4 @@ export {
   Gauge,
   PictorialBar,
   ThemeRiver,
-  Custom,
 };
