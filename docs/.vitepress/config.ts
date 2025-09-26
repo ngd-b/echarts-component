@@ -339,6 +339,12 @@ export default defineConfig({
               text: "Thumbnail 缩略图组件",
               link: "/components/thumbnail",
             },
+            {
+              text: "Graphic 原生图形元素组件",
+              link: "/components/graphic",
+              collapsed: true,
+              items: [],
+            },
           ],
         },
         {
