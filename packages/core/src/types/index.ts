@@ -19,3 +19,4 @@ export * from "./region";
 export * from "./timeline";
 export * from "./series";
 export * from "./matrix";
+export * from "./graphic";

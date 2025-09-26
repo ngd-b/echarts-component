@@ -70,6 +70,14 @@ export type {
   MatrixDimensionComponentOption,
 } from "./matrix/type";
 export type { ThumbnailComponentOption } from "./thumbnail/type";
+export type {
+  GraphicComponentOption,
+  GraphicElementComponentOption,
+  GraphicComponentGroupOption,
+  GraphicComponentImageOption,
+  GraphicComponentTextOption,
+  GraphicComponentZRPathOption,
+} from "./graphic/type";
 
 export type * from "./common/type";
 

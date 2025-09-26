@@ -1,27 +1,27 @@
 <script setup lang="tsx">
-import type { CustomGroupComponentOption, CustomGroupOption } from "../type";
-import {} from "@/hooks/index";
+import { useGraphic } from "@/hooks/index";
 import { isUndefined, omitBy } from "lodash-es";
 import { shallowRef, useId, watch } from "vue";
+import type { GraphicComponentGroupOption, GraphicGroupOption } from "../type";
 
 // 组件唯一id
 let id = useId();
 
-const options = shallowRef<CustomGroupComponentOption>({
+const graphicCtx = useGraphic();
+
+const options = shallowRef<GraphicComponentGroupOption>({
   type: "group",
   id: id,
   children: [],
 });
 
 defineOptions({
-  name: "RenderGroup",
+  name: "RenderSector",
 });
 
-const props = withDefaults(defineProps<CustomGroupOption>(), {
-  silent: undefined,
-  tooltipDisabled: undefined,
+const props = withDefaults(defineProps<GraphicGroupOption>(), {
+  draggable: undefined,
   diffChildrenByName: undefined,
-  ignore: undefined,
 });
 
 watch(
@@ -42,8 +42,8 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: CustomGroupComponentOption) {
-  // vueEcharts.resize();
+function update(data: GraphicComponentGroupOption) {
+  graphicCtx.update(data);
 }
 </script>
 <template>

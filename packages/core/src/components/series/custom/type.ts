@@ -23,6 +23,13 @@ export type CustomOption = Partial<
   >
 >;
 
+export type CustomElementComponentOption =
+  | CustomTextComponentOption
+  | CustomImageComponentOption
+  | CustomPathComponentOption
+  | CustomCompoundPathComponentOption
+  | CustomGroupComponentOption;
+
 type CustomElementOption<T> = Partial<
   Omit<
     T,

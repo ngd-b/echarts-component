@@ -1,7 +1,37 @@
 diff --git a/types/dist/shared.d.ts b/types/dist/shared.d.ts
-index 8d9cc1bb5024e7c2c4b4a960fbd6cd7165aa36f7..be61b70e5af4432acf7d2824f0068fd706ae5d2a 100644
+index 8d9cc1bb5024e7c2c4b4a960fbd6cd7165aa36f7..267d5b7ca38b2493c2febf89e241cb6440f6df31 100644
 --- a/types/dist/shared.d.ts
 +++ b/types/dist/shared.d.ts
+@@ -6528,7 +6528,7 @@ interface GraphicComponentDisplayableOption extends GraphicComponentBaseElementO
+     style?: ZRStyleProps;
+     z2?: number;
+ }
+-interface GraphicComponentGroupOption extends GraphicComponentBaseElementOption, TransitionOptionMixin<GroupProps> {
++interface GraphicComponentGroupOption extends /* @vue-ignore */ GraphicComponentBaseElementOption, TransitionOptionMixin<GroupProps> {
+     type?: 'group';
+     /**
+      * width/height: (can only be pixel value, default 0)
+@@ -6541,17 +6541,17 @@ interface GraphicComponentGroupOption extends GraphicComponentBaseElementOption,
+     children: GraphicComponentElementOption[];
+     keyframeAnimation?: ElementKeyframeAnimationOption<GroupProps> | ElementKeyframeAnimationOption<GroupProps>[];
+ }
+-interface GraphicComponentZRPathOption extends GraphicComponentDisplayableOption, TransitionOptionMixin<PathProps> {
++interface GraphicComponentZRPathOption extends /* @vue-ignore */ GraphicComponentDisplayableOption, TransitionOptionMixin<PathProps> {
+     shape?: PathProps['shape'] & TransitionOptionMixin<PathProps['shape']>;
+     style?: PathStyleProps & TransitionOptionMixin<PathStyleProps>;
+     keyframeAnimation?: ElementKeyframeAnimationOption<PathProps> | ElementKeyframeAnimationOption<PathProps>[];
+ }
+-interface GraphicComponentImageOption extends GraphicComponentDisplayableOption, TransitionOptionMixin<ImageProps> {
++interface GraphicComponentImageOption extends /* @vue-ignore */ GraphicComponentDisplayableOption, TransitionOptionMixin<ImageProps> {
+     type?: 'image';
+     style?: ImageStyleProps & TransitionOptionMixin<ImageStyleProps>;
+     keyframeAnimation?: ElementKeyframeAnimationOption<ImageProps> | ElementKeyframeAnimationOption<ImageProps>[];
+ }
+-interface GraphicComponentTextOption extends Omit<GraphicComponentDisplayableOption, 'textContent' | 'textConfig'>, TransitionOptionMixin<TextProps> {
++interface GraphicComponentTextOption extends /* @vue-ignore */ Omit<GraphicComponentDisplayableOption, 'textContent' | 'textConfig'>, TransitionOptionMixin<TextProps> {
+     type?: 'text';
+     style?: TextStyleProps & TransitionOptionMixin<TextStyleProps>;
+     keyframeAnimation?: ElementKeyframeAnimationOption<TextProps> | ElementKeyframeAnimationOption<TextProps>[];
 @@ -12159,3 +12159,12 @@ declare function installAxisBreak(registers: EChartsExtensionInstallRegisters):
  declare function installLegacyGridContainLabel(): void;
  

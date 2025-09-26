@@ -1,13 +1,18 @@
 <script setup lang="tsx">
-import type { CustomPathOption, CustomPathComponentOption } from "../type";
-import { useVueEcharts } from "@/hooks/index";
+import { useGraphic } from "@/hooks/index";
 import { isUndefined, omitBy } from "lodash-es";
 import { shallowRef, useId, watch } from "vue";
+import type {
+  GraphicComponentZRPathOption,
+  GraphicZRPathOption,
+} from "../type";
 
 // 组件唯一id
 let id = useId();
 
-const options = shallowRef<CustomPathComponentOption>({
+const graphicCtx = useGraphic();
+
+const options = shallowRef<GraphicComponentZRPathOption>({
   type: "bezierCurve",
   id: id,
 });
@@ -16,14 +21,9 @@ defineOptions({
   name: "RenderBezierCurve",
 });
 
-const vueEcharts = useVueEcharts();
-
-const props = withDefaults(defineProps<CustomPathOption>(), {
-  silent: undefined,
-  tooltipDisabled: undefined,
-  invisible: undefined,
-  ignore: undefined,
-  emphasisDisabled: undefined,
+const props = withDefaults(defineProps<GraphicZRPathOption>(), {
+  draggable: undefined,
+  diffChildrenByName: undefined,
 });
 
 watch(
@@ -44,8 +44,8 @@ watch(
  * 更新配置
  * @param data
  */
-function update(data: CustomPathComponentOption) {
-  // vueEcharts.resize();
+function update(data: GraphicComponentZRPathOption) {
+  graphicCtx.update(data);
 }
 </script>
 <template>
