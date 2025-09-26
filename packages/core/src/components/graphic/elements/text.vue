@@ -15,7 +15,7 @@ const options = shallowRef<GraphicComponentTextOption>({
 });
 
 defineOptions({
-  name: "RenderSector",
+  name: "RenderText",
 });
 
 const props = withDefaults(defineProps<GraphicTextOption>(), {

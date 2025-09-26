@@ -15,7 +15,7 @@ const options = shallowRef<GraphicComponentImageOption>({
 });
 
 defineOptions({
-  name: "RenderSector",
+  name: "RenderImage",
 });
 
 const props = withDefaults(defineProps<GraphicImageOption>(), {

@@ -100,6 +100,21 @@ import {
   Break,
   BreakArea,
   BreakLabelLayout,
+  Graphic,
+  RenderArc,
+  RenderBezierCurve,
+  RenderCircle,
+  RenderGroup,
+  RenderImage,
+  RenderLine,
+  RenderPolygon,
+  RenderPolyline,
+  RenderRect,
+  RenderRing,
+  RenderSector,
+  RenderText,
+  RenderCompoundPath,
+  RenderPath,
 } from "./components/index";
 
 const components = [
@@ -201,6 +216,22 @@ const components = [
   Break,
   BreakArea,
   BreakLabelLayout,
+  // 原生图
+  Graphic,
+  RenderArc,
+  RenderBezierCurve,
+  RenderCircle,
+  RenderGroup,
+  RenderImage,
+  RenderLine,
+  RenderRect,
+  RenderRing,
+  RenderSector,
+  RenderText,
+  RenderPolygon,
+  RenderPolyline,
+  RenderCompoundPath,
+  RenderPath,
 ];
 export default {
   install(app: App) {

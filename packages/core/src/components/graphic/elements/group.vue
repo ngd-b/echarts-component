@@ -16,7 +16,7 @@ const options = shallowRef<GraphicComponentGroupOption>({
 });
 
 defineOptions({
-  name: "RenderSector",
+  name: "RenderGroup",
 });
 
 const props = withDefaults(defineProps<GraphicGroupOption>(), {
