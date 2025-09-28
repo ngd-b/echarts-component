@@ -4,6 +4,7 @@ import { shallowRef, useId } from "vue";
 import type {
   GraphicComponentGroupOption,
   GraphicComponentOption,
+  GraphicElementEventType,
   GraphicGroupOption,
 } from "../type";
 
@@ -18,12 +19,19 @@ const options = shallowRef<GraphicComponentGroupOption>({
 
 defineOptions({
   name: "RenderGroup",
+  inheritAttrs: false,
 });
 
 const props = withDefaults(defineProps<GraphicGroupOption>(), {
+  silent: undefined,
+  ignore: undefined,
   draggable: undefined,
   diffChildrenByName: undefined,
 });
+
+defineEmits<{
+  [K in GraphicElementEventType]: [...args: any[]];
+}>();
 
 const { update } = useElement(props, options);
 

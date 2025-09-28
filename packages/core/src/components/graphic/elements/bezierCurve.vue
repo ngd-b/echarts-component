@@ -3,6 +3,7 @@ import { useElement } from "@/hooks/index";
 import { shallowRef, useId } from "vue";
 import type {
   GraphicComponentZRPathOption,
+  GraphicElementEventType,
   GraphicZRPathOption,
 } from "../type";
 // 组件唯一id
@@ -20,8 +21,15 @@ defineOptions({
 
 const props = withDefaults(defineProps<GraphicZRPathOption>(), {
   draggable: undefined,
-  diffChildrenByName: undefined,
+  silent: undefined,
+  ignore: undefined,
+  invisible: undefined,
+  progressive: undefined,
 });
+
+defineEmits<{
+  [K in GraphicElementEventType]: [...args: any[]];
+}>();
 
 useElement(props, options);
 </script>

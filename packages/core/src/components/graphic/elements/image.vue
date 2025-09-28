@@ -1,7 +1,11 @@
 <script setup lang="tsx">
 import { useElement } from "@/hooks/index";
 import { shallowRef, useId } from "vue";
-import type { GraphicComponentImageOption, GraphicImageOption } from "../type";
+import type {
+  GraphicComponentImageOption,
+  GraphicElementEventType,
+  GraphicImageOption,
+} from "../type";
 
 // 组件唯一id
 let id = useId();
@@ -13,12 +17,20 @@ const options = shallowRef<GraphicComponentImageOption>({
 
 defineOptions({
   name: "RenderImage",
+  inheritAttrs: false,
 });
 
 const props = withDefaults(defineProps<GraphicImageOption>(), {
   draggable: undefined,
-  diffChildrenByName: undefined,
+  silent: undefined,
+  ignore: undefined,
+  invisible: undefined,
+  progressive: undefined,
 });
+
+defineEmits<{
+  [K in GraphicElementEventType]: [...args: any[]];
+}>();
 
 useElement(props, options);
 </script>

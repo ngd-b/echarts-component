@@ -1,10 +1,7 @@
-import {
-  GRAPHIC_EVENT_TYPES,
-  GraphicElementEventType,
-} from "@/components/graphic/type";
+import { GRAPHIC_EVENT_TYPES } from "@/components/graphic/type";
 import { GraphicElementComponentOption } from "@/components/type";
 import { ShallowRef, useAttrs, watch } from "vue";
-import { useGraphic } from "./index";
+import { useGraphic, useElementStyle } from "./index";
 import { isUndefined, omitBy } from "lodash-es";
 
 /**
@@ -20,6 +17,11 @@ export const useElement = <T extends GraphicElementComponentOption>(
 
   const attrs = useAttrs();
 
+  useElementStyle({
+    options,
+    update,
+  });
+
   for (const event of GRAPHIC_EVENT_TYPES) {
     let fn =
       attrs[
@@ -31,10 +33,6 @@ export const useElement = <T extends GraphicElementComponentOption>(
       options.value[`on${event}`] = fn as any;
     }
   }
-
-  defineEmits<{
-    [K in GraphicElementEventType]: [];
-  }>();
 
   watch(
     () => props,

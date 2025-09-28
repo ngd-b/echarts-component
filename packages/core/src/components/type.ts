@@ -77,6 +77,12 @@ export type {
   GraphicComponentImageOption,
   GraphicComponentTextOption,
   GraphicComponentZRPathOption,
+  // style
+  GraphicElementStyleOption,
+  GraphicElementTextConfigOption,
+  GraphicElementShapeOption,
+  GraphicElementLeaveToOption,
+  GraphicElementEnterFromOption,
 } from "./graphic/type";
 
 export type * from "./common/type";
