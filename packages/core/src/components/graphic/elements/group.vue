@@ -1,13 +1,14 @@
 <script setup lang="tsx">
-import { useGraphic } from "@/hooks/index";
-import { isUndefined, omitBy } from "lodash-es";
-import { shallowRef, useId, watch } from "vue";
-import type { GraphicComponentGroupOption, GraphicGroupOption } from "../type";
+import { useElement, useGraphic } from "@/hooks/index";
+import { shallowRef, useId } from "vue";
+import type {
+  GraphicComponentGroupOption,
+  GraphicComponentOption,
+  GraphicGroupOption,
+} from "../type";
 
 // 组件唯一id
 let id = useId();
-
-const graphicCtx = useGraphic();
 
 const options = shallowRef<GraphicComponentGroupOption>({
   type: "group",
@@ -24,26 +25,20 @@ const props = withDefaults(defineProps<GraphicGroupOption>(), {
   diffChildrenByName: undefined,
 });
 
-watch(
-  () => props,
-  () => {
-    let propsData = omitBy(props, isUndefined);
+const { update } = useElement(props, options);
 
-    options.value = {
-      ...options.value,
-      ...propsData,
-    };
-    update(options.value);
-  },
-  { immediate: true, deep: true }
-);
+useGraphic({
+  options: shallowRef(options.value.children),
+  update: updateChildren,
+});
 
 /**
  * 更新配置
  * @param data
  */
-function update(data: GraphicComponentGroupOption) {
-  graphicCtx.update(data);
+function updateChildren(data: GraphicComponentOption) {
+  options.value.children = data;
+  update(options.value);
 }
 </script>
 <template>

@@ -18,3 +18,4 @@ export * from "./useTimeline";
 export * from "./useSeriesOption";
 export * from "./useMatrix";
 export * from "./useGraphic";
+export * from "./useElement";

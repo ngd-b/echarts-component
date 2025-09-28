@@ -1,16 +1,12 @@
 <script setup lang="tsx">
-import { useGraphic } from "@/hooks/index";
-import { isUndefined, omitBy } from "lodash-es";
-import { shallowRef, useId, watch } from "vue";
+import { useElement } from "@/hooks/index";
+import { shallowRef, useId } from "vue";
 import type {
   GraphicComponentZRPathOption,
   GraphicZRPathOption,
 } from "../type";
-
 // 组件唯一id
 let id = useId();
-
-const graphicCtx = useGraphic();
 
 const options = shallowRef<GraphicComponentZRPathOption>({
   type: "bezierCurve",
@@ -19,6 +15,7 @@ const options = shallowRef<GraphicComponentZRPathOption>({
 
 defineOptions({
   name: "RenderBezierCurve",
+  inheritAttrs: false,
 });
 
 const props = withDefaults(defineProps<GraphicZRPathOption>(), {
@@ -26,27 +23,7 @@ const props = withDefaults(defineProps<GraphicZRPathOption>(), {
   diffChildrenByName: undefined,
 });
 
-watch(
-  () => props,
-  () => {
-    let propsData = omitBy(props, isUndefined);
-
-    options.value = {
-      ...options.value,
-      ...propsData,
-    };
-    update(options.value);
-  },
-  { immediate: true, deep: true }
-);
-
-/**
- * 更新配置
- * @param data
- */
-function update(data: GraphicComponentZRPathOption) {
-  graphicCtx.update(data);
-}
+useElement(props, options);
 </script>
 <template>
   <slot></slot>

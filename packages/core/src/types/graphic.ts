@@ -1,6 +1,7 @@
 import type {
   GraphicElementComponentOption,
   GraphicComponentOption,
+  GraphicComponentGroupOption,
 } from "@/components/type";
 
 export type GraphicElementOption = GraphicElementComponentOption;
