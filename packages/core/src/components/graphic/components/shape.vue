@@ -16,6 +16,7 @@ const elementStyleCtx = useElementStyle();
 const props = withDefaults(defineProps<GraphicElementShapeOption>(), {
   smooth: undefined,
   smoothConstraint: undefined,
+  clockwise: undefined,
 });
 
 watch(

@@ -7,13 +7,18 @@ import { isUndefined, omitBy } from "lodash-es";
 const options = shallowRef<GraphicElementStyleOption>({});
 
 defineOptions({
-  name: "Style",
+  name: "ShapeStyle",
   inheritAttrs: false,
 });
 
 const elementStyleCtx = useElementStyle();
 
-const props = withDefaults(defineProps<GraphicElementStyleOption>(), {});
+const props = withDefaults(defineProps<GraphicElementStyleOption>(), {
+  borderDash: undefined,
+  lineDash: undefined,
+  strokeFirst: undefined,
+  strokeNoScale: undefined,
+});
 
 watch(
   () => props,
