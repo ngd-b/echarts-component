@@ -115,6 +115,12 @@ import {
   RenderText,
   RenderCompoundPath,
   RenderPath,
+  Style,
+  Shape,
+  EnterFrom,
+  LeaveTo,
+  TextContent,
+  TextConfig,
 } from "./components/index";
 
 const components = [
@@ -232,6 +238,12 @@ const components = [
   RenderPolyline,
   RenderCompoundPath,
   RenderPath,
+  Style,
+  Shape,
+  EnterFrom,
+  LeaveTo,
+  TextContent,
+  TextConfig,
 ];
 export default {
   install(app: App) {

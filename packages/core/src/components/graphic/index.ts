@@ -17,6 +17,8 @@ import RenderGroup from "./elements/group.vue";
 
 export { Graphic };
 
+export * from "./components/index";
+
 export {
   RenderRect,
   RenderRing,

@@ -7,7 +7,7 @@ import { isUndefined, omitBy } from "lodash-es";
 const options = shallowRef<GraphicElementStyleOption>({});
 
 defineOptions({
-  name: "ElementStyle",
+  name: "Style",
   inheritAttrs: false,
 });
 

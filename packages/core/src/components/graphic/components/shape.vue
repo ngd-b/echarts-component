@@ -14,8 +14,8 @@ defineOptions({
 const elementStyleCtx = useElementStyle();
 
 const props = withDefaults(defineProps<GraphicElementShapeOption>(), {
-  subPixelOptimize: undefined,
-  autoBatch: undefined,
+  smooth: undefined,
+  smoothConstraint: undefined,
 });
 
 watch(
