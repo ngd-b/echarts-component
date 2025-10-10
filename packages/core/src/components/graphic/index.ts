@@ -20,6 +20,7 @@ export { Graphic };
 export * from "./components/index";
 
 export {
+  RenderText,
   RenderRect,
   RenderRing,
   RenderSector,
@@ -29,7 +30,6 @@ export {
   RenderBezierCurve,
   RenderGroup,
   RenderImage,
-  RenderText,
   RenderPath,
   RenderCompoundPath,
   RenderPolygon,

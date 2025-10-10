@@ -50,6 +50,7 @@
     "@types/lodash-es": "catalog:",
     "@types/node": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
+    "@vitejs/plugin-vue-jsx": "catalog:",
     "@vue/tsconfig": "catalog:",
     "echarts": "catalog:",
     "terser": "catalog:",
@@ -58,7 +59,8 @@
     "vite": "catalog:",
     "vite-plugin-dts": "catalog:",
     "vue": "catalog:",
-    "vue-tsc": "catalog:"
+    "vue-tsc": "catalog:",
+    "type-fest": "catalog:"
   },
   "peerDependencies": {
     "echarts": "^5.6.0",

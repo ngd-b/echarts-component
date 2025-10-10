@@ -29,8 +29,6 @@ const props = withDefaults(defineProps<GraphicGroupOption>(), {
   diffChildrenByName: undefined,
 });
 
-console.log(props);
-
 defineEmits<{
   [K in GraphicElementEventType]: [...args: any[]];
 }>();
