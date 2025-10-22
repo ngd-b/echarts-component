@@ -27,9 +27,7 @@
     "echarts": "catalog:",
     "less": "catalog:",
     "terser": "catalog:",
-    "ts-morph": "catalog:",
     "tsx": "catalog:",
-    "type-fest": "catalog:",
     "typescript": "catalog:",
     "unocss": "catalog:",
     "vite": "catalog:",
@@ -40,6 +38,7 @@
   "pnpm": {
     "patchedDependencies": {
       "echarts": ".pnpm_patches/echarts.patch"
-    }
+    },
+    "overrides": {}
   }
 }

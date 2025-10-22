@@ -1,0 +1,2 @@
+
+# `@echarts-component/type`

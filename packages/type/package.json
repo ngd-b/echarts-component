@@ -1,0 +1,44 @@
+{
+  "name": "@echarts-component/type",
+  "version": "0.10.2",
+  "description": "Echarts component flatten type.",
+  "type": "module",
+  "sideEffects": false,
+  "private": true,
+  "scripts": {
+    "flatten": "tsx flatten.ts ",
+    "build": "pnpm run flatten && vite build"
+  },
+  "author": "hboot <bobolity@163.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.4.1",
+  "keywords": [
+    "echarts",
+    "components",
+    "type"
+  ],
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngd-b/echarts-component"
+  },
+  "homepage": "http://echarts-component.hboot.fun/",
+  "bugs": {
+    "url": "https://github.com/ngd-b/echarts-component/issues"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "echarts": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  }
+}
