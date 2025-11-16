@@ -1,10 +1,9 @@
 {
   "name": "@echarts-component/type",
-  "version": "0.10.2",
+  "version": "0.0.1",
   "description": "Echarts component flatten type.",
   "type": "module",
   "sideEffects": false,
-  "private": true,
   "scripts": {
     "flatten": "tsx flatten.ts ",
     "build": "pnpm run flatten && vite build"
@@ -17,7 +16,6 @@
     "components",
     "type"
   ],
-  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
@@ -36,9 +34,9 @@
   "devDependencies": {
     "@types/node": "catalog:",
     "echarts": "catalog:",
-    "tsx": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vite-plugin-dts": "catalog:"
+    "vite-plugin-dts": "catalog:",
+    "type-flat": "catalog:"
   }
 }

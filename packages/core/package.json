@@ -59,8 +59,7 @@
     "vite": "catalog:",
     "vite-plugin-dts": "catalog:",
     "vue": "catalog:",
-    "vue-tsc": "catalog:",
-    "type-fest": "catalog:"
+    "vue-tsc": "catalog:"
   },
   "peerDependencies": {
     "echarts": "^5.6.0",

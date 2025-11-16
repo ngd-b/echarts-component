@@ -15,7 +15,7 @@
     "update:full": "npm run update && npm run build:types",
     "release": "bumpp --execute=\"npm run release:prepare\" --all ",
     "release:prepare": "npm run build:types && tsx scripts/update.ts",
-    "publish": "tsx scripts/publish.ts"
+    "publish:npm": "tsx scripts/publish.ts"
   },
   "devDependencies": {
     "@types/lodash-es": "catalog:",
@@ -28,6 +28,7 @@
     "less": "catalog:",
     "terser": "catalog:",
     "tsx": "catalog:",
+    "type-flat": "catalog:",
     "typescript": "catalog:",
     "unocss": "catalog:",
     "vite": "catalog:",

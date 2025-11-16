@@ -1,5 +1,5 @@
 diff --git a/types/dist/shared.d.ts b/types/dist/shared.d.ts
-index 8d9cc1bb5024e7c2c4b4a960fbd6cd7165aa36f7..eeadc8642489654b820148478ca79ea0259ce160 100644
+index 8d9cc1bb5024e7c2c4b4a960fbd6cd7165aa36f7..30a4b1a4df2d287ad100da048a51ee4eb726d198 100644
 --- a/types/dist/shared.d.ts
 +++ b/types/dist/shared.d.ts
 @@ -12159,3 +12159,13 @@ declare function installAxisBreak(registers: EChartsExtensionInstallRegisters):
